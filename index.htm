@@ -210,9 +210,9 @@ td, th {
     <dt>편집자:</dt>
     <dd><a href="http://datadriven.com.au/">Marcos Cáceres</a>, W3C Invited Expert</dd>
   </dl>
-  <p>이 문서에 대한 일반 규정이 나와있는 <a href="http://w3c.github.io/packaged-webapps/packaging/errata.html"><strong>errata</strong></a>를 참조해라.</p>
-  <p>번역본은 <a href="http://www.w3.org/2003/03/Translations/byTechnology?technology=widgets"> <strong>translations</strong></a>를 참조해라.</p>
-  <p>이 문서와 최신 배포 문서와의 차이는 <a href="http://www.w3.org/2007/10/htmldiff?doc1=http%3A//www.w3.org/TR/widgets/&amp;doc2=http%3A//www.w3.org/TR/2011/REC-widgets-20110927/">differences</a>를 참조해라.</p>
+  <p>이 문서에 대한 일반 규정이 나와있는 <a href="http://w3c.github.io/packaged-webapps/packaging/errata.html"><strong>errata</strong></a>를 참조하십시오.</p>
+  <p>번역본은 <a href="http://www.w3.org/2003/03/Translations/byTechnology?technology=widgets"> <strong>translations</strong></a>를 참조하십시오.</p>
+  <p>이 문서와 최신 배포 문서와의 차이는 <a href="http://www.w3.org/2007/10/htmldiff?doc1=http%3A//www.w3.org/TR/widgets/&amp;doc2=http%3A//www.w3.org/TR/2011/REC-widgets-20110927/">differences</a>를 참조하십시오.</p>
   <p class="copyright"><a href="http://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a> © 2012 <a href="http://www.w3.org/"><abbr title="World Wide Web Consortium">W3C</abbr></a><sup>®</sup> (<a href="http://www.csail.mit.edu/"><abbr title="Massachusetts Institute of Technology">MIT</abbr></a>, <a href="http://www.ercim.eu/"><abbr title="European Research Consortium for Informatics and Mathematics">ERCIM</abbr></a>, <a href="http://www.keio.ac.jp/">Keio</a>), All Rights Reserved. W3C <a href="http://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>, <a href="http://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a> and <a href="http://www.w3.org/Consortium/Legal/copyright-documents">document use</a> rules apply.</p>
 </div>
 <hr>
@@ -255,167 +255,165 @@ td, th {
     believes contains <a href="http://www.w3.org/Consortium/Patent-Policy-20040205/#def-essential">Essential
       Claim(s)</a> must disclose the information in accordance with <a href="http://www.w3.org/Consortium/Patent-Policy-20040205/#sec-Disclosure">section 6 of the
   W3C Patent Policy</a>.</p>
-  <h2 class="no-num no-toc" id="toc">Table of Contents</h2>
+  <h2 class="no-num no-toc" id="toc">목차</h2>
   
 <!--begin-toc-->
 <ol class="toc">
- <li><a href="#introduction"><span class="secno">1 </span>Introduction</a>
+ <li><a href="#introduction"><span class="secno">1 </span>소개</a>
   <ol class="toc">
-   <li><a href="#design-goals-and-requirements"><span class="secno">1.1 </span>Design Goals and Requirements</a></li>
-   <li><a href="#how-this-document-is-organized"><span class="secno">1.2 </span>How This Document is Organized</a></li>
-   <li><a href="#typographic-conventions"><span class="secno">1.3 </span>Typographic Conventions</a></li>
+   <li><a href="#design-goals-and-requirements"><span class="secno">1.1 </span>디자인 목표와 요구사항</a></li>
+   <li><a href="#how-this-document-is-organized"><span class="secno">1.2 </span>이 문서가 어떻게 구성되어 있는가</a></li>
+   <li><a href="#typographic-conventions"><span class="secno">1.3 </span>문서 규약</a></li>
    <li><a href="#the-widget-family-of-specifications"><span class="secno">1.4 </span>The Widget Family of Specifications</a></ol></li>
- <li><a href="#conformance"><span class="secno">2 </span>Conformance</a></li>
- <li><a href="#definitions"><span class="secno">3 </span>Definitions</a>
+ <li><a href="#conformance"><span class="secno">2 </span>적합성</a></li>
+ <li><a href="#definitions"><span class="secno">3 </span>정의</a>
   <ol class="toc">
-   <li><a href="#character-definitions"><span class="secno">3.1 </span>Character Definitions</a></ol></li>
- <li><a href="#user-agents"><span class="secno">4 </span>User Agents</a>
+   <li><a href="#character-definitions"><span class="secno">3.1 </span>문자 정의</a></ol></li>
+ <li><a href="#user-agents"><span class="secno">4 </span>사용자 에이전트</a>
   <ol class="toc">
    <li><a href="#optional-aspects-of-the-zip-specification"><span class="secno">4.1 </span>Optional Aspects of the Zip Specification</a></ol></li>
- <li><a href="#zip-archive"><span class="secno">5 </span>Zip Archive</a>
+ <li><a href="#zip-archive"><span class="secno">5 </span>Zip 압축</a>
   <ol class="toc">
-   <li><a href="#compression-methods"><span class="secno">5.1 </span>Compression Methods</a></li>
-   <li><a href="#version-of-zip-needed-to-extract-a-file-entry"><span class="secno">5.2 </span>Version of Zip Needed to Extract a File Entry</a></li>
-   <li><a href="#zip-relative-paths"><span class="secno">5.3 </span>Zip Relative Paths</a></li>
-   <li><a href="#interoperability-considerations"><span class="secno">5.4 </span>Interoperability Considerations</a></ol></li>
- <li><a href="#widget-packages"><span class="secno">6 </span>Widget Packages</a>
+   <li><a href="#compression-methods"><span class="secno">5.1 </span>압축 방법</a></li>
+   <li><a href="#version-of-zip-needed-to-extract-a-file-entry"><span class="secno">5.2 </span>파일 엔트리를 추출하기 위한 Zip 버전</a></li>
+   <li><a href="#zip-relative-paths"><span class="secno">5.3 </span>Zip 상대 경로</a></li>
+   <li><a href="#interoperability-considerations"><span class="secno">5.4 </span>상호운용 고려사항</a></ol></li>
+ <li><a href="#widget-packages"><span class="secno">6 </span>위젯 패키지</a>
   <ol class="toc">
-   <li><a href="#invalid-widget-package"><span class="secno">6.1 </span>Invalid Widget Package</a></li>
-   <li><a href="#files-and-folders"><span class="secno">6.2 </span>Files and Folders</a></li>
-   <li><a href="#reserved-file-and-folder-names"><span class="secno">6.3 </span>Reserved File and Folder Names</a></li>
-   <li><a href="#digital-signatures"><span class="secno">6.4 </span>Digital Signatures</a></li>
-   <li><a href="#start-files"><span class="secno">6.5 </span>Start Files</a>
+   <li><a href="#invalid-widget-package"><span class="secno">6.1 </span>잘못된 위젯 패키지</a></li>
+   <li><a href="#files-and-folders"><span class="secno">6.2 </span>파일과 폴더</a></li>
+   <li><a href="#reserved-file-and-folder-names"><span class="secno">6.3 </span>예약된 파일과 폴더명</a></li>
+   <li><a href="#digital-signatures"><span class="secno">6.4 </span>디지털 서명</a></li>
+   <li><a href="#start-files"><span class="secno">6.5 </span>시작 파일</a>
     <ol class="toc">
-     <li><a href="#custom-start-file"><span class="secno">6.5.1 </span>Custom Start File</a></li>
-     <li><a href="#default-start-files"><span class="secno">6.5.2 </span>Default Start Files</a></ol></li>
-   <li><a href="#icons"><span class="secno">6.6 </span>Icons</a>
+     <li><a href="#custom-start-file"><span class="secno">6.5.1 </span>사용자 정의 시작 파일</a></li>
+     <li><a href="#default-start-files"><span class="secno">6.5.2 </span>기본 시작 파일</a></ol></li>
+   <li><a href="#icons"><span class="secno">6.6 </span>아이콘</a>
     <ol class="toc">
-     <li><a href="#custom-icons"><span class="secno">6.6.1 </span>Custom Icons</a></li>
-     <li><a href="#default-icons"><span class="secno">6.6.2 </span>Default Icons</a></ol></li>
-   <li><a href="#media-type"><span class="secno">6.7 </span>Media Type</a></li>
-   <li><a href="#file-extension"><span class="secno">6.8 </span>File Extension</a></ol></li>
- <li><a href="#configuration-document"><span class="secno">7 </span>Configuration Document</a>
+     <li><a href="#custom-icons"><span class="secno">6.6.1 </span>사용자 정의 아이콘</a></li>
+     <li><a href="#default-icons"><span class="secno">6.6.2 </span>기본 아이콘</a></ol></li>
+   <li><a href="#media-type"><span class="secno">6.7 </span>미디어 타입</a></li>
+   <li><a href="#file-extension"><span class="secno">6.8 </span>파일 확장자</a></ol></li>
+ <li><a href="#configuration-document"><span class="secno">7 </span>Configuration 문서</a>
   <ol class="toc">
-   <li><a href="#example-configuration-document"><span class="secno">7.1 </span>Example Configuration Document</a></li>
-   <li><a href="#namespace"><span class="secno">7.2 </span>Namespace</a></li>
-   <li><a href="#proprietary-extensions"><span class="secno">7.3 </span>Proprietary Extensions</a></li>
-   <li><a href="#types-of-attributes"><span class="secno">7.4 </span>Types of Attributes</a></li>
-   <li><a href="#global-attributes"><span class="secno">7.5 </span>Global Attributes</a>
+   <li><a href="#example-configuration-document"><span class="secno">7.1 </span>Configuration 문서 예제</a></li>
+   <li><a href="#namespace"><span class="secno">7.2 </span>네임스페이스</a></li>
+   <li><a href="#proprietary-extensions"><span class="secno">7.3 </span>소유 확장</a></li>
+   <li><a href="#types-of-attributes"><span class="secno">7.4 </span>애트리뷰트 타입</a></li>
+   <li><a href="#global-attributes"><span class="secno">7.5 </span>전역 애트리뷰트</a>
     <ol class="toc">
-     <li><a href="#the-xml:lang-attribute"><span class="secno">7.5.1 </span>The <code>xml:lang</code> Attribute</a></li>
-     <li><a href="#the-dir-attribute"><span class="secno">7.5.2 </span>The <code>dir</code> Attribute</a></li>
-     <li><a href="#examples-of-usage"><span class="secno">7.5.3 </span>Examples of Usage</a></ol></li>
-   <li><a href="#the-widget-element-and-its-attributes"><span class="secno">7.6 </span>The <code>widget</code> Element and its Attributes</a>
+     <li><a href="#the-xml:lang-attribute"><span class="secno">7.5.1 </span><code>xml:lang</code> 애트리뷰트</a></li>
+     <li><a href="#the-dir-attribute"><span class="secno">7.5.2 </span><code>dir</code> 애트리뷰트</a></li>
+     <li><a href="#examples-of-usage"><span class="secno">7.5.3 </span>사용 예제</a></ol></li>
+   <li><a href="#the-widget-element-and-its-attributes"><span class="secno">7.6 </span><code>widget</code> 엘리먼트와 애트리뷰트</a>
     <ol class="toc">
-     <li><a href="#the-id-attribute"><span class="secno">7.6.1 </span>The <code>id</code> Attribute</a></li>
-     <li><a href="#the-version-attribute"><span class="secno">7.6.2 </span>The <code>version</code> Attribute</a></li>
-     <li><a href="#the-height-attribute"><span class="secno">7.6.3 </span>The <code>height</code> Attribute</a></li>
-     <li><a href="#the-width-attribute"><span class="secno">7.6.4 </span>The <code>width</code> Attribute</a></li>
-     <li><a href="#the-viewmodes-attribute"><span class="secno">7.6.5 </span>The <code>viewmodes</code> Attribute</a></li>
-     <li><a href="#the-defaultlocale-attribute"><span class="secno">7.6.6 </span>The <code title="widget defaultlocale">defaultlocale</code> attribute</a></li>
-     <li><a href="#example-of-usage"><span class="secno">7.6.7 </span>Example of Usage</a></li>
-     <li><a href="#example-of-usage-of-the-defaultlocale-attribute"><span class="secno">7.6.8 </span>Example of Usage of the <code title="widget defaultlocale">defaultlocale</code> attribute </a></ol></li>
-   <li><a href="#the-name-element-and-its-attributes"><span class="secno">7.7 </span>The <code>name</code> Element and its Attributes</a>
+     <li><a href="#the-id-attribute"><span class="secno">7.6.1 </span><code>id</code> 애트리뷰트</a></li>
+     <li><a href="#the-version-attribute"><span class="secno">7.6.2 </span><code>version</code> 애트리뷰트</a></li>
+     <li><a href="#the-height-attribute"><span class="secno">7.6.3 </span><code>height</code> 애트리뷰트</a></li>
+     <li><a href="#the-width-attribute"><span class="secno">7.6.4 </span><code>width</code> 애트리뷰트</a></li>
+     <li><a href="#the-viewmodes-attribute"><span class="secno">7.6.5 </span><code>viewmodes</code> 애트리뷰트</a></li>
+     <li><a href="#the-defaultlocale-attribute"><span class="secno">7.6.6 </span><code title="widget defaultlocale">defaultlocale</code> 애트리뷰트</a></li>
+     <li><a href="#example-of-usage"><span class="secno">7.6.7 </span>사용 예제</a></li>
+     <li><a href="#example-of-usage-of-the-defaultlocale-attribute"><span class="secno">7.6.8 </span><code title="widget defaultlocale">defaultlocale</code> 애트리뷰트 사용 예제</a></ol></li>
+   <li><a href="#the-name-element-and-its-attributes"><span class="secno">7.7 </span><code>name</code> 엘리먼트와 애트리뷰트</a>
     <ol class="toc">
-     <li><a href="#the-short-attribute"><span class="secno">7.7.1 </span>The <code title="name short">short</code> Attribute</a></li>
-     <li><a href="#example-of-usage-0"><span class="secno">7.7.2 </span>Example of Usage</a></ol></li>
-   <li><a href="#the-description-element-and-its-attributes"><span class="secno">7.8 </span>The <code>description</code> Element and its Attributes</a>
+     <li><a href="#the-short-attribute"><span class="secno">7.7.1 </span><code title="name short">short</code> 애트리뷰트</a></li>
+     <li><a href="#example-of-usage-0"><span class="secno">7.7.2 </span>사용 예제</a></ol></li>
+   <li><a href="#the-description-element-and-its-attributes"><span class="secno">7.8 </span><code>description</code> 엘리먼트와 애트리뷰트</a>
     <ol class="toc">
-     <li><a href="#example-of-usage-1"><span class="secno">7.8.1 </span>Example of Usage</a></ol></li>
-   <li><a href="#the-author-element-and-its-attributes"><span class="secno">7.9 </span>The <code title="">author</code> Element and its Attributes</a>
+     <li><a href="#example-of-usage-1"><span class="secno">7.8.1 </span>사용 예제</a></ol></li>
+   <li><a href="#the-author-element-and-its-attributes"><span class="secno">7.9 </span><code title="">author</code> 엘리먼트와 애트리뷰트</a>
     <ol class="toc">
-     <li><a href="#the-href-attribute"><span class="secno">7.9.1 </span>The <code>href</code> Attribute</a></li>
-     <li><a href="#the-email-attribute"><span class="secno">7.9.2 </span>The <code>email</code> Attribute</a></li>
-     <li><a href="#example-of-usage-2"><span class="secno">7.9.3 </span>Example of Usage</a></ol></li>
-   <li><a href="#the-license-element-and-its-attributes"><span class="secno">7.10 </span>The <code>license</code> Element and its Attributes</a>
+     <li><a href="#the-href-attribute"><span class="secno">7.9.1 </span><code>href</code> 애트리뷰트</a></li>
+     <li><a href="#the-email-attribute"><span class="secno">7.9.2 </span><code>email</code> 애트리뷰트</a></li>
+     <li><a href="#example-of-usage-2"><span class="secno">7.9.3 </span>사용 예제</a></ol></li>
+   <li><a href="#the-license-element-and-its-attributes"><span class="secno">7.10 </span><code>license</code> 엘리먼트와 애트리뷰트</a>
     <ol class="toc">
-     <li><a href="#the-href-attribute-0"><span class="secno">7.10.1 </span>The <code>href</code> Attribute</a></li>
-     <li><a href="#example-of-usage-3"><span class="secno">7.10.2 </span>Example of Usage</a></ol></li>
-   <li><a href="#the-icon-element-and-its-attributes"><span class="secno">7.11 </span>The <code>icon</code> Element and its Attributes</a>
+     <li><a href="#the-href-attribute-0"><span class="secno">7.10.1 </span><code>href</code> 애트리뷰트</a></li>
+     <li><a href="#example-of-usage-3"><span class="secno">7.10.2 </span>사용 예제</a></ol></li>
+   <li><a href="#the-icon-element-and-its-attributes"><span class="secno">7.11 </span><code>icon</code> 엘리먼트와 애트리뷰트</a>
     <ol class="toc">
-     <li><a href="#the-src-attribute"><span class="secno">7.11.1 </span>The <code>src</code> Attribute</a></li>
-     <li><a href="#the-width-attribute-0"><span class="secno">7.11.2 </span>The <code>width</code> Attribute</a></li>
-     <li><a href="#the-height-attribute-0"><span class="secno">7.11.3 </span>The <code>height</code> Attribute</a></li>
-     <li><a href="#example-of-usage-4"><span class="secno">7.11.4 </span>Example of Usage</a></ol></li>
-   <li><a href="#the-content-element-and-its-attributes"><span class="secno">7.12 </span>The <code>content</code> Element and its Attributes</a>
+     <li><a href="#the-src-attribute"><span class="secno">7.11.1 </span><code>src</code> 애트리뷰트</a></li>
+     <li><a href="#the-width-attribute-0"><span class="secno">7.11.2 </span><code>width</code> 애트리뷰트</a></li>
+     <li><a href="#the-height-attribute-0"><span class="secno">7.11.3 </span><code>height</code> 애트리뷰트</a></li>
+     <li><a href="#example-of-usage-4"><span class="secno">7.11.4 </span>사용 예제</a></ol></li>
+   <li><a href="#the-content-element-and-its-attributes"><span class="secno">7.12 </span><code>content</code> 엘리먼트와 애트리뷰트</a>
     <ol class="toc">
-     <li><a href="#the-src-attribute-0"><span class="secno">7.12.1 </span>The <code>src</code> Attribute</a></li>
-     <li><a href="#the-type-attribute"><span class="secno">7.12.2 </span>The <code>type</code> Attribute</a></li>
-     <li><a href="#the-encoding-attribute"><span class="secno">7.12.3 </span>The <code>encoding</code> Attribute</a></li>
-     <li><a href="#example-of-usage-5"><span class="secno">7.12.4 </span>Example of Usage</a></ol></li>
-   <li><a href="#the-feature-element-and-its-attributes"><span class="secno">7.13 </span>The <code>feature</code> Element and its Attributes</a>
+     <li><a href="#the-src-attribute-0"><span class="secno">7.12.1 </span><code>src</code> 애트리뷰트</a></li>
+     <li><a href="#the-type-attribute"><span class="secno">7.12.2 </span><code>type</code> 애트리뷰트</a></li>
+     <li><a href="#the-encoding-attribute"><span class="secno">7.12.3 </span><code>encoding</code> 애트리뷰트</a></li>
+     <li><a href="#example-of-usage-5"><span class="secno">7.12.4 </span>사용 예제</a></ol></li>
+   <li><a href="#the-feature-element-and-its-attributes"><span class="secno">7.13 </span><code>feature</code> 엘리먼트와 애트리뷰트</a>
     <ol class="toc">
-     <li><a href="#the-name-attribute"><span class="secno">7.13.1 </span>The <code title="feature name">name</code> Attribute</a></li>
-     <li><a href="#the-required-attribute"><span class="secno">7.13.2 </span>The <code>required</code> Attribute</a></li>
-     <li><a href="#example-of-usage-6"><span class="secno">7.13.3 </span>Example of Usage</a></ol></li>
-   <li><a href="#the-param-element-and-its-attributes"><span class="secno">7.14 </span>The <code>param</code> Element and its Attributes</a>
+     <li><a href="#the-name-attribute"><span class="secno">7.13.1 </span><code title="feature name">name</code> 애트리뷰트</a></li>
+     <li><a href="#the-required-attribute"><span class="secno">7.13.2 </span><code>required</code> 애트리뷰트</a></li>
+     <li><a href="#example-of-usage-6"><span class="secno">7.13.3 </span>사용 예제</a></ol></li>
+   <li><a href="#the-param-element-and-its-attributes"><span class="secno">7.14 </span><code>param</code> 엘리먼트와 애트리뷰트</a>
     <ol class="toc">
-     <li><a href="#the-name-attribute-0"><span class="secno">7.14.1 </span>The <code>name</code> Attribute</a></li>
-     <li><a href="#the-value-attribute"><span class="secno">7.14.2 </span>The <code>value</code> Attribute</a></li>
-     <li><a href="#example-of-usage-7"><span class="secno">7.14.3 </span>Example of Usage</a></ol></li>
-   <li><a href="#the-preference-element-and-its-attributes"><span class="secno">7.15 </span>The <code>preference</code> Element and its Attributes</a>
+     <li><a href="#the-name-attribute-0"><span class="secno">7.14.1 </span><code>name</code> 애트리뷰트</a></li>
+     <li><a href="#the-value-attribute"><span class="secno">7.14.2 </span><code>value</code> 애트리뷰트</a></li>
+     <li><a href="#example-of-usage-7"><span class="secno">7.14.3 </span>사용 예제</a></ol></li>
+   <li><a href="#the-preference-element-and-its-attributes"><span class="secno">7.15 </span><code>preference</code> 엘리먼트와 애트리뷰트</a>
     <ol class="toc">
-     <li><a href="#the-name-attribute-1"><span class="secno">7.15.1 </span>The <code>name</code> Attribute</a></li>
-     <li><a href="#the-value-attribute-0"><span class="secno">7.15.2 </span>The <code>value</code> Attribute</a></li>
-     <li><a href="#the-readonly-attribute"><span class="secno">7.15.3 </span>The <code>readonly</code> Attribute</a></li>
-     <li><a href="#example-of-usage-8"><span class="secno">7.15.4 </span>Example of Usage</a></ol></li>
-   <li><a href="#the-span-element-and-its-attributes"><span class="secno">7.16 </span>The <code>span</code> Element and its Attributes</a>
+     <li><a href="#the-name-attribute-1"><span class="secno">7.15.1 </span><code>name</code> 애트리뷰트</a></li>
+     <li><a href="#the-value-attribute-0"><span class="secno">7.15.2 </span><code>value</code> 애트리뷰트</a></li>
+     <li><a href="#the-readonly-attribute"><span class="secno">7.15.3 </span><code>readonly</code> 애트리뷰트</a></li>
+     <li><a href="#example-of-usage-8"><span class="secno">7.15.4 </span>사용 예제</a></ol></li>
+   <li><a href="#the-span-element-and-its-attributes"><span class="secno">7.16 </span><code>span</code> 엘리먼트와 애트리뷰트</a>
     <ol class="toc">
-     <li><a href="#example-of-usage-9"><span class="secno">7.16.1 </span>Example of Usage</a></ol></ol></li>
- <li><a href="#internationalization-and-localization"><span class="secno">8 </span>Internationalization and localization</a>
+     <li><a href="#example-of-usage-9"><span class="secno">7.16.1 </span>사용 예제</a></ol></ol></li>
+ <li><a href="#internationalization-and-localization"><span class="secno">8 </span>국제화와 현지화</a>
   <ol class="toc">
-   <li><a href="#bidirectional-text"><span class="secno">8.1 </span>Bidirectional  text</a></li>
-   <li><a href="#localization-model"><span class="secno">8.2 </span>Localization Model</a></li>
-   <li><a href="#folder-based-localization"><span class="secno">8.3 </span>Folder-based localization</a></li>
-   <li><a href="#element-based-localization"><span class="secno">8.4 </span>Element-Based Localization</a></li>
-   <li><a href="#localization-examples"><span class="secno">8.5 </span>Localization Examples</a>
+   <li><a href="#bidirectional-text"><span class="secno">8.1 </span>양방향 텍스트</a></li>
+   <li><a href="#localization-model"><span class="secno">8.2 </span>현지화 모델</a></li>
+   <li><a href="#folder-based-localization"><span class="secno">8.3 </span>폴더 기반 현지화</a></li>
+   <li><a href="#element-based-localization"><span class="secno">8.4 </span>엘리먼트 기반 현지화</a></li>
+   <li><a href="#localization-examples"><span class="secno">8.5 </span>현지화 예제</a>
     <ol class="toc">
-     <li><a href="#simple-example"><span class="secno">8.5.1 </span>Simple Example</a></li>
-     <li><a href="#complex-example"><span class="secno">8.5.2 </span>Complex Example</a></li>
+     <li><a href="#simple-example"><span class="secno">8.5.1 </span>간단한 예제</a></li>
+     <li><a href="#complex-example"><span class="secno">8.5.2 </span>복잡한 예제</a></li>
      <li><a href="#fallback-behavior-example"><span class="secno">8.5.3 </span>Fallback Behavior Example</a></ol></ol></li>
- <li><a href="#steps-for-processing-a-widget-package"><span class="secno">9 </span>Steps for Processing a Widget Package</a>
+ <li><a href="#steps-for-processing-a-widget-package"><span class="secno">9 </span>위젯 패키지 처리에 대한 단계</a>
   <ol class="toc">
-   <li><a href="#processing-rules"><span class="secno">9.1 </span>Processing Rules</a>
+   <li><a href="#processing-rules"><span class="secno">9.1 </span>처리 규칙</a>
     <ol class="toc">
-     <li><a href="#rule-for-verifying-a-zip-archive"><span class="secno">9.1.1 </span>Rule for Verifying a Zip Archive</a></li>
-     <li><a href="#rule-for-extracting-file-data-from-a-file-entry"><span class="secno">9.1.2 </span>Rule for Extracting File Data from a File Entry</a></li>
-     <li><a href="#rule-for-finding-a-file-within-a-widget-package"><span class="secno">9.1.3 </span>Rule for Finding a File Within a Widget Package</a></li>
-     <li><a href="#rule-for-determining-directionality"><span class="secno">9.1.4 </span>Rule for Determining Directionality</a></li>
-     <li><a href="#rule-for-getting-a-single-attribute-value"><span class="secno">9.1.5 </span>Rule for Getting a Single Attribute Value</a></li>
-     <li><a href="#rule-for-getting-a-list-of-keywords-from-an-attribute"><span class="secno">9.1.6 </span>Rule for Getting a List of Keywords From an Attribute</a></li>
-     <li><a href="#rule-for-verifying-a-file-entry"><span class="secno">9.1.7 </span>Rule for Verifying a File Entry</a></li>
-     <li><a href="#rule-for-getting-text-content"><span class="secno">9.1.8 </span>Rule for Getting Text Content</a></li>
-     <li><a href="#rule-for-getting-text-content-with-normalized-white-space"><span class="secno">9.1.9 </span>Rule for Getting Text Content with Normalized White Space</a></li>
-     <li><a href="#rule-for-parsing-a-non-negative-integer"><span class="secno">9.1.10 </span>Rule for Parsing a Non-negative Integer</a></li>
-     <li><a href="#rule-for-identifying-the-media-type-of-a-file"><span class="secno">9.1.11 </span>Rule for Identifying the Media Type of a File</a></li>
-     <li><a href="#rule-for-deriving-the-user-agent-locales"><span class="secno">9.1.12 </span>Rule for Deriving the <var title="">user agent locales</var></a></li>
+     <li><a href="#rule-for-verifying-a-zip-archive"><span class="secno">9.1.1 </span>Zip 압축 검증 규칙</a></li>
+     <li><a href="#rule-for-extracting-file-data-from-a-file-entry"><span class="secno">9.1.2 </span>파일 엔트리로부터의 파일데이터 추출 규칙</a></li>
+     <li><a href="#rule-for-finding-a-file-within-a-widget-package"><span class="secno">9.1.3 </span>Widget 패키지 내의 파일을 찾는 규칙</a></li>
+     <li><a href="#rule-for-determining-directionality"><span class="secno">9.1.4 </span>결정 방향성에 대한 규칙</a></li>
+     <li><a href="#rule-for-getting-a-single-attribute-value"><span class="secno">9.1.5 </span>하나의 애트리뷰트 값을 얻는 규칙</a></li>
+     <li><a href="#rule-for-getting-a-list-of-keywords-from-an-attribute"><span class="secno">9.1.6 </span>애트리뷰트로부터 키워드 리스트를 얻는 규칙</a></li>
+     <li><a href="#rule-for-verifying-a-file-entry"><span class="secno">9.1.7 </span>파일 엔트리 검증 규칙</a></li>
+     <li><a href="#rule-for-getting-text-content"><span class="secno">9.1.8 </span>텍스트 내용을 가져오는 규칙</a></li>
+     <li><a href="#rule-for-getting-text-content-with-normalized-white-space"><span class="secno">9.1.9 </span>표준화된 공백과 함께 텍스트 내용을 가져오는 규칙</a></li>
+     <li><a href="#rule-for-parsing-a-non-negative-integer"><span class="secno">9.1.10 </span>양수 파싱 규칙</a></li>
+     <li><a href="#rule-for-identifying-the-media-type-of-a-file"><span class="secno">9.1.11 </span>파일의 미디어 타입 정의에 대한 규칙</a></li>
+     <li><a href="#rule-for-deriving-the-user-agent-locales"><span class="secno">9.1.12 </span><var title="">user agent locales</var> 도출에 대한 규칙</a></li>
      <li><a href="#rule-for-determining-if-a-potential-zip-archive-is-a-zip-archive"><span class="secno">9.1.13 </span>Rule for Determining if a Potential Zip Archive is a Zip
     Archive</a></ol></li>
-   <li><a class="no-num done" href="#step-1-acquire-a-potential-zip-archive">Step 1 - Acquire a Potential Zip Archive</a>
+   <li><a class="no-num done" href="#step-1-acquire-a-potential-zip-archive">Step 1 - Potential Zip 압축 획득</a>
     <ol class="toc">
-     <li><a href="#acquisition-of-a-potential-zip-archive-labeled-with-a-media-type"><span class="secno">9.1.1 </span>Acquisition of a Potential Zip archive Labeled with a Media Type</a></li>
-     <li><a href="#acquisition-of-potential-zip-archive-not-labeled-with-a-media-type"><span class="secno">9.1.2 </span>Acquisition of Potential Zip Archive not Labeled with a Media
-    Type</a></ol></li>
-   <li><a class="no-num done" href="#step-2-verify-the-zip-archive">Step 2 - Verify the Zip Archive</a></li>
-   <li><a class="no-num" href="#step-3-set-the-configuration-defaults">Step 3 - Set the Configuration Defaults</a></li>
-   <li><a class="no-num done" href="#step-4-locate-and-process-the-digital-signature">Step 4 - Locate and Process the Digital Signature</a></li>
-   <li><a class="no-num" href="#step-5-derive-the-user-agent's-locales">Step 5 - Derive the User Agent's Locales</a></li>
-   <li><a class="no-num done" href="#step-6-locate-the-configuration-document">Step 6 - Locate the Configuration Document</a></li>
-   <li><a class="no-num" href="#step-7-process-the-configuration-document">Step 7 - Process the Configuration
-    Document</a>
+     <li><a href="#acquisition-of-a-potential-zip-archive-labeled-with-a-media-type"><span class="secno">9.1.1 </span>디어 타입으로 분류된 Potential Zip 압축 획득</a></li>
+     <li><a href="#acquisition-of-potential-zip-archive-not-labeled-with-a-media-type"><span class="secno">9.1.2 </span>미디어 타입으로 분류되지 않은 Potential Zip 압축 획득</a></ol></li>
+   <li><a class="no-num done" href="#step-2-verify-the-zip-archive">Step 2 - Zip 압축 검증</a></li>
+   <li><a class="no-num" href="#step-3-set-the-configuration-defaults">Step 3 - 기본 Configuration 설정</a></li>
+   <li><a class="no-num done" href="#step-4-locate-and-process-the-digital-signature">Step 4 - 디지털 서명을 찾고 처리하기</a></li>
+   <li><a class="no-num" href="#step-5-derive-the-user-agent's-locales">Step 5 - 유저 에이전트의 지역 얻기</a></li>
+   <li><a class="no-num done" href="#step-6-locate-the-configuration-document">Step 6 - Configuration 문서 찾기</a></li>
+   <li><a class="no-num" href="#step-7-process-the-configuration-document">Step 7 - Configuration 문서 처리하기</a>
     <ol class="toc">
-     <li><a href="#terminology-used-in-processing-algorithm"><span class="secno">9.1.1 </span>Terminology Used in Processing Algorithm</a></li>
-     <li><a href="#algorithm-to-process-a-configuration-document"><span class="secno">9.1.2 </span>Algorithm to Process a Configuration Document</a></ol></li>
-   <li><a class="no-num done" href="#step-8-locate-the-start-file">Step 8 - Locate the Start File</a></li>
-   <li><a class="no-num done" href="#step-9-process-the-default-icons">Step 9 - Process the Default Icons</a></ol></li>
- <li><a class="no-num" href="#appendix">Appendix</a>
+     <li><a href="#terminology-used-in-processing-algorithm"><span class="secno">9.1.1 </span>처리 알고리즘에 사용되는 용어</a></li>
+     <li><a href="#algorithm-to-process-a-configuration-document"><span class="secno">9.1.2 </span>Configuration 문서를 처리하는 알고리즘</a></ol></li>
+   <li><a class="no-num done" href="#step-8-locate-the-start-file">Step 8 - 시작 파일 찾기</a></li>
+   <li><a class="no-num done" href="#step-9-process-the-default-icons">Step 9 - 기본 아이콘 처리하기</a></ol></li>
+ <li><a class="no-num" href="#appendix">부록</a>
   <ol class="toc">
-   <li><a class="no-num" href="#media-type-registration-for-application/widget">Media Type Registration for <code>application/widget</code></a></li>
-   <li><a class="no-num" href="#linking-to-a-widget-package-from-a-html-document">Linking To a Widget Package From a HTML Document</a></li>
-   <li><a class="no-num" href="#table-of-elements-and-their-attributes">Table of Elements and Their Attributes</a></ol></li>
- <li><a class="no-num" href="#acknowledgements">Acknowledgements</a></li>
- <li><a class="no-num" href="#normative-references">Normative References</a></li>
- <li><a class="no-num" href="#informative-references">Informative References</a></ol>
+   <li><a class="no-num" href="#media-type-registration-for-application/widget"><code>application/widget</code>에 대한 미디어 타입 등록</a></li>
+   <li><a class="no-num" href="#linking-to-a-widget-package-from-a-html-document">HTML 문서로부터 위젯 패키지에 링크걸기</a></li>
+   <li><a class="no-num" href="#table-of-elements-and-their-attributes">엘리먼트와 애트리뷰트 표</a></ol></li>
+ <li><a class="no-num" href="#acknowledgements">감사의 글</a></li>
+ <li><a class="no-num" href="#normative-references">인용 참조</a></li>
+ <li><a class="no-num" href="#informative-references">유용한 참조</a></ol>
 <!--end-toc-->
   <h2 id="introduction"><span class="secno">1 </span>Introduction</h2>
   <p><em>This section is non-normative.</em></p>
@@ -1391,7 +1389,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
   <p>A <a href="#language-attribute">language  attribute</a> that specifies, through a <a href="#language-tag">language
     tag</a>, the author's preferred locale for the widget. Its intended use is to provide a fallback in case the user agent cannot match any of the widget's <a href="#localized-content">localized content</a> to the <var><a href="#user-agent-locales">user agent locales</a></var> list or in case the author has not provided any unlocalized content. </p>
   <p class="authorguide"><strong>Authoring Guidelines:</strong> It is optional for authors to use the <code title="widget id"><a href="#the-id-attribute">defaultlocale</a></code> attribute with a <code title="widget element"><a href="#the-widget-element-and-its-attributes">widget</a></code> element. </p>
-  <h4 id="example-of-usage"><span class="secno">7.6.7 </span>Example of Usage</h4>
+  <h4 id="example-of-usage"><span class="secno">7.6.7 </span>사용 예제</h4>
   <div class="example">
     <p>The following example shows how the <code title="widget element"><a href="#the-widget-element-and-its-attributes">widget</a></code> element can be used.</p>
     <pre><code><strong>&lt;widget xmlns     = "http://www.w3.org/ns/widgets"
@@ -1441,7 +1439,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
   <h4 id="the-short-attribute"><span class="secno">7.7.1 </span>The <dfn title="name short"><code title="name short">short</code></dfn> Attribute</h4>
   <p>A <a href="#displayable-string-attribute">displayable-string attribute</a> intended to represent a condensed name for a widget (e.g., a name that could be used in context were only limited space is available, such as underneath an icon). </p>
   <p class="authorguide"><strong>Authoring Guidelines:</strong> It is optional for authors to use the <code title="name short"><a href="#the-short-attribute">short</a></code> attribute with an <code title="name element"><a href="#the-name-element-and-its-attributes">name</a></code> element.</p>
-  <h4 id="example-of-usage-0"><span class="secno">7.7.2 </span>Example of Usage</h4>
+  <h4 id="example-of-usage-0"><span class="secno">7.7.2 </span>사용 예제</h4>
   <div class="example">
     <p>The following example shows the usage of the <code title="name element"><a href="#the-name-element-and-its-attributes">name</a></code> element.</p>
     <pre><code>&lt;widget xmlns="http://www.w3.org/ns/widgets"&gt;
@@ -1477,7 +1475,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
     <dt>Attributes:</dt>
     <dd><a href="#global-attributes-0" title="global attributes">Global attributes</a>.</dd>
   </dl>
-  <h4 id="example-of-usage-1"><span class="secno">7.8.1 </span>Example of Usage</h4>
+  <h4 id="example-of-usage-1"><span class="secno">7.8.1 </span>사용 예제</h4>
   <div class="example">
     <p>An example usage of the description element.</p>
     <pre><code>&lt;widget xmlns="http://www.w3.org/ns/widgets"&gt;
@@ -1518,7 +1516,7 @@ your blog or to the insane dahut chaser web site! Awesome!
   <h4 id="the-email-attribute"><span class="secno">7.9.2 </span>The <code><dfn title="author email">email</dfn></code> Attribute</h4>
   <p>A <a href="#string-attribute">string attribute</a> that represents an email address associated with the author. </p>
   <p class="authorguide"><strong>Authoring Guidelines:</strong> It is optional for authors to use the <code title="author email"><a href="#the-email-attribute">email</a></code> attribute with an <code title="author element"><a href="#the-author-element-and-its-attributes">author</a></code> element.</p>
-  <h4 id="example-of-usage-2"><span class="secno">7.9.3 </span>Example of Usage</h4>
+  <h4 id="example-of-usage-2"><span class="secno">7.9.3 </span>사용 예제</h4>
   <div class="example">
     <p>The following example shows the expected usage of the <code title="author element"><a href="#the-author-element-and-its-attributes">author</a></code> element.</p>
     <pre><code>&lt;widget xmlns="http://www.w3.org/ns/widgets"&gt;
@@ -1555,7 +1553,7 @@ your blog or to the insane dahut chaser web site! Awesome!
   <p>A <a href="#valid-iri">valid IRI</a> or a <a href="#valid-path">valid path</a> that points to a
     representation of a software and/or content license. </p>
   <p class="authorguide"><strong>Authoring Guidelines:</strong> It is optional for authors to use the <code title="license href"><a href="#the-href-attribute-0">href</a></code> attribute with a <code title="license element"><a href="#the-license-element-and-its-attributes">license</a></code> element.</p>
-  <h4 id="example-of-usage-3"><span class="secno">7.10.2 </span>Example of Usage</h4>
+  <h4 id="example-of-usage-3"><span class="secno">7.10.2 </span>사용 예제</h4>
   <div class="example">
     <p>This example shows the expected usage of the <code title="license element"><a href="#the-license-element-and-its-attributes">license</a></code> element's <code title="license href"><a href="#the-href-attribute-0">href</a></code> attribute.</p>
     <pre><code>&lt;widget xmlns="http://www.w3.org/ns/widgets"&gt;
@@ -1605,7 +1603,7 @@ Distributed under the W3C Software License.
   <h4 id="the-height-attribute-0"><span class="secno">7.11.3 </span>The <code><dfn title="icon height">height</dfn></code> Attribute</h4>
   <p>A <a href="#valid-non-negative-integer" title="valid non-negative integer">numeric attribute</a> greater than <code>0</code> that represents,  in <a href="http://www.w3.org/TR/CSS21/syndata.html#length-units">CSS pixels</a> <a href="#css2">[CSS]</a>, the author's preferred height for the icon. A user agent <em class="ct">may</em> ignore this value when changing the height icon to fit a rendering context or for accessibility reasons. </p>
   <p class="authorguide"><strong>Authoring Guidelines:</strong> It is optional for authors to use the <code title="icon height"><a href="#the-height-attribute-0">height</a></code> attribute of an <code title="icon element"><a href="#the-icon-element-and-its-attributes">icon</a></code> element.</p>
-  <h4 id="example-of-usage-4"><span class="secno">7.11.4 </span>Example of Usage</h4>
+  <h4 id="example-of-usage-4"><span class="secno">7.11.4 </span>사용 예제</h4>
   <div class="example">
     <p>This example shows the expected usage of the <code title="icon element"><a href="#the-icon-element-and-its-attributes">icon</a></code> element. The example declares three icon elements, two of
       which are raster and one of which is an <a href="#svgtiny">[SVGTiny]</a> file. The raster
@@ -1654,7 +1652,7 @@ Distributed under the W3C Software License.
   <p>The <dfn id="default-encoding">default encoding</dfn> is <a href="#utf-8">[UTF-8]</a>, which has the name "<code><a href="#utf-8">UTF-8</a></code>"  in the <a href="#iana-charsets">[IANA-Charsets]</a> registry. </p>
   <p>Aside from the <a href="#default-encoding">default encoding</a>, it is <em class="ct">optional</em> for a <a class="product-ua" href="#user-agent">user
     agent</a> to <a href="#supported" title="supported">support</a> other character encodings. </p>
-  <h4 id="example-of-usage-5"><span class="secno">7.12.4 </span>Example of Usage</h4>
+  <h4 id="example-of-usage-5"><span class="secno">7.12.4 </span>사용 예제</h4>
   <div class="example">
     <p>This example shows the expected usage of the <code title="content element"><a href="#the-content-element-and-its-attributes">content</a></code> element:</p>
     <pre><code>&lt;widget xmlns="http://www.w3.org/ns/widgets"&gt;
@@ -1720,7 +1718,7 @@ Distributed under the W3C Software License.
     widget can function correctly without the <a href="#feature">feature</a> being <a href="#supported">supported</a> or otherwise made available by the user agent. </p>
   <p class="authorguide"><strong>Authoring Guidelines:</strong> It is optional for authors to use the <code title="feature required"><a href="#the-required-attribute">required</a></code> attribute with an <code title="feature element"><a href="#the-feature-element-and-its-attributes">feature</a></code> element. However, authors need to be aware that a user agent will behave as if the <code title="feature required"><a href="#the-required-attribute">required</a></code> attribute had been set to <code>true</code> when the <code title="feature required"><a href="#the-required-attribute">required</a></code> attribute is absent, meaning that the named <a href="#feature">feature</a> needs to be available  at
     runtime or the widget will be treated as an <a href="#invalid-widget-package-0">invalid widget package</a>. </p>
-  <h4 id="example-of-usage-6"><span class="secno">7.13.3 </span>Example of Usage</h4>
+  <h4 id="example-of-usage-6"><span class="secno">7.13.3 </span>사용 예제</h4>
   <div class="example">
     <p>This example demonstrates a widget that would like to use a fictional geo-location <abbr title="application programming interface">API</abbr> feature, but would still
       be able to function if the feature cannot be made available to the widget by the user
@@ -1753,7 +1751,7 @@ Distributed under the W3C Software License.
   <p>A <a href="#string-attribute">string attribute</a> that denotes the value of this <a href="#parameter">parameter</a>. </p>
   <p class="authorguide"><strong>Authoring Guidelines:</strong> When a <code title="param element"><a href="#the-param-element-and-its-attributes">param</a></code> element is used, it is required for authors to
     use the <code title="param value"><a href="#the-value-attribute">value</a></code> attribute.</p>
-  <h4 id="example-of-usage-7"><span class="secno">7.14.3 </span>Example of Usage</h4>
+  <h4 id="example-of-usage-7"><span class="secno">7.14.3 </span>사용 예제</h4>
   <div class="example">
     <p>This example demonstrates a widget that makes use of a fictional geo-location
       feature where by its accuracy is set to "<code>low</code>" via a <code title="param element"><a href="#the-param-element-and-its-attributes">param</a></code> element.</p>
@@ -1794,7 +1792,7 @@ Distributed under the W3C Software License.
   <p>A <a href="#boolean-attribute">boolean attribute</a> indicating whether this preference can, or cannot, be
     overwritten at runtime (e.g., via an author script). When set to <code>true</code>, it means that the <a href="#preference">preference</a> cannot be overwritten. When set to <code>false</code>, it means that the <a href="#preference">preference</a> can be overwritten. </p>
   <p class="authorguide"><strong>Authoring Guidelines:</strong> It is optional for authors to use the <code title="readonly">readonly</code> attribute with a <code title="preference element"><a href="#the-preference-element-and-its-attributes">preference</a></code> element. If the <code title="readonly">readonly</code> attribute is absent, the user agent will act as if the readonly attribute had been set to <code>false</code> (meaning that the <a href="#preference">preference</a> can be overwritten at runtime).</p>
-  <h4 id="example-of-usage-8"><span class="secno">7.15.4 </span>Example of Usage</h4>
+  <h4 id="example-of-usage-8"><span class="secno">7.15.4 </span>사용 예제</h4>
   <div class="example">
     <p>This example shows a widget where two preferences are set. The second <code title="preference element"><a href="#the-preference-element-and-its-attributes">preference</a></code> is set as "read only" via the <code>readonly</code> attribute, which means the values of that preference cannot be changed at
       runtime.</p>
@@ -1830,7 +1828,7 @@ Distributed under the W3C Software License.
     <dt>Attributes:</dt>
     <dd><a href="#global-attributes-0" title="global attributes">Global attributes</a>.</dd>
   </dl>
-  <h4 id="example-of-usage-9"><span class="secno">7.16.1 </span>Example of Usage</h4>
+  <h4 id="example-of-usage-9"><span class="secno">7.16.1 </span>사용 예제</h4>
   <p><em>This section is informative.</em></p>
   <div class="example">
     <p>This example shows the <code title="span element"><a href="#the-span-element-and-its-attributes">span</a></code> elements being used to indicate directionality of text as well as language information. Note that the <code title="name element"><a href="#the-name-element-and-its-attributes">name</a></code> element's <code><a href="#the-xml:lang-attribute">xml:lang</a></code> attribute is set to an empty string to allow it to be used as <a href="#default-content">default content</a> in the process of <a href="#element-based-localization-0">element-based localization</a>: </p>
