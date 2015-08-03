@@ -639,18 +639,15 @@ td, th {
       <p> Patented aspects.</p>
     </li>
   </ul>
-  <h2 id="zip-archive"><span class="secno">5 </span>Zip Archive</h2>
-  <p> The <dfn id="zip-archive-0">Zip archive</dfn> file format,  defined in the <a href="#zip">[ZIP]</a> specification, is the <dfn id="packaging-format">packaging format</dfn> for <a href="#widget-package" title="widget package">widget packages</a>.</p>
-  <p>A <dfn id="file-entry">file entry</dfn> is the data held by a <dfn class="external" id="local-file-header">local file
-    header</dfn>, <dfn class="external" id="file-data">file data</dfn>, and (optional) <dfn class="external" id="data-descriptor">data descriptor</dfn>, as defined in the <a href="#zip">[ZIP]</a> specification,
-    for each physical file or folder contained in a <a href="#zip-archive-0">Zip archive</a>.</p>
-  <p>A <dfn id="potential-zip-archive">potential Zip archive</dfn> is a data object claiming to be a <a href="#zip-archive-0">Zip archive</a>,
-    that has not been <a href="#rule-for-verifying-a-zip-archive-0" title="rule for verifying a zip archive">verified</a> to be a <a href="#valid-zip-archive">valid Zip archive</a>.</p>
+  <h2 id="zip-archive"><span class="secno">5 </span>Zip 압축</h2>
+  <p> <a href="#zip">[ZIP]</a> 명세에 정의된 <dfn id="zip-archive-0">Zip 압축</dfn> 파일 포멧은 <a href="#widget-package" title="widget package">위젯 패키지</a>에 대한 <dfn id="packaging-format">패키징 포멧</dfn>입니다.</p>
+  <p><a href="#zip-archive-0">Zip 압축</a>에 포함된 각각의 실제 파일이나 폴더에 대해, <a href="#zip">[ZIP]</a> 명세에 정의된 <dfn id="file-entry">파일 엔트리</dfn>는 <dfn class="external" id="local-file-header">로컬 파일 헤더</dfn>,
+  <dfn class="external" id="file-data">파일 데이터</dfn>, 및 (옵션)<dfn class="external" id="data-descriptor">데이터 기술자</dfn>가 보유하는 데이터입니다.</p>
+  <p><dfn id="potential-zip-archive">potential Zip 압축</dfn>은 <a href="#zip-archive-0">Zip 압축</a>임을 주장하는 데이터 객체이지만, <a href="#valid-zip-archive">유효한 Zip 압축</a>이라는 것이 <a href="#rule-for-verifying-a-zip-archive-0" title="rule for verifying a zip archive">입증</a>되지 않았습니다.</p>
   <p>A <dfn id="valid-zip-archive">valid Zip archive</dfn> is a  data object that the user agent has verified as conforming to the production of a <dfn class="external" id=".zip-file">.Zip file</dfn> as defined by
     the <cite>Zip File Format Specification</cite> <a href="#zip">[ZIP]</a> and <a href="#step-2-verify-the-zip-archive" title="step 2">meets the requirements of this specification</a> (See <a href="#step-2-verify-the-zip-archive">Step 2</a>).</p>
-  <p>The <dfn id="magic-numbers-for-a-zip-archive">magic numbers for a Zip
-    archive</dfn> is the byte sequence: <code>50 4B 03 04</code>.</p>
-  <h3 id="compression-methods"><span class="secno">5.1 </span>Compression Methods</h3>
+  <p><dfn id="magic-numbers-for-a-zip-archive">Zip 압축을 위한 매직 넘버</dfn>는 바이트 배열입니다: <code>50 4B 03 04</code>.</p>
+  <h3 id="compression-methods"><span class="secno">5.1 </span>압축 방법</h3>
   <p>A <dfn id="compression-method">compression method</dfn> is the compression algorithm or storage method
     that was used to encode the file data of a <a href="#file-entry">file entry</a> when the zip archive was created by the author. The compression method
     that  encoded the <var><a href="#file-data">file data</a></var> of a <a href="#file-entry">file entry</a> is
