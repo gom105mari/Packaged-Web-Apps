@@ -21,6 +21,7 @@
  * valid -> 올바른
  * invalid -> 잘못된
  * specification -> 명세
+ * This section is non-normative. -> 이 부분은 비표준적인 내용입니다.
 
 ## 번역 진행상황
 * 목차 번역 - 90%
