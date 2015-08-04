@@ -742,135 +742,120 @@ td, th {
       caution when using the "+" U+002B PLUS SIGN, as it might cause issues on some
       operating systems.</p>
   </div>
-  <h2 id="widget-packages"><span class="secno">6 </span>Widget Packages</h2>
-  <p>A <dfn id="widget-package">widget package</dfn> is  a <a href="#valid-zip-archive">valid Zip
-    archive</a> that contains the following:</p>
+  <h2 id="widget-packages"><span class="secno">6 </span>Widget 패키지</h2><p><dfn id="widget-package">widget 패키지</dfn>는 아래 내용을 포함하는 <a href="#valid-zip-archive">올바른 Zip 아카이브</a>입니다:</p>
   <ul>
     <li>
-      <p>One or more <a href="#start-file" title="start file">start files</a>,  located at  the <a href="#root-of-the-widget-package">root of the widget package</a> and/or at the root of <a href="#locale-folder-0" title="locale folder">locale folders</a> or referenced by a <code title="content element"><a href="#the-content-element-and-its-attributes">content</a></code> element's <code title="content src"><a href="#the-src-attribute-0">src</a></code> attribute.</p>
+      <p>하나 이상의 <a href="#start-file" title="start file">시작 파일</a>이 <a href="#root-of-the-widget-package">widget 패키지의 root</a> 위치에 있습니다. 또한, <a href="#locale-folder-0" title="locale folder">locale 폴더</a>의 root에도 있고/있거나, 또는 <code title="content element"><a href="#the-content-element-and-its-attributes">content</a></code> element의 <code title="content src"><a href="#the-src-attribute-0">src</a></code> attribute로 참조합니다.</p>
     </li>
     <li>
-      <p>One <a href="#configuration-document-0">configuration document</a>,
-        located at the <a href="#root-of-the-widget-package">root of the widget package</a>.</p>
+      <p><a href="#root-of-the-widget-package">widget 패키지의 root</a> 위치에 하나의 <a href="#configuration-document-0">configuration 문서</a>가 있습니다.</p>
     </li>
     <li>
-      <p>Zero or more <a href="#default-icon" title="default icon">icons</a>, either located at the <a href="#root-of-the-widget-package">root of the widget package</a> and/or at the root of <a href="#locale-folder-0" title="locale folder">locale folders</a> or referenced by the <code title="icon element"><a href="#the-icon-element-and-its-attributes">icon</a></code> element's <code title="icon src"><a href="#the-src-attribute">src</a></code> attribute.</p>
+      <p>0개 또는 그 이상의 <a href="#default-icon" title="default icon">아이콘</a>이 <a href="#root-of-the-widget-package">widget 패키지의 root</a> 위치에 있습니다. 또한, <a href="#locale-folder-0" title="locale folder">locale 폴더</a>의 root에도 있고/있거나, 또는 <code title="icon element"><a href="#the-icon-element-and-its-attributes">icon</a></code> element의 <code title="icon src"><a href="#the-src-attribute">src</a></code> attribute로 참조합니다.</p>
     </li>
     <li>
-      <p>Zero or more <a href="#arbitrary">arbitrary</a> <a href="#file" title="file">files</a> located
-        either at the <a href="#root-of-the-widget-package">root of the widget package</a> and/or in <a href="#arbitrary">arbitrary</a> <a href="#folder" title="folder">folders</a> or in <a href="#locale-folder-0" title="locale folder">locale folders</a>.</p>
+      <p>0개 또는 그 이상의 <a href="#arbitrary">arbitrary</a> <a href="#file" title="file">파일들</a>이 <a href="#root-of-the-widget-package">widget 패키지의 root</a> 위치에 있습니다. 또한, <a href="#arbitrary">arbitrary</a> <a href="#folder" title="folder">폴더</a>나 <a href="#locale-folder-0" title="locale folder">locale 폴더</a>에도 있을 수 있습니다.</p>
     </li>
     <li>
-      <p>Zero or more <a href="#digital-signature" title="digital signature">digital signatures</a> located at
-        the <a href="#root-of-the-widget-package">root of the widget package.</a></p>
+      <p>0개 또는 그 이상의 <a href="#digital-signature" title="digital signature">디지털 서명</a>이 <a href="#root-of-the-widget-package">widget 패키지의 root</a>에 있습니다.</p>
     </li>
   </ul>
   <p class="note"><span class="notetitle">주석:</span> See <a href="#step-1-acquire-a-potential-zip-archive">step 1</a> - Acquire
     a Potential Zip Archive for instructions on how to process a widget package.</p>
-  <h3 id="invalid-widget-package"><span class="secno">6.1 </span>Invalid Widget Package</h3>
-  <p>During the <a href="#steps-for-processing-a-widget-package-0">steps for
-    processing a widget package</a>, certain error conditions can result in a <a href="#zip-archive-0">Zip archive</a> being treated as an <a href="#invalid-widget-package-0">invalid widget package</a>. An <dfn id="invalid-widget-package-0">invalid Widget package</dfn> is a condition whereby a Zip archive, or a file
-    within the Zip archive, is deemed to be corrupt beyond recovery or is non-conforming
-    to, or <a href="#unsupported">unsupported</a> by, this specification in such a way that it would
-    not be possible for the user agent to continue processing.</p>
-  <h3 id="files-and-folders"><span class="secno">6.2 </span>Files and Folders</h3>
-  <p>The <dfn id="root-of-the-widget-package">root of the widget package</dfn> is the top-most path level of the <a href="#zip-archive-0">Zip archive</a>. The root of the widget package contains <a href="#file" title="file">files</a> and <a href="#folder" title="folder">folders</a>, some of which are <a href="#reserved">reserved</a> (see <a href="#reserved-file-names-table">reserved file names table</a>).</p>
-  <p>A <dfn id="file">file</dfn> is the decompressed physical representation of a <a href="#file-entry">file
-    entry</a> (i.e., a file extracted into its physical form as it was prior to being
-    added to the <a href="#zip-archive-0">Zip archive</a>).</p>
-  <p>A <dfn id="folder">folder</dfn> is a <a href="#file-entry">file entry</a> whose <var><a href="#file-name-field">file name field</a></var> matches the production of <a href="#folder-name"><code>folder-name</code></a> in a <a href="#valid-zip-relative-path">valid Zip relative path</a> (the last character of the <var><a href="#file-name-field">file name
-    field</a></var> is a U+002F SOLIDUS) and whose <var><a href="#version-needed-to-extract">version needed to extract</a></var> is
-    2.0.</p>
-  <p>A <dfn id="processable-file">processable file</dfn> is a <a href="#file">file</a> that:</p>
+  <h3 id="invalid-widget-package"><span class="secno">6.1 </span>잘못된 Widget 패키지</h3>
+  <p><a href="#steps-for-processing-a-widget-package-0">widget 패키지를 처리하는 과정</a>을 진행할 때, 특정 에러 조건은 <a href="#zip-archive-0">Zip 아카이브</a>를 <a href="#invalid-widget-package-0">잘못된 widget 패키지</a>로 처리할 수 있습니다. <dfn id="invalid-widget-package-0">잘못된 Widget 패키지</dfn>의  상태는, Zip 아카이브 또는 Zip 아카이브 내의 파일이 복구  불가능하게 손상되었거나, 부적합하거나, <a href="#unsupported">지원되지 않거나</a>, 유저 에이전트가 계속 처리할 수 없는  명세인 것으로 간주되는 상태입니다.</p>
+  <h3 id="files-and-folders"><span class="secno">6.2 </span>파일과 폴더</h3>
+  <p><dfn id="root-of-the-widget-package">widget 패키지의 root</dfn>는 <a href="#zip-archive-0">Zip archive</a>의 최상위 경로입니다. widget 패키지의 root는 <a href="#file" title="file">파일</a>과 <a href="#folder" title="folder">폴더</a>, 몇몇 <a href="#reserved">예약된</a> 것을 포함합니다(<a href="#reserved-file-names-table">예약된 파일명 표</a>)를 보세요.</p>
+  <p><dfn id="file">파일</dfn>은 <a href="#file-entry">파일 엔트리</a>의 압축이 풀린 물리적 표현입니다(즉, 파일은 <a href="#zip-archive-0">Zip 아카이브</a>에 추가되기 전의 물리적 형태로 추출됩니다).</p>
+  <p><dfn id="folder">폴더</dfn>는 <a href="#valid-zip-relative-path">올바른 Zip 상대 경로</a>에서 <var><a href="#file-name-field">파일명 field</a></var>와 <a href="#folder-name"><code>folder-name</code></a>의 생성이 일치하는 <a href="#file-entry">파일 엔트리</a>이고(<var><a href="#file-name-field">파일명
+    field</a></var>의 마지막 문자는 U+002F SOLIDUS 입니다), <var><a href="#version-needed-to-extract">추출하는데 필요한 버전</a></var>은 2.0입니다.</p>
+  <p><dfn id="processable-file">처리가능한 파일</dfn>은 아래의  조건에 맞는 <a href="#file">파일</a>입니다:</p>
   <ul>
     <li>
-      <p>Exists within the <a href="#widget-package">widget package</a>.</p>
+      <p><a href="#widget-package">widget 패키지</a> 내에 존재합니다.</p>
     </li>
     <li>
-      <p>When the <a href="#rule-for-verifying-a-file-entry-0">rule for verifying a file entry</a> is applied to the file, it
-        returns <code>true</code>.</p>
+      <p><a href="#rule-for-verifying-a-file-entry-0">파일 엔트리 검증 규칙</a>이 파일에 적용될 때, <code>true</code>를 반환합니다.</p>
     </li>
     <li>
-      <p>Is of a <a href="#media-type-0">media type</a> <a href="#supported">supported</a> by the user agent,
-        determined applying the <a href="#rule-for-identifying-the-media-type-of-a-file-0">rule for identifying the media type of a file</a> to the file in question. </p>
+      <p>유저 에이전트에 의해 <a href="#supported">지원</a>되고, 의심스러운 파일에 <a href="#rule-for-identifying-the-media-type-of-a-file-0">파일의 미디어 타입을 식별하는 규칙</a>을 적용하기로 결정된 <a href="#media-type-0">미디어 타입</a>입니다.</p>
     </li>
   </ul>
-  <h3 id="reserved-file-and-folder-names"><span class="secno">6.3 </span>Reserved File and Folder Names</h3>
-  <p>The <a href="#reserved-file-names-table">reserved file names table</a>, below, contains a list of file names
-    that are <a href="#reserved">reserved</a> for some purpose by this specification. The first column
-    of the reserved file names table contains a case-sensitive list of file names.
-    The second column of the table denotes the purpose for which the file name is <a href="#reserved">reserved</a>.</p>
+  <h3 id="reserved-file-and-folder-names"><span class="secno">6.3 </span>예약된 파일과 폴더명</h3>
+  <p>아래의 <a href="#reserved-file-names-table">예약된 파일명 표</a>는 이 명세에 따른 어떤 목적에 대한 <a href="#reserved">예약된</a> 파일명 리스트를 포함합니다.
+   예약된 파일명 표의 첫번째 열은 대소문자를 구분하는 파일명을 포함합니다.
+   표의 두번째 열은 파일명이 <a href="#reserved">예약된</a> 목적을 나타냅니다.</p>
   <table>
     <caption>
-    <dfn id="reserved-file-names-table">Reserved File Names Table</dfn>
+    <dfn id="reserved-file-names-table">예약된 파일명 표</dfn>
     </caption>
     <thead>
       <tr>
-        <th>file name</th>
-        <th>Type</th>
-        <th>reserved for purpose</th>
+        <th>파일명</th>
+        <th>타입</th>
+        <th>예약된 목적</th>
       </tr>
       <tr>
         <td>config.xml</td>
-        <td><a href="#file">file</a></td>
-        <td><a href="#configuration-document-0">Configuration document</a></td>
+        <td><a href="#file">파일</a></td>
+        <td><a href="#configuration-document-0">Configuration 문서</a></td>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td>icon.png</td>
-        <td><a href="#file">file</a></td>
-        <td><a href="#default-icon">Default icon</a></td>
+        <td><a href="#file">파일</a></td>
+        <td><a href="#default-icon">기본 아이콘</a></td>
       </tr>
       <tr>
         <td>icon.gif</td>
-        <td><a href="#file">file</a></td>
-        <td><a href="#default-icon">Default icon</a></td>
+        <td><a href="#file">파일</a></td>
+        <td><a href="#default-icon">기본 아이콘</a></td>
       </tr>
       <tr>
         <td>icon.jpg</td>
-        <td><a href="#file">file</a></td>
-        <td><a href="#default-icon">Default icon</a></td>
+        <td><a href="#file">파일</a></td>
+        <td><a href="#default-icon">기본 아이콘</a></td>
       </tr>
       <tr>
         <td>icon.ico</td>
-        <td><a href="#file">file</a></td>
-        <td><a href="#default-icon">Default icon</a></td>
+        <td><a href="#file">파일</a></td>
+        <td><a href="#default-icon">기본 아이콘</a></td>
       </tr>
       <tr>
         <td>icon.svg</td>
-        <td><a href="#file">file</a></td>
-        <td><a href="#default-icon">Default icon</a></td>
+        <td><a href="#file">파일</a></td>
+        <td><a href="#default-icon">기본 아이콘</a></td>
       </tr>
       <tr>
         <td>index.html</td>
-        <td><a href="#file">file</a></td>
-        <td><a href="#default-start-file">Default start file</a></td>
+        <td><a href="#file">파일</a></td>
+        <td><a href="#default-start-file">기본 시작 파일</a></td>
       </tr>
       <tr>
         <td>index.htm</td>
-        <td><a href="#file">file</a></td>
-        <td><a href="#default-start-file">Default start file</a></td>
+        <td><a href="#file">파일</a></td>
+        <td><a href="#default-start-file">기본 시작 파일</a></td>
       </tr>
       <tr>
         <td>index.svg</td>
-        <td><a href="#file">file</a></td>
-        <td><a href="#default-start-file">Default start file</a></td>
+        <td><a href="#file">파일</a></td>
+        <td><a href="#default-start-file">기본 시작 파일</a></td>
       </tr>
       <tr>
         <td>index.xhtml</td>
-        <td><a href="#file">file</a></td>
-        <td><a href="#default-start-file">Default start file</a></td>
+        <td><a href="#file">파일</a></td>
+        <td><a href="#default-start-file">기본 시작 파일</a></td>
       </tr>
       <tr>
         <td>index.xht</td>
-        <td><a href="#file">file</a></td>
-        <td><a href="#default-start-file">Default start file</a></td>
+        <td><a href="#file">파일</a></td>
+        <td><a href="#default-start-file">기본 시작 파일</a></td>
       </tr>
       <tr>
         <td>locales</td>
-        <td><a href="#folder">folder</a></td>
-        <td><a href="#container-for-localized-content">Container for localized content</a></td>
+        <td><a href="#folder">폴더</a></td>
+        <td><a href="#container-for-localized-content">지역화된 컨텐츠에 대한 컨테이너</a></td>
       </tr>
     </tbody>
   </table>
