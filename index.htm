@@ -1059,17 +1059,14 @@ td, th {
       package is labeled as a <code>application/widget</code> when served over HTTP. The <a href="#widget-file-extension">widget file extension</a> is required for widget packages on systems where it is customary for file names to include a file extension that symbolizes (or is associated with) a <a href="#media-type-0">media
       type</a>.</p>
   </div>
-  <h2 id="configuration-document"><span class="secno">7 </span>Configuration Document</h2>
-  <p><dfn id="configuration-document-0">configuration document</dfn>는 <a href="#widget-namespace">widget namespace</a>에 있는 root에 <code title="widget element"><a href="#the-widget-element-and-its-attributes">widget</a></code> 요소를 가지는 <a href="#xml">[XML]</a> 문서입니다. widget package는 하나의 configuration document가 <a href="#root-of-the-widget-package">widget 패키지의 root(root of the widget package)</a>에 정확하게 위치해야 합니다.</p>
-  <p class="note"><span class="notetitle">Note:</span> <a href="#configuration-document-0">configuration document</a>의 요소들이 user agent에 의해 어떻게 처리되는지에 대한 자세한 내용은 <a href="#step-7-process-the-configuration-document">Step 7</a>을 보기 바랍니다..</p>
-  <p><dfn id="valid-configuration-document-file-name">올바른 configuration document 파일 이름(valid configuration document file name)</dfn>은  <code>"config.xml"</code>입니다. </p>
-  <p id="ta-dxzVDWpaWg">A <a class="product-ua" href="#user-agent">user agent</a> <em class="ct">must</em> treat any <a href="#file">file</a> in an <a href="#arbitrary">arbitrary</a> <a href="#folder">folder</a> or <a href="#locale-folder-0" title="locale folder">locale folders</a> that uses the
-    
-    file name <code>config.xml</code> as an <a href="#arbitrary">arbitrary</a> file.</p>
-  <p class="authorguide"><strong>Authoring Guidelines:</strong> Be sure to always include
-    a <a href="#configuration-document-0">configuration document</a> at the <a href="#root-of-the-widget-package">root of the widget package</a> and that the <code>config.xml</code> file name is in lowercase form. To ensure interoperability, encode the <a href="#configuration-document-0">configuration document</a> as <a href="#utf-8">[UTF-8]</a>.</p>
-  <h3 id="example-configuration-document"><span class="secno">7.1 </span>Example Configuration Document</h3>
-  <p>The following is an example of a typical <a href="#configuration-document-0">configuration document</a>:</p>
+  <h2 id="configuration-document"><span class="secno">7 </span>Configuration 문서</h2>
+  <p><dfn id="configuration-document-0">configuration 문서</dfn>는 <a href="#widget-namespace">widget namespace</a>에 있는 root에 <code title="widget element"><a href="#the-widget-element-and-its-attributes">widget</a></code> 요소를 가지는 <a href="#xml">[XML]</a> 문서입니다. widget 패키지는 정확하게 <a href="#root-of-the-widget-package">widget 패키지의 root</a>에 위치하는 하나의 configuration 문서를 가집니다.</p>
+  <p class="note"><span class="notetitle">Note:</span> <a href="#configuration-document-0">configuration 문서</a>의 element들이 user agent에 의해 어떻게 처리되는지에 대한 자세한 내용은 <a href="#step-7-process-the-configuration-document">Step 7</a>을 보기 바랍니다..</p>
+  <p><dfn id="valid-configuration-document-file-name">유효한 configuration document 파일 이름</dfn>은  <code>"config.xml"</code>입니다. </p>
+  <p id="ta-dxzVDWpaWg"><a class="product-ua" href="#user-agent">user agent</a>는 <a href="#arbitrary">임의의</a> <a href="#folder">폴더</a> 또는 <a href="#locale-folder-0" title="locale folder">locale 폴더들</a> 아래의 "<code>config.xml</code>"이라는 이름을 사용하는 <a href="#file">파일</a>은 <a href="#arbitrary">임의의</a> 파일로 취급<em class="ct">해야한다.</em></p>
+  <p class="authorguide"><strong>작성 가이드라인:</strong> 항상 <a href="#configuration-document-0">configuration 문서</a>는 <a href="#root-of-the-widget-package">widget 패키지의 root</a>에 포함하여 주시고 <code>config.xml</code>파일 이름은 소문자 형태로 해주시기 바랍니다. 상호 운용을 위해서 <a href="#configuration-document-0">configuration 문서</a>는 <a href="#utf-8">[UTF-8]</a>로 encode바랍니다.</p>
+  <h3 id="example-configuration-document"><span class="secno">7.1 </span>Configuration 문서 예시</h3>
+  <p>다음은 <a href="#configuration-document-0">configuration 문서</a>의 일반적인 예시입니다:</p>
   <div class="example">
     <pre><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;widget xmlns       = "http://www.w3.org/ns/widgets"
@@ -1116,13 +1113,9 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
   &lt;/license&gt;
 &lt;/widget&gt;</code></pre>
   </div>
-  <p class="note"><span class="notetitle">Note:</span> Implementers are encouraged to
-    expose relevant information provided by the <a href="#configuration-document-0">configuration document</a> to the
-    user. Having "visual metadata" encourages authors to make full use of the configuration
-    document format. See <a href="#step-7-process-the-configuration-document">Step 7</a> for instructions on how to process a
-    configuration document.</p>
+  <p class="note"><span class="notetitle">Note:</span> <a href="#configuration-document-0">configuration 문서</a>에서 제공하는 관련 정보들을 사용자에게 제공하도록 구현자들에게 권장하고 있습니다. "보여지는 metadata"가 있다는 것은 작성자들이 configuration 포맷을 최대한 활용하도록 만듭니다. 어떻게 configuration 문서를 처리하는지에 대한 설명은 <a href="#step-7-process-the-configuration-document">Step 7</a>을 참고하세요.</p>
   <div class="authorguide">
-    <p><strong>Authoring Guidelines:</strong> The only mandatory element in a configuration document  is the <code title="widget element"><a href="#the-widget-element-and-its-attributes">widget</a></code> element. All other elements and their respective attributes are optional. The following example shows the smallest possible configuration document that a  user agent will be able to process. The reason to include this sole element is to explicitly inform a user agent or conformance checker that this zip file  attempts to conform to this specification. </p>
+    <p><strong>작성 가이드라인:</strong> configuration 문서에서 유일한 필수 element는 <code title="widget element"><a href="#the-widget-element-and-its-attributes">widget</a></code> element 입니다. 모든 다른 element들과 그것들 각각의 attribute들은 optional 입니다. 다음의 예는 user agent가 처리할 수 있는 가장 최소한의 configuration 문서입니다. 이 하나의 element를 포함하는 이유는 user agent나 conformance checker에게 이 zip 파일은 이 명세를 준수하려고 한다는 것을 명시적으로 알려주기 위해서입니다.</p>
     <div class="example">
       <pre><code>
 
@@ -1131,7 +1124,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
     </div>
   </div>
   <h3 id="namespace"><span class="secno">7.2 </span>Namespace</h3>
-  <p>The <dfn id="widget-namespace">widget namespace</dfn> URI for a <a href="#configuration-document-0">configuration document</a> is <code>http://www.w3.org/ns/widgets</code> <a href="#xmlns">[XMLNS]</a>.</p>
+  <p><a href="#configuration-document-0">configuration document</a>을 위한 <dfn id="widget-namespace">widget namespace</dfn> URI는 <code>http://www.w3.org/ns/widgets</code> <a href="#xmlns">[XMLNS]</a> 입니다.</p>
   <p>No provision is made for an explicit version number in this specification. If a future version of this specification requires explicit versioning of the document format, a different namespace will be used.</p>
   <p class="authorguide"><strong>Authoring Guidelines:</strong> Be sure to declare
     the widget namespace as part of the <code title="widget element"><a href="#the-widget-element-and-its-attributes">widget</a></code> element. If the namespace is absent, then the widget will be treated by the user agent as an <a href="#invalid-widget-package-0">invalid widget package</a>.</p>
