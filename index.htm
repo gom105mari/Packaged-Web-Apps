@@ -272,7 +272,7 @@ td, th {
  <li><a href="#user-agents"><span class="secno">4 </span>사용자 에이전트</a>
   <ol class="toc">
    <li><a href="#optional-aspects-of-the-zip-specification"><span class="secno">4.1 </span>Optional Aspects of the Zip Specification</a></ol></li>
- <li><a href="#zip-archive"><span class="secno">5 </span>Zip 압축</a>
+ <li><a href="#zip-archive"><span class="secno">5 </span>Zip 아카이브</a>
   <ol class="toc">
    <li><a href="#compression-methods"><span class="secno">5.1 </span>압축 방법</a></li>
    <li><a href="#version-of-zip-needed-to-extract-a-file-entry"><span class="secno">5.2 </span>File Entry를 추출하기 위한 Zip 버전</a></li>
@@ -377,7 +377,7 @@ td, th {
   <ol class="toc">
    <li><a href="#processing-rules"><span class="secno">9.1 </span>처리 규칙</a>
     <ol class="toc">
-     <li><a href="#rule-for-verifying-a-zip-archive"><span class="secno">9.1.1 </span>Zip 압축 검증 규칙</a></li>
+     <li><a href="#rule-for-verifying-a-zip-archive"><span class="secno">9.1.1 </span>Zip 아카이브 검증 규칙</a></li>
      <li><a href="#rule-for-extracting-file-data-from-a-file-entry"><span class="secno">9.1.2 </span>File Entry로부터의 File Data 추출 규칙</a></li>
      <li><a href="#rule-for-finding-a-file-within-a-widget-package"><span class="secno">9.1.3 </span>Widget 패키지 내의 File을 찾는 규칙</a></li>
      <li><a href="#rule-for-determining-directionality"><span class="secno">9.1.4 </span>결정 방향성에 대한 규칙</a></li>
@@ -391,11 +391,11 @@ td, th {
      <li><a href="#rule-for-deriving-the-user-agent-locales"><span class="secno">9.1.12 </span><var title="">user agent locales</var> 도출에 대한 규칙</a></li>
      <li><a href="#rule-for-determining-if-a-potential-zip-archive-is-a-zip-archive"><span class="secno">9.1.13 </span>Rule for Determining if a Potential Zip Archive is a Zip
     Archive</a></ol></li>
-   <li><a class="no-num done" href="#step-1-acquire-a-potential-zip-archive">Step 1 - Potential Zip 압축 획득</a>
+   <li><a class="no-num done" href="#step-1-acquire-a-potential-zip-archive">Step 1 - Potential Zip 아카이브 획득</a>
     <ol class="toc">
-     <li><a href="#acquisition-of-a-potential-zip-archive-labeled-with-a-media-type"><span class="secno">9.1.1 </span>미디어 타입으로 분류된 Potential Zip 압축 획득</a></li>
-     <li><a href="#acquisition-of-potential-zip-archive-not-labeled-with-a-media-type"><span class="secno">9.1.2 </span>미디어 타입으로 분류되지 않은 Potential Zip 압축 획득</a></ol></li>
-   <li><a class="no-num done" href="#step-2-verify-the-zip-archive">Step 2 - Zip 압축 검증</a></li>
+     <li><a href="#acquisition-of-a-potential-zip-archive-labeled-with-a-media-type"><span class="secno">9.1.1 </span>미디어 타입으로 분류된 Potential Zip 아카이브 획득</a></li>
+     <li><a href="#acquisition-of-potential-zip-archive-not-labeled-with-a-media-type"><span class="secno">9.1.2 </span>미디어 타입으로 분류되지 않은 Potential Zip 아카이브 획득</a></ol></li>
+   <li><a class="no-num done" href="#step-2-verify-the-zip-archive">Step 2 - Zip 아카이브 검증</a></li>
    <li><a class="no-num" href="#step-3-set-the-configuration-defaults">Step 3 - 기본 Configuration 설정</a></li>
    <li><a class="no-num done" href="#step-4-locate-and-process-the-digital-signature">Step 4 - 디지털 서명을 찾고 처리하기</a></li>
    <li><a class="no-num" href="#step-5-derive-the-user-agent's-locales">Step 5 - 유저 에이전트의 지역 얻기</a></li>
@@ -639,31 +639,24 @@ td, th {
       <p> Patented aspects.</p>
     </li>
   </ul>
-  <h2 id="zip-archive"><span class="secno">5 </span>Zip 압축</h2>
-  <p> <a href="#zip">[ZIP]</a> 명세에 정의된 <dfn id="zip-archive-0">Zip 압축</dfn> 파일 포멧은 <a href="#widget-package" title="widget package">위젯 패키지</a>에 대한 <dfn id="packaging-format">패키징 포멧</dfn>입니다.</p>
-  <p><a href="#zip-archive-0">Zip 압축</a>에 포함된 각각의 실제 파일이나 폴더에 대해, <a href="#zip">[ZIP]</a> 명세에 정의된 <dfn id="file-entry">파일 엔트리</dfn>는 <dfn class="external" id="local-file-header">로컬 파일 헤더</dfn>,
+  <h2 id="zip-archive"><span class="secno">5 </span>Zip 아카이브</h2>
+  <p><a href="#zip-archive-0">Zip 아카이브</a>에 포함된 각각의 실제 파일이나 폴더에 대해, <a href="#zip">[ZIP]</a> 명세에 정의된 <dfn id="file-entry">파일 엔트리</dfn>는 <dfn class="external" id="local-file-header">로컬 파일 헤더</dfn>,
+  <p> <a href="#zip">[ZIP]</a> 명세에 정의된 <dfn id="zip-archive-0">Zip 아카이브</dfn> 파일 포멧은 <a href="#widget-package" title="widget package">위젯 패키지</a>에 대한 <dfn id="packaging-format">패키징 포멧</dfn>입니다.</p>
   <dfn class="external" id="file-data">파일 데이터</dfn>, 및 (옵션)<dfn class="external" id="data-descriptor">데이터 기술자</dfn>가 보유하는 데이터입니다.</p>
-  <p><dfn id="potential-zip-archive">potential Zip 압축</dfn>은 <a href="#zip-archive-0">Zip 압축</a>임을 주장하는 데이터 객체이지만, <a href="#valid-zip-archive">유효한 Zip 압축</a>이라는 것이 <a href="#rule-for-verifying-a-zip-archive-0" title="rule for verifying a zip archive">입증</a>되지 않았습니다.</p>
+  <p><dfn id="potential-zip-archive">potential Zip 아카이브</dfn>는 <a href="#zip-archive-0">Zip 아카이브</a>임을 주장하는 데이터 객체이지만, <a href="#valid-zip-archive">올바른 Zip 아카이브</a>라는 것이 <a href="#rule-for-verifying-a-zip-archive-0" title="rule for verifying a zip archive">입증</a>되지 않았습니다.</p>
   <p>A <dfn id="valid-zip-archive">valid Zip archive</dfn> is a  data object that the user agent has verified as conforming to the production of a <dfn class="external" id=".zip-file">.Zip file</dfn> as defined by
     the <cite>Zip File Format Specification</cite> <a href="#zip">[ZIP]</a> and <a href="#step-2-verify-the-zip-archive" title="step 2">meets the requirements of this specification</a> (See <a href="#step-2-verify-the-zip-archive">Step 2</a>).</p>
-  <p><dfn id="magic-numbers-for-a-zip-archive">Zip 압축을 위한 매직 넘버</dfn>는 바이트 배열입니다: <code>50 4B 03 04</code>.</p>
+  <p><dfn id="magic-numbers-for-a-zip-archive">Zip 아카이브를 위한 매직 넘버</dfn>는 바이트 배열입니다: <code>50 4B 03 04</code>.</p>
   <h3 id="compression-methods"><span class="secno">5.1 </span>압축 방법</h3>
-  <p>A <dfn id="compression-method">compression method</dfn> is the compression algorithm or storage method
-    that was used to encode the file data of a <a href="#file-entry">file entry</a> when the zip archive was created by the author. The compression method
-    that  encoded the <var><a href="#file-data">file data</a></var> of a <a href="#file-entry">file entry</a> is
-    identified by the numeric value derived from the <dfn id="compression-method-field"><var>compression method
-    field</var></dfn> defined in the <a href="#zip">[ZIP]</a> specification.</p>
-  <p>The <dfn id="valid-compression-methods">valid compression methods</dfn>, as indicated by the <var><a href="#compression-method-field">compression
-    method field</a></var>, for a <a href="#file-entry">file entry</a> are:</p>
+  <p> <dfn id="compression-method">압축 방법</dfn> 은 저자에 의해 zip 아카이브가 생성될 때, 파일 엔트리의 파일 데이터를 암호화 하는데 사용하는 압축 알고리즘이나 저장 방법입니다. <a href="#file-entry">file entry</a>의 <var><a href="#file-data">file data</a></var>를 암호화하는 압축 방법은 <a href="#zip">[ZIP]</a> 명세에 정의된 <dfn id="compression-method-field"><var>압축 방법 필드</var></dfn>로부터 도출된 숫자에 의해 식별됩니다.</p>
+  <p><var><a href="#compression-method-field">압축 방법 필드</a></var>에 표시된 대로, 파일 엔트리에 대해 <dfn id="valid-compression-methods">올바른 압축 방법</dfn>은:</p>
   <dl>
     <dt><code>8</code></dt>
-    <dd>Data is compressed using <a href="#deflate">[Deflate]</a>.</dd>
+    <dd>데이터는 <a href="#deflate">[Deflate]</a>를 사용하여 압축됩니다.</dd>
     <dt><code>0</code></dt>
-    <dd>Data is <dfn class="external" id="stored">Stored</dfn> (no compression), as defined in the <a href="#zip">[ZIP]</a> specification.</dd>
+    <dd>데이터는 <a href="#zip">[ZIP]</a> 명세에 정의된 대로 저장된다 (압축 없이).</dd>
   </dl>
-  <p class="authorguide"><strong>Authoring Guidelines:</strong> To ensure
-    interoperability, compress <a href="#file-entry" title="file entry">file entries</a> in <a href="#zip-archive-0" title="zip archive">Zip archives</a> with <a href="#deflate">[Deflate]</a> or <a href="#stored">Stored</a> (no compression); other compression methods can result in in the
-    Zip archive being treated as an <a href="#invalid-widget-package-0">invalid widget package</a>. Of the valid compression methods, <a href="#deflate">[Deflate]</a> is the preferred compression method.</p>
+  <p class="authorguide"><strong>저작 지침:</strong> 상호 운용성을 확보하기 위해서, <a href="#file-entry" title="file entry">파일 엔트리</a>를 <a href="#deflate">[Deflate]</a> 나 <a href="#stored">Stored</a> (압축 없이) 방법으로 Zip 아카이브에 압축합니다; 다른 압축 방법은  Zip 아카이브가 <a href="#invalid-widget-package-0">잘못된 Widget 패키지</a>로 처리되는 원인이 될 수 있습니다. 올바른 압축 방법 중, <a href="#deflate">[Deflate]</a> 를 추천합니다.</p>
   <h3 id="version-of-zip-needed-to-extract-a-file-entry"><span class="secno">5.2 </span>Version of Zip Needed to Extract a File Entry</h3>
   <p>The <dfn class="external" id="version-needed-to-extract"><var>version needed to extract</var></dfn> is the 2-byte
     sequence in the <var><a href="#local-file-header">local file header</a></var> of a <a href="#file-entry">file entry</a> that
@@ -1069,7 +1062,7 @@ td, th {
   <h2 id="configuration-document"><span class="secno">7 </span>Configuration Document</h2>
   <p><dfn id="configuration-document-0">configuration document</dfn>는 <a href="#widget-namespace">widget namespace</a>에 있는 root에 <code title="widget element"><a href="#the-widget-element-and-its-attributes">widget</a></code> 요소를 가지는 <a href="#xml">[XML]</a> 문서입니다. widget package는 하나의 configuration document가 <a href="#root-of-the-widget-package">widget 패키지의 root(root of the widget package)</a>에 정확하게 위치해야 합니다.</p>
   <p class="note"><span class="notetitle">Note:</span> <a href="#configuration-document-0">configuration document</a>의 요소들이 user agent에 의해 어떻게 처리되는지에 대한 자세한 내용은 <a href="#step-7-process-the-configuration-document">Step 7</a>을 보기 바랍니다..</p>
-  <p><dfn id="valid-configuration-document-file-name">유효한 configuration document 파일 이름(valid configuration document file name)</dfn>은  <code>"config.xml"</code>입니다. </p>
+  <p><dfn id="valid-configuration-document-file-name">올바른 configuration document 파일 이름(valid configuration document file name)</dfn>은  <code>"config.xml"</code>입니다. </p>
   <p id="ta-dxzVDWpaWg">A <a class="product-ua" href="#user-agent">user agent</a> <em class="ct">must</em> treat any <a href="#file">file</a> in an <a href="#arbitrary">arbitrary</a> <a href="#folder">folder</a> or <a href="#locale-folder-0" title="locale folder">locale folders</a> that uses the
     
     file name <code>config.xml</code> as an <a href="#arbitrary">arbitrary</a> file.</p>
