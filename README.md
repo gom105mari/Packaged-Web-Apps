@@ -8,6 +8,7 @@
  * Widget
  * Zip
  * namespace
+ * root
 * 표준 번역
  * Note -> 주석
  * Authoring Guidelines -> 작성 지침
@@ -22,6 +23,8 @@
  * invalid -> 잘못된
  * specification -> 명세
  * This section is non-normative. -> 이 부분은 비표준적인 내용입니다.
+ * container -> 컨테이너
+ * Default start file -> 기본 시작 파일
 
 ## 번역 진행상황
 * 목차 번역 - 90%
