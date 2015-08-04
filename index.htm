@@ -416,7 +416,7 @@ td, th {
  <li><a class="no-num" href="#informative-references">유용한 참조</a></ol>
 <!--end-toc-->
   <h2 id="introduction"><span class="secno">1 </span>개요</h2>
-  <p><em>This section is non-normative.</em></p>
+  <p><em>이 부분은 비표준적인 내용입니다.</em></p>
   <p><em>Widgets</em> are full-fledged client-side applications that are authored using
     Web standards such as <a href="#html">[HTML]</a> and packaged for distribution. They are typically downloaded and
     installed on a client machine or device where they run as stand-alone applications, but
@@ -427,7 +427,7 @@ td, th {
     information).</p>
   <p>This specification is intended to specify a part of the Web platform closely related to <a href="#html">[HTML]</a>. </p>
   <h3 id="design-goals-and-requirements"><span class="secno">1.1 </span>Design Goals and Requirements</h3>
-  <p><em>This section is non-normative.</em></p>
+  <p><em>이 부분은 비표준적인 내용입니다.</em></p>
   <p>The design goals and requirements for this specification are documented in the<cite> </cite><a href="#widgets-requirements">[Widgets-Requirements]</a> document. </p>
   <p>This document addresses
     the 25 requirements relating to "<a href="http://www.w3.org/TR/2009/WD-widgets-reqs-20090430/#widget-package-packaging">Packaging</a>" and "<a href="http://www.w3.org/TR/2009/WD-widgets-reqs-20090430/#configuration-document">Configuration Document</a>" of the 30 April 2009 Working Draft of the <cite>Widgets Requirements</cite> Document: </p>
@@ -491,7 +491,7 @@ td, th {
       Display Mode</a>: see the <code>viewmodes</code> attribute of the <code title="widget element"><a href="#the-widget-element-and-its-attributes">widget</a></code> element.</li>
   </ol>
   <h3 id="how-this-document-is-organized"><span class="secno">1.2 </span>How This Document is Organized</h3>
-  <p><em>This section is non-normative.</em></p>
+  <p><em>이 부분은 비표준적인 내용입니다.</em></p>
   <p>This document is organized into two halves, but not
     explicitly marked as such. The first half defines the various aspects of what
     constitutes the <a href="#packaging-format">packaging format</a>, the <a href="#configuration-document-0">configuration document</a>,
@@ -507,12 +507,12 @@ td, th {
     configuration document. Wherever processing is relevant, sections in the first half of
     the document link to sections in the second half of the document.</p>
   <h3 id="typographic-conventions"><span class="secno">1.3 </span>Typographic Conventions</h3>
-  <p><em>This section is non-normative.</em></p>
+  <p><em>이 부분은 비표준적인 내용입니다.</em></p>
   <p>This section defines the <dfn id="typographical-conventions">typographical conventions</dfn> used by this
     specification. Some text in this specification is non-normative. Non-normative text includes:</p>
   <ul>
     <li>sections marked with the text <q><em>This section is non-normative</em></q>,</li>
-    <li>authoring guidelines,</li>
+    <li>작성 지침,</li>
     <li>examples,</li>
     <li>and notes.</li>
   </ul>
@@ -531,9 +531,9 @@ td, th {
     contains useful supplementary information in a non-normative form.</p>
   <p class=" authorguide"><strong>작성 지침:</strong> This is an Authoring
     Guideline. Its purpose is to provide authors with best-practice authoring techniques.
-    Authoring guidelines are non-normative.</p>
+    작성 지침 are non-normative.</p>
   <h3 id="the-widget-family-of-specifications"><span class="secno">1.4 </span>The Widget Family of Specifications</h3>
-  <p><em>This section is non-normative.</em></p>
+  <p><em>이 부분은 비표준적인 내용입니다.</em></p>
   <p>This specification is part of the <dfn id="widgets-family-of-specifications">Widgets family of specifications</dfn>,
     which together standardize widgets as a whole. The <a href="http://www.w3.org/2008/webapps/wiki/WidgetSpecs">list of specifications</a> that make up the Widgets  Family of Specifications can be found on the Working Group's wiki. </p>
   <h2 id="conformance"><span class="secno">2 </span>Conformance</h2>
@@ -673,17 +673,10 @@ td, th {
   <p class="note"><span class="notetitle">주석:</span> Zip 아카이브가 기존의 PKWARE 암호화방식으로 암호화되어 있을 경우, <a href="#step-2-verify-the-zip-archive">Step 2</a>에서 유저 에이전트는 <a href="#invalid-widget-package-0">잘못된 Widget 패키지</a>를 다룰 수도 있습니다.</p>
   <h3 id="zip-relative-paths"><span class="secno">5.3 </span>Zip 상대 경로</h3>
   <p>A <dfn id="zip-relative-path">Zip 상대경로</dfn>는 <a href="#file-entry">파일 엔트리</a>의 <var><a href="#local-file-header">로컬 파일 헤더</a></var>에 기록된 <dfn class="external" id="file-name-field"><var>파일명 필드</var></dfn>로부터 얻은 가변 길이 문자열입니다.</p>
-  <p class="note"><span class="notetitle">주석:</span> A Zip relative path is said to
-    be relative as it stores the string that represents file and folder names relative to
-    where the Zip archive was created on a file system (e.g. <samp>images/bg.png</samp>),
-    as opposed to storing an absolute path (e.g. <samp>c:\images\bg.png</samp>). The
-    value of a Zip relative path will generally resemble the string value of a name of
-    the file or folder(s) on the device on which the Zip archive was created, but with
-    the exception of the path delimiter being a U+002F SOLIDUS "/" character. Note also
-    that a Zip relative path is not a URI reference; Zip relative paths need to be
-    converted to URI references before they can be used in context that make use of
-    URIs. </p>
-  <p>A <dfn id="valid-zip-relative-path">valid Zip relative path</dfn> is one that matches the production of <code><a href="#zip-rel-path">Zip-rel-path</a></code> in the following <a href="#abnf">[ABNF]</a>:</p>
+  <p class="note"><span class="notetitle">주석:</span> A Zip relative path is said to be relative as it stores the string that represents file and folder names relative to where the Zip archive was created on a file system (e.g. <samp>images/bg.png</samp>), as opposed to storing an absolute path (e.g. <samp>c:\images\bg.png</samp>).
+   The value of a Zip relative path will generally resemble the string value of a name of the file or folder(s) on the device on which the Zip archive was created, but with the exception of the path delimiter being a U+002F SOLIDUS "/" character.
+   Note also that a Zip relative path is not a URI reference; Zip relative paths need to be converted to URI references before they can be used in context that make use of URIs. </p>
+  <p><dfn id="valid-zip-relative-path">올바른 Zip 상대경로</dfn>는 아래 <a href="#abnf">[ABNF]</a>의 <code><a href="#zip-rel-path">Zip-rel-path</a></code>의 생성과 일치합니다:</p>
   <pre><code><dfn id="zip-rel-path">Zip-rel-path</dfn>   = [locale-folder] *folder-name file-name /
                  [locale-folder] 1*folder-name
 <dfn id="locale-folder">locale-folder</dfn>  = %x6C %x6F %x63 %x61 %x6C %x65 %x73
@@ -705,21 +698,20 @@ td, th {
 <dfn id="lang-tag">lang-tag</dfn>       = primary-subtag *( "-" subtag )<br><dfn id="primary-subtag">primary-subtag</dfn> = 1*8low-alpha<br><dfn id="subtag">subtag </dfn>        = 1*8(alphanum)
 <dfn id="alphanum">alphanum</dfn>       = low-alpha  / DIGIT<br><dfn id="low-alpha">low-alpha </dfn>     = %x61-7a
 </code></pre>
-  <p><dfn class="external" id="alpha"><code>ALPHA</code></dfn>, <dfn class="external" id="digit"><code>DIGIT</code></dfn>, and <dfn class="external" id="sp"><code>SP</code></dfn> are defined in the <a href="#abnf">[ABNF]</a> specification (but essentially represent
-    alphanumerical characters and the U+0020 SPACE code point respectively).</p>
-  <h3 id="interoperability-considerations"><span class="secno">5.4 </span>Interoperability Considerations</h3>
-  <p><em>This section is non-normative.</em></p>
-  <p>Some issues can arise with regards to character encodings of file names, the length of zip relative paths, and the use of certain strings as file names. This sections is intended to help authors avoid potential interoperability issues. </p>
-  <div class="authorguide"><strong>Authoring Guideline</strong>
-    <h4 class="no-toc" id="paths-lengths"><span class="secno">5.4.1 </span>Paths Lengths</h4>
-    <p><em>This section is non-normative.</em></p>
+  <p><dfn class="external" id="alpha"><code>ALPHA</code></dfn>, <dfn class="external" id="digit"><code>DIGIT</code></dfn>, 그리고 <dfn class="external" id="sp"><code>SP</code></dfn>는 <a href="#abnf">[ABNF]</a> 명세에 정의되어 있습니다(그러나 기본적으로 각각의 영숫자문자와  U+0020 SPACE 코드 포인트를 나타냅니다).</p>
+  <h3 id="interoperability-considerations"><span class="secno">5.4 </span>상호운용 고려사항</h3>
+  <p><em>이 부분은 비표준적인 내용입니다.</em></p>
+  <p>몇가지 문제는 파일명의 문자 인코딩, zip 상대경로의 길이, 그리고 파일명과 같은 특정 문자의 사용시에 발생할 수 있습니다. 이 부분은 상호운용성 문제를 피할수 있도록 저자가 도움을 주는 부분입니다.</p>
+  <div class="authorguide"><strong>작성 지침</strong>
+    <h4 class="no-toc" id="paths-lengths"><span class="secno">5.4.1 </span>경로 길이</h4>
+    <p><em>이 부분은 비표준적인 내용입니다.</em></p>
     <p>Authors need to be aware that having
       excessively long path names (e.g. over 120 characters) can also result in
       interoperability issues on some operating systems. This is because some operating systems have restrictions on how long a path length can be, so authors should try to keep the lengths of  paths at less than 250 bytes. In addition, Unicode code points may
       require more than one byte to encode a character, which can result in a path whose
       length is less than 250 characters but whose size is greater than 250 bytes! </p>
-    <h4 class="no-toc" id="character-sets"><span class="secno">5.4.2 </span>Character sets</h4>
-    <p><em>This section is non-normative.</em></p>
+    <h4 class="no-toc" id="character-sets"><span class="secno">5.4.2 </span>문자 세트</h4>
+    <p><em>이 부분은 비표준적인 내용입니다.</em></p>
     <p>Authors need to be aware that, at the time of publication, there are
       interoperability issues with regards to using characters outside the <code>safe-chars</code> range for file or folder names in a Zip archive when using
       Zipping tools bundled with operating systems. The interoperability issues have
@@ -730,8 +722,8 @@ td, th {
     <p>If an author chooses to use the <code>utf8-chars</code>, they need to thoroughly
       test their widgets on various platforms prior to distribution; otherwise it is
       suggested that authors restrict file and folder names to the <code>safe-chars</code> (characters in the US-ASCII range).</p>
-    <h4 class="no-toc" id="file-names"><span class="secno">5.4.3 </span>File Names</h4>
-    <p><em>This section is non-normative.</em></p>
+    <h4 class="no-toc" id="file-names"><span class="secno">5.4.3 </span>파일명</h4>
+    <p><em>이 부분은 비표준적인 내용입니다.</em></p>
     <p> Authors need to avoid using the <a href="#zip-forbidden-characters">Zip forbidden
       characters</a> when naming the files used by a widget. These characters are reserved to
       maintain interoperability across various file systems and with <a href="#uri">[URI]</a>s.</p>
@@ -886,7 +878,7 @@ td, th {
     convention for distributor signature</a> and the <a href="http://www.w3.org/TR/widgets-digsig/#naming-convention-for-an-author-signature">naming
     convention for an author signature</a>, as defined in the <a href="#widgets-digsig">[Widgets-DigSig]</a> specification, are also reserved in this specification.</p>
   <div class="authorguide">
-    <p><strong>Authoring Guideline:</strong> Authors are strongly encourage to package all
+    <p><strong>작성 지침:</strong> Authors are strongly encourage to package all
       files, except the reserved files and the  container for localized
       content, within a single subdirectory named, for instance, after the
       widget. This is to avoid unzipping several files into the end-user's
@@ -1721,7 +1713,7 @@ Distributed under the W3C Software License.
   </dl>
   <h4 id="the-name-attribute-0"><span class="secno">7.14.1 </span>The <code><dfn title="param name">name</dfn></code> Attribute</h4>
   <p>A <a href="#string-attribute">string attribute</a> that denotes the name of this <a href="#parameter">parameter</a>. </p>
-  <p class="authorguide"><strong>Authoring Guideline:</strong>When a <code title="param element"><a href="#the-param-element-and-its-attributes">param</a></code> element is declared, it is required for authors to
+  <p class="authorguide"><strong>작성 지침:</strong>When a <code title="param element"><a href="#the-param-element-and-its-attributes">param</a></code> element is declared, it is required for authors to
     use the <code title="param name"><a href="#the-name-attribute-0">name</a></code> attribute. </p>
   <h4 id="the-value-attribute"><span class="secno">7.14.2 </span>The <code><dfn title="param value">value</dfn></code> Attribute</h4>
   <p>A <a href="#string-attribute">string attribute</a> that denotes the value of this <a href="#parameter">parameter</a>. </p>
@@ -1880,13 +1872,13 @@ Distributed under the W3C Software License.
     avoiding subtags marked as <dfn class="external" id="deprecated">deprecated</dfn>, <dfn class="external" id="grandfathered">grandfathered</dfn>, or <dfn class="external" id="redundant">redundant</dfn> in the <a href="http://www.iana.org/assignments/language-subtag-registry">IANA Language Subtag
     Registry</a>. These <a href="#locale-folder-0" title="locale folder">locale folders</a> are then placed
     inside the <a href="#container-for-localized-content">container for localized content</a>.</p>
-  <p class="authorguide"><strong>Authoring Guidelines</strong> Although BCP 47 recommends a particular case-folding convention, the use of upper or lowercase letters has no meaning in a language tag. Because folders inside a widget package are treated by the user-agent in a case-sensitive manner, the names of the folders inside a 'locale' folder must be all lowercase. All language tags are mapped to lowercase for matching purposes (although they can appear in any form in the configuration file or elsewhere).</p>
+  <p class="authorguide"><strong>작성 지침</strong> Although BCP 47 recommends a particular case-folding convention, the use of upper or lowercase letters has no meaning in a language tag. Because folders inside a widget package are treated by the user-agent in a case-sensitive manner, the names of the folders inside a 'locale' folder must be all lowercase. All language tags are mapped to lowercase for matching purposes (although they can appear in any form in the configuration file or elsewhere).</p>
   <p>The <dfn id="container-for-localized-content">container for localized content</dfn> is a <a href="#reserved">reserved</a> <a href="#folder">folder</a> at the <a href="#root-of-the-widget-package">root of the widget package</a> whose <code><a href="#folder-name">folder-name</a></code> case-sensitively matches the string '<code>locales</code>'. A
     container for localized content contains zero or more <a href="#locale-folder-0" title="locale folder">locale folders</a>.</p>
   <p>A <dfn id="locale-folder-0">locale folder</dfn> is a <a href="#folder">folder</a> whose <var><a href="#file-name-field">file name field</a></var> matches the production of <code><a href="#locale-folder">locale-folder</a></code> and is a direct descendant of the <a href="#container-for-localized-content">container for localized content</a> (e.g., "<code>/locales/en-us</code>",
     "<code>/locales/fr</code>", etc). A <a href="#locale-folder-0">locale folder</a> contains zero or more <a href="#arbitrary">arbitrary</a> folders and/or files.</p>
   <div class="authorguide">
-    <p><strong>Authoring Guidelines</strong> Authors need to avoid region, script or
+    <p><strong>작성 지침</strong> Authors need to avoid region, script or
       other subtags except where they add useful distinguishing information to a <a href="#locale-folder-0">locale folder</a>. In addition, avoid including empty <a href="#locale-folder-0" title="locale folder">locale folders</a> in a <a href="#widget-package">widget package</a> (unless there
       is a good reason to include them).</p>
     <div class="example">
@@ -2038,7 +2030,7 @@ Distributed under the W3C Software License.
   </pre>
   </div>
   <h3 id="localization-examples"><span class="secno">8.5 </span>Localization Examples</h3>
-  <p><em>This section is non-normative.</em></p>
+  <p><em>이 부분은 비표준적인 내용입니다.</em></p>
   <p>This section presents three examples of how widgets can be localized. Each example
     is intended to showcase how the localization algorithm is intended to work.</p>
   <h4 id="simple-example"><span class="secno">8.5.1 </span>Simple Example</h4>
@@ -3955,7 +3947,7 @@ Content-Type: application/x-gadget</code></pre>
     </dd>
   </dl>
   <h3 class="no-num" id="linking-to-a-widget-package-from-a-html-document">Linking To a Widget Package From a HTML Document</h3>
-  <p><em>This section is non-normative.</em></p>
+  <p><em>이 부분은 비표준적인 내용입니다.</em></p>
   <p><em>This section only applies to HTML user agents <a href="#html">[HTML]</a>.</em></p>
   <p><dfn id="auto-discovery">Auto-discovery</dfn> enables a user agent to identify and install a <a href="#widget-package">widget package</a> that is associated with an HTML page. When a page points to
     a <a href="#widget-package">widget package</a>, user agents <em class="ct">should</em> expose the presence of the <a href="#widget-package">widget package</a> to the end-user and allow the end-user to install the <a href="#widget">widget</a>.</p>
@@ -3971,7 +3963,7 @@ Content-Type: application/x-gadget</code></pre>
 </pre>
   </div>
   <h3 class="no-num" id="table-of-elements-and-their-attributes">Table of Elements and Their Attributes</h3>
-  <p><em>This section is non-normative.</em></p>
+  <p><em>이 부분은 비표준적인 내용입니다.</em></p>
   <p>This table lists all elements and respective attributes, as well as child-parent relationships, that make up the language of the <a href="#configuration-document-0">configuration document</a> format defined in this specification. </p>
   <table>
     <tr>
