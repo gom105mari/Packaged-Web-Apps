@@ -19,6 +19,7 @@
  * data descriptor -> 데이터 기술자
  * valid -> 올바른
  * invalid -> 잘못된
+ * specification -> 명세
 
 ## 번역 진행상황
 * 목차 번역 - 90%
