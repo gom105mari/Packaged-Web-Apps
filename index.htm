@@ -527,9 +527,9 @@ td, th {
     external specification.</p>
   <p class="example">This is an example. Examples are used to explain concepts or
     demonstrate how to use a feature. Examples are non-normative.</p>
-  <p class="note"><span class="notetitle">Note:</span> This is a note, it usually
+  <p class="note"><span class="notetitle">주석:</span> This is a note, it usually
     contains useful supplementary information in a non-normative form.</p>
-  <p class=" authorguide"><strong>Authoring Guidelines:</strong> This is an Authoring
+  <p class=" authorguide"><strong>작성 지침:</strong> This is an Authoring
     Guideline. Its purpose is to provide authors with best-practice authoring techniques.
     Authoring guidelines are non-normative.</p>
   <h3 id="the-widget-family-of-specifications"><span class="secno">1.4 </span>The Widget Family of Specifications</h3>
@@ -539,7 +539,7 @@ td, th {
   <h2 id="conformance"><span class="secno">2 </span>Conformance</h2>
   <p>There is only one class of  product that can claim conformance to this
     specification: a <a href="#user-agent">user agent</a>.</p>
-  <p class="note"> <span class="notetitle">Note:</span> Implementers can partially check their level of conformance to this specification by successfully passing the test cases of the <a href="#widgets-test-suite">[P&amp;C-Test-Suite]</a>. Note, however, that passing all the tests in the test suite does not imply complete conformance to this specification; It only implies that the implementation conforms to aspects tested by the test suite (the test suite does not provide tests for any optional conformance clauses).</p>
+  <p class="note"> <span class="notetitle">주석:</span> Implementers can partially check their level of conformance to this specification by successfully passing the test cases of the <a href="#widgets-test-suite">[P&amp;C-Test-Suite]</a>. Note, however, that passing all the tests in the test suite does not imply complete conformance to this specification; It only implies that the implementation conforms to aspects tested by the test suite (the test suite does not provide tests for any optional conformance clauses).</p>
   <h2 id="definitions"><span class="secno">3 </span>Definitions</h2>
   <p>The following terms are used throughout this specification so they are gathered here for the readers convenience. The following list of terms is not exhaustive; other terms are defined throughout this specification.</p>
   <p><dfn id="arbitrary">Arbitrary</dfn> means that a character, or text string, or <code><a href="#file-name">file-name</a></code>, or <code><a href="#folder-name">folder-name</a></code> is not <a href="#reserved">reserved</a> for
@@ -613,7 +613,7 @@ td, th {
   <p>In addition to <a href="#widget-package" title="widget package">widget packages</a>, a <a class="product-ua" href="#user-agent">user agent</a> <em class="ct">may</em> <a href="#supported" title="supported">support</a> other legacy and proprietary application packaging formats. </p>
   <p>It is <em class="ct">optional</em> for a <a class="product-ua" href="#user-agent">user
     agent</a> to <a href="#supported" title="supported">support</a> the <a href="#optional-aspects-of-the-zip-specification-0">optional  aspects of the Zip specification</a>.</p>
-  <p class="note"><span class="notetitle">Note:</span> The user agent described in this
+  <p class="note"><span class="notetitle">주석:</span> The user agent described in this
     specification does not necessarily denote a "<dfn id="widget-user-agent">widget user agent</dfn>" at large:
     that is, a user agent that implements all the specifications, and dependencies, defined
     in the <a href="#widgets-family-of-specifications">Widgets Family of Specifications</a>. The user agent described is this
@@ -640,8 +640,8 @@ td, th {
     </li>
   </ul>
   <h2 id="zip-archive"><span class="secno">5 </span>Zip 아카이브</h2>
-  <p><a href="#zip-archive-0">Zip 아카이브</a>에 포함된 각각의 실제 파일이나 폴더에 대해, <a href="#zip">[ZIP]</a> 명세에 정의된 <dfn id="file-entry">파일 엔트리</dfn>는 <dfn class="external" id="local-file-header">로컬 파일 헤더</dfn>,
   <p> <a href="#zip">[ZIP]</a> 명세에 정의된 <dfn id="zip-archive-0">Zip 아카이브</dfn> 파일 포멧은 <a href="#widget-package" title="widget package">위젯 패키지</a>에 대한 <dfn id="packaging-format">패키징 포멧</dfn>입니다.</p>
+  <p><a href="#zip-archive-0">Zip 아카이브</a>에 포함된 각각의 실제 파일이나 폴더에 대해, <a href="#zip">[ZIP]</a> 명세에 정의된 <dfn id="file-entry">파일 엔트리</dfn>는 <dfn class="external" id="local-file-header">로컬 파일 헤더</dfn>,
   <dfn class="external" id="file-data">파일 데이터</dfn>, 및 (옵션)<dfn class="external" id="data-descriptor">데이터 기술자</dfn>가 보유하는 데이터입니다.</p>
   <p><dfn id="potential-zip-archive">potential Zip 아카이브</dfn>는 <a href="#zip-archive-0">Zip 아카이브</a>임을 주장하는 데이터 객체이지만, <a href="#valid-zip-archive">올바른 Zip 아카이브</a>라는 것이 <a href="#rule-for-verifying-a-zip-archive-0" title="rule for verifying a zip archive">입증</a>되지 않았습니다.</p>
   <p>A <dfn id="valid-zip-archive">valid Zip archive</dfn> is a  data object that the user agent has verified as conforming to the production of a <dfn class="external" id=".zip-file">.Zip file</dfn> as defined by
@@ -654,33 +654,26 @@ td, th {
     <dt><code>8</code></dt>
     <dd>데이터는 <a href="#deflate">[Deflate]</a>를 사용하여 압축됩니다.</dd>
     <dt><code>0</code></dt>
-    <dd>데이터는 <a href="#zip">[ZIP]</a> 명세에 정의된 대로 저장된다 (압축 없이).</dd>
+    <dd>데이터는 <a href="#zip">[ZIP]</a> 명세에 정의된 대로 저장된다 (압축 안함).</dd>
   </dl>
-  <p class="authorguide"><strong>저작 지침:</strong> 상호 운용성을 확보하기 위해서, <a href="#file-entry" title="file entry">파일 엔트리</a>를 <a href="#deflate">[Deflate]</a> 나 <a href="#stored">Stored</a> (압축 없이) 방법으로 Zip 아카이브에 압축합니다; 다른 압축 방법은  Zip 아카이브가 <a href="#invalid-widget-package-0">잘못된 Widget 패키지</a>로 처리되는 원인이 될 수 있습니다. 올바른 압축 방법 중, <a href="#deflate">[Deflate]</a> 를 추천합니다.</p>
-  <h3 id="version-of-zip-needed-to-extract-a-file-entry"><span class="secno">5.2 </span>Version of Zip Needed to Extract a File Entry</h3>
-  <p>The <dfn class="external" id="version-needed-to-extract"><var>version needed to extract</var></dfn> is the 2-byte
-    sequence in the <var><a href="#local-file-header">local file header</a></var> of a <a href="#file-entry">file entry</a> that
-    indicates the minimum supported version of the <a href="#zip">[ZIP]</a> specification
-    needed to extract the <a href="#file-data">file data</a>.</p>
-  <p>The <dfn id="valid-versions-needed-to-extract">valid versions needed to extract</dfn> values are as follows. Each value
-    is assigned one or more meanings by the <a href="#zip">[ZIP]</a> specification:</p>
+  <p class="authorguide"><strong>저작 지침:</strong> 상호 운용성을 확보하기 위해서, <a href="#file-entry" title="file entry">파일 엔트리</a>를 <a href="#deflate">[Deflate]</a>나 <a href="#stored">Stored</a> (압축 안함) 방법으로 Zip 아카이브에 압축합니다; 다른 압축 방법은  Zip 아카이브가 <a href="#invalid-widget-package-0">잘못된 Widget 패키지</a>로 처리되는 원인이 될 수 있습니다. 올바른 압축 방법 중, <a href="#deflate">[Deflate]</a>를 추천합니다.</p>
+  <h3 id="version-of-zip-needed-to-extract-a-file-entry"><span class="secno">5.2 </span>파일 엔트리를 추출하기 위해 필요한 Zip의 버전</h3>
+  <p><dfn class="external" id="version-needed-to-extract"><var>추출을 위해 필요한 버전</var></dfn>은 <a href="#file-entry">파일 엔트리</a>의 <var><a href="#local-file-header">로컬 파일 헤더</a></var>의 2-바이트 시퀀스인데,  이것은  <a href="#file-data">파일 데이터</a>를 추출하는데 필요한 <a href="#zip">[ZIP]</a> 명세의 최소 지원 버전을 나타낸다.</p>
+  <p>값을 <dfn id="valid-versions-needed-to-extract">추출하는데 필요한 올바른 버전</dfn>은 다음과 같습니다. 각각의 값은  <a href="#zip">[ZIP]</a>  명세에 따라 하나 이상의 의미가 부여됩니다.</p>
   <dl>
     <dt>1.0</dt>
     <dd>
-      <p>Default value specified in the <a href="#zip">[ZIP]</a> specification.</p>
+      <p><a href="#zip">[ZIP]</a> 명세에 기록된 기본 값.</p>
     </dd>
     <dt>2.0</dt>
     <dd>
-      <p>The file data is compressed using <a href="#deflate">[Deflate]</a>, or the file data is a folder, or the file has been encrypted using traditional PKWARE encryption.</p>
+      <p>파일 데이터는 <a href="#deflate">[Deflate]</a> 방법으로 압축되거나, 파일 데이터는 폴더이고, 아니면 파일은 기존의 PKWARE 암호화 방식으로 암호화되어 있습니다.</p>
     </dd>
   </dl>
-  <p class="note"><span class="notetitle">Note:</span> If the Zip archive has been
-    encrypted using traditional PKWARE encryption, then the user agent will treat the Zip
-    archive as an <a href="#invalid-widget-package-0">invalid widget package</a> in <a href="#step-2-verify-the-zip-archive">Step 2</a>.</p>
-  <h3 id="zip-relative-paths"><span class="secno">5.3 </span>Zip Relative Paths</h3>
-  <p>A <dfn id="zip-relative-path">Zip relative path</dfn> is the variable-length string derived from the <dfn class="external" id="file-name-field"><var>file name field</var></dfn> of the <var><a href="#local-file-header">local file
-    header</a></var> of a <a href="#file-entry">file entry</a>.</p>
-  <p class="note"><span class="notetitle">Note:</span> A Zip relative path is said to
+  <p class="note"><span class="notetitle">주석:</span> Zip 아카이브가 기존의 PKWARE 암호화방식으로 암호화되어 있을 경우, <a href="#step-2-verify-the-zip-archive">Step 2</a>에서 유저 에이전트는 <a href="#invalid-widget-package-0">잘못된 Widget 패키지</a>를 다룰 수도 있습니다.</p>
+  <h3 id="zip-relative-paths"><span class="secno">5.3 </span>Zip 상대 경로</h3>
+  <p>A <dfn id="zip-relative-path">Zip 상대경로</dfn>는 <a href="#file-entry">파일 엔트리</a>의 <var><a href="#local-file-header">로컬 파일 헤더</a></var>에 기록된 <dfn class="external" id="file-name-field"><var>파일명 필드</var></dfn>로부터 얻은 가변 길이 문자열입니다.</p>
+  <p class="note"><span class="notetitle">주석:</span> A Zip relative path is said to
     be relative as it stores the string that represents file and folder names relative to
     where the Zip archive was created on a file system (e.g. <samp>images/bg.png</samp>),
     as opposed to storing an absolute path (e.g. <samp>c:\images\bg.png</samp>). The
@@ -780,7 +773,7 @@ td, th {
         the <a href="#root-of-the-widget-package">root of the widget package.</a></p>
     </li>
   </ul>
-  <p class="note"><span class="notetitle">Note:</span> See <a href="#step-1-acquire-a-potential-zip-archive">step 1</a> - Acquire
+  <p class="note"><span class="notetitle">주석:</span> See <a href="#step-1-acquire-a-potential-zip-archive">step 1</a> - Acquire
     a Potential Zip Archive for instructions on how to process a widget package.</p>
   <h3 id="invalid-widget-package"><span class="secno">6.1 </span>Invalid Widget Package</h3>
   <p>During the <a href="#steps-for-processing-a-widget-package-0">steps for
@@ -992,9 +985,9 @@ td, th {
       <td>application/xhtml+xml</td>
     </tr>
   </table>
-  <p class="note"><span class="notetitle">Note:</span> See <a href="#step-8-locate-the-start-file">Step 8</a> for
+  <p class="note"><span class="notetitle">주석:</span> See <a href="#step-8-locate-the-start-file">Step 8</a> for
     instructions on finding a <a href="#default-start-file">default start file</a>.</p>
-  <p class="authorguide"><strong>Authoring Guidelines:</strong> Always include at least
+  <p class="authorguide"><strong>작성 지침:</strong> Always include at least
     one <a href="#start-file">start file</a> in a widget package.</p>
   <h3 id="icons"><span class="secno">6.6 </span>Icons</h3>
   <p>An <dfn id="icon">icon</dfn> is a <a href="#file">file</a> that is used
@@ -1044,7 +1037,7 @@ td, th {
   <p>It is <em class="ct">optional</em> for a <a href="#user-agent">user agent</a> to <a href="#supported" title="supported">support</a> the <a href="#media-type-0" title="media type">media types</a> listed in the <a href="#default-icons-table">default icons table</a>.</p>
   <h3 id="media-type"><span class="secno">6.7 </span>Media Type</h3>
   <p>The <dfn id="valid-widget-media-type">valid widget media type</dfn> is the string <code>application/widget</code>.</p>
-  <p class="authorguide"><strong>Authoring Guidelines:</strong> If the protocol over
+  <p class="authorguide"><strong>작성 지침:</strong> If the protocol over
     which the <a href="#widget-package">widget package</a> is transferred <a href="#supported" title="supported">supports</a> the [MIME] specification (e.g. <a href="#http">[HTTP]</a>), then make sure that the widget
     is labeled with an <code>application/widget</code> media type. Failure to correctly
     label a <a href="#widget-package">widget package</a> can result in the widget package being treated as an <a href="#invalid-widget-package-0">invalid widget package</a>.</p>
@@ -1053,7 +1046,7 @@ td, th {
     <p>A <dfn id="widget-file-extension">widget file extension</dfn> is the text string that case-insensitively
       matches the string "<code>.wgt</code>"  (e.g. <code>.wgt</code>, <code>.WGt</code>, <code>.WgT</code>, etc. are all valid). </p>
     <p class="example">For example in <code>widget.WGT</code>, the <code>".WGT</code>" component is the file extension. </p>
-    <p class="authorguide"><strong>Authoring Guidelines:</strong> If it is anticipated
+    <p class="authorguide"><strong>작성 지침:</strong> If it is anticipated
       that the widget will be distributed by means lacking MIME support, then include the
       widget file extension. The widget file extension is not necessary if the widget
       package is labeled as a <code>application/widget</code> when served over HTTP. The <a href="#widget-file-extension">widget file extension</a> is required for widget packages on systems where it is customary for file names to include a file extension that symbolizes (or is associated with) a <a href="#media-type-0">media
@@ -1061,10 +1054,10 @@ td, th {
   </div>
   <h2 id="configuration-document"><span class="secno">7 </span>Configuration 문서</h2>
   <p><dfn id="configuration-document-0">configuration 문서</dfn>는 <a href="#widget-namespace">widget namespace</a>에 있는 root에 <code title="widget element"><a href="#the-widget-element-and-its-attributes">widget</a></code> 요소를 가지는 <a href="#xml">[XML]</a> 문서입니다. widget 패키지는 정확하게 <a href="#root-of-the-widget-package">widget 패키지의 root</a>에 위치하는 하나의 configuration 문서를 가집니다.</p>
-  <p class="note"><span class="notetitle">Note:</span> <a href="#configuration-document-0">configuration 문서</a>의 element들이 user agent에 의해 어떻게 처리되는지에 대한 자세한 내용은 <a href="#step-7-process-the-configuration-document">Step 7</a>을 보기 바랍니다..</p>
+  <p class="note"><span class="notetitle">주석:</span> <a href="#configuration-document-0">configuration 문서</a>의 element들이 user agent에 의해 어떻게 처리되는지에 대한 자세한 내용은 <a href="#step-7-process-the-configuration-document">Step 7</a>을 보기 바랍니다..</p>
   <p><dfn id="valid-configuration-document-file-name">유효한 configuration document 파일 이름</dfn>은  <code>"config.xml"</code>입니다. </p>
   <p id="ta-dxzVDWpaWg"><a class="product-ua" href="#user-agent">user agent</a>는 <a href="#arbitrary">임의의</a> <a href="#folder">폴더</a> 또는 <a href="#locale-folder-0" title="locale folder">locale 폴더들</a> 아래의 "<code>config.xml</code>"이라는 이름을 사용하는 <a href="#file">파일</a>은 <a href="#arbitrary">임의의</a> 파일로 취급<em class="ct">해야한다.</em></p>
-  <p class="authorguide"><strong>작성 가이드라인:</strong> 항상 <a href="#configuration-document-0">configuration 문서</a>는 <a href="#root-of-the-widget-package">widget 패키지의 root</a>에 포함하여 주시고 <code>config.xml</code>파일 이름은 소문자 형태로 해주시기 바랍니다. 상호 운용을 위해서 <a href="#configuration-document-0">configuration 문서</a>는 <a href="#utf-8">[UTF-8]</a>로 encode바랍니다.</p>
+  <p class="authorguide"><strong>작성 지침:</strong> 항상 <a href="#configuration-document-0">configuration 문서</a>는 <a href="#root-of-the-widget-package">widget 패키지의 root</a>에 포함하여 주시고 <code>config.xml</code>파일 이름은 소문자 형태로 해주시기 바랍니다. 상호 운용을 위해서 <a href="#configuration-document-0">configuration 문서</a>는 <a href="#utf-8">[UTF-8]</a>로 encode바랍니다.</p>
   <h3 id="example-configuration-document"><span class="secno">7.1 </span>Configuration 문서 예시</h3>
   <p>다음은 <a href="#configuration-document-0">configuration 문서</a>의 일반적인 예시입니다:</p>
   <div class="example">
@@ -1113,7 +1106,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
   &lt;/license&gt;
 &lt;/widget&gt;</code></pre>
   </div>
-  <p class="note"><span class="notetitle">Note:</span> <a href="#configuration-document-0">configuration 문서</a>에서 제공하는 관련 정보들을 사용자에게 제공하도록 구현자들에게 권장하고 있습니다. "보여지는 metadata"가 있다는 것은 작성자들이 configuration 포맷을 최대한 활용하도록 만듭니다. 어떻게 configuration 문서를 처리하는지에 대한 설명은 <a href="#step-7-process-the-configuration-document">Step 7</a>을 참고하세요.</p>
+  <p class="note"><span class="notetitle">주석:</span> <a href="#configuration-document-0">configuration 문서</a>에서 제공하는 관련 정보들을 사용자에게 제공하도록 구현자들에게 권장하고 있습니다. "보여지는 metadata"가 있다는 것은 작성자들이 configuration 포맷을 최대한 활용하도록 만듭니다. 어떻게 configuration 문서를 처리하는지에 대한 설명은 <a href="#step-7-process-the-configuration-document">Step 7</a>을 참고하세요.</p>
   <div class="authorguide">
     <p><strong>작성 가이드라인:</strong> configuration 문서에서 유일한 필수 element는 <code title="widget element"><a href="#the-widget-element-and-its-attributes">widget</a></code> element 입니다. 모든 다른 element들과 그것들 각각의 attribute들은 optional 입니다. 다음의 예는 user agent가 처리할 수 있는 가장 최소한의 configuration 문서입니다. 이 하나의 element를 포함하는 이유는 user agent나 conformance checker에게 이 zip 파일은 이 명세를 준수하려고 한다는 것을 명시적으로 알려주기 위해서입니다.</p>
     <div class="example">
@@ -1126,7 +1119,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
   <h3 id="namespace"><span class="secno">7.2 </span>Namespace</h3>
   <p><a href="#configuration-document-0">configuration document</a>을 위한 <dfn id="widget-namespace">widget namespace</dfn> URI는 <code>http://www.w3.org/ns/widgets</code> <a href="#xmlns">[XMLNS]</a> 입니다.</p>
   <p>No provision is made for an explicit version number in this specification. If a future version of this specification requires explicit versioning of the document format, a different namespace will be used.</p>
-  <p class="authorguide"><strong>Authoring Guidelines:</strong> Be sure to declare
+  <p class="authorguide"><strong>작성 지침:</strong> Be sure to declare
     the widget namespace as part of the <code title="widget element"><a href="#the-widget-element-and-its-attributes">widget</a></code> element. If the namespace is absent, then the widget will be treated by the user agent as an <a href="#invalid-widget-package-0">invalid widget package</a>.</p>
   <h3 id="proprietary-extensions"><span class="secno">7.3 </span>Proprietary Extensions</h3>
   <p><em>This section is non-normative</em>.</p>
@@ -1205,7 +1198,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
         path</dfn> is one that matches the production of a <code><a href="#zip-rel-path">Zip-rel-path</a></code> or a <code>Zip-abs-path</code>. </p>
     </dd>
     <dd>
-      <p class="authorguide"><strong>Authoring Guidelines:</strong> A valid path is not a URI: a valid path represents a
+      <p class="authorguide"><strong>작성 지침:</strong> A valid path is not a URI: a valid path represents a
         hierarchical path to a file inside a <a href="#zip-archive-0">Zip archive</a>, which exactly matches the value of a <var><a href="#file-name-field">file name
         field</a></var> of a <var><a href="#local-file-header">local file header</a></var> of a <a href="#file-entry">file entry</a>.      This means that valid paths need not be URL encoded.</p>
     </dd>
@@ -1215,7 +1208,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
         that matches the <code><a href="#iri">IRI</a></code> token of the <a href="#iri">[IRI]</a> specification. </p>
     </dd>
     <dd>
-      <p class=" authorguide"><strong>Authoring Guidelines:</strong> Because of the risk of confusion between IRIs that would be equivalent if dereferenced, the use of %-escaped characters in feature names is strongly discouraged. </p>
+      <p class=" authorguide"><strong>작성 지침:</strong> Because of the risk of confusion between IRIs that would be equivalent if dereferenced, the use of %-escaped characters in feature names is strongly discouraged. </p>
     </dd>
     <dt><dfn id="version-attribute">Version attribute</dfn></dt>
     <dd>
@@ -1224,7 +1217,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
         processing rule for the format of a <a href="#version-attribute">version attribute</a>. </p>
     </dd>
     <dd class="authorguide">
-      <p><strong>Authoring Guidelines:</strong> For the purpose of this specification, the
+      <p><strong>작성 지침:</strong> For the purpose of this specification, the
         structure of version tags has no semantics; they are just treated as arbitrary
         strings (e.g. '1.0' is not less than '2.0', but is simply different). However,
         for the sake of consistency, one can choose to use the following <a href="#abnf">[ABNF]</a>:</p>
@@ -1254,13 +1247,13 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
   <p>This section describes the behavior and expected usage of other relevant attributes
     that are part of the <a href="#xml">[XML]</a> specification and this specification. In this specification, these attributes are referred to as <dfn id="global-attributes-0">global attributes</dfn> because  they can be used on any element in a <a href="#configuration-document-0">configuration document</a>. </p>
   <p>Although <a href="#global-attributes-0">global attributes</a> can be used on any element in this specification, they sometimes have no effect on the element on which they are used. For example, applying <code><a href="#the-dir-attribute">dir</a></code> attribute on an <code title="icon element"><a href="#the-icon-element-and-its-attributes">icon</a></code> element will have no effect on the <code title="icon element"><a href="#the-icon-element-and-its-attributes">icon</a></code> elements or any of its attributes. What effect specifying a global attribute has on an elements is determined by <a href="#step-7-process-the-configuration-document">Step 7</a> of this specification.</p>
-  <p class="authorguide"><strong>Authoring Guidelines:</strong> Although it is optional for an author to use any global attributes, their usage is recommended when appropriate (e.g., when  declaring the language will help with legibility and when directional information will assist the user agent render text correctly). </p>
+  <p class="authorguide"><strong>작성 지침:</strong> Although it is optional for an author to use any global attributes, their usage is recommended when appropriate (e.g., when  declaring the language will help with legibility and when directional information will assist the user agent render text correctly). </p>
   <h4 id="the-xml:lang-attribute"><span class="secno">7.5.1 </span>The <dfn><code>xml:lang</code></dfn> Attribute</h4>
   <p>A <a href="#language-attribute">language  attribute</a> that specifies, through a <a href="#language-tag">language
     tag</a>, the language of the contents and attribute values of XML elements (see the <a href="http://www.iana.org/assignments/language-subtag-registry">IANA Language Subtag
     Registry</a>). The <a href="#xml">[XML]</a> specification specifies the <code><a href="#the-xml:lang-attribute">xml:lang</a></code> attribute and its influence on  child nodes. </p>
   <div class="authorguide">
-    <p><strong>Authoring Guidelines:</strong> Although <a href="#bcp47">[BCP47]</a> recommends that language tags be casefolded in a particular way for presentation, case has no meaning in a language tag. As a reminder to authors that   user-agents map all language tags to lowercase, all examples in this document use lowercase. See also <a href="#folder-based-localization-0">folder-based localization</a>, which also requires authors to use  language tags in lowercase form as the names of folders.</p>
+    <p><strong>작성 지침:</strong> Although <a href="#bcp47">[BCP47]</a> recommends that language tags be casefolded in a particular way for presentation, case has no meaning in a language tag. As a reminder to authors that   user-agents map all language tags to lowercase, all examples in this document use lowercase. See also <a href="#folder-based-localization-0">folder-based localization</a>, which also requires authors to use  language tags in lowercase form as the names of folders.</p>
     <p>Avoid subtags from the <a href="http://www.iana.org/assignments/language-subtag-registry">IANA Language Subtag
       Registry</a> marked as deprecated, grandfathered, or redundant. The intended
       purpose of the <code><a href="#the-xml:lang-attribute">xml:lang</a></code> attribute is to declare the primary language
@@ -1287,7 +1280,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       <p>Right-to-left override. Forces the Unicode <a href="#bidi">[BIDI]</a> algorithm to treat characters within an element as strong right-to-left characters.</p>
     </dd>
   </dl>
-  <p class="note"><span class="notetitle">Note:</span>For security reasons, implementations intending to display <abbr title="Internationalized Resource Identifiers">IRIs</abbr> and <abbr title="Internationalized domain name">IDNA</abbr> addresses found in the configuration document are strongly encouraged to follow the security advice given in <a href="#refsUTR">[UTR36]</a>. This could include, for example,  behaving as if the <code><a href="#the-dir-attribute">dir</a></code> attribute had no effect on any <a href="#iri-attribute" title="IRI attribute">IRI attributes</a>, <a href="#path-attribute" title="path attribute">path attributes</a>, and the <code title="author element"><a href="#the-author-element-and-its-attributes">author</a></code> element's <code title="author email"><a href="#the-email-attribute">email</a></code> attribute.</p>
+  <p class="note"><span class="notetitle">주석:</span>For security reasons, implementations intending to display <abbr title="Internationalized Resource Identifiers">IRIs</abbr> and <abbr title="Internationalized domain name">IDNA</abbr> addresses found in the configuration document are strongly encouraged to follow the security advice given in <a href="#refsUTR">[UTR36]</a>. This could include, for example,  behaving as if the <code><a href="#the-dir-attribute">dir</a></code> attribute had no effect on any <a href="#iri-attribute" title="IRI attribute">IRI attributes</a>, <a href="#path-attribute" title="path attribute">path attributes</a>, and the <code title="author element"><a href="#the-author-element-and-its-attributes">author</a></code> element's <code title="author email"><a href="#the-email-attribute">email</a></code> attribute.</p>
   <p>The base direction of a <code><a href="#the-dir-attribute">dir</a></code> attribute is either set explicitly by the nearest parent element that uses the <code><a href="#the-dir-attribute">dir</a></code> attribute; or, in the absence of such an attribute, the base direction is inherited from the <dfn id="default-direction-of-the-document">default direction of the document</dfn>, which is left-to-right ("<code><a href="#ltr">ltr</a></code>"). </p>
   <h4 id="examples-of-usage"><span class="secno">7.5.3 </span>Examples of Usage</h4>
   <div class="example">
@@ -1351,27 +1344,27 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
   </dl>
   <h4 id="the-id-attribute"><span class="secno">7.6.1 </span>The <code><dfn title="widget id">id</dfn></code> Attribute</h4>
   <p>An <a href="#iri-attribute">IRI attribute</a> that denotes an identifier for the widget. </p>
-  <p class="authorguide"><strong>Authoring Guidelines:</strong> It is optional for authors to use the <code title="widget id"><a href="#the-id-attribute">id</a></code> attribute with a <code title="widget element"><a href="#the-widget-element-and-its-attributes">widget</a></code> element.</p>
+  <p class="authorguide"><strong>작성 지침:</strong> It is optional for authors to use the <code title="widget id"><a href="#the-id-attribute">id</a></code> attribute with a <code title="widget element"><a href="#the-widget-element-and-its-attributes">widget</a></code> element.</p>
   <h4 id="the-version-attribute"><span class="secno">7.6.2 </span>The <code><dfn title="widget-element version">version</dfn></code> Attribute</h4>
   <p>A <a href="#version-attribute">version attribute</a> that specifies the version of the widget. </p>
-  <p class="authorguide"><strong>Authoring Guidelines:</strong> It is optional for authors to use the <code title="widget-element version"><a href="#the-version-attribute">version</a></code> attribute with a <code title="widget element"><a href="#the-widget-element-and-its-attributes">widget</a></code> element.</p>
+  <p class="authorguide"><strong>작성 지침:</strong> It is optional for authors to use the <code title="widget-element version"><a href="#the-version-attribute">version</a></code> attribute with a <code title="widget element"><a href="#the-widget-element-and-its-attributes">widget</a></code> element.</p>
   <h4 id="the-height-attribute"><span class="secno">7.6.3 </span>The <code><dfn title="widget-element height">height</dfn></code> Attribute</h4>
   <p>A <a href="#valid-non-negative-integer" title="valid non-negative integer">numeric attribute</a> greater than <code>0</code> that indicates the preferred <a href="#viewport">viewport</a> height of the
     instantiated <a href="#custom-start-file-0">custom start file</a> in <a href="http://www.w3.org/TR/2008/REC-CSS2-20080411/syndata.html#length-units">CSS pixels</a> <a href="#css2">[CSS]</a>. </p>
-  <p class="authorguide"><strong>Authoring Guidelines:</strong> It is optional for authors to use the <code title="widget-element height"><a href="#the-height-attribute">height</a></code> attribute with a <code title="widget element"><a href="#the-widget-element-and-its-attributes">widget</a></code> element.</p>
+  <p class="authorguide"><strong>작성 지침:</strong> It is optional for authors to use the <code title="widget-element height"><a href="#the-height-attribute">height</a></code> attribute with a <code title="widget element"><a href="#the-widget-element-and-its-attributes">widget</a></code> element.</p>
   <h4 id="the-width-attribute"><span class="secno">7.6.4 </span>The <code><dfn title="widget-element width">width</dfn></code> Attribute</h4>
   <p>A <a href="#valid-non-negative-integer" title="valid non-negative integer">numeric attribute</a> greater than <code>0</code> that indicates the preferred <a href="#viewport">viewport</a> width of the
     instantiated <a href="#custom-start-file-0">custom start file</a> in <a href="http://www.w3.org/TR/2008/REC-CSS2-20080411/syndata.html#length-units">CSS pixels</a> <a href="#css2">[CSS]</a>. </p>
-  <p class="authorguide"><strong>Authoring Guidelines:</strong> It is optional for authors to use the <code title="widget-element width"><a href="#the-width-attribute">width</a></code> attribute with a <code title="widget element"><a href="#the-widget-element-and-its-attributes">widget</a></code> element. </p>
+  <p class="authorguide"><strong>작성 지침:</strong> It is optional for authors to use the <code title="widget-element width"><a href="#the-width-attribute">width</a></code> attribute with a <code title="widget element"><a href="#the-widget-element-and-its-attributes">widget</a></code> element. </p>
   <h4 id="the-viewmodes-attribute"><span class="secno">7.6.5 </span>The <code><dfn title="widget viewmodes">viewmodes</dfn></code> Attribute</h4>
   <p>A <a href="#keyword-list-attribute">keyword list attribute</a> that denotes  the author's
     preferred view mode, followed by the next most preferred view mode and so forth. When the attribute is missing, or is left empty, it implies that the author expects the user agent to select an appropriate viewmode for the widget.</p>
   <p>The concept of a <dfn class="external" id="viewport">viewport</dfn> is defined in <a href="#css2">[CSS]</a>, but is essentially a window or other viewing area on the screen (see section <a href="http://www.w3.org/TR/2008/REC-CSS2-20080411/visuren.html#q2">9.1.1 The viewport</a> of <a href="#css2">[CSS]</a>). The concept of a <dfn class="external" id="view-mode">view mode</dfn> is defined in the <a href="#view-modes">[View-Modes]</a> specification.</p>
-  <p class="authorguide"><strong>Authoring Guidelines:</strong> It is optional for authors to use the <code title="widget viewmodes"><a href="#the-viewmodes-attribute">viewmodes</a></code> attribute with a <code title="widget element"><a href="#the-widget-element-and-its-attributes">widget</a></code> element.</p>
+  <p class="authorguide"><strong>작성 지침:</strong> It is optional for authors to use the <code title="widget viewmodes"><a href="#the-viewmodes-attribute">viewmodes</a></code> attribute with a <code title="widget element"><a href="#the-widget-element-and-its-attributes">widget</a></code> element.</p>
   <h4 id="the-defaultlocale-attribute"><span class="secno">7.6.6 </span>The <code title="widget defaultlocale"><dfn title="widget defaultlocale">defaultlocale</dfn></code> attribute</h4>
   <p>A <a href="#language-attribute">language  attribute</a> that specifies, through a <a href="#language-tag">language
     tag</a>, the author's preferred locale for the widget. Its intended use is to provide a fallback in case the user agent cannot match any of the widget's <a href="#localized-content">localized content</a> to the <var><a href="#user-agent-locales">user agent locales</a></var> list or in case the author has not provided any unlocalized content. </p>
-  <p class="authorguide"><strong>Authoring Guidelines:</strong> It is optional for authors to use the <code title="widget id"><a href="#the-id-attribute">defaultlocale</a></code> attribute with a <code title="widget element"><a href="#the-widget-element-and-its-attributes">widget</a></code> element. </p>
+  <p class="authorguide"><strong>작성 지침:</strong> It is optional for authors to use the <code title="widget id"><a href="#the-id-attribute">defaultlocale</a></code> attribute with a <code title="widget element"><a href="#the-widget-element-and-its-attributes">widget</a></code> element. </p>
   <h4 id="example-of-usage"><span class="secno">7.6.7 </span>사용 예제</h4>
   <div class="example">
     <p>The following example shows how the <code title="widget element"><a href="#the-widget-element-and-its-attributes">widget</a></code> element can be used.</p>
@@ -1414,14 +1407,14 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
     <dt>Localizable via <code><a href="#the-xml:lang-attribute">xml:lang</a></code>:</dt>
     <dd>Yes.</dd>
     <dd>
-      <p class="authorguide"><strong>Authoring Guidelines:</strong> The value of the <code><a href="#the-xml:lang-attribute">xml:lang</a></code> attribute needs to be unique for any subsequent element of this type.</p>
+      <p class="authorguide"><strong>작성 지침:</strong> The value of the <code><a href="#the-xml:lang-attribute">xml:lang</a></code> attribute needs to be unique for any subsequent element of this type.</p>
     </dd>
     <dt>Attributes:</dt>
     <dd> <a href="#global-attributes-0" title="global attributes">Global attributes</a>, <code title="name short"><a href="#the-short-attribute">short</a></code>.</dd>
   </dl>
   <h4 id="the-short-attribute"><span class="secno">7.7.1 </span>The <dfn title="name short"><code title="name short">short</code></dfn> Attribute</h4>
   <p>A <a href="#displayable-string-attribute">displayable-string attribute</a> intended to represent a condensed name for a widget (e.g., a name that could be used in context were only limited space is available, such as underneath an icon). </p>
-  <p class="authorguide"><strong>Authoring Guidelines:</strong> It is optional for authors to use the <code title="name short"><a href="#the-short-attribute">short</a></code> attribute with an <code title="name element"><a href="#the-name-element-and-its-attributes">name</a></code> element.</p>
+  <p class="authorguide"><strong>작성 지침:</strong> It is optional for authors to use the <code title="name short"><a href="#the-short-attribute">short</a></code> attribute with an <code title="name element"><a href="#the-name-element-and-its-attributes">name</a></code> element.</p>
   <h4 id="example-of-usage-0"><span class="secno">7.7.2 </span>사용 예제</h4>
   <div class="example">
     <p>The following example shows the usage of the <code title="name element"><a href="#the-name-element-and-its-attributes">name</a></code> element.</p>
@@ -1453,7 +1446,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
     <dt>Localizable via <code><a href="#the-xml:lang-attribute">xml:lang</a></code>:</dt>
     <dd>Yes.</dd>
     <dd>
-      <p class="authorguide"><strong>Authoring Guidelines:</strong> The value of the <code><a href="#the-xml:lang-attribute">xml:lang</a></code> attribute needs to be unique for any subsequent element of this type. If two or more elements with the same xml:lang attribute value are encountered, the user agent will <a href="#ignore">ignore</a> all but the matching first element. See <a href="#step-7-process-the-configuration-document">Step 7</a> for more details. </p>
+      <p class="authorguide"><strong>작성 지침:</strong> The value of the <code><a href="#the-xml:lang-attribute">xml:lang</a></code> attribute needs to be unique for any subsequent element of this type. If two or more elements with the same xml:lang attribute value are encountered, the user agent will <a href="#ignore">ignore</a> all but the matching first element. See <a href="#step-7-process-the-configuration-document">Step 7</a> for more details. </p>
     </dd>
     <dt>Attributes:</dt>
     <dd><a href="#global-attributes-0" title="global attributes">Global attributes</a>.</dd>
@@ -1495,10 +1488,10 @@ your blog or to the insane dahut chaser web site! Awesome!
   <p>An <a href="#iri-attribute">IRI attribute</a> whose value represents an IRI that the author
     associates with himself or herself (e.g., a homepage, a profile on a social network,
     etc.). </p>
-  <p class="authorguide"><strong>Authoring Guidelines:</strong> It is optional for authors to use the <code title="author-element href"><a href="#the-href-attribute">href</a></code> attribute with an <code title="author element"><a href="#the-author-element-and-its-attributes">author</a></code> element.</p>
+  <p class="authorguide"><strong>작성 지침:</strong> It is optional for authors to use the <code title="author-element href"><a href="#the-href-attribute">href</a></code> attribute with an <code title="author element"><a href="#the-author-element-and-its-attributes">author</a></code> element.</p>
   <h4 id="the-email-attribute"><span class="secno">7.9.2 </span>The <code><dfn title="author email">email</dfn></code> Attribute</h4>
   <p>A <a href="#string-attribute">string attribute</a> that represents an email address associated with the author. </p>
-  <p class="authorguide"><strong>Authoring Guidelines:</strong> It is optional for authors to use the <code title="author email"><a href="#the-email-attribute">email</a></code> attribute with an <code title="author element"><a href="#the-author-element-and-its-attributes">author</a></code> element.</p>
+  <p class="authorguide"><strong>작성 지침:</strong> It is optional for authors to use the <code title="author email"><a href="#the-email-attribute">email</a></code> attribute with an <code title="author element"><a href="#the-author-element-and-its-attributes">author</a></code> element.</p>
   <h4 id="example-of-usage-2"><span class="secno">7.9.3 </span>사용 예제</h4>
   <div class="example">
     <p>The following example shows the expected usage of the <code title="author element"><a href="#the-author-element-and-its-attributes">author</a></code> element.</p>
@@ -1527,7 +1520,7 @@ your blog or to the insane dahut chaser web site! Awesome!
     <dt>Localizable via <code><a href="#the-xml:lang-attribute">xml:lang</a></code>:</dt>
     <dd>Yes.</dd>
     <dd>
-      <p class="authorguide"><strong>Authoring Guidelines:</strong> The value of the <code><a href="#the-xml:lang-attribute">xml:lang</a></code> attribute needs to be unique for any subsequent element of this type. The content of localized <code title="license element"><a href="#the-license-element-and-its-attributes">license</a></code> elements shouldn't be used to present different versions of a license, just translations of the same license.</p>
+      <p class="authorguide"><strong>작성 지침:</strong> The value of the <code><a href="#the-xml:lang-attribute">xml:lang</a></code> attribute needs to be unique for any subsequent element of this type. The content of localized <code title="license element"><a href="#the-license-element-and-its-attributes">license</a></code> elements shouldn't be used to present different versions of a license, just translations of the same license.</p>
     </dd>
     <dt>Attributes:</dt>
     <dd><a href="#global-attributes-0" title="global attributes">Global attributes</a>, <code title="license href"><a href="#the-href-attribute-0">href</a></code>. </dd>
@@ -1535,7 +1528,7 @@ your blog or to the insane dahut chaser web site! Awesome!
   <h4 id="the-href-attribute-0"><span class="secno">7.10.1 </span>The <dfn title="license href"><code>href</code></dfn> Attribute</h4>
   <p>A <a href="#valid-iri">valid IRI</a> or a <a href="#valid-path">valid path</a> that points to a
     representation of a software and/or content license. </p>
-  <p class="authorguide"><strong>Authoring Guidelines:</strong> It is optional for authors to use the <code title="license href"><a href="#the-href-attribute-0">href</a></code> attribute with a <code title="license element"><a href="#the-license-element-and-its-attributes">license</a></code> element.</p>
+  <p class="authorguide"><strong>작성 지침:</strong> It is optional for authors to use the <code title="license href"><a href="#the-href-attribute-0">href</a></code> attribute with a <code title="license element"><a href="#the-license-element-and-its-attributes">license</a></code> element.</p>
   <h4 id="example-of-usage-3"><span class="secno">7.10.2 </span>사용 예제</h4>
   <div class="example">
     <p>This example shows the expected usage of the <code title="license element"><a href="#the-license-element-and-its-attributes">license</a></code> element's <code title="license href"><a href="#the-href-attribute-0">href</a></code> attribute.</p>
@@ -1578,14 +1571,14 @@ Distributed under the W3C Software License.
   <h4 id="the-src-attribute"><span class="secno">7.11.1 </span>The <dfn title="icon src"><code>src</code></dfn> Attribute</h4>
   <p>A <a href="#path-attribute">path attribute</a> that points to a <a href="#file">file</a> inside the
     widget package. </p>
-  <p class="authorguide"><strong>Authoring Guidelines:</strong> When an <code title="icon element"><a href="#the-icon-element-and-its-attributes">icon</a></code> element is used, it is required for authors to
+  <p class="authorguide"><strong>작성 지침:</strong> When an <code title="icon element"><a href="#the-icon-element-and-its-attributes">icon</a></code> element is used, it is required for authors to
     use the <code title="icon src"><a href="#the-src-attribute">src</a></code> attribute.</p>
   <h4 id="the-width-attribute-0"><span class="secno">7.11.2 </span>The <code><dfn title="icon width">width</dfn></code> Attribute</h4>
   <p>A <a href="#valid-non-negative-integer" title="valid non-negative integer">numeric attribute</a> greater than <code>0</code> that represents,  in <a href="http://www.w3.org/TR/CSS21/syndata.html#length-units">CSS pixels</a> <a href="#css2">[CSS]</a>, the author's preferred width for the icon. A user agent <em class="ct">may</em> ignore this value when changing the height icon to fit a rendering context or for accessibility reasons. </p>
-  <p class="authorguide"><strong>Authoring Guidelines:</strong> It is optional for authors to use the <code title="icon width"><a href="#the-width-attribute-0">width</a></code> attribute of an <code title="icon element"><a href="#the-icon-element-and-its-attributes">icon</a></code> element.</p>
+  <p class="authorguide"><strong>작성 지침:</strong> It is optional for authors to use the <code title="icon width"><a href="#the-width-attribute-0">width</a></code> attribute of an <code title="icon element"><a href="#the-icon-element-and-its-attributes">icon</a></code> element.</p>
   <h4 id="the-height-attribute-0"><span class="secno">7.11.3 </span>The <code><dfn title="icon height">height</dfn></code> Attribute</h4>
   <p>A <a href="#valid-non-negative-integer" title="valid non-negative integer">numeric attribute</a> greater than <code>0</code> that represents,  in <a href="http://www.w3.org/TR/CSS21/syndata.html#length-units">CSS pixels</a> <a href="#css2">[CSS]</a>, the author's preferred height for the icon. A user agent <em class="ct">may</em> ignore this value when changing the height icon to fit a rendering context or for accessibility reasons. </p>
-  <p class="authorguide"><strong>Authoring Guidelines:</strong> It is optional for authors to use the <code title="icon height"><a href="#the-height-attribute-0">height</a></code> attribute of an <code title="icon element"><a href="#the-icon-element-and-its-attributes">icon</a></code> element.</p>
+  <p class="authorguide"><strong>작성 지침:</strong> It is optional for authors to use the <code title="icon height"><a href="#the-height-attribute-0">height</a></code> attribute of an <code title="icon element"><a href="#the-icon-element-and-its-attributes">icon</a></code> element.</p>
   <h4 id="example-of-usage-4"><span class="secno">7.11.4 </span>사용 예제</h4>
   <div class="example">
     <p>This example shows the expected usage of the <code title="icon element"><a href="#the-icon-element-and-its-attributes">icon</a></code> element. The example declares three icon elements, two of
@@ -1616,12 +1609,12 @@ Distributed under the W3C Software License.
   </dl>
   <h4 id="the-src-attribute-0"><span class="secno">7.12.1 </span>The <code><dfn title="content src">src</dfn></code> Attribute</h4>
   <p>A <a href="#path-attribute">path attribute</a> that allows an author to point to a <a href="#file">file</a> within the <a href="#widget-package">widget package</a>. </p>
-  <p class="authorguide"><strong>Authoring Guidelines:</strong> When a <code title="content element"><a href="#the-content-element-and-its-attributes">content</a></code> element is used, it is required for authors to
+  <p class="authorguide"><strong>작성 지침:</strong> When a <code title="content element"><a href="#the-content-element-and-its-attributes">content</a></code> element is used, it is required for authors to
     use the <code title="content src"><a href="#the-src-attribute-0">src</a></code> attribute.</p>
   <h4 id="the-type-attribute"><span class="secno">7.12.2 </span>The <dfn title="content type"><code>type</code></dfn> Attribute</h4>
   <p>A <a href="#media-type-attribute">media type attribute</a> that indicates the <a href="#media-type-0">media type</a> of
     the file referenced by the <code>src</code> attribute. </p>
-  <p class="authorguide"><strong>Authoring Guidelines:</strong> It is optional for authors
+  <p class="authorguide"><strong>작성 지침:</strong> It is optional for authors
     to use the <code title="content type"><a href="#the-type-attribute">type</a></code> attribute with a <code title="content element"><a href="#the-content-element-and-its-attributes">content</a></code> element. When the value is absent, the
     user agent will assume the value <code>text/html</code>. </p>
   <h4 id="the-encoding-attribute"><span class="secno">7.12.3 </span>The <dfn title="content encoding"><code>encoding</code></dfn> Attribute</h4>
@@ -1629,7 +1622,7 @@ Distributed under the W3C Software License.
     the <code title="content src"><a href="#the-src-attribute-0">src</a></code> attribute. The  value is the "name"
     
     or "alias" of any "Character Set" listed in <a href="#iana-charsets">[IANA-Charsets]</a>. </p>
-  <p class="authorguide"><strong>Authoring Guidelines:</strong> It is optional for authors to use the <code title="content encoding"><a href="#the-encoding-attribute">encoding</a></code> attribute with a <code title="content element"><a href="#the-content-element-and-its-attributes">content</a></code> element. Where aliases are given by
+  <p class="authorguide"><strong>작성 지침:</strong> It is optional for authors to use the <code title="content encoding"><a href="#the-encoding-attribute">encoding</a></code> attribute with a <code title="content element"><a href="#the-content-element-and-its-attributes">content</a></code> element. Where aliases are given by
     the <a href="#iana-charsets">[IANA-Charsets]</a> registry, authors are encouraged to use the value of the
     "preferred MIME name" (if any) from the registry.</p>
   <p>The <dfn id="default-encoding">default encoding</dfn> is <a href="#utf-8">[UTF-8]</a>, which has the name "<code><a href="#utf-8">UTF-8</a></code>"  in the <a href="#iana-charsets">[IANA-Charsets]</a> registry. </p>
@@ -1691,7 +1684,7 @@ Distributed under the W3C Software License.
   </dl>
   <h4 id="the-name-attribute"><span class="secno">7.13.1 </span>The <dfn title="feature name"><code title="feature name">name</code></dfn> Attribute</h4>
   <p>An <a href="#iri-attribute">IRI attribute</a> that identifies a <a href="#feature">feature</a> that is needed by the widget at runtime (such as an <abbr title="application programming interface">API</abbr>). </p>
-  <p class="authorguide"><strong>Authoring Guidelines:</strong> When the <code title="feature element"><a href="#the-feature-element-and-its-attributes">feature</a></code> element is declared, it is required for authors to use the <code title="feature name"><a href="#the-name-attribute">name</a></code> attribute.</p>
+  <p class="authorguide"><strong>작성 지침:</strong> When the <code title="feature element"><a href="#the-feature-element-and-its-attributes">feature</a></code> element is declared, it is required for authors to use the <code title="feature name"><a href="#the-name-attribute">name</a></code> attribute.</p>
   <h4 id="the-required-attribute"><span class="secno">7.13.2 </span>The <code><dfn title="feature required">required</dfn></code> Attribute</h4>
   <p>A <a href="#boolean-attribute">boolean attribute</a> that indicates whether or not this <a href="#feature">feature</a> has to be available to the widget at runtime. </p>
   <p>When set to <code>true</code>, the <code title="feature required"><a href="#the-required-attribute">required</a></code> attribute denotes that a <a href="#feature">feature</a> is absolutely needed by the widget to function correctly, and
@@ -1699,7 +1692,7 @@ Distributed under the W3C Software License.
     purpose or won't execute properly. </p>
   <p>When set to <code>false</code>, the <code title="feature required"><a href="#the-required-attribute">required</a></code> attribute denotes that a
     widget can function correctly without the <a href="#feature">feature</a> being <a href="#supported">supported</a> or otherwise made available by the user agent. </p>
-  <p class="authorguide"><strong>Authoring Guidelines:</strong> It is optional for authors to use the <code title="feature required"><a href="#the-required-attribute">required</a></code> attribute with an <code title="feature element"><a href="#the-feature-element-and-its-attributes">feature</a></code> element. However, authors need to be aware that a user agent will behave as if the <code title="feature required"><a href="#the-required-attribute">required</a></code> attribute had been set to <code>true</code> when the <code title="feature required"><a href="#the-required-attribute">required</a></code> attribute is absent, meaning that the named <a href="#feature">feature</a> needs to be available  at
+  <p class="authorguide"><strong>작성 지침:</strong> It is optional for authors to use the <code title="feature required"><a href="#the-required-attribute">required</a></code> attribute with an <code title="feature element"><a href="#the-feature-element-and-its-attributes">feature</a></code> element. However, authors need to be aware that a user agent will behave as if the <code title="feature required"><a href="#the-required-attribute">required</a></code> attribute had been set to <code>true</code> when the <code title="feature required"><a href="#the-required-attribute">required</a></code> attribute is absent, meaning that the named <a href="#feature">feature</a> needs to be available  at
     runtime or the widget will be treated as an <a href="#invalid-widget-package-0">invalid widget package</a>. </p>
   <h4 id="example-of-usage-6"><span class="secno">7.13.3 </span>사용 예제</h4>
   <div class="example">
@@ -1732,7 +1725,7 @@ Distributed under the W3C Software License.
     use the <code title="param name"><a href="#the-name-attribute-0">name</a></code> attribute. </p>
   <h4 id="the-value-attribute"><span class="secno">7.14.2 </span>The <code><dfn title="param value">value</dfn></code> Attribute</h4>
   <p>A <a href="#string-attribute">string attribute</a> that denotes the value of this <a href="#parameter">parameter</a>. </p>
-  <p class="authorguide"><strong>Authoring Guidelines:</strong> When a <code title="param element"><a href="#the-param-element-and-its-attributes">param</a></code> element is used, it is required for authors to
+  <p class="authorguide"><strong>작성 지침:</strong> When a <code title="param element"><a href="#the-param-element-and-its-attributes">param</a></code> element is used, it is required for authors to
     use the <code title="param value"><a href="#the-value-attribute">value</a></code> attribute.</p>
   <h4 id="example-of-usage-7"><span class="secno">7.14.3 </span>사용 예제</h4>
   <div class="example">
@@ -1750,7 +1743,7 @@ Distributed under the W3C Software License.
     declare one or more preferences: a <dfn id="preference">preference</dfn> is a persistently stored
     name-value pair that is <a href="#associate" title="associate">associated</a> with the widget the
     first time the widget is initiated.</p>
-  <p class="note"><span class="notetitle">Note:</span> A user agent that <a href="#supported" title="supported">supports</a> the <a href="#widgets-apis">[Widgets-APIs]</a> specification will expose any declared <a href="#preference">preference</a> at runtime  in the manner described
+  <p class="note"><span class="notetitle">주석:</span> A user agent that <a href="#supported" title="supported">supports</a> the <a href="#widgets-apis">[Widgets-APIs]</a> specification will expose any declared <a href="#preference">preference</a> at runtime  in the manner described
     in the <a href="#widgets-apis">[Widgets-APIs]</a> specification.</p>
   <dl>
     <dt>Context in which this element is used:</dt>
@@ -1766,15 +1759,15 @@ Distributed under the W3C Software License.
   </dl>
   <h4 id="the-name-attribute-1"><span class="secno">7.15.1 </span>The <code><dfn title="preference name">name</dfn></code> Attribute</h4>
   <p>A string that denotes the name of this <a href="#preference">preference</a>. </p>
-  <p class="authorguide"><strong>Authoring Guidelines:</strong> When a <code title="preference element"><a href="#the-preference-element-and-its-attributes">preference</a></code> element is used, it is required for authors to
+  <p class="authorguide"><strong>작성 지침:</strong> When a <code title="preference element"><a href="#the-preference-element-and-its-attributes">preference</a></code> element is used, it is required for authors to
     use the <code title="preference name"><a href="#the-name-attribute-1">name</a></code> attribute.</p>
   <h4 id="the-value-attribute-0"><span class="secno">7.15.2 </span>The <code><dfn title="preference value">value</dfn></code> Attribute</h4>
   <p>A string that denotes the value of this <a href="#preference">preference</a>. </p>
-  <p class="authorguide"><strong>Authoring Guidelines:</strong> It is optional for authors to use the <code title="preference value"><a href="#the-value-attribute-0">value</a></code> attribute with a <code title="preference element"><a href="#the-preference-element-and-its-attributes">preference</a></code> element.</p>
+  <p class="authorguide"><strong>작성 지침:</strong> It is optional for authors to use the <code title="preference value"><a href="#the-value-attribute-0">value</a></code> attribute with a <code title="preference element"><a href="#the-preference-element-and-its-attributes">preference</a></code> element.</p>
   <h4 id="the-readonly-attribute"><span class="secno">7.15.3 </span>The <code><dfn title="preference readonly">readonly</dfn></code> Attribute</h4>
   <p>A <a href="#boolean-attribute">boolean attribute</a> indicating whether this preference can, or cannot, be
     overwritten at runtime (e.g., via an author script). When set to <code>true</code>, it means that the <a href="#preference">preference</a> cannot be overwritten. When set to <code>false</code>, it means that the <a href="#preference">preference</a> can be overwritten. </p>
-  <p class="authorguide"><strong>Authoring Guidelines:</strong> It is optional for authors to use the <code title="readonly">readonly</code> attribute with a <code title="preference element"><a href="#the-preference-element-and-its-attributes">preference</a></code> element. If the <code title="readonly">readonly</code> attribute is absent, the user agent will act as if the readonly attribute had been set to <code>false</code> (meaning that the <a href="#preference">preference</a> can be overwritten at runtime).</p>
+  <p class="authorguide"><strong>작성 지침:</strong> It is optional for authors to use the <code title="readonly">readonly</code> attribute with a <code title="preference element"><a href="#the-preference-element-and-its-attributes">preference</a></code> element. If the <code title="readonly">readonly</code> attribute is absent, the user agent will act as if the readonly attribute had been set to <code>false</code> (meaning that the <a href="#preference">preference</a> can be overwritten at runtime).</p>
   <h4 id="example-of-usage-8"><span class="secno">7.15.4 </span>사용 예제</h4>
   <div class="example">
     <p>This example shows a widget where two preferences are set. The second <code title="preference element"><a href="#the-preference-element-and-its-attributes">preference</a></code> is set as "read only" via the <code>readonly</code> attribute, which means the values of that preference cannot be changed at
@@ -1806,7 +1799,7 @@ Distributed under the W3C Software License.
       <p>No, meaning that declaring <code><a href="#the-xml:lang-attribute">xml:lang</a></code> on a <code title="span element"><a href="#the-span-element-and-its-attributes">span</a></code> element within a parent element (e.g., a <code title="name element"><a href="#the-name-element-and-its-attributes">name</a></code> element) will not affect the behavior of <a href="#element-based-localization-0">element-based localization</a> (see Example of Usage below to see how this works). </p>
     </dd>
     <dd>
-      <p class="authorguide"><strong>Authoring Guidelines:</strong> Authors are encouraged to use <code><a href="#the-xml:lang-attribute">xml:lang</a></code> to indicate the language information for text content contained within a <code title="span element"><a href="#the-span-element-and-its-attributes">span</a></code> element. See Example of Usage for more information. </p>
+      <p class="authorguide"><strong>작성 지침:</strong> Authors are encouraged to use <code><a href="#the-xml:lang-attribute">xml:lang</a></code> to indicate the language information for text content contained within a <code title="span element"><a href="#the-span-element-and-its-attributes">span</a></code> element. See Example of Usage for more information. </p>
     </dd>
     <dt>Attributes:</dt>
     <dd><a href="#global-attributes-0" title="global attributes">Global attributes</a>.</dd>
@@ -1840,7 +1833,7 @@ Distributed under the W3C Software License.
     audiences that vary in culture, region, or language. <dfn id="localization">Localization</dfn> refers to
     the adaptation of a product, application or document content to meet the language,
     cultural and other requirements of a specific target market (a "locale").</p>
-  <p class="note"><span class="notetitle">Note:</span> See also the <cite><a href="http://www.w3.org/TR/2004/NOTE-ws-i18n-scenarios-20040730/#locale">Web Services
+  <p class="note"><span class="notetitle">주석:</span> See also the <cite><a href="http://www.w3.org/TR/2004/NOTE-ws-i18n-scenarios-20040730/#locale">Web Services
     Internationalization Usage Scenarios</a></cite> and the <cite><a href="http://www.unicode.org/reports/tr35/#Locale">Unicode Locale Data Markup
     Language</a></cite> for an informative discussion on the term locale.</p>
   <p><dfn id="localized-content">Localized content</dfn> is content an author has explicitly <a href="#localization" title="localization">localized</a>: that is, a <a href="#widget-package">widget package</a> that contains
@@ -1857,7 +1850,7 @@ Distributed under the W3C Software License.
     the <a href="#configuration-document-0">configuration document</a>, can be localized via <a href="#folder-based-localization-0">folder-based localization</a>.</p>
   <p class="example">For example, a locale folder "<code>locales/ja/</code>" (Japanese) might contain
     an HTML document translated into Japanese.</p>
-  <p class="authorguide"><strong>Authoring Guidelines:</strong> <a href="#locale-folder-0" title="locale folder">Locale folders</a> need to be placed in the <a href="#container-for-localized-content">container for
+  <p class="authorguide"><strong>작성 지침:</strong> <a href="#locale-folder-0" title="locale folder">Locale folders</a> need to be placed in the <a href="#container-for-localized-content">container for
     localized content</a> (a locale folder not in a <a href="#container-for-localized-content">container for localized
     content</a> will be treated as an <a href="#arbitrary">arbitrary</a> folder).  In addition, authors making use of localization features provided by this specification should  translate, localize, or alter <a href="#localized-content">localized content</a> for a the given locale, and test their widgets thoroughly.</p>
   <h3 id="bidirectional-text"><span class="secno">8.1 </span>Bidirectional  text</h3>
@@ -1950,7 +1943,7 @@ Distributed under the W3C Software License.
 &lt;/widget&gt;</code></pre>
   </div>
   <p>Some of the elements in the widgets namespace are defined to be <dfn id="localizable-via-xml:lang">localizable via xml:lang</dfn> as part of the element's definition (with either "yes" or "no"). See, for example, the <code title="name element"><a href="#the-name-element-and-its-attributes">name</a></code> element. When "yes", it means  that an author can utilize xml:lang to achieve <a href="#element-based-localization-0">element-based localization</a> either directly or indirectly through the inheritance of the value of <code><a href="#the-xml:lang-attribute">xml:lang</a></code>. How element-based localization is handled is specified in detail in <a href="#step-7-process-the-configuration-document">Step 7</a>. </p>
-  <p class="note"><span class="notetitle">Note:</span> The xml:lang attribute can be used on any element in order to indicate which language is used in the content and attribute values of that element. As specified in the XML Specification, its value is inherited, such that if an element has an xml:lang attribute, all of its descendants are considered to be in that language as well, unless they specify their own <code><a href="#the-xml:lang-attribute">xml:lang</a></code> attribute. Note that an element can indicate that it is in no specific language by setting <code><a href="#the-xml:lang-attribute">xml:lang</a></code> to the empty string, irrespective of whether any of its ancestors has an xml:lang attribute.</p>
+  <p class="note"><span class="notetitle">주석:</span> The xml:lang attribute can be used on any element in order to indicate which language is used in the content and attribute values of that element. As specified in the XML Specification, its value is inherited, such that if an element has an xml:lang attribute, all of its descendants are considered to be in that language as well, unless they specify their own <code><a href="#the-xml:lang-attribute">xml:lang</a></code> attribute. Note that an element can indicate that it is in no specific language by setting <code><a href="#the-xml:lang-attribute">xml:lang</a></code> to the empty string, irrespective of whether any of its ancestors has an xml:lang attribute.</p>
   <div class="example">
     <p>For example, if an author uses the <code><a href="#the-xml:lang-attribute">xml:lang</a></code> attribute on the <code title="widget element"><a href="#the-widget-element-and-its-attributes">widget</a></code> element, then all child elements inherit
       the value xml:lang. This means that the first <code title="name element"><a href="#the-name-element-and-its-attributes">name</a></code> element below behaves as <code>xml:lang="en"</code> had been explicitly used.
@@ -2297,7 +2290,7 @@ Distributed under the W3C Software License.
     widget as an <a href="#invalid-widget-package-0">invalid widget package</a>.</p>
   <p>In the event that a user agent encounters an <a href="#invalid-widget-package-0">invalid widget package</a> during the <a href="#steps-for-processing-a-widget-package-0">steps for processing a widget package</a>, a <a class="product-ua" href="#user-agent">user agent</a> <em class="ct">must</em> abort all processing of the <a href="#steps-for-processing-a-widget-package-0">steps for processing a
     widget package</a>.</p>
-  <p class="note"><span class="notetitle">Note:</span>A user agent can optimize <a href="#steps-for-processing-a-widget-package-0">steps for processing a widget package</a> and associated <a href="#processing-rules-0">processing rules</a> , or  perform the steps in a different order,
+  <p class="note"><span class="notetitle">주석:</span>A user agent can optimize <a href="#steps-for-processing-a-widget-package-0">steps for processing a widget package</a> and associated <a href="#processing-rules-0">processing rules</a> , or  perform the steps in a different order,
     but the end result needs to be indistinguishable from the result that
     would be obtained by following the specification.</p>
   <h3 id="processing-rules"><span class="secno">9.1 </span>Processing Rules</h3>
@@ -2325,7 +2318,7 @@ Distributed under the W3C Software License.
       <p>A special symbol to indicate that a value has no data. For example, "let <var>x</var> be <code><a href="#null">null</a></code>" or "if <var>y</var> is empty, then return <code><a href="#null">null</a></code>".</p>
     </dd>
   </dl>
-  <p class="note"><span class="notetitle">Note:</span> Note: Although languages such as ECMA Script and Java support <code><a href="#null">null</a></code> as a 
+  <p class="note"><span class="notetitle">주석:</span> 주석: Although languages such as ECMA Script and Java support <code><a href="#null">null</a></code> as a 
     native value type, there are some programming languages that have no 
     notion of <code><a href="#null">null</a></code> or where null is problematic (e.g. C++). Implementations 
     in these languages need to substitute a language-specific value or symbol 
@@ -2367,7 +2360,7 @@ Distributed under the W3C Software License.
       <p>Return <var><a href="#file">file</a></var>.</p>
     </li>
   </ol>
-  <p class="note"><span class="notetitle">Note:</span> For efficiency, a user agent can
+  <p class="note"><span class="notetitle">주석:</span> For efficiency, a user agent can
     extract specific <a href="#file" title="file">files</a> as they are needed for processing
     rather than extracting all the <a href="#file" title="file">files</a> at once. As a security
     precaution, implementations are discouraged from extracting <a href="#file-entry" title="file entry">file entries</a> from un-trusted widgets directly onto the file system.
@@ -2378,7 +2371,7 @@ Distributed under the W3C Software License.
     following algorithm. The algorithm returns either a <a href="#processable-file">processable file</a>, <code><a href="#null">null</a></code>, or an error. </p>
   <p>For
     the sake of comparison and matching, it is <em class="ct">recommended</em> that a <a class="product-ua" href="#user-agent">user agent</a> treat all <a href="#zip-relative-path" title="zip relative path">Zip relative paths</a> as <a href="#utf-8">[UTF-8]</a>. </p>
-  <p class="note"><span class="notetitle">Note:</span> This specification does not define
+  <p class="note"><span class="notetitle">주석:</span> This specification does not define
     how links in documents other than the <a href="#configuration-document-0">configuration document</a> are to be
     dereferenced. For handling links in other documents, such as (X)HTML, CSS, SVG, etc.,
     please refer to the <a href="#widgets-uri">[Widgets-URI]</a> specification.</p>
@@ -2767,7 +2760,7 @@ Distributed under the W3C Software License.
   <p>The <dfn id="rule-for-identifying-the-media-type-of-a-file-0">rule for identifying the media type of a file</dfn> is given by the
     following algorithm. The algorithm always returns a
     string.</p>
-  <p class="note"><span class="notetitle">Note:</span>This rule is only to be applied
+  <p class="note"><span class="notetitle">주석:</span>This rule is only to be applied
     when explicitly instructed to by the specification (e.g., during <a href="#step-7-process-the-configuration-document">Step 7</a>). There
     are situations where alternative means are defined by the specification to identify the
     media type of a file (e.g., by the presence of the <code title="content element"><a href="#the-content-element-and-its-attributes">content</a></code> element's <code title="content type"><a href="#the-type-attribute">type</a></code> attribute or deriving the media type of a <a href="#default-start-file">default start file</a> from the <a href="#default-start-files-table">default start files table</a>).</p>
@@ -2969,7 +2962,7 @@ Distributed under the W3C Software License.
       <p>Otherwise, return <code>true</code>.</p>
     </li>
   </ol>
-  <p class="note"><span class="notetitle">Note:</span> A user agent can inspect the <var>potential archive</var> once it has acquired the first four bytes of the <a href="#potential-zip-archive">potential Zip archive</a> or can wait until all the data of the <a href="#potential-zip-archive">potential Zip archive</a> has been completely acquired.</p>
+  <p class="note"><span class="notetitle">주석:</span> A user agent can inspect the <var>potential archive</var> once it has acquired the first four bytes of the <a href="#potential-zip-archive">potential Zip archive</a> or can wait until all the data of the <a href="#potential-zip-archive">potential Zip archive</a> has been completely acquired.</p>
   <h3 class="no-num done" id="step-1-acquire-a-potential-zip-archive"><dfn>Step 1</dfn> - Acquire a Potential Zip Archive</h3>
   <p>Step 1 involves acquiring a <a href="#potential-zip-archive">potential Zip archive</a> and confirming that
     it is a <a href="#zip-archive-0">Zip archive</a> by applying the <a href="#rule-for-determining-if-a-potential-zip-archive-is-a-zip-archive-0">rule for determining if a
@@ -3029,7 +3022,7 @@ Content-Type: application/x-gadget</code></pre>
   <h3 class="no-num" id="step-3-set-the-configuration-defaults"><dfn>Step 3</dfn> - Set the Configuration Defaults</h3>
   <p>In <a href="#step-3-set-the-configuration-defaults">Step 3</a>, a <a class="product-ua" href="#user-agent">user agent</a> <em class="ct">must</em> set the following variables and
     default values as defined in the <a href="#table-of-configuration-defaults">table of configuration defaults</a>. </p>
-  <p class="note"><span class="notetitle">Note:</span> When a <code><a href="#null">null</a></code> value is assigned to a variable in the <a href="#table-of-configuration-defaults">table of
+  <p class="note"><span class="notetitle">주석:</span> When a <code><a href="#null">null</a></code> value is assigned to a variable in the <a href="#table-of-configuration-defaults">table of
     configuration defaults</a>, a user agent needs to treats
     the value as <code><a href="#null">null</a></code> (i.e., not as an empty string and not as the text string <code><a href="#null">"null"</a></code>).</p>
   <table>
@@ -3393,7 +3386,7 @@ Content-Type: application/x-gadget</code></pre>
         <li>
           <p>If the value of <var>range</var> is not "*", then retaining <a href="http://www.w3.org/TR/xpath/#dt-document-order">document order</a>, let <var>matching elements</var> be the result of applying <a href="#lookup">lookup</a> to the  child  elements that are defined as being <a href="#localizable-via-xml:lang">localizable via <code>xml:lang</code></a> (i.e., the <code title="name element"><a href="#the-name-element-and-its-attributes">name</a></code>, <code title="description element"><a href="#the-description-element-and-its-attributes">description</a></code>, and <code title="license element"><a href="#the-license-element-and-its-attributes">license</a></code> elements) that are direct descendants of the <var>root
             element</var> and whose <code><a href="#the-xml:lang-attribute">xml:lang</a></code> attribute matches the current <var>range</var>. Append <var>matching elements</var> to the <var><a href="#element-list">element list</a></var>.</p>
-          <p class="note"><span class="notetitle">Note:</span> In the context of this specification, the above conformance requirement is intended to match the <code title="name element"><a href="#the-name-element-and-its-attributes">name</a></code>, <code title="description element"><a href="#the-description-element-and-its-attributes">description</a></code>, and <code title="license element"><a href="#the-license-element-and-its-attributes">license</a></code> elements. However, it is written in an abstract manner to provide a hook for future specifications that want to define elements that also support being <a href="#localizable-via-xml:lang">localizable via xml:lang</a>.</p>
+          <p class="note"><span class="notetitle">주석:</span> In the context of this specification, the above conformance requirement is intended to match the <code title="name element"><a href="#the-name-element-and-its-attributes">name</a></code>, <code title="description element"><a href="#the-description-element-and-its-attributes">description</a></code>, and <code title="license element"><a href="#the-license-element-and-its-attributes">license</a></code> elements. However, it is written in an abstract manner to provide a hook for future specifications that want to define elements that also support being <a href="#localizable-via-xml:lang">localizable via xml:lang</a>.</p>
         </li>
         <li>If the value of  range is "*", retaining <a href="http://www.w3.org/TR/xpath/#dt-document-order">document order</a>, let <var>unlocalized elements</var> be all child elements that are direct
           descendants of the <var>root element</var> that do not have an implicit or explicit <var><a href="#the-xml:lang-attribute">xml:lang</a></var> attribute (i.e., match <a href="#default-content">default content</a>). Append <var>unlocalized elements</var> to the <var><a href="#element-list">element list</a></var>.
@@ -3685,7 +3678,7 @@ Content-Type: application/x-gadget</code></pre>
           <p id="ta-KNiLPOKdgQ"> If this <code title="param elemement">param</code> element  is not a direct child of a <code title="feature element"><a href="#the-feature-element-and-its-attributes">feature</a></code> element, then the <a class="product-ua" href="#user-agent">user agent</a> <em class="ct">must</em> <a href="#ignore">ignore</a> this <code title="param element"><a href="#the-param-element-and-its-attributes">param</a></code> <var>element</var>.</p>
         </dd>
         <dd>
-          <p class="note"><span class="notetitle">Note:</span> How a param element is to be processed when it is inside a feature element is defined below.</p>
+          <p class="note"><span class="notetitle">주석:</span> How a param element is to be processed when it is inside a feature element is defined below.</p>
         </dd>
       </dl>
       <dl class="procedure">
@@ -3709,7 +3702,7 @@ Content-Type: application/x-gadget</code></pre>
             <li>
               <p>Let <var>feature-name</var> be the result of applying the <a href="#rule-for-getting-a-single-attribute-value-0">rule for
                 getting a single attribute value</a> to the value of the <code title="feature name"><a href="#the-name-attribute">name</a></code> attribute.</p>
-              <p class="note"><span class="notetitle">Note:</span> This specification allows <code title="feature element"><a href="#the-feature-element-and-its-attributes">feature</a></code> elements with the same <code title="feature name"><a href="#the-name-attribute">name</a></code> attribute value to be declared more than once. Handling of duplicate <a href="#feature-request" title="feature request">feature requests</a> is left up to the implementation or the specification that defines the feature. </p>
+              <p class="note"><span class="notetitle">주석:</span> This specification allows <code title="feature element"><a href="#the-feature-element-and-its-attributes">feature</a></code> elements with the same <code title="feature name"><a href="#the-name-attribute">name</a></code> attribute value to be declared more than once. Handling of duplicate <a href="#feature-request" title="feature request">feature requests</a> is left up to the implementation or the specification that defines the feature. </p>
             </li>
             <li>
               <p id="ta-paWbGHyVrG">If <var>feature-name</var> is not a <a href="#valid-iri">valid IRI</a>, and <var>required-feature</var> is <code>true</code>, then the <a class="product-ua" href="#user-agent">user agent</a> <em class="ct">must</em> treat this widget as
