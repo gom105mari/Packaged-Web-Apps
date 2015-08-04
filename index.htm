@@ -275,12 +275,12 @@ td, th {
  <li><a href="#zip-archive"><span class="secno">5 </span>Zip 압축</a>
   <ol class="toc">
    <li><a href="#compression-methods"><span class="secno">5.1 </span>압축 방법</a></li>
-   <li><a href="#version-of-zip-needed-to-extract-a-file-entry"><span class="secno">5.2 </span>파일 엔트리를 추출하기 위한 Zip 버전</a></li>
+   <li><a href="#version-of-zip-needed-to-extract-a-file-entry"><span class="secno">5.2 </span>File Entry를 추출하기 위한 Zip 버전</a></li>
    <li><a href="#zip-relative-paths"><span class="secno">5.3 </span>Zip 상대 경로</a></li>
    <li><a href="#interoperability-considerations"><span class="secno">5.4 </span>상호운용 고려사항</a></ol></li>
- <li><a href="#widget-packages"><span class="secno">6 </span>위젯 패키지</a>
+ <li><a href="#widget-packages"><span class="secno">6 </span>Widget 패키지</a>
   <ol class="toc">
-   <li><a href="#invalid-widget-package"><span class="secno">6.1 </span>잘못된 위젯 패키지</a></li>
+   <li><a href="#invalid-widget-package"><span class="secno">6.1 </span>잘못된 Widget 패키지</a></li>
    <li><a href="#files-and-folders"><span class="secno">6.2 </span>파일과 폴더</a></li>
    <li><a href="#reserved-file-and-folder-names"><span class="secno">6.3 </span>예약된 파일과 폴더명</a></li>
    <li><a href="#digital-signatures"><span class="secno">6.4 </span>디지털 서명</a></li>
@@ -297,69 +297,69 @@ td, th {
  <li><a href="#configuration-document"><span class="secno">7 </span>Configuration 문서</a>
   <ol class="toc">
    <li><a href="#example-configuration-document"><span class="secno">7.1 </span>Configuration 문서 예제</a></li>
-   <li><a href="#namespace"><span class="secno">7.2 </span>네임스페이스</a></li>
+   <li><a href="#namespace"><span class="secno">7.2 </span>Namespace</a></li>
    <li><a href="#proprietary-extensions"><span class="secno">7.3 </span>소유 확장</a></li>
-   <li><a href="#types-of-attributes"><span class="secno">7.4 </span>애트리뷰트 타입</a></li>
-   <li><a href="#global-attributes"><span class="secno">7.5 </span>전역 애트리뷰트</a>
+   <li><a href="#types-of-attributes"><span class="secno">7.4 </span>attribute  타입</a></li>
+   <li><a href="#global-attributes"><span class="secno">7.5 </span>전역 attribute</a>
     <ol class="toc">
-     <li><a href="#the-xml:lang-attribute"><span class="secno">7.5.1 </span><code>xml:lang</code> 애트리뷰트</a></li>
-     <li><a href="#the-dir-attribute"><span class="secno">7.5.2 </span><code>dir</code> 애트리뷰트</a></li>
+     <li><a href="#the-xml:lang-attribute"><span class="secno">7.5.1 </span><code>xml:lang</code> attribute</a></li>
+     <li><a href="#the-dir-attribute"><span class="secno">7.5.2 </span><code>dir</code> attribute</a></li>
      <li><a href="#examples-of-usage"><span class="secno">7.5.3 </span>사용 예제</a></ol></li>
-   <li><a href="#the-widget-element-and-its-attributes"><span class="secno">7.6 </span><code>widget</code> 엘리먼트와 애트리뷰트</a>
+   <li><a href="#the-widget-element-and-its-attributes"><span class="secno">7.6 </span><code>widget</code> element와 attribute</a>
     <ol class="toc">
-     <li><a href="#the-id-attribute"><span class="secno">7.6.1 </span><code>id</code> 애트리뷰트</a></li>
-     <li><a href="#the-version-attribute"><span class="secno">7.6.2 </span><code>version</code> 애트리뷰트</a></li>
-     <li><a href="#the-height-attribute"><span class="secno">7.6.3 </span><code>height</code> 애트리뷰트</a></li>
-     <li><a href="#the-width-attribute"><span class="secno">7.6.4 </span><code>width</code> 애트리뷰트</a></li>
-     <li><a href="#the-viewmodes-attribute"><span class="secno">7.6.5 </span><code>viewmodes</code> 애트리뷰트</a></li>
-     <li><a href="#the-defaultlocale-attribute"><span class="secno">7.6.6 </span><code title="widget defaultlocale">defaultlocale</code> 애트리뷰트</a></li>
+     <li><a href="#the-id-attribute"><span class="secno">7.6.1 </span><code>id</code> attribute</a></li>
+     <li><a href="#the-version-attribute"><span class="secno">7.6.2 </span><code>version</code> attribute</a></li>
+     <li><a href="#the-height-attribute"><span class="secno">7.6.3 </span><code>height</code> attribute</a></li>
+     <li><a href="#the-width-attribute"><span class="secno">7.6.4 </span><code>width</code> attribute</a></li>
+     <li><a href="#the-viewmodes-attribute"><span class="secno">7.6.5 </span><code>viewmodes</code> attribute</a></li>
+     <li><a href="#the-defaultlocale-attribute"><span class="secno">7.6.6 </span><code title="widget defaultlocale">defaultlocale</code> attribute</a></li>
      <li><a href="#example-of-usage"><span class="secno">7.6.7 </span>사용 예제</a></li>
-     <li><a href="#example-of-usage-of-the-defaultlocale-attribute"><span class="secno">7.6.8 </span><code title="widget defaultlocale">defaultlocale</code> 애트리뷰트 사용 예제</a></ol></li>
-   <li><a href="#the-name-element-and-its-attributes"><span class="secno">7.7 </span><code>name</code> 엘리먼트와 애트리뷰트</a>
+     <li><a href="#example-of-usage-of-the-defaultlocale-attribute"><span class="secno">7.6.8 </span><code title="widget defaultlocale">defaultlocale</code> attribute 사용 예제</a></ol></li>
+   <li><a href="#the-name-element-and-its-attributes"><span class="secno">7.7 </span><code>name</code> element와 attribute</a>
     <ol class="toc">
-     <li><a href="#the-short-attribute"><span class="secno">7.7.1 </span><code title="name short">short</code> 애트리뷰트</a></li>
+     <li><a href="#the-short-attribute"><span class="secno">7.7.1 </span><code title="name short">short</code> attribute</a></li>
      <li><a href="#example-of-usage-0"><span class="secno">7.7.2 </span>사용 예제</a></ol></li>
-   <li><a href="#the-description-element-and-its-attributes"><span class="secno">7.8 </span><code>description</code> 엘리먼트와 애트리뷰트</a>
+   <li><a href="#the-description-element-and-its-attributes"><span class="secno">7.8 </span><code>description</code> element와 attribute</a>
     <ol class="toc">
      <li><a href="#example-of-usage-1"><span class="secno">7.8.1 </span>사용 예제</a></ol></li>
-   <li><a href="#the-author-element-and-its-attributes"><span class="secno">7.9 </span><code title="">author</code> 엘리먼트와 애트리뷰트</a>
+   <li><a href="#the-author-element-and-its-attributes"><span class="secno">7.9 </span><code title="">author</code> element와 attribute</a>
     <ol class="toc">
-     <li><a href="#the-href-attribute"><span class="secno">7.9.1 </span><code>href</code> 애트리뷰트</a></li>
-     <li><a href="#the-email-attribute"><span class="secno">7.9.2 </span><code>email</code> 애트리뷰트</a></li>
+     <li><a href="#the-href-attribute"><span class="secno">7.9.1 </span><code>href</code> attribute</a></li>
+     <li><a href="#the-email-attribute"><span class="secno">7.9.2 </span><code>email</code> attribute</a></li>
      <li><a href="#example-of-usage-2"><span class="secno">7.9.3 </span>사용 예제</a></ol></li>
-   <li><a href="#the-license-element-and-its-attributes"><span class="secno">7.10 </span><code>license</code> 엘리먼트와 애트리뷰트</a>
+   <li><a href="#the-license-element-and-its-attributes"><span class="secno">7.10 </span><code>license</code> element와 attribute</a>
     <ol class="toc">
-     <li><a href="#the-href-attribute-0"><span class="secno">7.10.1 </span><code>href</code> 애트리뷰트</a></li>
+     <li><a href="#the-href-attribute-0"><span class="secno">7.10.1 </span><code>href</code> attribute</a></li>
      <li><a href="#example-of-usage-3"><span class="secno">7.10.2 </span>사용 예제</a></ol></li>
-   <li><a href="#the-icon-element-and-its-attributes"><span class="secno">7.11 </span><code>icon</code> 엘리먼트와 애트리뷰트</a>
+   <li><a href="#the-icon-element-and-its-attributes"><span class="secno">7.11 </span><code>icon</code> element와 attribute</a>
     <ol class="toc">
-     <li><a href="#the-src-attribute"><span class="secno">7.11.1 </span><code>src</code> 애트리뷰트</a></li>
-     <li><a href="#the-width-attribute-0"><span class="secno">7.11.2 </span><code>width</code> 애트리뷰트</a></li>
-     <li><a href="#the-height-attribute-0"><span class="secno">7.11.3 </span><code>height</code> 애트리뷰트</a></li>
+     <li><a href="#the-src-attribute"><span class="secno">7.11.1 </span><code>src</code> attribute</a></li>
+     <li><a href="#the-width-attribute-0"><span class="secno">7.11.2 </span><code>width</code> attribute</a></li>
+     <li><a href="#the-height-attribute-0"><span class="secno">7.11.3 </span><code>height</code> attribute</a></li>
      <li><a href="#example-of-usage-4"><span class="secno">7.11.4 </span>사용 예제</a></ol></li>
-   <li><a href="#the-content-element-and-its-attributes"><span class="secno">7.12 </span><code>content</code> 엘리먼트와 애트리뷰트</a>
+   <li><a href="#the-content-element-and-its-attributes"><span class="secno">7.12 </span><code>content</code> element와 attribute</a>
     <ol class="toc">
-     <li><a href="#the-src-attribute-0"><span class="secno">7.12.1 </span><code>src</code> 애트리뷰트</a></li>
-     <li><a href="#the-type-attribute"><span class="secno">7.12.2 </span><code>type</code> 애트리뷰트</a></li>
-     <li><a href="#the-encoding-attribute"><span class="secno">7.12.3 </span><code>encoding</code> 애트리뷰트</a></li>
+     <li><a href="#the-src-attribute-0"><span class="secno">7.12.1 </span><code>src</code> attribute</a></li>
+     <li><a href="#the-type-attribute"><span class="secno">7.12.2 </span><code>type</code> attribute</a></li>
+     <li><a href="#the-encoding-attribute"><span class="secno">7.12.3 </span><code>encoding</code> attribute</a></li>
      <li><a href="#example-of-usage-5"><span class="secno">7.12.4 </span>사용 예제</a></ol></li>
-   <li><a href="#the-feature-element-and-its-attributes"><span class="secno">7.13 </span><code>feature</code> 엘리먼트와 애트리뷰트</a>
+   <li><a href="#the-feature-element-and-its-attributes"><span class="secno">7.13 </span><code>feature</code> element와 attribute</a>
     <ol class="toc">
-     <li><a href="#the-name-attribute"><span class="secno">7.13.1 </span><code title="feature name">name</code> 애트리뷰트</a></li>
-     <li><a href="#the-required-attribute"><span class="secno">7.13.2 </span><code>required</code> 애트리뷰트</a></li>
+     <li><a href="#the-name-attribute"><span class="secno">7.13.1 </span><code title="feature name">name</code> attribute</a></li>
+     <li><a href="#the-required-attribute"><span class="secno">7.13.2 </span><code>required</code> attribute</a></li>
      <li><a href="#example-of-usage-6"><span class="secno">7.13.3 </span>사용 예제</a></ol></li>
-   <li><a href="#the-param-element-and-its-attributes"><span class="secno">7.14 </span><code>param</code> 엘리먼트와 애트리뷰트</a>
+   <li><a href="#the-param-element-and-its-attributes"><span class="secno">7.14 </span><code>param</code> element와 attribute</a>
     <ol class="toc">
-     <li><a href="#the-name-attribute-0"><span class="secno">7.14.1 </span><code>name</code> 애트리뷰트</a></li>
-     <li><a href="#the-value-attribute"><span class="secno">7.14.2 </span><code>value</code> 애트리뷰트</a></li>
+     <li><a href="#the-name-attribute-0"><span class="secno">7.14.1 </span><code>name</code> attribute</a></li>
+     <li><a href="#the-value-attribute"><span class="secno">7.14.2 </span><code>value</code> attribute</a></li>
      <li><a href="#example-of-usage-7"><span class="secno">7.14.3 </span>사용 예제</a></ol></li>
-   <li><a href="#the-preference-element-and-its-attributes"><span class="secno">7.15 </span><code>preference</code> 엘리먼트와 애트리뷰트</a>
+   <li><a href="#the-preference-element-and-its-attributes"><span class="secno">7.15 </span><code>preference</code> element와 attribute</a>
     <ol class="toc">
-     <li><a href="#the-name-attribute-1"><span class="secno">7.15.1 </span><code>name</code> 애트리뷰트</a></li>
-     <li><a href="#the-value-attribute-0"><span class="secno">7.15.2 </span><code>value</code> 애트리뷰트</a></li>
-     <li><a href="#the-readonly-attribute"><span class="secno">7.15.3 </span><code>readonly</code> 애트리뷰트</a></li>
+     <li><a href="#the-name-attribute-1"><span class="secno">7.15.1 </span><code>name</code> attribute</a></li>
+     <li><a href="#the-value-attribute-0"><span class="secno">7.15.2 </span><code>value</code> attribute</a></li>
+     <li><a href="#the-readonly-attribute"><span class="secno">7.15.3 </span><code>readonly</code> attribute</a></li>
      <li><a href="#example-of-usage-8"><span class="secno">7.15.4 </span>사용 예제</a></ol></li>
-   <li><a href="#the-span-element-and-its-attributes"><span class="secno">7.16 </span><code>span</code> 엘리먼트와 애트리뷰트</a>
+   <li><a href="#the-span-element-and-its-attributes"><span class="secno">7.16 </span><code>span</code> element와 attribute</a>
     <ol class="toc">
      <li><a href="#example-of-usage-9"><span class="secno">7.16.1 </span>사용 예제</a></ol></ol></li>
  <li><a href="#internationalization-and-localization"><span class="secno">8 </span>국제화와 현지화</a>
@@ -367,23 +367,23 @@ td, th {
    <li><a href="#bidirectional-text"><span class="secno">8.1 </span>양방향 텍스트</a></li>
    <li><a href="#localization-model"><span class="secno">8.2 </span>현지화 모델</a></li>
    <li><a href="#folder-based-localization"><span class="secno">8.3 </span>폴더 기반 현지화</a></li>
-   <li><a href="#element-based-localization"><span class="secno">8.4 </span>엘리먼트 기반 현지화</a></li>
+   <li><a href="#element-based-localization"><span class="secno">8.4 </span>element 기반 현지화</a></li>
    <li><a href="#localization-examples"><span class="secno">8.5 </span>현지화 예제</a>
     <ol class="toc">
      <li><a href="#simple-example"><span class="secno">8.5.1 </span>간단한 예제</a></li>
      <li><a href="#complex-example"><span class="secno">8.5.2 </span>복잡한 예제</a></li>
      <li><a href="#fallback-behavior-example"><span class="secno">8.5.3 </span>Fallback Behavior Example</a></ol></ol></li>
- <li><a href="#steps-for-processing-a-widget-package"><span class="secno">9 </span>위젯 패키지 처리에 대한 단계</a>
+ <li><a href="#steps-for-processing-a-widget-package"><span class="secno">9 </span>Widget  패키지 처리에 대한 단계</a>
   <ol class="toc">
    <li><a href="#processing-rules"><span class="secno">9.1 </span>처리 규칙</a>
     <ol class="toc">
      <li><a href="#rule-for-verifying-a-zip-archive"><span class="secno">9.1.1 </span>Zip 압축 검증 규칙</a></li>
-     <li><a href="#rule-for-extracting-file-data-from-a-file-entry"><span class="secno">9.1.2 </span>파일 엔트리로부터의 파일데이터 추출 규칙</a></li>
-     <li><a href="#rule-for-finding-a-file-within-a-widget-package"><span class="secno">9.1.3 </span>Widget 패키지 내의 파일을 찾는 규칙</a></li>
+     <li><a href="#rule-for-extracting-file-data-from-a-file-entry"><span class="secno">9.1.2 </span>File Entry로부터의 File Data 추출 규칙</a></li>
+     <li><a href="#rule-for-finding-a-file-within-a-widget-package"><span class="secno">9.1.3 </span>Widget 패키지 내의 File을 찾는 규칙</a></li>
      <li><a href="#rule-for-determining-directionality"><span class="secno">9.1.4 </span>결정 방향성에 대한 규칙</a></li>
-     <li><a href="#rule-for-getting-a-single-attribute-value"><span class="secno">9.1.5 </span>하나의 애트리뷰트 값을 얻는 규칙</a></li>
-     <li><a href="#rule-for-getting-a-list-of-keywords-from-an-attribute"><span class="secno">9.1.6 </span>애트리뷰트로부터 키워드 리스트를 얻는 규칙</a></li>
-     <li><a href="#rule-for-verifying-a-file-entry"><span class="secno">9.1.7 </span>파일 엔트리 검증 규칙</a></li>
+     <li><a href="#rule-for-getting-a-single-attribute-value"><span class="secno">9.1.5 </span>하나의 attribute 값을 얻는 규칙</a></li>
+     <li><a href="#rule-for-getting-a-list-of-keywords-from-an-attribute"><span class="secno">9.1.6 </span>attribute로부터 키워드 리스트를 얻는 규칙</a></li>
+     <li><a href="#rule-for-verifying-a-file-entry"><span class="secno">9.1.7 </span>File Entry 검증 규칙</a></li>
      <li><a href="#rule-for-getting-text-content"><span class="secno">9.1.8 </span>텍스트 내용을 가져오는 규칙</a></li>
      <li><a href="#rule-for-getting-text-content-with-normalized-white-space"><span class="secno">9.1.9 </span>표준화된 공백과 함께 텍스트 내용을 가져오는 규칙</a></li>
      <li><a href="#rule-for-parsing-a-non-negative-integer"><span class="secno">9.1.10 </span>양수 파싱 규칙</a></li>
@@ -409,13 +409,13 @@ td, th {
  <li><a class="no-num" href="#appendix">부록</a>
   <ol class="toc">
    <li><a class="no-num" href="#media-type-registration-for-application/widget"><code>application/widget</code>에 대한 미디어 타입 등록</a></li>
-   <li><a class="no-num" href="#linking-to-a-widget-package-from-a-html-document">HTML 문서로부터 위젯 패키지에 링크걸기</a></li>
-   <li><a class="no-num" href="#table-of-elements-and-their-attributes">엘리먼트와 애트리뷰트 표</a></ol></li>
+   <li><a class="no-num" href="#linking-to-a-widget-package-from-a-html-document">HTML 문서로부터 Widget 패키지에 링크걸기</a></li>
+   <li><a class="no-num" href="#table-of-elements-and-their-attributes">element와 attribute 표</a></ol></li>
  <li><a class="no-num" href="#acknowledgements">감사의 글</a></li>
  <li><a class="no-num" href="#normative-references">인용 참조</a></li>
  <li><a class="no-num" href="#informative-references">유용한 참조</a></ol>
 <!--end-toc-->
-  <h2 id="introduction"><span class="secno">1 </span>Introduction</h2>
+  <h2 id="introduction"><span class="secno">1 </span>개요</h2>
   <p><em>This section is non-normative.</em></p>
   <p><em>Widgets</em> are full-fledged client-side applications that are authored using
     Web standards such as <a href="#html">[HTML]</a> and packaged for distribution. They are typically downloaded and
