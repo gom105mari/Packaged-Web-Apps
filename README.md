@@ -36,4 +36,5 @@
 ## 번역 진행상황
 * 목차 번역 - 90%
 * 5. Zip Archive - 40%
+* 6. Widget Package - 100% 완료
 * 7. Configuration Document - 5%
