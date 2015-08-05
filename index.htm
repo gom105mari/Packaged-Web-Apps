@@ -220,7 +220,7 @@ td, th {
   <h2 class="no-num no-toc" id="abstract">요약</h2>
   <p>이 명세는 <cite>Widget Packaging and XML Configuration</cite>을 수정한 것이고, 기존 권고에서 찾은 <a href="http://w3c.github.io/packaged-webapps/packaging/errata.html">errata</a>를 다룹니다. 명세의 이름도 업계 <em>동향</em>에 맞게 애플리케이션의 클래스 이름으로 수정했습니다.</p>
   <p>이 명세는 일반적으로 알려진 <em>앱 패키지</em> 또는 <em>widgets</em> 소프트웨어의 클래스에 대한 패키징 포맷과 메타데이터를 표준화합니다.
-  기존의 사용자 인터페이스 위젯(버튼, 입력 박스, 툴바 등)과는 달리, 이 문서에서의 widget은 HTML과 같은 기술을 이용해서 작성하고, 배포를 위해 패키지된 완전한 클라이언트 응용 애플리케이션입니다.
+  기존의 사용자 인터페이스 위젯(버튼, 입력 박스, 툴바 등)과는 달리, 이 문서에서의 widget은 HTML과 같은 기술을 이용해서 작성한 후 배포를 위해 패키지된 완전한 클라이언트 응용 애플리케이션입니다.
   간단한 시계, 주식 시세 표시기, 뉴스캐스터, 게임, 날씨 캐스터부터, 여러 소스들에서 데이터를 얻어, 흥미있고 유용한 것을 사용자에게 보여주는 복잡한 앱까지를 예로 들 수 있습니다.</p>
   <p>이 명세는 아카이브 포멧의 PKWare의 Zip 명세, configuration 문서 포멧의 XML, 패키지의 다양한 측면을 처리하고 검증할 때 따르는 런타임 단계에 의존합니다.
     파일의 컨테이너로 역할을 하는 패키지 포멧은 widget에서 사용됩니다.
@@ -364,7 +364,7 @@ td, th {
      <li><a href="#simple-example"><span class="secno">8.5.1 </span>간단한 예시</a></li>
      <li><a href="#complex-example"><span class="secno">8.5.2 </span>복잡한 예시</a></li>
      <li><a href="#fallback-behavior-example"><span class="secno">8.5.3 </span>Fallback Behavior Example</a></ol></ol></li>
- <li><a href="#steps-for-processing-a-widget-package"><span class="secno">9 </span>Widget  패키지 처리에 대한 단계</a>
+ <li><a href="#steps-for-processing-a-widget-package"><span class="secno">9 </span>Widget  패키지 처리에 대한 Step</a>
   <ol class="toc">
    <li><a href="#processing-rules"><span class="secno">9.1 </span>처리 규칙</a>
     <ol class="toc">
@@ -599,35 +599,35 @@ td, th {
     <li>U+007D RIGHT CURLY BRACKET,</li>
     <li>U+0021 EXCLAMATION MARK.</li>
   </ul>
-  <h2 id="user-agents"><span class="secno">4 </span>User Agents</h2>
-  <p>A <dfn id="user-agent">user agent</dfn> is an implementation of this specification that also <a href="#supported" title="supported">supports</a> <a href="#xml">[XML]</a>, <a href="#xmlns">[XMLNS]</a>, <a href="#utf-8">[UTF-8]</a>, <a href="#unicode">[Unicode]</a>, <a href="#dom3core">[DOMCore]</a>, <a href="#sniff">[SNIFF]</a>, and <a href="#zip">[ZIP]</a> (see <a href="#optional-aspects-of-the-zip-specification-0">optional aspects of the Zip specification</a>). </p>
-  <p>In addition to <a href="#widget-package" title="widget package">widget packages</a>, a <a class="product-ua" href="#user-agent">user agent</a> <em class="ct">may</em> <a href="#supported" title="supported">support</a> other legacy and proprietary application packaging formats. </p>
-  <p>It is <em class="ct">optional</em> for a <a class="product-ua" href="#user-agent">user
-    agent</a> to <a href="#supported" title="supported">support</a> the <a href="#optional-aspects-of-the-zip-specification-0">optional  aspects of the Zip specification</a>.</p>
-  <p class="note"><span class="notetitle">주석:</span> The user agent described in this
-    specification does not necessarily denote a "<dfn id="widget-user-agent">widget user agent</dfn>" at large:
-    that is, a user agent that implements all the specifications, and dependencies, defined
-    in the <a href="#widgets-family-of-specifications">Widgets Family of Specifications</a>. The user agent described is this
-    specification is only concerned with how to processes <a href="#zip-archive-0" title="zip archive">Zip
-    archives</a> and <a href="#configuration-document-0" title="configuration document">configuration
-    documents</a>.</p>
-  <h3 id="optional-aspects-of-the-zip-specification"><span class="secno">4.1 </span>Optional Aspects of the Zip Specification</h3>
-  <p>The <dfn id="optional-aspects-of-the-zip-specification-0">optional aspects of the Zip specification</dfn> are as follows. These  aspects represent general features defined in the <a href="#zip">[ZIP]</a> specification that this specification does not make use of: </p>
+  <h2 id="user-agents"><span class="secno">4 </span>유저 에이전트</h2>
+  <p><dfn id="user-agent">유저 에이전트</dfn>는 <a href="#xml">[XML]</a>, <a href="#xmlns">[XMLNS]</a>, <a href="#utf-8">[UTF-8]</a>, <a href="#unicode">[Unicode]</a>,
+   <a href="#dom3core">[DOMCore]</a>, <a href="#sniff">[SNIFF]</a>, 그리고 <a href="#zip">[ZIP]</a> (<a href="#optional-aspects-of-the-zip-specification-0">Zip 명세의 선택적인 측면</a> 참조)을
+   <a href="#supported" title="supported">지원</a>하는 이 명세에 대한 구현입니다.</p>
+  <p>또한 <a href="#widget-package" title="widget package">widget 패키지</a> 이외에, <a class="product-ua" href="#user-agent">유저 에이전트</a>는
+   과거에 등록한 다른 애플리케이션 패키징 포멧을 <a href="#supported" title="supported">지원</a><em class="ct">할지도</em> 모릅니다.</p>
+  <p><a class="product-ua" href="#user-agent">유저 에이전트</a>가 <a href="#optional-aspects-of-the-zip-specification-0">Zip 명세의 선택적인 측면</a>을 <a href="#supported" title="supported">지원</a>하는 것은
+  <em class="ct">선택사항</em>입니다.</p>
+  <p class="note"><span class="notetitle">주석:</span>이 명세에서 나오는 유저 에이전트는 일반적으로 "<dfn id="widget-user-agent">widget 유저 에이전트</dfn>"만을 의미하지 않습니다:
+    즉, 모든 명세와 의존성을 구현하는 유저 에이전트는 <a href="#widgets-family-of-specifications">Widgets Family of Specifications</a>에 정의되어 있습니다.
+     이 명세에 나오는 유저 에이전트는 <a href="#zip-archive-0" title="zip archive">Zip 아카이브</a>를 어떻게 처리하는지,
+      <a href="#configuration-document-0" title="configuration document">configuration 문서</a>를 어떻게 처리하는지에만 관심이 있습니다.</p>
+  <h3 id="optional-aspects-of-the-zip-specification"><span class="secno">4.1 </span>Zip 명세의 선택적인 측면</h3>
+  <p><dfn id="optional-aspects-of-the-zip-specification-0">Zip 명세의 선택적인 측면</dfn>들은 아래와 같습니다. 현재 명세에서는 사용하지 않으며, 이 측면들은 <a href="#zip">[ZIP]</a>명세에 정의된 일반적인 특징을 나타냅니다:</p>
   <ul>
     <li>
-      <p>Compression or  decompression algorithms other than <a href="#deflate">[Deflate]</a> and <a href="#stored">Stored</a>.</p>
+      <p><a href="#deflate">[Deflate]</a>와 <a href="#stored">저장</a> 이외의 압축이나 해제 알고리즘.</p>
     </li>
     <li>
-      <p>Zip64 extensions.</p>
+      <p>Zip64 확장.</p>
     </li>
     <li>
-      <p> Digital signature methods.</p>
+      <p>디지털 서명 방법.</p>
     </li>
     <li>
-      <p> Decryption methods.</p>
+      <p>복호화 방법.</p>
     </li>
     <li>
-      <p> Patented aspects.</p>
+      <p>특허 측면.</p>
     </li>
   </ul>
   <h2 id="zip-archive"><span class="secno">5 </span>Zip 아카이브</h2>
