@@ -1081,7 +1081,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
   </div>
   <p class="note"><span class="notetitle">주석:</span> <a href="#configuration-document-0">configuration 문서</a>에서 제공하는 관련 정보들을 사용자에게 제공하도록 구현자들에게 권장하고 있습니다. "보여지는 metadata"가 있다는 것은 작성자들이 configuration 포맷을 최대한 활용하도록 만듭니다. 어떻게 configuration 문서를 처리하는지에 대한 설명은 <a href="#step-7-process-the-configuration-document">Step 7</a>을 참고하세요.</p>
   <div class="authorguide">
-    <p><strong>작성 지침:</strong> configuration 문서에서 유일한 필수 element는 <code title="widget element"><a href="#the-widget-element-and-its-attributes">widget</a></code> element 입니다. 모든 다른 elements과 그것들 각각의 attributes는 optional 입니다. 다음의 예는 user agent가 처리할 수 있는 가장 최소한의 configuration 문서입니다. 이 하나의 element를 포함하는 이유는 user agent나 conformance checker에게 이 zip 파일은 이 명세를 준수하려고 한다는 것을 명시적으로 알려주기 위해서입니다.</p>
+    <p><strong>작성 지침:</strong> configuration 문서에서 유일한 필수 element는 <code title="widget element"><a href="#the-widget-element-and-its-attributes">widget</a></code> element 입니다. 모든 다른 elements와 그것들 각각의 attributes는 optional 입니다. 다음의 예는 user agent가 처리할 수 있는 가장 최소한의 configuration 문서입니다. 이 하나의 element를 포함하는 이유는 user agent나 conformance checker에게 이 zip 파일은 이 명세를 준수하려고 한다는 것을 명시적으로 알려주기 위해서입니다.</p>
     <div class="example">
       <pre><code>
 
@@ -1121,70 +1121,62 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
     </dd>
     <dt><dfn id="string-attribute">String attribute</dfn></dt>
     <dd>
-      <p>The value of a string attribute is any string that conforms to <a href="#xml">[XML]</a> as a valid string for an XML attribute. The purpose of this attribute type is to classify strings that are not affected by the <code title="dir"><a href="#the-dir-attribute">dir</a></code> attribute, such as the <code title="author email"><a href="#the-email-attribute">email</a></code> attribute (i.e., these attributes will not treated as <a href="#displayable-string-attribute" title="Displayable-string attribute">displayable-strings</a> during <a href="#step-7-process-the-configuration-document">Step 7</a>). </p>
+      <p>string attribute의 값은 XML attribute를 위한 올바른 문자열 <a href="#xml">[XML]</a>을 준수하는 어떤 문자열이라도 상관없습니다. 이 attribute 타입의 목적은 <code title="author email"><a href="#the-email-attribute">email</a></code> attribute와 같이 <code title="dir"><a href="#the-dir-attribute">dir</a></code> attribute에 의해 영향을 받지 않는 문자열을 분류하기 위함입니다. (즉, 이 attributes는 <a href="#step-7-process-the-configuration-document">Step 7</a>에서 <a href="#displayable-string-attribute" title="Displayable-string attribute">displayable-strings</a> 로 취급되지 않을 것입니다). </p>
     </dd>
     <dt><dfn id="displayable-string-attribute">Displayable-string attribute</dfn></dt>
     <dd>
-      <p>An attribute whose primary purpose is to convey human readable information, such as the <code title="name element"><a href="#the-name-element-and-its-attributes">name</a></code> element's <code title="name short"><a href="#the-short-attribute">short</a></code> attribute and the widget element's <code title="widget version"><a href="#widget-version">version</a></code> attribute. </p>
+      <p>attribute의 주된 목적은 <code title="name element"><a href="#the-name-element-and-its-attributes">name</a></code> element의 <code title="name short"><a href="#the-short-attribute">short</a></code> attribute나 widget element의 <code title="widget version"><a href="#widget-version">version</a></code> attribute 같이 인간이 읽을 수 있는 정보를 전달함에 있습니다. </p>
     </dd>
     <dt><dfn id="keyword-attribute">Keyword attribute</dfn></dt>
     <dd>
-      <p>A <dfn id="keyword">keyword</dfn> is a string that is <a href="#reserved">reserved</a> for the purpose
-        of this specification. The value of a keyword attribute is a <a href="#keyword">keyword</a> that is one of a finite set specified in the attribute's definition in the case
-        given in this specification. </p>
+      <p><dfn id="keyword">keyword</dfn>는 이 명세의 목적을 위해 <a href="#reserved">예약된</a>문자열 입니다. keyword attribute의 값은 이 명세에 지정된 경우의 attribute 정의에 명시되어진 set(유한) 중의 하나인 <a href="#keyword">keyword</a>입니다. </p>
     </dd>
     <dt><dfn id="keyword-list-attribute">Keyword list attribute</dfn></dt>
     <dd>
-      <p>An attribute defined as taking one or more <a href="#keyword" title="keyword">keywords</a> as a value, which are separated by <a href="#space-characters">space characters</a>. </p>
+      <p>attribute는 <a href="#space-characters">space 문자들</a>에 의해 분류된 하나 이상의 <a href="#keyword" title="keyword">keywords</a>를 값으로 가지도록 정의되어 있습니다. </p>
     </dd>
     <dt><dfn id="media-type-attribute">Media type attribute</dfn></dt>
     <dd>
-      <p>An attribute whose value is defined as containing a valid media type. A <dfn id="valid-media-type">valid media type</dfn> is string that matches the production for <code><a href="#valid-mime-type">valid-MIME-type</a></code> in the following <a href="#abnf">[ABNF]</a>:</p>
+      <p>attribute의 값은 올바른 미디어 타입을 포함하도록 정의되어 있습니다. <dfn id="valid-media-type">올바른 미디어 타입</dfn>은 다음에 나오는 <a href="#abnf">[ABNF]</a>의 <code><a href="#valid-mime-type">valid-MIME-type</a></code>형식에 부합하는 문자열입니다:</p>
       <pre>
 <code><dfn id="valid-mime-type">valid-MIME-type</dfn> = type "/" subtype *(";" parameter)</code></pre>
-      <p>The <dfn class="external" id="mime-type-part" title="mime type-part"><code>type</code></dfn>, <dfn class="external" id="mime-subtype-part" title="mime subtype-part"><code>subtype</code></dfn>, and <dfn class="external" id="mime-parameter" title="mime parameter"><code>parameter</code></dfn> tokens are defined in the <a href="#mime">[MIME]</a> specification.</p>
+      <p><dfn class="external" id="mime-type-part" title="mime type-part"><code>type</code></dfn>, <dfn class="external" id="mime-subtype-part" title="mime subtype-part"><code>subtype</code></dfn>, 그리고 <dfn class="external" id="mime-parameter" title="mime parameter"><code>parameter</code></dfn> 토큰들은 <a href="#mime">[MIME]</a> 명세에 정의되어 있습니다.</p>
     </dd>
     <dt><dfn id="language-attribute">Language attribute</dfn></dt>
     <dd>
-      <p>An attribute whose value is defined as containing a <dfn id="valid-language-tag">valid language tag</dfn> (see the <a href="http://www.iana.org/assignments/language-subtag-registry">IANA Language Subtag
-        Registry</a> for an authoritative list of possible values, see also the <a href="http://www.iso.org/iso/country_codes/iso_3166_code_lists/country_names_and_code_elements">Maintenance Agency for ISO 3166 country codes</a>). A valid language tag is a string that conforms to the production of a <code>Language-Tag</code>, as defined in the <a href="#bcp47">[BCP47]</a> specification.</p>
+      <p>attribute값은 <dfn id="valid-language-tag">올바른 language tag</dfn>를 포함하도록 정의되어 있습니다. (가능한 값들의 리스트는 <a href="http://www.iana.org/assignments/language-subtag-registry">IANA Language Subtag
+        Registry</a>나 <a href="http://www.iso.org/iso/country_codes/iso_3166_code_lists/country_names_and_code_elements">Maintenance Agency for ISO 3166 country codes</a>를 찾아보기 바랍니다). 올바른 language tag는 <a href="#bcp47">[BCP47]</a>명세에 정의된 <code>Language-Tag</code>형식을 준수하는 문자열입니다.</p>
     </dd>
     <dt><dfn id="numeric-attribute">Numeric attribute</dfn></dt>
     <dd>
-      <p>The value of a numeric attribute is a string containing a valid non-negative
-        integer. A <dfn id="valid-non-negative-integer">valid non-negative integer</dfn> is a string that consists of one
-        or more code points in the range U+0030 DIGIT ZERO (0) to U+0039 DIGIT NINE (9).
-        For example, the strings "002", "323", "23214", and so on. </p>
+      <p>numeric attribute의 값은 올바른 양의 정수를 가지는 문자열입니다.<dfn id="valid-non-negative-integer">올바른 양의 정수(non-negative integer)</dfn>는 U+0030 DIGIT ZERO (0) 와 U+0039 DIGIT NINE (9) 범위 사이의 하나 이상의 코드 포인트들로 구성되어진 문자열 입니다.
+        예를 들면 "002", "323", "23214" 등과 같은 문자열 입니다. </p>
     </dd>
     <dt><dfn id="path-attribute">Path attribute</dfn></dt>
     <dd>
-      <p>An attribute defined as containing a valid path. A <dfn id="valid-path">valid
-        path</dfn> is one that matches the production of a <code><a href="#zip-rel-path">Zip-rel-path</a></code> or a <code>Zip-abs-path</code>. </p>
+      <p>attribute는 올바른 path 값을 가지도록 정의되어 있습니다. <dfn id="valid-path">올바른
+        path</dfn>란 <code><a href="#zip-rel-path">Zip-rel-path</a></code> 또는 <code>Zip-abs-path</code> 형식에 일치하는 path 입니다. </p>
     </dd>
     <dd>
-      <p class="authorguide"><strong>작성 지침:</strong> A valid path is not a URI: a valid path represents a
-        hierarchical path to a file inside a <a href="#zip-archive-0">Zip archive</a>, which exactly matches the value of a <var><a href="#file-name-field">file name
-        field</a></var> of a <var><a href="#local-file-header">local file header</a></var> of a <a href="#file-entry">file entry</a>.      This means that valid paths need not be URL encoded.</p>
+      <p class="authorguide"><strong>작성 지침:</strong> 올바른 path는 URI가 아닙니다: 올바른 path는 <a href="#file-entry">file entry</a>의 <var><a href="#local-file-header">local file header</a></var>의 
+        <var><a href="#file-name-field">file name field</a></var> 와 정확하게 일치하는 <a href="#zip-archive-0">Zip archive</a> 내부의 파일로의 계층적인 path를 나타냅니다. 이것은 올바른 path는 URL encode될 필요가 없다는 것을 의미합니다.</p>
     </dd>
     <dt><dfn id="iri-attribute">IRI attribute</dfn></dt>
     <dd>
-      <p>An attribute defined as containing a valid IRI. A <dfn id="valid-iri">valid IRI</dfn> is one
-        that matches the <code><a href="#iri">IRI</a></code> token of the <a href="#iri">[IRI]</a> specification. </p>
+      <p>attribute는 올바른 IRI 를 가지도록 정의되어 있습니다. <dfn id="valid-iri">올바른 IRI</dfn>는 
+        <a href="#iri">[IRI]</a> 명세의 <code><a href="#iri">IRI</a></code> 토큰과 일치하는 것입니다. </p>
     </dd>
     <dd>
-      <p class=" authorguide"><strong>작성 지침:</strong> Because of the risk of confusion between IRIs that would be equivalent if dereferenced, the use of %-escaped characters in feature names is strongly discouraged. </p>
+      <p class=" authorguide"><strong>작성 지침:</strong> 역참조되면 같아지는 IRI들의 사이의 혼동 위험성 때문에 feature 이름들에 %-escaped 문자들을 사용하는 것을 강력히 막고 있습니다. </p>
     </dd>
     <dt><dfn id="version-attribute">Version attribute</dfn></dt>
     <dd>
-      <p>A <a href="#displayable-string-attribute">displayable-string attribute</a> whose value is any arbitrary string value (possibly empty) within the constraints allowed for <a href="#xml">[XML]</a> attributes. This
-        specification does not mandate any specific format, semantics, or special
-        processing rule for the format of a <a href="#version-attribute">version attribute</a>. </p>
+      <p><a href="#displayable-string-attribute">displayable-string attribute</a> 의 값은 <a href="#xml">[XML]</a> attributes에 허용되는 제약내의 어떤 임의의 문자열이라도 가능합니다 (공란도 가능).
+       이 명세는 <a href="#version-attribute">version attribute</a>의 포맷을 위해 어떠한 특정 포맷, 시맨틱스, 또는 스페셜한 처리 룰을 강제하지 않습니다. </p>
     </dd>
     <dd class="authorguide">
-      <p><strong>작성 지침:</strong> For the purpose of this specification, the
-        structure of version tags has no semantics; they are just treated as arbitrary
-        strings (e.g. '1.0' is not less than '2.0', but is simply different). However,
-        for the sake of consistency, one can choose to use the following <a href="#abnf">[ABNF]</a>:</p>
+      <p><strong>작성 지침:</strong> 이 명세의 목적을 위해, version tags의 스트럭쳐에는 시맨틱스가 없습니다; 그냥 임의의 문자열로 취급됩니다 (예를 들어 '1.0'은 '2.0' 보다 하위가 아니라 그냥 단순하게 다릅니다). 그러나,
+        일관성을 위해, 다음의 <a href="#abnf">[ABNF]</a>을 사용하도록 선택할 수 있습니다:</p>
       <pre><code><dfn id="rec-version-tag">rec-version-tag</dfn> = 1*DIGIT "."  1*DIGIT [ "." 1*DIGIT]<br>                  *[ 1*ALPHA / SP / 1*DIGIT ]</code></pre>
       <dl class="example">
         <dt>Example version tags:</dt>
