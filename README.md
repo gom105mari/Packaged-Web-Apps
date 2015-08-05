@@ -9,6 +9,7 @@
  * Zip
  * namespace
  * root
+ * Step
 * 표준 번역
  * Note -> 주석
  * Authoring Guidelines -> 작성 지침
