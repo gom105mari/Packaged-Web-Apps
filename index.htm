@@ -648,7 +648,7 @@ td, th {
     the <cite>Zip File Format Specification</cite> <a href="#zip">[ZIP]</a> and <a href="#step-2-verify-the-zip-archive" title="step 2">meets the requirements of this specification</a> (See <a href="#step-2-verify-the-zip-archive">Step 2</a>).</p>
   <p><dfn id="magic-numbers-for-a-zip-archive">Zip 아카이브를 위한 매직 넘버</dfn>는 바이트 배열입니다: <code>50 4B 03 04</code>.</p>
   <h3 id="compression-methods"><span class="secno">5.1 </span>압축 방법</h3>
-  <p> <dfn id="compression-method">압축 방법</dfn> 은 저자에 의해 zip 아카이브가 생성될 때, 파일 엔트리의 파일 데이터를 암호화 하는데 사용하는 압축 알고리즘이나 저장 방법입니다. <a href="#file-entry">file entry</a>의 <var><a href="#file-data">file data</a></var>를 암호화하는 압축 방법은 <a href="#zip">[ZIP]</a> 명세에 정의된 <dfn id="compression-method-field"><var>압축 방법 필드</var></dfn>로부터 도출된 숫자에 의해 식별됩니다.</p>
+  <p> <dfn id="compression-method">압축 방법</dfn> 은 작성자에 의해 zip 아카이브가 생성될 때, 파일 엔트리의 파일 데이터를 암호화 하는데 사용하는 압축 알고리즘이나 저장 방법입니다. <a href="#file-entry">file entry</a>의 <var><a href="#file-data">file data</a></var>를 암호화하는 압축 방법은 <a href="#zip">[ZIP]</a> 명세에 정의된 <dfn id="compression-method-field"><var>압축 방법 필드</var></dfn>로부터 도출된 숫자에 의해 식별됩니다.</p>
   <p><var><a href="#compression-method-field">압축 방법 필드</a></var>에 표시된 대로, 파일 엔트리에 대해 <dfn id="valid-compression-methods">올바른 압축 방법</dfn>은:</p>
   <dl>
     <dt><code>8</code></dt>
@@ -701,7 +701,7 @@ td, th {
   <p><dfn class="external" id="alpha"><code>ALPHA</code></dfn>, <dfn class="external" id="digit"><code>DIGIT</code></dfn>, 그리고 <dfn class="external" id="sp"><code>SP</code></dfn>는 <a href="#abnf">[ABNF]</a> 명세에 정의되어 있습니다(그러나 기본적으로 각각의 영숫자문자와  U+0020 SPACE 코드 포인트를 나타냅니다).</p>
   <h3 id="interoperability-considerations"><span class="secno">5.4 </span>상호운용 고려사항</h3>
   <p><em>이 부분은 비표준적인 내용입니다.</em></p>
-  <p>몇가지 문제는 파일명의 문자 인코딩, zip 상대경로의 길이, 그리고 파일명과 같은 특정 문자의 사용시에 발생할 수 있습니다. 이 부분은 상호운용성 문제를 피할수 있도록 저자가 도움을 주는 부분입니다.</p>
+  <p>몇가지 문제는 파일명의 문자 인코딩, zip 상대경로의 길이, 그리고 파일명과 같은 특정 문자의 사용시에 발생할 수 있습니다. 이 부분은 상호운용성 문제를 피할수 있도록 작성자가 도움을 주는 부분입니다.</p>
   <div class="authorguide"><strong>작성 지침</strong>
     <h4 class="no-toc" id="paths-lengths"><span class="secno">5.4.1 </span>경로 길이</h4>
     <p><em>이 부분은 비표준적인 내용입니다.</em></p>
@@ -754,7 +754,7 @@ td, th {
       <p>0개 또는 그 이상의 <a href="#default-icon" title="default icon">아이콘</a>이 <a href="#root-of-the-widget-package">widget 패키지의 root</a> 위치에 있습니다. 또한, <a href="#locale-folder-0" title="locale folder">locale 폴더</a>의 root에도 있고/있거나, 또는 <code title="icon element"><a href="#the-icon-element-and-its-attributes">icon</a></code> element의 <code title="icon src"><a href="#the-src-attribute">src</a></code> attribute로 참조합니다.</p>
     </li>
     <li>
-      <p>0개 또는 그 이상의 <a href="#arbitrary">arbitrary</a> <a href="#file" title="file">파일들</a>이 <a href="#root-of-the-widget-package">widget 패키지의 root</a> 위치에 있습니다. 또한, <a href="#arbitrary">arbitrary</a> <a href="#folder" title="folder">폴더</a>나 <a href="#locale-folder-0" title="locale folder">locale 폴더</a>에도 있을 수 있습니다.</p>
+      <p>0개 또는 그 이상의 <a href="#arbitrary">임의의</a> <a href="#file" title="file">파일들</a>이 <a href="#root-of-the-widget-package">widget 패키지의 root</a> 위치에 있습니다. 또한, <a href="#arbitrary">임의의</a> <a href="#folder" title="folder">폴더</a>나 <a href="#locale-folder-0" title="locale folder">locale 폴더</a>에도 있을 수 있습니다.</p>
     </li>
     <li>
       <p>0개 또는 그 이상의 <a href="#digital-signature" title="digital signature">디지털 서명</a>이 <a href="#root-of-the-widget-package">widget 패키지의 root</a>에 있습니다.</p>
@@ -915,27 +915,25 @@ td, th {
   <h3 id="digital-signatures"><span class="secno">6.4 </span>전자 서명</h3>
   <p><a href="#widget-package">widget 패키지</a>는 <dfn id="digital-signature">디지털 서명</dfn>을 포함하기 때문에, <dfn id="digitally-signed">디지털 방식으로 서명</dfn>되어 있습니다. widget 패키지는 <a href="#widgets-digsig">[Widgets-DigSig]</a> 명세를 따르는 하나 이상의 <a href="#file" title="file">파일</a>을 포함합니다.</p>
   <h3 id="start-files"><span class="secno">6.5 </span>시작 파일</h3>
-  <p><dfn id="start-file">시작 파일</dfn>은 유저 에이전트가 widget을 인스턴스화 할 때, widget 패키지에서 로드한 <a href="#file">파일</a>을 지정합니다 when it instantiates the widget. This specification defines
-    two kinds of start file: <a href="#custom-start-file-0">custom start file</a> and <a href="#default-start-file">default start
-    file</a>.</p>
+  <p>유저 에이전트가 widget을 인스턴스화 할 때, widget 패키지에서 로드한 <a href="#file">파일</a>을 <dfn id="start-file">시작 파일</dfn>로 지정합니다.  이 명세는 두 종류의 시작파일로 정의됩니다: <a href="#custom-start-file-0">사용자 정의 파일</a>과 <a href="#default-start-file">기본 시작 파일</a>.</p>
   <h4 id="custom-start-file"><span class="secno">6.5.1 </span>사용자 정의 시작 파일</h4>
-  <p>A <dfn id="custom-start-file-0">custom start file</dfn> is a <a href="#processable-file">processable file</a> inside the <a href="#widget-package">widget package</a> identified by a <code title="content element"><a href="#the-content-element-and-its-attributes">content</a></code> element's <code title="content src"><a href="#the-src-attribute-0">src</a></code> attribute.</p>
+  <p><a href="#widget-package">widget 패키지</a> 내 <code title="content element"><a href="#the-content-element-and-its-attributes">content</a></code> element의 <code title="content src"><a href="#the-src-attribute-0">src</a></code> attribute에 정의된 <dfn id="custom-start-file-0">사용자 정의 시작 파일</dfn>은 <a href="#processable-file">처리 가능한 파일</a>입니다.</p>
   <h4 id="default-start-files"><span class="secno">6.5.2 </span>기본 시작 파일</h4>
-  <p>A <dfn id="default-start-file">default start file</dfn> is a <a href="#reserved">reserved</a> <a href="#start-file">start file</a> at the <a href="#root-of-the-widget-package">root of the widget package</a> or  at the root of a <a href="#locale-folder-0">locale folder</a> whose file name case-sensitively matches a file name given in the file name
-    column of the <a href="#default-start-files-table">default start files table</a>, and whose <a href="#media-type-0">media type</a> matches the <a href="#media-type-0">media type</a> given in the media type column of the table.</p>
-  <p>It is <em class="ct">optional</em> for a <a class="product-ua" href="#user-agent">user agent</a> to <a href="#supported" title="supported">support</a> the <a href="#media-type-0" title="media type">media types</a> listed in
-    the <a href="#default-start-files-table">default start files table</a>.</p>
-  <p id="ta-RRZxvvTFHx">If a user agent encounters a <a href="#file">file</a> matching a file name given in the
-    file name column of the <a href="#default-start-files-table">default start files table</a> in an <a href="#arbitrary">arbitrary</a> <a href="#folder">folder</a>, then <a class="product-ua" href="#user-agent">user agent</a> <em class="ct">must</em> treat that file as an <a href="#arbitrary">arbitrary</a> file.</p>
-  <p class="example">For example,
-    "<code>foo/bar/index.html</code>" would be treated as an <a href="#arbitrary">arbitrary</a> <a href="#file">file</a>.</p>
+  <p><dfn id="default-start-file">기본 시작 파일</dfn>은 <a href="#root-of-the-widget-package">widget 패키지의 root</a>에 위치하는 <a href="#reserved">예약된</a> <a href="#start-file">시작 파일</a>이거나 <a href="#locale-folder-0">locale 폴더</a>의 root에 위치하는 파일이며, <a href="#default-start-files-table">기본 시작 파일 표</a>의 파일명과 대소문자까지 일치하는 파일명을 찾습니다.
+  또한, 표의  <a href="#media-type-0">미디어 타입</a>과 일치하는 <a href="#media-type-0">미디어 타입</a>이어야 합니다.</p>
+  <p><a href="#default-start-files-table">기본 시작 파일 표</a>에 나열된 <a href="#media-type-0" title="media type">미디어 타입</a>은 
+  <a class="product-ua" href="#user-agent">유저 에이전트</a>를 위한 부가정보입니다.</p>
+  <p id="ta-RRZxvvTFHx">만약 유저 에이전트가 <a href="#arbitrary">임의의</a> <a href="#folder">폴더</a> 내에서 <a href="#default-start-files-table">기본 시작 파일 표</a>의 파일명과 일치하는 <a href="#file">파일</a>을 찾을 경우,
+    <a class="product-ua" href="#user-agent">유저 에이전트</a>는 그 파일을 <em class="ct">반드시</em> <a href="#arbitrary">임의의</a> 파일로 다루어야 합니다.</p>
+  <p class="example">예를 들어,
+    "<code>foo/bar/index.html</code>"은 <a href="#arbitrary">임의의</a> <a href="#file">파일</a>로 다루어집니다.</p>
   <table>
     <caption>
-    <dfn id="default-start-files-table">Default Start Files Table</dfn>
+    <dfn id="default-start-files-table">기본 시작 파일 표</dfn>
     </caption>
     <tr>
-      <th scope="col">file name</th>
-      <th scope="col">media type</th>
+      <th scope="col">파일명</th>
+      <th scope="col">미디어 타입</th>
     </tr>
     <tr>
       <td>index.htm</td>
@@ -958,33 +956,29 @@ td, th {
       <td>application/xhtml+xml</td>
     </tr>
   </table>
-  <p class="note"><span class="notetitle">주석:</span> See <a href="#step-8-locate-the-start-file">Step 8</a> for
-    instructions on finding a <a href="#default-start-file">default start file</a>.</p>
-  <p class="authorguide"><strong>작성 지침:</strong> Always include at least
-    one <a href="#start-file">start file</a> in a widget package.</p>
+  <p class="note"><span class="notetitle">주석:</span> <a href="#default-start-file">기본 시작 파일</a>을 찾는 설명이 나와있는<a href="#step-8-locate-the-start-file">Step 8</a>을 보세요.</p>
+  <p class="authorguide"><strong>작성 지침:</strong> widget 패키지에는 적어도 하나 이상의 <a href="#start-file">시작 파일</a>을 항상 포함합니다.</p>
   <h3 id="icons"><span class="secno">6.6 </span>아이콘</h3>
-  <p>An <dfn id="icon">icon</dfn> is a <a href="#file">file</a> that is used
-    to represent the widget in various application contexts (e.g. the icon that the user
-    activates to instantiate a widget, or an icon in a dock or task bar or some other visual
-    context). The icon is intended to help users of visual browsers to recognize the widget
-    at a glance. There are two kinds of icons defined by this specification, <a href="#custom-icon" title="custom
-      icon">custom
-    icons</a> and <a href="#default-icon" title="default icon">기본 아이콘</a>.</p>
+  <p><dfn id="icon">아이콘</dfn>은 다양한 애플리케이션 컨텍스트에서 widget을 표현하기 위해 주로 사용하는 <a href="#file">파일</a>입니다
+    (예를 들어, 사용자가 widget을 인스턴스화 할 때 활용, dock이나 task bar 또는 다른 시각적인 컨텍스트에서 사용).
+     아이콘은 시각적인 브라우저에서 widget을 한 눈에 인식하도록 도와주는 것을 목적으로 하고 있습니다.
+     이 명세에는 두 종류의 아이콘이 정의되어 있습니다, <a href="#custom-icon" title="custom
+      icon">사용자 정의 아이콘</a>과 <a href="#default-icon" title="default icon">기본 아이콘</a>.</p>
   <h4 id="custom-icons"><span class="secno">6.6.1 </span>사용자 정의 아이콘</h4>
-  <p>A <dfn id="custom-icon">custom icon</dfn> is an <a href="#icon">icon</a> explicitly declared by an author via an <code title="icon element"><a href="#the-icon-element-and-its-attributes">icon</a></code> element in a <a href="#configuration-document-0">configuration document</a>. A <a href="#custom-icon">custom icon</a> can be  located at the <a href="#root-of-the-widget-package">root of the widget
-    package</a>, or at the root of a <a href="#locale-folder-0">locale folder</a>, or in an <a href="#arbitrary">arbitrary</a> <a href="#folder">folder</a>.</p>
+  <p><dfn id="custom-icon">사용자 정의 아이콘</dfn>은 <a href="#configuration-document-0">configuration 문서</a>의 <code title="icon element"><a href="#the-icon-element-and-its-attributes">icon</a></code> element에 작성자가 명시적으로 정의한 <a href="#icon">아이콘</a>입니다.
+   <a href="#custom-icon">사용자 정의 아이콘</a>은 <a href="#root-of-the-widget-package">widget 패키지의 root</a>나, <a href="#locale-folder-0">locale 폴더</a>의 root, 또는 <a href="#arbitrary">임의의</a> <a href="#folder">폴더</a>에 위치할 수 있습니다.</p>
   <h4 id="default-icons"><span class="secno">6.6.2 </span>기본 아이콘</h4>
-  <p>A <dfn id="default-icon">default icon</dfn> is a <a href="#reserved">reserved</a> <a href="#icon">icon</a>, either at the <a href="#root-of-the-widget-package">root of the widget package</a> or at the root of a <a href="#locale-folder-0">locale
-    folder</a>, whose file
-    name case-sensitively and exactly matches a file name given in the file name column of
-    the <a href="#default-icons-table">기본 아이콘 표</a>.</p>
+  <p><dfn id="default-icon">기본 아이콘</dfn>은 <a href="#root-of-the-widget-package">widget 패키지의 root</a>나 
+  <a href="#locale-folder-0">locale 폴더</a>의 root에 위치하는 파일 중 하아니고, 
+  <a href="#default-icons-table">기본 아이콘 표</a>의 파일명과 대소문자까지 일치하는 
+  <a href="#reserved">예약된</a> <a href="#icon">아이콘</a>입니다.</p>
   <table>
     <caption>
     <dfn id="default-icons-table">기본 아이콘 표</dfn>
     </caption>
     <tr>
-      <th scope="col">file name</th>
-      <th scope="col">media type</th>
+      <th scope="col">파일명</th>
+      <th scope="col">미디어 타입</th>
     </tr>
     <tr>
       <td>icon.svg</td>
@@ -1007,23 +1001,22 @@ td, th {
       <td>image/jpeg</td>
     </tr>
   </table>
-  <p>It is <em class="ct">optional</em> for a <a href="#user-agent">user agent</a> to <a href="#supported" title="supported">support</a> the <a href="#media-type-0" title="media type">media types</a> listed in the <a href="#default-icons-table">default icons table</a>.</p>
-  <h3 id="media-type"><span class="secno">6.7 </span>Media Type</h3>
-  <p>The <dfn id="valid-widget-media-type">valid widget media type</dfn> is the string <code>application/widget</code>.</p>
-  <p class="authorguide"><strong>작성 지침:</strong> If the protocol over
-    which the <a href="#widget-package">widget package</a> is transferred <a href="#supported" title="supported">supports</a> the [MIME] specification (e.g. <a href="#http">[HTTP]</a>), then make sure that the widget
-    is labeled with an <code>application/widget</code> media type. Failure to correctly
-    label a <a href="#widget-package">widget package</a> can result in the widget package being treated as an <a href="#invalid-widget-package-0">invalid widget package</a>.</p>
-  <h3 id="file-extension"><span class="secno">6.8 </span>File Extension</h3>
+  <p> <a href="#default-icons-table">기본 아이콘 표</a>에 나열된 <a href="#media-type-0" title="media type">미디어 타입</a>은 
+  <a class="product-ua" href="#user-agent">유저 에이전트</a>를 위한 부가정보입니다.</p>
+  <h3 id="media-type"><span class="secno">6.7 </span>미디어 타입</h3>
+  <p><dfn id="valid-widget-media-type">올바른 widget 미디어 타입</dfn>은 <code>application/widget</code> 입니다.</p>
+  <p class="authorguide"><strong>작성 지침:</strong>만약 <a href="#widget-package">widget 패키지</a>가 전송되는 프로토콜이
+   [MIME] 명세(<a href="#http">[HTTP]</a>와 같은)를 <a href="#supported" title="supported">지원</a>할 경우,
+   widget이 <code>application/widget</code> 미디어 타입으로 표시되어 있는지 확인해야 합니다.
+   <a href="#widget-package">widget 패키지</a>가 올바르게 표시되지 않으면 <a href="#invalid-widget-package-0">잘못된 widget 패키지</a>로 처리됩니다.</p>
+  <h3 id="file-extension"><span class="secno">6.8 </span>파일 확장자</h3>
   <div>
-    <p>A <dfn id="widget-file-extension">widget file extension</dfn> is the text string that case-insensitively
-      matches the string "<code>.wgt</code>"  (e.g. <code>.wgt</code>, <code>.WGt</code>, <code>.WgT</code>, etc. are all valid). </p>
-    <p class="example">For example in <code>widget.WGT</code>, the <code>".WGT</code>" component is the file extension. </p>
-    <p class="authorguide"><strong>작성 지침:</strong> If it is anticipated
-      that the widget will be distributed by means lacking MIME support, then include the
-      widget file extension. The widget file extension is not necessary if the widget
-      package is labeled as a <code>application/widget</code> when served over HTTP. The <a href="#widget-file-extension">widget file extension</a> is required for widget packages on systems where it is customary for file names to include a file extension that symbolizes (or is associated with) a <a href="#media-type-0">media
-      type</a>.</p>
+    <p><dfn id="widget-file-extension">widget 파일 확장자</dfn>는 대소문자를 구별하지 않고, "<code>.wgt</code>"와 일치하는 텍스트 문자열입니다(예를 들어, <code>.wgt</code>, <code>.WGt</code>, <code>.WgT</code>, etc. 는 모두 올바른 값입니다). </p>
+    <p class="example">예를 들어 <code>widget.WGT</code>에서, <code>".WGT</code>" 컴포넌트는 파일 확장자입니다. </p>
+    <p class="authorguide"><strong>작성 지침:</strong>widget이 MIME 지원없이 배포될 예정인 경우, widget 파일 확장자를 포함하세요.
+    <code>application/widget</code>로 표시된 widget 패키지가 HTTP로 제공될 때는, widget 파일 확장자가 필요없습니다.
+     파일명에 포함된 파일확장자가 <a href="#media-type-0">미디어 타입</a>을 상징하는(또는 이와 연관된) 일반적인 시스템에서는, 위젯 패키지를 위해서 
+     <a href="#widget-file-extension">widget 파일 확장자</a>가 필요합니다.</p>
   </div>
   <h2 id="configuration-document"><span class="secno">7 </span>Configuration 문서</h2>
   <p><dfn id="configuration-document-0">configuration 문서</dfn>는 <a href="#widget-namespace">widget namespace</a>에 있는 root에 <code title="widget element"><a href="#the-widget-element-and-its-attributes">widget</a></code> 요소를 가지는 <a href="#xml">[XML]</a> 문서입니다. widget 패키지는 정확하게 <a href="#root-of-the-widget-package">widget 패키지의 root</a>에 위치하는 하나의 configuration 문서를 가집니다.</p>
