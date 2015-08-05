@@ -40,4 +40,4 @@
 * 4. User Agent - 100% 완료
 * 5. Zip Archive - 90%
 * 6. Widget Package - 100% 완료
-* 7. Configuration Document - 5%
+* 7. Configuration Document - 10%
