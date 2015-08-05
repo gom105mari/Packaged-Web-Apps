@@ -29,7 +29,9 @@
  * author -> 작성자
  * localization -> 현지화
  * example -> 예시
- * type -> 
+ * type -> 타입
+ * arbitrary -> 임의의
+ * table -> 표
 
 ## 번역 진행상황
 * 목차 번역 - 90%
