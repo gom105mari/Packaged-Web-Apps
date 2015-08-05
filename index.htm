@@ -217,26 +217,17 @@ td, th {
 </div>
 <hr>
 <div class="body">
-  <h2 class="no-num no-toc" id="abstract">Abstract</h2>
-  <p>This specification updates the <cite>Widget Packaging and XML Configuration</cite>, and addresses some <a href="http://w3c.github.io/packaged-webapps/packaging/errata.html">errata</a> found in the original recommendation. It also updates the name of the specification, to be more <em>in vogue</em> with industry trends towards the naming of this class of application.</p>
-  <p>This specification standardizes a packaging format and metadata for a  class of software
-    known commonly as <em>packaged apps</em> or <em>widgets</em>. Unlike traditional user interface widgets (e.g., buttons, input boxes, toolbars, etc.), widgets as specified in this document are full-fledged client-side applications that are authored
-    using technologies such as HTML and then packaged for distribution. Examples range from
-    simple clocks, stock tickers, news casters, games and weather forecasters, to complex
-    applications that pull data from multiple sources to be "mashed-up" and presented to a
-    user in some interesting and useful way.</p>
-  <p>The
-    specification relies on PKWare's Zip specification as the archive format, XML as a
-    configuration document format, and a series of steps that runtimes follow when
-    processing and verifying various aspects of a package. The packaging format acts as a
-    container for files used by a widget. The configuration document is an XML vocabulary
-    that declares metadata and configuration parameters for a widget. The steps for
-    processing a widget package describe the expected behavior and means of error handling
-    for runtimes while processing the packaging format, configuration document, and other
-    relevant files. </p>
-  <p>This specification is part of the <a href="#widgets-family-of-specifications">Widgets family of specifications</a>,
-    which together standardize widgets as a whole.</p>
-  <h2 class="no-num no-toc" id="sotd">Status of this Document </h2>
+  <h2 class="no-num no-toc" id="abstract">요약</h2>
+  <p>이 명세는 <cite>Widget Packaging and XML Configuration</cite>을 수정한 것이고, 기존 권고에서 찾은 <a href="http://w3c.github.io/packaged-webapps/packaging/errata.html">errata</a>를 다룹니다. 명세의 이름도 업계 <em>동향</em>에 맞게 애플리케이션의 클래스 이름으로 수정했습니다.</p>
+  <p>이 명세는 일반적으로 알려진 <em>앱 패키지</em> 또는 <em>widgets</em> 소프트웨어의 클래스에 대한 패키징 포맷과 메타데이터를 표준화합니다.
+  기존의 사용자 인터페이스 위젯(버튼, 입력 박스, 툴바 등)과는 달리, 이 문서에서의 widget은 HTML과 같은 기술을 이용해서 작성하고, 배포를 위해 패키지된 완전한 클라이언트 응용 애플리케이션입니다.
+  간단한 시계, 주식 시세 표시기, 뉴스캐스터, 게임, 날씨 캐스터부터, 여러 소스들에서 데이터를 얻어, 흥미있고 유용한 것을 사용자에게 보여주는 복잡한 앱까지를 예로 들 수 있습니다.</p>
+  <p>이 명세는 아카이브 포멧의 PKWare의 Zip 명세, configuration 문서 포멧의 XML, 패키지의 다양한 측면을 처리하고 검증할 때 따르는 런타임 단계에 의존합니다.
+    파일의 컨테이너로 역할을 하는 패키지 포멧은 widget에서 사용됩니다.
+    configuration 문서는 widget에 대한 메타데이터와 configuration 변수를 정의하는 XML 어휘입니다.
+    widget 패키지를 처리에 대한 Step에서는, 예상되는 동작과 패키지 형식을 처리하는 동안의 런타임에 대한 에러 처리 방법, configuration 문서, 그리고 다른 연관된 파일들을 설명합니다.</p>
+  <p>이 명세는  widget 전체를 표준화 하는 <a href="#widgets-family-of-specifications">Widgets family of specifications</a>의 일부분입니다.</p>
+  <h2 class="no-num no-toc" id="sotd">이 문서의 상태</h2>
   <p><em>This section describes the status of this document at the time of its
   publication. Other documents may supersede this document. A list of current W3C
   publications and the latest revision of this technical report can be found in the
