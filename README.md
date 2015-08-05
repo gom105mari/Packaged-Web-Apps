@@ -25,6 +25,11 @@
  * This section is non-normative. -> 이 부분은 비표준적인 내용입니다.
  * container -> 컨테이너
  * Default start file -> 기본 시작 파일
+ * implementer -> 구현자
+ * author -> 작성자
+ * localization -> 현지화
+ * example -> 예시
+ * type -> 
 
 ## 번역 진행상황
 * 목차 번역 - 90%

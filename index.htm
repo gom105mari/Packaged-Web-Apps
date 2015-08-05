@@ -1034,7 +1034,7 @@ td, th {
   <p class="note"><span class="notetitle">주석:</span> <a href="#configuration-document-0">configuration 문서</a>의 element들이 user agent에 의해 어떻게 처리되는지에 대한 자세한 내용은 <a href="#step-7-process-the-configuration-document">Step 7</a>을 보기 바랍니다..</p>
   <p><dfn id="valid-configuration-document-file-name">올바른 configuration 문서 파일 이름</dfn>은  <code>"config.xml"</code>입니다. </p>
   <p id="ta-dxzVDWpaWg"><a class="product-ua" href="#user-agent">user agent</a>는 <a href="#arbitrary">임의의</a> <a href="#folder">폴더</a> 또는 <a href="#locale-folder-0" title="locale folder">locale 폴더들</a> 아래의 "<code>config.xml</code>"이라는 이름을 사용하는 <a href="#file">파일</a>은 <a href="#arbitrary">임의의</a> 파일로 취급<em class="ct">해야한다.</em></p>
-  <p class="authorguide"><strong>작성 지침:</strong> 항상 <a href="#configuration-document-0">configuration 문서</a>는 <a href="#root-of-the-widget-package">widget 패키지의 root</a>에 포함하여 주시고 <code>config.xml</code>파일 이름은 소문자 형태로 해주시기 바랍니다. 상호 운용을 위해서 <a href="#configuration-document-0">configuration 문서</a>는 <a href="#utf-8">[UTF-8]</a>로 encode바랍니다.</p>
+  <p class="authorguide"><strong>작성 지침:</strong>반드시 <a href="#configuration-document-0">configuration 문서</a>는 <a href="#root-of-the-widget-package">widget 패키지의 root</a>에 포함하여 주시고 <code>config.xml</code>파일 이름은 소문자 형태로 해주시기 바랍니다. 상호 운용을 위해서 <a href="#configuration-document-0">configuration 문서</a>는 <a href="#utf-8">[UTF-8]</a>로 encode바랍니다.</p>
   <h3 id="example-configuration-document"><span class="secno">7.1 </span>Configuration 문서 예시</h3>
   <p>다음은 <a href="#configuration-document-0">configuration 문서</a>의 일반적인 예시입니다:</p>
   <div class="example">
@@ -1085,7 +1085,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
   </div>
   <p class="note"><span class="notetitle">주석:</span> <a href="#configuration-document-0">configuration 문서</a>에서 제공하는 관련 정보들을 사용자에게 제공하도록 구현자들에게 권장하고 있습니다. "보여지는 metadata"가 있다는 것은 작성자들이 configuration 포맷을 최대한 활용하도록 만듭니다. 어떻게 configuration 문서를 처리하는지에 대한 설명은 <a href="#step-7-process-the-configuration-document">Step 7</a>을 참고하세요.</p>
   <div class="authorguide">
-    <p><strong>작성 지침:</strong> configuration 문서에서 유일한 필수 element는 <code title="widget element"><a href="#the-widget-element-and-its-attributes">widget</a></code> element 입니다. 모든 다른 element들과 그것들 각각의 attribute들은 optional 입니다. 다음의 예는 user agent가 처리할 수 있는 가장 최소한의 configuration 문서입니다. 이 하나의 element를 포함하는 이유는 user agent나 conformance checker에게 이 zip 파일은 이 명세를 준수하려고 한다는 것을 명시적으로 알려주기 위해서입니다.</p>
+    <p><strong>작성 지침:</strong> configuration 문서에서 유일한 필수 element는 <code title="widget element"><a href="#the-widget-element-and-its-attributes">widget</a></code> element 입니다. 모든 다른 elements과 그것들 각각의 attributes는 optional 입니다. 다음의 예는 user agent가 처리할 수 있는 가장 최소한의 configuration 문서입니다. 이 하나의 element를 포함하는 이유는 user agent나 conformance checker에게 이 zip 파일은 이 명세를 준수하려고 한다는 것을 명시적으로 알려주기 위해서입니다.</p>
     <div class="example">
       <pre><code>
 
@@ -1095,16 +1095,13 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
   </div>
   <h3 id="namespace"><span class="secno">7.2 </span>Namespace</h3>
   <p><a href="#configuration-document-0">configuration 문서</a>를 위한 <dfn id="widget-namespace">widget namespace</dfn> URI는 <code>http://www.w3.org/ns/widgets</code> <a href="#xmlns">[XMLNS]</a> 입니다.</p>
-  <p>No provision is made for an explicit version number in this specification. If a future version of this specification requires explicit versioning of the document format, a different namespace will be used.</p>
-  <p class="authorguide"><strong>작성 지침:</strong> Be sure to declare
-    the widget namespace as part of the <code title="widget element"><a href="#the-widget-element-and-its-attributes">widget</a></code> element. If the namespace is absent, then the widget will be treated by the user agent as an <a href="#invalid-widget-package-0">invalid widget package</a>.</p>
+  <p>이 명세에는 명시적인 버전 번호를 위한 규정은 없습니다. 만약 이 명세의 향후 버전에서 문서 포맷의 명시적인 버저닝이 필요하다면 다른 namespace가 사용될 것입니다.</p>
+  <p class="authorguide"><strong>작성 지침:</strong> 반드시 widget namespace를 <code title="widget element"><a href="#the-widget-element-and-its-attributes">widget</a></code> element의 파트로 선언하세요. 만약 namespace가 없다면, user agent은 widget을 <a href="#invalid-widget-package-0">잘못된 widget package</a>로 인식할 것입니다.</p>
   <h3 id="proprietary-extensions"><span class="secno">7.3 </span>Proprietary Extensions</h3>
-  <p><em>This section is non-normative</em>.</p>
-  <p> Implementers or authors intending to extend the <a href="#configuration-document-0">configuration document</a> format with
-    their own <a href="#xml">[XML]</a> elements and attributes (or those defined in other
-    specifications) can do so by using a separate <a href="#xmlns">[XMLNS]</a> namespace. This specification does not define a model for processing <a href="#xml">[XML]</a> elements outside the <a href="#widget-namespace">widget namespace</a> (they are simply <a href="#ignore" title="ignore">ignored</a> during processing).</p>
+  <p><em>이 부분은 비표준적인 내용입니다.</em>.</p>
+  <p>자신만의 <a href="#xml">[XML]</a> elements와 attributes (또는 다른 명세에 정의된 이것들) 를 가지고 <a href="#configuration-document-0">configuration 문서</a>의 포맷을 확장하려고 하는 구현자 혹은 작성자들은 별도의 <a href="#xmlns">[XMLNS]</a> namespace를 가지고 할 수 있습니다. 이 명세는 <a href="#widget-namespace">widget namespace</a> 외부의 <a href="#xml">[XML]</a> elements를 처리하는 모델을 정의하지 않습니다.(그 elements는 단순히 처리과정에서 <a href="#ignore" title="ignore">무시됩니다</a>).</p>
   <div class="example">
-    <p>Example of extending the <a href="#configuration-document-0">configuration document</a> format:</p>
+    <p><a href="#configuration-document-0">configuration 문서</a> 포맷 확장의 예시:</p>
     <pre><code>&lt;widget xmlns="http://www.w3.org/ns/widgets"
    <strong>xmlns:ex="http://example.org/"</strong>&gt;
        &lt;icon src="idle.png" <strong> ex:role="inactive"/&gt;
@@ -1115,22 +1112,16 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
        &lt;content src="widget.html"/&gt;
 &lt;/widget&gt;</code></pre>
   </div>
-  <h3 id="types-of-attributes"><span class="secno">7.4 </span>Types of Attributes</h3>
-  <p>This section defines the different <dfn id="attribute-types">attribute types</dfn> used in the <a href="#configuration-document-0">configuration document</a> and what constitutes valid values for those
-    attribute types. </p>
-  <p>An attribute is <dfn id="invalid">invalid</dfn> if its value does not conform to its said <a href="#attribute-types" title="attribute types">attribute type</a>; that is, if the value of the
-    attribute is <a href="#in-error">in error</a> given the processing rules for that type of
-    attribute. </p>
+  <h3 id="types-of-attributes"><span class="secno">7.4 </span>Attributes의 타입들</h3>
+  <p>이 부분에서는 <a href="#configuration-document-0">configuration 문서</a>에서 사용되는 다양한 <dfn id="attribute-types">attribute 타입들</dfn>과 무엇이 이 타입들에게 올바른 값들인지를 정의 합니다.</p>
+  <p>attribute는 그 값이 <a href="#attribute-types" title="attribute types">attribute type</a>을 준수하지 않으면 <dfn id="invalid">잘못된</dfn>것 입니다(즉, attribute의 값이 attribute 타입을 처리하는 룰로부터 <a href="#in-error">error</a>처리된다면 - TODO)</p>
   <dl>
     <dt><dfn id="boolean-attribute">Boolean attribute</dfn></dt>
     <dd>
-      <p>A boolean attribute is a <a href="#keyword-attribute">keyword attribute</a> that can only be used
-        with a valid boolean value. A <dfn id="valid-boolean-value">valid boolean value</dfn> is a <a href="#keyword">keyword</a> that
-        case-sensitively matches <code>true</code> or <code>false</code>. Unless specified
-        otherwise, the default behavior, which is used when the attribute is omitted or has
-        a value other than the two allowed values, is <code>false</code>. The way a user
-        agent interprets a boolean attribute is defined as part of an attribute's
-        definition (see, for example, the <code title="feature element"><a href="#the-feature-element-and-its-attributes">feature</a></code> element's <code title="feature required"><a href="#the-required-attribute">required</a></code> attribute). </p>
+      <p>boolean attribute는 올바른 boolean 값만 사용할 수 있는 <a href="#keyword-attribute">keyword attribute</a>입니다.
+       <dfn id="valid-boolean-value">올바른 boolean 값</dfn>은 <a href="#keyword">keyword</a> 대소문자 정확하게 <code>true</code> 또는 <code>false</code>와 일치한 값입니다. 별도로 기술되어 있지 않는 한,
+        attribute가 빠져있거나 허용된 2가지 값 이외의 값을 가질 때의 기본 동작은 <code>false</code> 입니다. user
+        agent가 boolean attribute를 해석하는 방법은 attribute의 정의에 정의되어 있습니다. (예로 <code title="feature element"><a href="#the-feature-element-and-its-attributes">feature</a></code> element의 <code title="feature required"><a href="#the-required-attribute">required</a></code> attribute를 참고하세요). </p>
     </dd>
     <dt><dfn id="string-attribute">String attribute</dfn></dt>
     <dd>
