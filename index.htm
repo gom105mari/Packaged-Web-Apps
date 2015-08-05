@@ -855,24 +855,21 @@ td, th {
       <tr>
         <td>locales</td>
         <td><a href="#folder">폴더</a></td>
-        <td><a href="#container-for-localized-content">지역화된 컨텐츠에 대한 컨테이너</a></td>
+        <td><a href="#container-for-localized-content">현지화된 컨텐츠에 대한 컨테이너</a></td>
       </tr>
     </tbody>
   </table>
-  <p>Files named using the <a href="http://www.w3.org/TR/widgets-digsig/#naming-convention-for-a-distributor-signature">naming
-    convention for distributor signature</a> and the <a href="http://www.w3.org/TR/widgets-digsig/#naming-convention-for-an-author-signature">naming
-    convention for an author signature</a>, as defined in the <a href="#widgets-digsig">[Widgets-DigSig]</a> specification, are also reserved in this specification.</p>
+  <p><a href="#widgets-digsig">[Widgets-DigSig]</a> 명세에 정의된 대로, 
+  <a href="http://www.w3.org/TR/widgets-digsig/#naming-convention-for-a-distributor-signature">배포자 서명에 대한 명명 규칙</a>과 
+  <a href="http://www.w3.org/TR/widgets-digsig/#naming-convention-for-an-author-signature">작성자 서명에 대한 명명 규칙</a>을
+  사용하여 지정된 파일도 이 명세에 예약되어 있습니다.</p>
   <div class="authorguide">
-    <p><strong>작성 지침:</strong> Authors are strongly encourage to package all
-      files, except the reserved files and the  container for localized
-      content, within a single subdirectory named, for instance, after the
-      widget. This is to avoid unzipping several files into the end-user's
-      current working directory. Future versions of this specification may
-      include rules for locating index.html and config.xml within such
-      directories.</p>
+    <p><strong>작성 지침:</strong> 
+    아래 예시와 같이, 작성자는 예약된 파일과 현지화된 콘텐츠의 컨테이너를 제외한 모든 파일을 하나의 하위 디렉토리에 모으는 것을 권장하고 있습니다.
+    이것은 최종 사용자의 현재 작업 디렉토리에 여러 파일이 풀리는 것을 방지하기 위한 것입니다.  
+    이 명세의 이후 버전에서는 index.html과 config.xml를 어떤 디렉토리에 둘 것인지에 대한 규칙이 포함될 수도 있습니다.</p>
     <div class="example">
-      <p>For example, best-practice for packaging a widget would look something
-        like this:</p>
+      <p>widget을 패키징하는 가장 좋은 예시는 아래와 같습니다:</p>
       <ul class="dir_listing">
         <li class="widget_icon"> <img alt="widget file: " height="16" src="images/widget.png" width="16"> boat.wgt
           <ul>
@@ -915,16 +912,15 @@ td, th {
       </ul>
     </div>
   </div>
-  <h3 id="digital-signatures"><span class="secno">6.4 </span>Digital Signatures</h3>
-  <p>A <a href="#widget-package">widget package</a> contains a <dfn id="digital-signature">digital signature</dfn>, and hence is <dfn id="digitally-signed">digitally signed</dfn>, if the widget package contains one or more <a href="#file" title="file">files</a> that conform to the <a href="#widgets-digsig">[Widgets-DigSig]</a> specification. </p>
-  <h3 id="start-files"><span class="secno">6.5 </span>Start Files</h3>
-  <p>A <dfn id="start-file">start file</dfn> designates a <a href="#file">file</a> from the widget package to be
-    loaded by the user agent when it instantiates the widget. This specification defines
+  <h3 id="digital-signatures"><span class="secno">6.4 </span>전자 서명</h3>
+  <p><a href="#widget-package">widget 패키지</a>는 <dfn id="digital-signature">디지털 서명</dfn>을 포함하기 때문에, <dfn id="digitally-signed">디지털 방식으로 서명</dfn>되어 있습니다. widget 패키지는 <a href="#widgets-digsig">[Widgets-DigSig]</a> 명세를 따르는 하나 이상의 <a href="#file" title="file">파일</a>을 포함합니다.</p>
+  <h3 id="start-files"><span class="secno">6.5 </span>시작 파일</h3>
+  <p><dfn id="start-file">시작 파일</dfn>은 유저 에이전트가 widget을 인스턴스화 할 때, widget 패키지에서 로드한 <a href="#file">파일</a>을 지정합니다 when it instantiates the widget. This specification defines
     two kinds of start file: <a href="#custom-start-file-0">custom start file</a> and <a href="#default-start-file">default start
     file</a>.</p>
-  <h4 id="custom-start-file"><span class="secno">6.5.1 </span>Custom Start File</h4>
+  <h4 id="custom-start-file"><span class="secno">6.5.1 </span>사용자 정의 시작 파일</h4>
   <p>A <dfn id="custom-start-file-0">custom start file</dfn> is a <a href="#processable-file">processable file</a> inside the <a href="#widget-package">widget package</a> identified by a <code title="content element"><a href="#the-content-element-and-its-attributes">content</a></code> element's <code title="content src"><a href="#the-src-attribute-0">src</a></code> attribute.</p>
-  <h4 id="default-start-files"><span class="secno">6.5.2 </span>Default Start Files</h4>
+  <h4 id="default-start-files"><span class="secno">6.5.2 </span>기본 시작 파일</h4>
   <p>A <dfn id="default-start-file">default start file</dfn> is a <a href="#reserved">reserved</a> <a href="#start-file">start file</a> at the <a href="#root-of-the-widget-package">root of the widget package</a> or  at the root of a <a href="#locale-folder-0">locale folder</a> whose file name case-sensitively matches a file name given in the file name
     column of the <a href="#default-start-files-table">default start files table</a>, and whose <a href="#media-type-0">media type</a> matches the <a href="#media-type-0">media type</a> given in the media type column of the table.</p>
   <p>It is <em class="ct">optional</em> for a <a class="product-ua" href="#user-agent">user agent</a> to <a href="#supported" title="supported">support</a> the <a href="#media-type-0" title="media type">media types</a> listed in
@@ -966,25 +962,25 @@ td, th {
     instructions on finding a <a href="#default-start-file">default start file</a>.</p>
   <p class="authorguide"><strong>작성 지침:</strong> Always include at least
     one <a href="#start-file">start file</a> in a widget package.</p>
-  <h3 id="icons"><span class="secno">6.6 </span>Icons</h3>
+  <h3 id="icons"><span class="secno">6.6 </span>아이콘</h3>
   <p>An <dfn id="icon">icon</dfn> is a <a href="#file">file</a> that is used
     to represent the widget in various application contexts (e.g. the icon that the user
     activates to instantiate a widget, or an icon in a dock or task bar or some other visual
     context). The icon is intended to help users of visual browsers to recognize the widget
     at a glance. There are two kinds of icons defined by this specification, <a href="#custom-icon" title="custom
       icon">custom
-    icons</a> and <a href="#default-icon" title="default icon">default icons</a>.</p>
-  <h4 id="custom-icons"><span class="secno">6.6.1 </span>Custom Icons</h4>
+    icons</a> and <a href="#default-icon" title="default icon">기본 아이콘</a>.</p>
+  <h4 id="custom-icons"><span class="secno">6.6.1 </span>사용자 정의 아이콘</h4>
   <p>A <dfn id="custom-icon">custom icon</dfn> is an <a href="#icon">icon</a> explicitly declared by an author via an <code title="icon element"><a href="#the-icon-element-and-its-attributes">icon</a></code> element in a <a href="#configuration-document-0">configuration document</a>. A <a href="#custom-icon">custom icon</a> can be  located at the <a href="#root-of-the-widget-package">root of the widget
     package</a>, or at the root of a <a href="#locale-folder-0">locale folder</a>, or in an <a href="#arbitrary">arbitrary</a> <a href="#folder">folder</a>.</p>
-  <h4 id="default-icons"><span class="secno">6.6.2 </span>Default Icons</h4>
+  <h4 id="default-icons"><span class="secno">6.6.2 </span>기본 아이콘</h4>
   <p>A <dfn id="default-icon">default icon</dfn> is a <a href="#reserved">reserved</a> <a href="#icon">icon</a>, either at the <a href="#root-of-the-widget-package">root of the widget package</a> or at the root of a <a href="#locale-folder-0">locale
     folder</a>, whose file
     name case-sensitively and exactly matches a file name given in the file name column of
-    the <a href="#default-icons-table">default icons table</a>.</p>
+    the <a href="#default-icons-table">기본 아이콘 표</a>.</p>
   <table>
     <caption>
-    <dfn id="default-icons-table">Default Icons Table</dfn>
+    <dfn id="default-icons-table">기본 아이콘 표</dfn>
     </caption>
     <tr>
       <th scope="col">file name</th>
