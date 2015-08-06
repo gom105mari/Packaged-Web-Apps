@@ -1236,7 +1236,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 <span dir="rtl">این نرم افزار به شما اجازه می دهد تا برای دیدن آب و هوا در منطقه محلی تان.</span>
    &lt;/description&gt;
 &lt;/widget&gt;</code></pre>
-    <p>다음 예시는 <a href="#localized-content">localized content</a>에 적용된 <code><a href="#the-dir-attribute">dir</a></code> attribute 입니다. </p>
+    <p>다음은 <a href="#localized-content">localized content</a>에 적용된 <code><a href="#the-dir-attribute">dir</a></code> attribute의 예시입니다. </p>
     <pre><code>&lt;widget xmlns="http://www.w3.org/ns/widgets"&gt;
 
    &lt;name short="Weather"&gt;
@@ -1248,7 +1248,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
    </span>&lt;/name&gt;
 
 &lt;/widget&gt;</code></pre>
-    <p>다음 예시는 혼합된 language 컨텐츠와 함께 사용된 <code><a href="#the-dir-attribute">dir</a></code> attribute 입니다: </p>
+    <p>다음은 혼합된 language 컨텐츠와 함께 사용된 <code><a href="#the-dir-attribute">dir</a></code> attribute의 예시입니다: </p>
     <pre><code>
 &lt;widget xmlns="http://www.w3.org/ns/widgets"&gt;
   &lt;name short="Weather"&gt;
@@ -1262,56 +1262,52 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 &lt;/widget&gt;</code></pre>
   </div>
   <h3 id="the-widget-element-and-its-attributes"><span class="secno">7.6 </span>The <dfn title="widget element"><code>widget</code></dfn> Element and its Attributes</h3>
-  <p>The <code title="widget element"><a href="#the-widget-element-and-its-attributes">widget</a></code> element serves as a container for the
-    other elements of the <a href="#configuration-document-0">configuration document</a>.</p>
+  <p><code title="widget element"><a href="#the-widget-element-and-its-attributes">widget</a></code> element는 <a href="#configuration-document-0">configuration 문서</a>의 다른 elements를 위한 컨테이너처럼 제공됩니다.</p>
   <dl>
     <dt>Context in which this element is used:</dt>
-    <dd> The <code title="widget element"><a href="#the-widget-element-and-its-attributes">widget</a></code> element is the root element of a <a href="#configuration-document-0">configuration document</a>. </dd>
+    <dd><code title="widget element"><a href="#the-widget-element-and-its-attributes">widget</a></code> element는 <a href="#configuration-document-0">configuration 문서</a>의 루트 element입니다. </dd>
     <dt>Occurrences:</dt>
-    <dd> Exactly one, at the root element of the <a href="#xml">[XML]</a> document. </dd>
+    <dd><a href="#xml">[XML]</a> document의 root element에 딱 하나 존재합니다. </dd>
     <dt>Expected children (in any order):</dt>
-    <dd><code title="name element"><a href="#the-name-element-and-its-attributes">name</a></code>: zero or more (<a href="#one-element-is-allowed-per-language">one element is
-      allowed per language</a>).</dd>
-    <dd><code title="description element"><a href="#the-description-element-and-its-attributes">description</a></code>: zero or more (<a href="#one-element-is-allowed-per-language">one
-      element is allowed per language</a>).</dd>
-    <dd><code title="author element"><a href="#the-author-element-and-its-attributes">author</a></code>: zero or one.</dd>
-    <dd><code title="license element"><a href="#the-license-element-and-its-attributes">license</a></code>: zero or more (<a href="#one-element-is-allowed-per-language">one element is
-      allowed per language</a>).</dd>
-    <dd><code title="icon element"><a href="#the-icon-element-and-its-attributes">icon</a></code>: zero or more.</dd>
-    <dd><code title="content element"><a href="#the-content-element-and-its-attributes">content</a></code>: zero or one.</dd>
-    <dd><code title="feature element"><a href="#the-feature-element-and-its-attributes">feature</a></code>: zero or more.</dd>
-    <dd><code title="preference element"><a href="#the-preference-element-and-its-attributes">preference</a></code>: zero or more.</dd>
+    <dd><code title="name element"><a href="#the-name-element-and-its-attributes">name</a></code>:없거나 하나이상 (<a href="#one-element-is-allowed-per-language">language당 하나의 element만 허용됩니다</a>).</dd>
+    <dd><code title="description element"><a href="#the-description-element-and-its-attributes">description</a></code>: 없거나 하나이상 (<a href="#one-element-is-allowed-per-language">language당 하나의 element만 허용됩니다</a>).</dd>
+    <dd><code title="author element"><a href="#the-author-element-and-its-attributes">author</a></code>: 없거나 하나.</dd>
+    <dd><code title="license element"><a href="#the-license-element-and-its-attributes">license</a></code>: 없거나 하나이상 (<a href="#one-element-is-allowed-per-language">language당 하나의 element만 허용됩니다</a>).</dd>
+    <dd><code title="icon element"><a href="#the-icon-element-and-its-attributes">icon</a></code>: 없거나 하나이상.</dd>
+    <dd><code title="content element"><a href="#the-content-element-and-its-attributes">content</a></code>: 없거나 하나.</dd>
+    <dd><code title="feature element"><a href="#the-feature-element-and-its-attributes">feature</a></code>: 없거나 하나이상.</dd>
+    <dd><code title="preference element"><a href="#the-preference-element-and-its-attributes">preference</a></code>: 없거나 하나이상.</dd>
     <dt>Localizable via xml:lang:</dt>
-    <dd> No. Inheritance of the value of this attribute by <code title="author element"><a href="#the-author-element-and-its-attributes">author</a></code>, <code title="preference element"><a href="#the-preference-element-and-its-attributes">preference</a></code>, <code title="icon element"><a href="#the-icon-element-and-its-attributes">icon</a></code>, and <code title="content element"><a href="#the-content-element-and-its-attributes">content</a></code> will have no effect during processing in <a href="#step-7-process-the-configuration-document">Step 7</a>.</dd>
+    <dd> 안됩니다. <code title="author element"><a href="#the-author-element-and-its-attributes">author</a></code>, <code title="preference element"><a href="#the-preference-element-and-its-attributes">preference</a></code>, <code title="icon element"><a href="#the-icon-element-and-its-attributes">icon</a></code>, 그리고 <code title="content element"><a href="#the-content-element-and-its-attributes">content</a></code>에 의한 이 attribuate 값의 상속은 <a href="#step-7-process-the-configuration-document">Step 7</a>의 처리 동안 아무런 효과가 없을 것입니다.</dd>
     <dt>Attributes:</dt>
     <dd> <a href="#global-attributes-0" title="global attributes">Global attributes</a>, <code title="widget id"><a href="#the-id-attribute">id</a></code>, <code title="widget version"><a href="#widget-version">version</a></code>, <code title="widget height"><a href="#widget-height">height</a></code>, <code title="widget width"><a href="#widget-width">width</a></code>, <code title="widget viewmodes"><a href="#the-viewmodes-attribute">viewmodes</a></code>. </dd>
   </dl>
   <h4 id="the-id-attribute"><span class="secno">7.6.1 </span>The <code><dfn title="widget id">id</dfn></code> Attribute</h4>
-  <p>An <a href="#iri-attribute">IRI attribute</a> that denotes an identifier for the widget. </p>
-  <p class="authorguide"><strong>작성 지침:</strong> It is optional for authors to use the <code title="widget id"><a href="#the-id-attribute">id</a></code> attribute with a <code title="widget element"><a href="#the-widget-element-and-its-attributes">widget</a></code> element.</p>
+  <p>widget의 식별자를 나타내는 <a href="#iri-attribute">IRI attribute</a>. </p>
+  <p class="authorguide"><strong>작성 지침:</strong> 작성자들이 <code title="widget element"><a href="#the-widget-element-and-its-attributes">widget</a></code> element와 <code title="widget id"><a href="#the-id-attribute">id</a></code> attribute를 사용하는 것은 선택 항목입니다.</p>
   <h4 id="the-version-attribute"><span class="secno">7.6.2 </span>The <code><dfn title="widget-element version">version</dfn></code> Attribute</h4>
-  <p>A <a href="#version-attribute">version attribute</a> that specifies the version of the widget. </p>
-  <p class="authorguide"><strong>작성 지침:</strong> It is optional for authors to use the <code title="widget-element version"><a href="#the-version-attribute">version</a></code> attribute with a <code title="widget element"><a href="#the-widget-element-and-its-attributes">widget</a></code> element.</p>
+  <p>widget의 버젼을 지정하는 <a href="#version-attribute">version attribute</a>. </p>
+  <p class="authorguide"><strong>작성 지침:</strong> 작성자들이 <code title="widget element"><a href="#the-widget-element-and-its-attributes">widget</a></code> element와 <code title="widget-element version"><a href="#the-version-attribute">version</a></code> attribute를 사용하는 것은 선택 항목입니다.</p>
   <h4 id="the-height-attribute"><span class="secno">7.6.3 </span>The <code><dfn title="widget-element height">height</dfn></code> Attribute</h4>
-  <p>A <a href="#valid-non-negative-integer" title="valid non-negative integer">numeric attribute</a> greater than <code>0</code> that indicates the preferred <a href="#viewport">viewport</a> height of the
-    instantiated <a href="#custom-start-file-0">custom start file</a> in <a href="http://www.w3.org/TR/2008/REC-CSS2-20080411/syndata.html#length-units">CSS pixels</a> <a href="#css2">[CSS]</a>. </p>
-  <p class="authorguide"><strong>작성 지침:</strong> It is optional for authors to use the <code title="widget-element height"><a href="#the-height-attribute">height</a></code> attribute with a <code title="widget element"><a href="#the-widget-element-and-its-attributes">widget</a></code> element.</p>
+  <p>인스턴스화된 <a href="#custom-start-file-0">사용자 정의 파일</a>의 선호되는 <a href="#viewport">viewport</a>의 높이를 <a href="http://www.w3.org/TR/2008/REC-CSS2-20080411/syndata.html#length-units">CSS pixels</a> <a href="#css2">[CSS]</a>로 나타내는 <code>0</code>보다 큰 <a href="#valid-non-negative-integer" title="valid non-negative integer">numeric attribute</a>. </p>
+  <p class="authorguide"><strong>작성 지침:</strong> 작성자들이 <code title="widget element"><a href="#the-widget-element-and-its-attributes">widget</a></code> element와 <code title="widget-element height"><a href="#the-height-attribute">height</a></code> attribute를 사용하는 것은 선택 항목입니다.</p>
   <h4 id="the-width-attribute"><span class="secno">7.6.4 </span>The <code><dfn title="widget-element width">width</dfn></code> Attribute</h4>
-  <p>A <a href="#valid-non-negative-integer" title="valid non-negative integer">numeric attribute</a> greater than <code>0</code> that indicates the preferred <a href="#viewport">viewport</a> width of the
-    instantiated <a href="#custom-start-file-0">custom start file</a> in <a href="http://www.w3.org/TR/2008/REC-CSS2-20080411/syndata.html#length-units">CSS pixels</a> <a href="#css2">[CSS]</a>. </p>
-  <p class="authorguide"><strong>작성 지침:</strong> It is optional for authors to use the <code title="widget-element width"><a href="#the-width-attribute">width</a></code> attribute with a <code title="widget element"><a href="#the-widget-element-and-its-attributes">widget</a></code> element. </p>
+  <p>인스턴스화된 <a href="#custom-start-file-0">사용자 정의 파일</a>의 선호되는 <a href="#viewport">viewport</a>의 너비를 <a href="http://www.w3.org/TR/2008/REC-CSS2-20080411/syndata.html#length-units">CSS pixels</a> <a href="#css2">[CSS]</a>로 나타내는 <code>0</code>보다 큰 <a href="#valid-non-negative-integer" title="valid non-negative integer">numeric attribute</a>. </p>
+  <p class="authorguide"><strong>작성 지침:</strong> 작성자들이 <code title="widget element"><a href="#the-widget-element-and-its-attributes">widget</a></code> element와 <code title="widget-element width"><a href="#the-width-attribute">width</a></code>
+   attribute를 사용하는 것은 선택 항목입니다. </p>
   <h4 id="the-viewmodes-attribute"><span class="secno">7.6.5 </span>The <code><dfn title="widget viewmodes">viewmodes</dfn></code> Attribute</h4>
-  <p>A <a href="#keyword-list-attribute">keyword list attribute</a> that denotes  the author's
-    preferred view mode, followed by the next most preferred view mode and so forth. When the attribute is missing, or is left empty, it implies that the author expects the user agent to select an appropriate viewmode for the widget.</p>
-  <p>The concept of a <dfn class="external" id="viewport">viewport</dfn> is defined in <a href="#css2">[CSS]</a>, but is essentially a window or other viewing area on the screen (see section <a href="http://www.w3.org/TR/2008/REC-CSS2-20080411/visuren.html#q2">9.1.1 The viewport</a> of <a href="#css2">[CSS]</a>). The concept of a <dfn class="external" id="view-mode">view mode</dfn> is defined in the <a href="#view-modes">[View-Modes]</a> specification.</p>
-  <p class="authorguide"><strong>작성 지침:</strong> It is optional for authors to use the <code title="widget viewmodes"><a href="#the-viewmodes-attribute">viewmodes</a></code> attribute with a <code title="widget element"><a href="#the-widget-element-and-its-attributes">widget</a></code> element.</p>
+  <p>작성자의 선호하는 view mode를 나타내는 preferred view mode, 그 이후에 나오는 가장 선호하는 view mode 등을 나타내는 <a href="#keyword-list-attribute">keyword list attribute</a>.
+   attribute가 빠져있거나, 또는 비어있다는 것은 작성자는 user agent로 하여금 widget에 적절한 viewmode를 선택하는 것을 바란다라고 의미합니다.
+    .</p>
+  <p><dfn class="external" id="viewport">viewport</dfn>의 컨셉은 <a href="#css2">[CSS]</a>에 정의되어 있으며 근본적으로 screen위의 window나 그 밖의 viewing area입니다. (<a href="#css2">[CSS]</a>의 <a href="http://www.w3.org/TR/2008/REC-CSS2-20080411/visuren.html#q2">9.1.1 The viewport</a>을 참고하세요). <dfn class="external" id="view-mode">view mode</dfn>의 컨셉은 <a href="#view-modes">[View-Modes]</a> 명세에 정의되어 있습니다.</p>
+  <p class="authorguide"><strong>작성 지침:</strong>작성자들이 <code title="widget element"><a href="#the-widget-element-and-its-attributes">widget</a></code> element와 <code title="widget viewmodes"><a href="#the-viewmodes-attribute">viewmodes</a></code> attribute를 사용하는 것은 선택 항목입니다.</p>
   <h4 id="the-defaultlocale-attribute"><span class="secno">7.6.6 </span>The <code title="widget defaultlocale"><dfn title="widget defaultlocale">defaultlocale</dfn></code> attribute</h4>
-  <p>A <a href="#language-attribute">language  attribute</a> that specifies, through a <a href="#language-tag">language
-    tag</a>, the author's preferred locale for the widget. Its intended use is to provide a fallback in case the user agent cannot match any of the widget's <a href="#localized-content">localized content</a> to the <var><a href="#user-agent-locales">user agent locales</a></var> list or in case the author has not provided any unlocalized content. </p>
-  <p class="authorguide"><strong>작성 지침:</strong> It is optional for authors to use the <code title="widget id"><a href="#the-id-attribute">defaultlocale</a></code> attribute with a <code title="widget element"><a href="#the-widget-element-and-its-attributes">widget</a></code> element. </p>
+  <p>작성자가 <a href="#language-tag">language tag</a>를 통해 widget의 선호하는 locale을 지정하기 위한 <a href="#language-attribute">language attribute</a>.
+  사용 목적은 user agent가 widget의 <a href="#localized-content">현지화된 컨텐츠</a>를 <var><a href="#user-agent-locales">user agent locales</a></var> list에 하나도 일치시키지 못하는 경우나 작성자가 현지화되지 않은 컨텐츠를 하나도 제공하지 않는 경우에 fallback을 제공하기 위함입니다 . </p>
+  <p class="authorguide"><strong>작성 지침:</strong> 작성자가 <code title="widget element"><a href="#the-widget-element-and-its-attributes">widget</a></code> element와 <code title="widget id"><a href="#the-id-attribute">defaultlocale</a></code> attribute를 사용하는 것은 선택 항목입니다. </p>
   <h4 id="example-of-usage"><span class="secno">7.6.7 </span>사용 예시</h4>
   <div class="example">
-    <p>The following example shows how the <code title="widget element"><a href="#the-widget-element-and-its-attributes">widget</a></code> element can be used.</p>
+    <p>다음은 <code title="widget element"><a href="#the-widget-element-and-its-attributes">widget</a></code> element가 어떻게 사용되는 지의 예시입니다.</p>
     <pre><code><strong>&lt;widget xmlns     = "http://www.w3.org/ns/widgets"
     id        = "http://example.org/exampleWidget"
     version   = "2.0 Beta"
@@ -1319,9 +1315,9 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
     width     = "200"
     viewmodes = "windowed floating"/</strong><strong title="">&gt;</strong></code></pre>
   </div>
-  <h4 id="example-of-usage-of-the-defaultlocale-attribute"><span class="secno">7.6.8 </span>Example of Usage of the <code title="widget defaultlocale"><a href="#the-defaultlocale-attribute">defaultlocale</a></code> attribute </h4>
+  <h4 id="example-of-usage-of-the-defaultlocale-attribute"><span class="secno">7.6.8 </span><code title="widget defaultlocale"><a href="#the-defaultlocale-attribute">defaultlocale</a></code> attribute의 사용 예시</h4>
   <div class="example">
-    <p>The following example shows how the <code title="widget element"><a href="#the-widget-element-and-its-attributes">widget</a></code> element's <code title="widget defaultlocale"><a href="#the-defaultlocale-attribute">defaultlocale</a></code> attribute can be used: </p>
+    <p>다음 예제는 <code title="widget element"><a href="#the-widget-element-and-its-attributes">widget</a></code> element의 <code title="widget defaultlocale"><a href="#the-defaultlocale-attribute">defaultlocale</a></code> attribute가 어떻게 사용되는 지를 보여줍니다: </p>
     <pre>&lt;widget xmlns = "http://www.w3.org/ns/widgets"
         <strong>defaultlocale</strong> = "en-us"&gt;
 

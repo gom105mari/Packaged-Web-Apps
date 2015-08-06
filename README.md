@@ -33,6 +33,7 @@
  * type -> 타입
  * arbitrary -> 임의의
  * table -> 표
+ * identifier -> 식별자
 
 ## 번역 진행상황
 * Abstract - 100% 완료
