@@ -230,24 +230,23 @@ td, th {
     widget 패키지를 처리에 대한 Step에서는, 예상되는 동작과 패키지 형식을 처리하는 동안의 런타임에 대한 에러 처리 방법, configuration 문서, 그리고 다른 연관된 파일들을 설명합니다.</p>
   <p>이 명세는  widget 전체를 표준화 하는 <a href="#widgets-family-of-specifications">Widgets family of specifications</a>의 일부분입니다.</p>
   <h2 class="no-num no-toc" id="sotd">이 문서의 상태</h2>
-  <p><em>This section describes the status of this document at the time of its
-  publication. Other documents may supersede this document. A list of current W3C
-  publications and the latest revision of this technical report can be found in the
-  <a href="http://www.w3.org/TR/">W3C technical reports index</a> at
-  http://www.w3.org/TR/.</em>  </p>
-  <p>This is the 27 November 2012 Recommendation of the <cite>Widget Packaging and XML Configuration</cite> specification. This document is produced by the <a href="http://www.w3.org/2008/webapps/">Web
-    Applications WG</a>, part of the <a href="http://www.w3.org/2006/rwc/Activity">Rich Web
-      Client Activity</a> in the W3C <a href="http://www.w3.org/Interaction/">Interaction
-  Domain</a>.  </p>
-  <p>This document has been reviewed by W3C Members, by software developers, and by other W3C groups and interested parties, and is endorsed by the Director as a W3C Recommendation. It is a stable document and may be used as reference material or cited from another document. W3C's role in making the Recommendation is to draw attention to the specification and to promote its widespread deployment. This enhances the functionality and interoperability of the Web.</p>
-  <p>The public is encouraged to send comments to the WebApps Working Group's public mailing list <a href="mailto:public-webapps@w3.org">public-webapps@w3.org</a> (<a href="http://lists.w3.org/Archives/Public/public-webapps/">archive</a>).  </p>
-  <p>This document was produced by a group operating under the <a href="http://www.w3.org/Consortium/Patent-Policy-20040205/">5 February 2004 W3C Patent
-    Policy</a>. W3C maintains a <a href="http://www.w3.org/2004/01/pp-impl/42538/status" rel="disclosure">public list of any patent disclosures</a> made in connection with the
-    deliverables of the group; that page also includes instructions for disclosing a
-    patent. An individual who has actual knowledge of a patent which the individual
-    believes contains <a href="http://www.w3.org/Consortium/Patent-Policy-20040205/#def-essential">Essential
-      Claim(s)</a> must disclose the information in accordance with <a href="http://www.w3.org/Consortium/Patent-Policy-20040205/#sec-Disclosure">section 6 of the
-  W3C Patent Policy</a>.</p>
+  <p><em>이 섹션에서는 이 문서를 게시할 때의 상태에 대해 설명합니다.
+   다른 문서가 이 문서를 대체할 수도 있습니다. http://www.w3.org/TR/의 <a href="http://www.w3.org/TR/">W3C 기술 보고서 목차</a>에서
+   W3C 게시물의 현재 리스트와 이 기술 보고서의 최신 수정본을 찾아볼 수 있습니다.</em></p>
+  <p>이것은 <cite>패키징과 XML Configuration</cite> 명세의 2012년 11월 27일 W3C 권고안입니다.
+  이문서는 W3C <a href="http://www.w3.org/Interaction/">Interaction Domain</a> 소속의 <a href="http://www.w3.org/2006/rwc/Activity">Rich Web Client Activity</a>파트인 
+  <a href="http://www.w3.org/2008/webapps/">Web Applications WG</a>에서 작성하였습니다.</p>
+  <p>이 문서는 W3C 멤버, 소프트웨어 개발자, W3C 그룹과 관계자들이 검토했고, W3C 권고안의 임원이 승인하였습니다.
+  이것은 안정된 문서이고, 다른 문서에서 참고 자료로 사용하거나 인용될 수 있습니다.
+  W3C의 권고안 작성에 관한 역할은 명세에 대해 주의를 끌고, 광범위한 보급을 촉진하는 것입니다.    
+  이것은 웹의 기능성과 상호운용성을 강화합니다.</p>
+  <p>공개는 WebApps Working Group의 공개 메일 목록<a href="mailto:public-webapps@w3.org">public-webapps@w3.org</a> (<a href="http://lists.w3.org/Archives/Public/public-webapps/">archive</a>)으로 의견을 제출할 것을 권장하고 있습니다.  </p>
+  <p>이 문서는 <a href="http://www.w3.org/Consortium/Patent-Policy-20040205/">2004년 2월 5일 W3C 특허 정책</a>에서 활동하는 그룹에서 작성하였습니다.
+  W3C는 그룹의 성과물과 관련된 <a href="http://www.w3.org/2004/01/pp-impl/42538/status" rel="disclosure">모든 특허의 공개 목록</a>을 유지관리합니다;
+  그 페이지에는 특허의 공개에 관한 지침도 포함되어 있습니다.
+  <a href="http://www.w3.org/Consortium/Patent-Policy-20040205/#def-essential">Essential Claim(s)</a>을 포함하고 있다고 생각하는
+  특허에 대한 실질적인 지식을 가진 사람은, <a href="http://www.w3.org/Consortium/Patent-Policy-20040205/#sec-Disclosure">W3C 특허 정책 6항</a>에 따라 
+  그 정보를 공개해야만 합니다.</p>
   <h2 class="no-num no-toc" id="toc">목차</h2>
   
 <!--begin-toc-->
@@ -2223,8 +2222,8 @@ Distributed under the W3C Software License.
       </li>
     </ul>
   </div>
-  <h2 id="steps-for-processing-a-widget-package"><span class="secno">9 </span>Steps for Processing a Widget Package</h2>
-  <p>The <dfn id="steps-for-processing-a-widget-package-0">steps for processing a widget package</dfn> involves nine steps that a <a href="#user-agent">user agent</a> follows in sequential order, responding
+  <h2 id="steps-for-processing-a-widget-package"><span class="secno">9 </span>Widget 패키지 처리에 대한 Steps</h2>
+  <p><dfn id="steps-for-processing-a-widget-package-0">Widget 패키지 처리에 대한 Steps</dfn>는 9 step으로 되어있습니다. involves nine steps that a <a href="#user-agent">user agent</a> follows in sequential order, responding
     accordingly if any of the steps result in an error or if the specification asks for the
     user agent to skip a step. The procedures for what to do when an error is encountered
     are described as part of each step; however, there are times when it will not be
