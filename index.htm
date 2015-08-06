@@ -1185,47 +1185,50 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
     </dd>
   </dl>
   <h3 id="global-attributes"><span class="secno">7.5 </span>Global Attributes</h3>
-  <p>This section describes the behavior and expected usage of other relevant attributes
-    that are part of the <a href="#xml">[XML]</a> specification and this specification. In this specification, these attributes are referred to as <dfn id="global-attributes-0">global attributes</dfn> because  they can be used on any element in a <a href="#configuration-document-0">configuration document</a>. </p>
-  <p>Although <a href="#global-attributes-0">global attributes</a> can be used on any element in this specification, they sometimes have no effect on the element on which they are used. For example, applying <code><a href="#the-dir-attribute">dir</a></code> attribute on an <code title="icon element"><a href="#the-icon-element-and-its-attributes">icon</a></code> element will have no effect on the <code title="icon element"><a href="#the-icon-element-and-its-attributes">icon</a></code> elements or any of its attributes. What effect specifying a global attribute has on an elements is determined by <a href="#step-7-process-the-configuration-document">Step 7</a> of this specification.</p>
-  <p class="authorguide"><strong>작성 지침:</strong> Although it is optional for an author to use any global attributes, their usage is recommended when appropriate (e.g., when  declaring the language will help with legibility and when directional information will assist the user agent render text correctly). </p>
+  <p>이 섹션은 <a href="#xml">[XML]</a> 명세와 이 명세의 일부에서 나머지 다른 관련 attributes의 동작과 사용법에 대해 설명합니다. 이 명세에서 이 attributes는 <a href="#configuration-document-0">configuration 문서</a>의 어떤 element에서도 사용 가능 하기 때문에 
+  <dfn id="global-attributes-0">global attributes</dfn>라고 합니다. </p>
+  <p><a href="#global-attributes-0">global attributes</a>는 이 명세내의 어떤 element에서도 사용 가능 하지만 때때로 일부 element에서는 아무 효과도 없을수도 있습니다. 예를 들어, 
+   <code title="icon element"><a href="#the-icon-element-and-its-attributes">icon</a></code> element 에 <code><a href="#the-dir-attribute">dir</a></code> attribute 을 적용시키면 <code title="icon element"><a href="#the-icon-element-and-its-attributes">icon</a></code> elements 나 그것의 어떤 attributes에도 아무 영향이 없습니다. elements에 global attribute의 어떤 효과가 지정되었는 지는 이 명세의 <a href="#step-7-process-the-configuration-document">Step 7</a> 에 정해져 있습니다.</p>
+  <p class="authorguide"><strong>작성 지침:</strong> 어떤  global attributes을 사용할 지는 작성자 선택이지만 적절한 때 사용하는 것을 추천합니다
+   (e.g., language를 선언하면 가독성을 높이는 데 도움이 되고 방향정보는 user agent가 텍스트를 올바르게 표시하는데 도움이 됩니다 ). </p>
   <h4 id="the-xml:lang-attribute"><span class="secno">7.5.1 </span>The <dfn><code>xml:lang</code></dfn> Attribute</h4>
-  <p>A <a href="#language-attribute">language  attribute</a> that specifies, through a <a href="#language-tag">language
-    tag</a>, the language of the contents and attribute values of XML elements (see the <a href="http://www.iana.org/assignments/language-subtag-registry">IANA Language Subtag
-    Registry</a>). The <a href="#xml">[XML]</a> specification specifies the <code><a href="#the-xml:lang-attribute">xml:lang</a></code> attribute and its influence on  child nodes. </p>
+  <p><a href="#language-attribute">language  attribute</a>는 <a href="#language-tag">language
+    tag</a>을 통해서 컨텐츠의 language와 XML elements의 attributes 값들을 지정합니다 (<a href="http://www.iana.org/assignments/language-subtag-registry">IANA Language Subtag
+    Registry</a>를 참고하시기 바랍니다). <a href="#xml">[XML]</a> 명세는 <code><a href="#the-xml:lang-attribute">xml:lang</a></code> attribute 와 자식 노드들에 미치는 영향을 지정합니다. </p>
   <div class="authorguide">
-    <p><strong>작성 지침:</strong> Although <a href="#bcp47">[BCP47]</a> recommends that language tags be casefolded in a particular way for presentation, case has no meaning in a language tag. As a reminder to authors that   user-agents map all language tags to lowercase, all examples in this document use lowercase. See also <a href="#folder-based-localization-0">folder-based localization</a>, which also requires authors to use  language tags in lowercase form as the names of folders.</p>
-    <p>Avoid subtags from the <a href="http://www.iana.org/assignments/language-subtag-registry">IANA Language Subtag
-      Registry</a> marked as deprecated, grandfathered, or redundant. The intended
-      purpose of the <code><a href="#the-xml:lang-attribute">xml:lang</a></code> attribute is to declare the primary language
-      of an element, its attributes, and its descendant nodes; as such, it has no implication with regards to the directionality of the text in the user agent. To specify the directionality of text, see the <code><a href="#the-dir-attribute">dir</a></code> attribute. </p>
+    <p><strong>작성 지침:</strong> 비록 <a href="#bcp47">[BCP47]</a>는 프레젠테이션을 위해 특정한 방법으로 language tags를 casefold하는 것을 추천하지만, 대소문자여부는 language tag에 아무 의미가 없습니다. 
+    user-agents는 모든 language tags를 소문자로 매핑한다는 것을 작성자에게 되새기는 차원에서, 이 문서의 모든 예제들도 소문자를 사용합니다. 작성자는 폴더의 이름 행태의 소문자로 language tag를 사용해야 하며 <a href="#folder-based-localization-0">folder-based localization</a>를 참고하세요.</p>
+    <p><a href="http://www.iana.org/assignments/language-subtag-registry">IANA Language Subtag
+      Registry</a>에 deprecated, grandfathered, 또는 redundant 로 표시된 subtags는 피하세요. <code><a href="#the-xml:lang-attribute">xml:lang</a></code> attribute의 의도된 목적은 element나 그것의 attribute, 그것의 자손 노드들의 
+      일차 language를 선언하는 것입니다; 예를 들어 user agent 의 텍스트의 방향성에 관해 관련된 것은 없습니다. 텍스트의 방향을 지정하려면 <code><a href="#the-dir-attribute">dir</a></code> attribute를 참고하세요. </p>
   </div>
   <h4 id="the-dir-attribute"><span class="secno">7.5.2 </span>The <dfn><code>dir</code></dfn> Attribute</h4>
-  <p>A <a href="#keyword-attribute">keyword attribute</a> used  to specify   the directionality in which human-readable text is to be represented by a user agent (e.g., the text content of the <code title="name element"><a href="#the-name-element-and-its-attributes">name</a></code> element, the <code title="description element"><a href="#the-description-element-and-its-attributes">description</a></code> element, and the <code title="license element"><a href="#the-license-element-and-its-attributes">license</a></code> element).   The directionality set by the <code><a href="#the-dir-attribute">dir</a></code> attribute applies to the text content and  any <a href="#displayable-string-attribute" title="displayable-string attribute">displayable string</a> attributes of  the element where it is used, and to  child elements in its content unless overridden with another instance of <code><a href="#the-dir-attribute">dir</a></code> (i.e., in this specification, the <code><a href="#the-dir-attribute">dir</a></code> attribute only affects the <code title="name short"><a href="#the-short-attribute">short</a></code> attribute of the <code title="name element"><a href="#the-name-element-and-its-attributes">name</a></code> element and to the <code title="widget version"><a href="#widget-version">version</a></code> attribute of the <code title="widget element"><a href="#the-widget-element-and-its-attributes">widget</a></code> element). </p>
-  <p>The possible value of a <code><a href="#the-dir-attribute">dir</a></code> attribute is one of the <dfn id="valid-directional-indicators">valid directional  indicators</dfn>:</p>
+  <p>user agent에 의해 표현되는 인간이 읽을 수 있는 텍스트의 방향성을 지정하기 위해 사용되는 <a href="#keyword-attribute">keyword attribute</a>입니다 (예를 들면 <code title="name element"><a href="#the-name-element-and-its-attributes">name</a></code> element, <code title="description element"><a href="#the-description-element-and-its-attributes">description</a></code> element, 그리고 <code title="license element"><a href="#the-license-element-and-its-attributes">license</a></code> element의 텍스트 컨텐츠입니다). <code><a href="#the-dir-attribute">dir</a></code> attribute에 의해 설정된 방향성은 텍스트 컨텐츠와 그리고 또 다른 <code><a href="#the-dir-attribute">dir</a></code>인스턴스에 의해 override되지 않는 한 element가 사용된 곳에 있는 element의 <a href="#displayable-string-attribute" title="displayable-string attribute">displayable string</a> attributes와, 
+  element의 자식 element에 적용됩니다. (예를 들면, 이 명세 내에서, <code><a href="#the-dir-attribute">dir</a></code> attribute는 오직 <code title="name element"><a href="#the-name-element-and-its-attributes">name</a></code> element의 <code title="name short"><a href="#the-short-attribute">short</a></code> attribute과 <code title="widget element"><a href="#the-widget-element-and-its-attributes">widget</a></code> element의 <code title="widget version"><a href="#widget-version">version</a></code> attribute에만 영향을 줍니다). </p>
+  <p><code><a href="#the-dir-attribute">dir</a></code> attribute의 사용 가능한 값은 <dfn id="valid-directional-indicators">올바른 directional  indicators</dfn>중의 하나 입니다:</p>
   <dl>
     <dt><code><dfn id="ltr">ltr</dfn></code></dt>
     <dd>
-      <p>Left-to-right text.  Request that the Unicode <a href="#bidi">[BIDI]</a> algorithm treat characters within an element  as embedded left-to-right.</p>
+      <p>왼쪽에서 오른쪽 순으로의 텍스트. Unicode <a href="#bidi">[BIDI]</a> 알고리즘이 treat element내의 문자들을 왼쪽에서 오른쪽 순서로 내장된것으로 처리하게 요청한다.</p>
     </dd>
     <dt><code><dfn id="rtl">rtl</dfn></code></dt>
     <dd>
-      <p>Right-to-left text.  Request that the Unicode <a href="#bidi">[BIDI]</a> algorithm treat characters within an element  as embedded right-to-left.</p>
+      <p>오른쪽에서 왼쪽 순으로의 텍스트.  Unicode <a href="#bidi">[BIDI]</a> 알고리즘이 treat element내의 문자들을 오른쪽에서 왼쪽 순서로 내장된것으로 처리하게 요청한다.</p>
     </dd>
     <dt><code><dfn id="lro">lro</dfn></code></dt>
     <dd>
-      <p> Left-to-right override. Forces the Unicode <a href="#bidi">[BIDI]</a> algorithm to treat characters within an element as strong left-to-right characters.</p>
+      <p>왼쪽에서 오른쪽 순으로 override한다. Unicode <a href="#bidi">[BIDI]</a> 알고리즘이 treat element내의 문자들을 왼쪽에서 오른쪽 순서의 굵은 글씨로 처리하게 강제한다(TODO).</p>
     </dd>
     <dt><code><dfn id="rlo">rlo</dfn></code></dt>
     <dd>
-      <p>Right-to-left override. Forces the Unicode <a href="#bidi">[BIDI]</a> algorithm to treat characters within an element as strong right-to-left characters.</p>
+      <p>오른쪽에서 왼쪽 순으로의 override한다. Unicode <a href="#bidi">[BIDI]</a> 알고리즘이 treat element내의 문자들을 오른쪽에서 왼쪽 순서의 굵은 글씨로 처리하게 강제한다.(TODO)</p>
     </dd>
   </dl>
-  <p class="note"><span class="notetitle">주석:</span>For security reasons, implementations intending to display <abbr title="Internationalized Resource Identifiers">IRIs</abbr> and <abbr title="Internationalized domain name">IDNA</abbr> addresses found in the configuration document are strongly encouraged to follow the security advice given in <a href="#refsUTR">[UTR36]</a>. This could include, for example,  behaving as if the <code><a href="#the-dir-attribute">dir</a></code> attribute had no effect on any <a href="#iri-attribute" title="IRI attribute">IRI attributes</a>, <a href="#path-attribute" title="path attribute">path attributes</a>, and the <code title="author element"><a href="#the-author-element-and-its-attributes">author</a></code> element's <code title="author email"><a href="#the-email-attribute">email</a></code> attribute.</p>
-  <p>The base direction of a <code><a href="#the-dir-attribute">dir</a></code> attribute is either set explicitly by the nearest parent element that uses the <code><a href="#the-dir-attribute">dir</a></code> attribute; or, in the absence of such an attribute, the base direction is inherited from the <dfn id="default-direction-of-the-document">default direction of the document</dfn>, which is left-to-right ("<code><a href="#ltr">ltr</a></code>"). </p>
+  <p class="note"><span class="notetitle">주석:</span>보안상의 이유로 configuration 문서에서 발견된 <abbr title="Internationalized Resource Identifiers">IRIs</abbr> and <abbr title="Internationalized domain name">IDNA</abbr> 주소들을 보여주는 구현들은 <a href="#refsUTR">[UTR36]</a>에서 제공되는 보안 어드바이스를 따르도록 강력히 권장됩니다. 이것들은 예로 들면 <code><a href="#the-dir-attribute">dir</a></code> attribute가 어떤 <a href="#iri-attribute" title="IRI attribute">IRI attributes</a>, <a href="#path-attribute" title="path attribute">path attributes</a>, 그리고 <code title="author element"><a href="#the-author-element-and-its-attributes">author</a></code> element의 <code title="author email"><a href="#the-email-attribute">email</a></code> attribute 에 아무 효과가 없는것처럼 하는 동작들이 포함될 수 있습니다.</p>
+  <p><code><a href="#the-dir-attribute">dir</a></code> attribute의 기본 방향은 <code><a href="#the-dir-attribute">dir</a></code> attribute를 사용하는 가장 가까운 부모 element로 부터 명시적으로 설정되거나; 그런 attribute가 없는 경우, 기본 방향은 <dfn id="default-direction-of-the-document">문서의 기본 방향</dfn>으로 부터 상속됩니다, 즉 왼쪽에서 오른쪽 순서입니다 ("<code><a href="#ltr">ltr</a></code>"). </p>
   <h4 id="examples-of-usage"><span class="secno">7.5.3 </span>Examples of Usage</h4>
   <div class="example">
-    <p>The following  example demonstrates the <code><a href="#the-dir-attribute">dir</a></code> attribute being  applied globally to a <a href="#configuration-document-0">configuration document</a>. </p>
+    <p>다음에 나오는 예시는 <a href="#configuration-document-0">configuration 문서</a>에 전역으로 적용되는 <code><a href="#the-dir-attribute">dir</a></code> attribute를 보여주고 있습니다. </p>
     <pre><code>&lt;widget xmlns="http://www.w3.org/ns/widgets" dir="rtl" xml:lang="fa"&gt;
 &lt;name short="آب و هوا"&gt;‎
 آب و هوا برنامه&lt;/name&gt;
@@ -1233,7 +1236,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 <span dir="rtl">این نرم افزار به شما اجازه می دهد تا برای دیدن آب و هوا در منطقه محلی تان.</span>
    &lt;/description&gt;
 &lt;/widget&gt;</code></pre>
-    <p>The following example shows the <code><a href="#the-dir-attribute">dir</a></code> attribute applied to <a href="#localized-content">localized content</a>. </p>
+    <p>다음 예시는 <a href="#localized-content">localized content</a>에 적용된 <code><a href="#the-dir-attribute">dir</a></code> attribute 입니다. </p>
     <pre><code>&lt;widget xmlns="http://www.w3.org/ns/widgets"&gt;
 
    &lt;name short="Weather"&gt;
@@ -1245,7 +1248,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
    </span>&lt;/name&gt;
 
 &lt;/widget&gt;</code></pre>
-    <p>The following example shows the <code><a href="#the-dir-attribute">dir</a></code> attribute used with mixed language content: </p>
+    <p>다음 예시는 혼합된 language 컨텐츠와 함께 사용된 <code><a href="#the-dir-attribute">dir</a></code> attribute 입니다: </p>
     <pre><code>
 &lt;widget xmlns="http://www.w3.org/ns/widgets"&gt;
   &lt;name short="Weather"&gt;
