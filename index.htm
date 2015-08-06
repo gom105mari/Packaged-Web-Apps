@@ -1296,32 +1296,34 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 &lt;/widget&gt;</pre>
   </div>
   <h3 id="the-name-element-and-its-attributes"><span class="secno">7.7 </span>The <dfn title="name element"><code>name</code></dfn> Element and its Attributes</h3>
-  <p>The <code title="name element"><a href="#the-name-element-and-its-attributes">name</a></code> element represents the full
-    human-readable name for a <a href="#widget">widget</a> that is used, for example, in an
-    application menu or in other contexts.</p>
+  <p><code title="name element"><a href="#the-name-element-and-its-attributes">name</a></code> element는 어플리케이션 메뉴나 다른 컨텍스트에서
+  사용되는 <a href="#widget">widget</a>의 이름(인간이 완전히 읽을 수 있는)을 나타냅니다.</p>
   <dl>
     <dt>Context in which this element is used:</dt>
-    <dd>In a <code title="widget element"><a href="#the-widget-element-and-its-attributes">widget</a></code> element.</dd>
+    <dd><code title="widget element"><a href="#the-widget-element-and-its-attributes">widget</a></code> element 내에서.</dd>
     <dt>Content model:</dt>
-    <dd>Any.</dd>
+    <dd>어떤 모델이든지.</dd>
     <dt>Occurrences:</dt>
-    <dd>Zero or more (<a href="#one-element-is-allowed-per-language">one element is allowed per language</a>).</dd>
+    <dd>없거나 하나 이상 (<a href="#one-element-is-allowed-per-language">language당 하나의 element만 허용됩니다</a>).</dd>
     <dt>Expected children:</dt>
-    <dd><code title="span element"><a href="#the-span-element-and-its-attributes">span</a></code>: zero or more.</dd>
+    <dd><code title="span element"><a href="#the-span-element-and-its-attributes">span</a></code>: 없거나 하나 이상.</dd>
     <dt>Localizable via <code><a href="#the-xml:lang-attribute">xml:lang</a></code>:</dt>
-    <dd>Yes.</dd>
+    <dd>가능.</dd>
     <dd>
-      <p class="authorguide"><strong>작성 지침:</strong> The value of the <code><a href="#the-xml:lang-attribute">xml:lang</a></code> attribute needs to be unique for any subsequent element of this type.</p>
+      <p class="authorguide"><strong>작성 지침:</strong> <code><a href="#the-xml:lang-attribute">xml:lang</a></code> attribute의 값은 
+      이 타입의 뒤에 오는 어느 element와 비교해도 유일무이해야 합니다.</p>
     </dd>
     <dt>Attributes:</dt>
     <dd> <a href="#global-attributes-0" title="global attributes">Global attributes</a>, <code title="name short"><a href="#the-short-attribute">short</a></code>.</dd>
   </dl>
   <h4 id="the-short-attribute"><span class="secno">7.7.1 </span>The <dfn title="name short"><code title="name short">short</code></dfn> Attribute</h4>
-  <p>A <a href="#displayable-string-attribute">displayable-string attribute</a> intended to represent a condensed name for a widget (e.g., a name that could be used in context were only limited space is available, such as underneath an icon). </p>
-  <p class="authorguide"><strong>작성 지침:</strong> It is optional for authors to use the <code title="name short"><a href="#the-short-attribute">short</a></code> attribute with an <code title="name element"><a href="#the-name-element-and-its-attributes">name</a></code> element.</p>
+  <p>widget의 요약된 이름을 나타내는 용도의 <a href="#displayable-string-attribute">displayable-string attribute</a>
+  (TODO 예를 들어, a name that could be used in context were only limited space is available, such as underneath an icon). </p>
+  <p class="authorguide"><strong>작성 지침:</strong> 작성자가 <code title="name element"><a href="#the-name-element-and-its-attributes">name</a></code> element와
+  <code title="name short"><a href="#the-short-attribute">short</a></code> attribute를 사용 하는 것은 선택 항목입니다.</p>
   <h4 id="example-of-usage-0"><span class="secno">7.7.2 </span>사용 예시</h4>
   <div class="example">
-    <p>The following example shows the usage of the <code title="name element"><a href="#the-name-element-and-its-attributes">name</a></code> element.</p>
+    <p>다음 예제는 <code title="name element"><a href="#the-name-element-and-its-attributes">name</a></code> element의 사용법을 보여줍니다.</p>
     <pre><code>&lt;widget xmlns="http://www.w3.org/ns/widgets"&gt;
 
    <strong>&lt;name short="Weather"&gt;
