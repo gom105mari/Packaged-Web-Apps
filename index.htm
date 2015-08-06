@@ -1337,29 +1337,29 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 &lt;/widget&gt;</code></pre>
   </div>
   <h3 id="the-description-element-and-its-attributes"><span class="secno">7.8 </span>The <dfn title="description element"><code>description</code></dfn> Element and its Attributes</h3>
-  <p>The <code title="description element"><a href="#the-description-element-and-its-attributes">description</a></code> element represents a
-    human-readable description of the widget.</p>
+  <p>widget의 인간이 읽을 수 있는 description을 표현하는 <code title="description element"><a href="#the-description-element-and-its-attributes">description</a></code> element.</p>
   <!-- metadata element -->
   <dl>
     <dt>Context in which this element is used:</dt>
-    <dd>In a <code title="widget element"><a href="#the-widget-element-and-its-attributes">widget</a></code> element.</dd>
+    <dd><code title="widget element"><a href="#the-widget-element-and-its-attributes">widget</a></code> element 내에서.</dd>
     <dt>Content model:</dt>
-    <dd>Any.</dd>
+    <dd>어떤 모델이던지.</dd>
     <dt>Occurrences:</dt>
-    <dd>Zero or more (<a href="#one-element-is-allowed-per-language">one element is allowed per language</a>).</dd>
+    <dd>없거나 하나 이상 (<a href="#one-element-is-allowed-per-language">language당 하나의 element만 허용됩니다</a>).</dd>
     <dt>Expected children:</dt>
-    <dd><code title="span element"><a href="#the-span-element-and-its-attributes">span</a></code>: zero or more.</dd>
+    <dd><code title="span element"><a href="#the-span-element-and-its-attributes">span</a></code>: 없거나 하나 이상.</dd>
     <dt>Localizable via <code><a href="#the-xml:lang-attribute">xml:lang</a></code>:</dt>
-    <dd>Yes.</dd>
+    <dd>가능합니다.</dd>
     <dd>
-      <p class="authorguide"><strong>작성 지침:</strong> The value of the <code><a href="#the-xml:lang-attribute">xml:lang</a></code> attribute needs to be unique for any subsequent element of this type. If two or more elements with the same xml:lang attribute value are encountered, the user agent will <a href="#ignore">ignore</a> all but the matching first element. See <a href="#step-7-process-the-configuration-document">Step 7</a> for more details. </p>
+      <p class="authorguide"><strong>작성 지침:</strong> <code><a href="#the-xml:lang-attribute">xml:lang</a></code> attribute의 값은 이 타입의 뒤에 오는 어느 element와 비교해도 유일무이해야 합니다.
+      만약 같은 xml:lang attribute 값을 가진 둘 또는 그 이상의 elements와 충돌한다면 ,user agent는 모두 <a href="#ignore">무시</a> 하고 첫번째 element를 맞출 것입니다. 보다 자세한 내용은 <a href="#step-7-process-the-configuration-document">Step 7</a>을 확인바랍니다. </p>
     </dd>
     <dt>Attributes:</dt>
     <dd><a href="#global-attributes-0" title="global attributes">Global attributes</a>.</dd>
   </dl>
   <h4 id="example-of-usage-1"><span class="secno">7.8.1 </span>사용 예시</h4>
   <div class="example">
-    <p>An example usage of the description element.</p>
+    <p>description element의 사용 예시.</p>
     <pre><code>&lt;widget xmlns="http://www.w3.org/ns/widgets"&gt;
   &lt;name&gt;Dahut Chaser&lt;/name&gt;
   <strong>&lt;description&gt;
