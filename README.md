@@ -3,22 +3,24 @@
 * 현재 번역본 보기 - http://gom105mari.github.io/Packaged-Web-Apps
 
 ## 번역 진행상황 (전체 30% 정도 번역 완료)
-* Abstract - 100% 완료
-* Status of this document - 100% 완료
-* Table of Contents - 90%
-* 1. Introduction - 100% 완료
-* 2. Conformance - 100% 완료
-* 3. Definitions - 100% 완료
-* 4. User Agent - 100% 완료
-* 5. Zip Archive - 90%
-* 6. Widget Package - 100% 완료
-* 7. Configuration Document - 35%
-* 8 Internationalization and localization
-* 9 Steps for Processing a Widget Package
-* Appendix
-* Acknowledgements
-* Normative References
-* Informative References
+제목 | 진행상황
+------------ | -------------
+요약 | 100% 완료
+이 문서의 상태 | 100% 완료
+목차 | 90%
+1. 소개 | 100% 완료
+2. 호환 | 100% 완료
+3. 정의 | 100% 완료
+4. 유저 에이전트 | 100% 완료
+5. Zip 아카이브 | 90%
+6. Widget 패키지 | 100% 완료
+7. Configuration 문서 | 35%
+8. 국제화와 현지화 | 0%
+9. Widget 패키지 처리 과정 | 0%
+부록 | 0%
+감사의 글 | 0%
+인용 참조 | 0%
+유용한 참조 | 0%
 
 ## 번역 지침
 * 고유 단어로 유지할 것
