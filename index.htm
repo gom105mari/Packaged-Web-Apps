@@ -227,7 +227,7 @@ td, th {
   <p>이 명세는 아카이브 포멧의 PKWare의 Zip 명세, configuration 문서 포멧의 XML, 패키지의 다양한 측면을 처리하고 검증할 때 따르는 런타임 단계에 의존합니다.
     파일의 컨테이너로 역할을 하는 패키지 포멧은 widget에서 사용됩니다.
     configuration 문서는 widget에 대한 메타데이터와 configuration 변수를 정의하는 XML 어휘입니다.
-    widget 패키지를 처리에 대한 Step에서는, 예상되는 동작과 패키지 형식을 처리하는 동안의 런타임에 대한 에러 처리 방법, configuration 문서, 그리고 다른 연관된 파일들을 설명합니다.</p>
+    widget 패키지 처리 과정에서는, 예상되는 동작과 패키지 형식을 처리하는 동안의 런타임에 대한 에러 처리 방법, configuration 문서, 그리고 다른 연관된 파일들을 설명합니다.</p>
   <p>이 명세는  widget 전체를 표준화 하는 <a href="#widgets-family-of-specifications">Widgets family of specifications</a>의 일부분입니다.</p>
   <h2 class="no-num no-toc" id="sotd">이 문서의 상태</h2>
   <p><em>이 섹션에서는 이 문서를 게시할 때의 상태에 대해 설명합니다.
@@ -365,7 +365,7 @@ td, th {
      <li><a href="#simple-example"><span class="secno">8.5.1 </span>간단한 예시</a></li>
      <li><a href="#complex-example"><span class="secno">8.5.2 </span>복잡한 예시</a></li>
      <li><a href="#fallback-behavior-example"><span class="secno">8.5.3 </span>Fallback Behavior Example</a></ol></ol></li>
- <li><a href="#steps-for-processing-a-widget-package"><span class="secno">9 </span>Widget  패키지 처리에 대한 Step</a>
+ <li><a href="#steps-for-processing-a-widget-package"><span class="secno">9 </span>Widget 패키지 처리 과정</a>
   <ol class="toc">
    <li><a href="#processing-rules"><span class="secno">9.1 </span>처리 규칙</a>
     <ol class="toc">
@@ -383,21 +383,21 @@ td, th {
      <li><a href="#rule-for-deriving-the-user-agent-locales"><span class="secno">9.1.12 </span><var title="">user agent locales</var> 도출에 대한 규칙</a></li>
      <li><a href="#rule-for-determining-if-a-potential-zip-archive-is-a-zip-archive"><span class="secno">9.1.13 </span>Rule for Determining if a Potential Zip Archive is a Zip
     Archive</a></ol></li>
-   <li><a class="no-num done" href="#step-1-acquire-a-potential-zip-archive">Step 1 - Potential Zip 아카이브 획득</a>
+   <li><a class="no-num done" href="#step-1-acquire-a-potential-zip-archive">1단계 - Potential Zip 아카이브 획득</a>
     <ol class="toc">
      <li><a href="#acquisition-of-a-potential-zip-archive-labeled-with-a-media-type"><span class="secno">9.1.1 </span>미디어 타입으로 분류된 Potential Zip 아카이브 획득</a></li>
      <li><a href="#acquisition-of-potential-zip-archive-not-labeled-with-a-media-type"><span class="secno">9.1.2 </span>미디어 타입으로 분류되지 않은 Potential Zip 아카이브 획득</a></ol></li>
-   <li><a class="no-num done" href="#step-2-verify-the-zip-archive">Step 2 - Zip 아카이브 검증</a></li>
-   <li><a class="no-num" href="#step-3-set-the-configuration-defaults">Step 3 - 기본 Configuration 설정</a></li>
-   <li><a class="no-num done" href="#step-4-locate-and-process-the-digital-signature">Step 4 - 디지털 서명을 찾고 처리하기</a></li>
-   <li><a class="no-num" href="#step-5-derive-the-user-agent's-locales">Step 5 - 유저 에이전트의 지역 얻기</a></li>
-   <li><a class="no-num done" href="#step-6-locate-the-configuration-document">Step 6 - Configuration 문서 찾기</a></li>
-   <li><a class="no-num" href="#step-7-process-the-configuration-document">Step 7 - Configuration 문서 처리하기</a>
+   <li><a class="no-num done" href="#step-2-verify-the-zip-archive">2단계 - Zip 아카이브 검증</a></li>
+   <li><a class="no-num" href="#step-3-set-the-configuration-defaults">3단계 - 기본 Configuration 설정</a></li>
+   <li><a class="no-num done" href="#step-4-locate-and-process-the-digital-signature">4단계 - 디지털 서명을 찾고 처리하기</a></li>
+   <li><a class="no-num" href="#step-5-derive-the-user-agent's-locales">5단계 - 유저 에이전트의 지역 얻기</a></li>
+   <li><a class="no-num done" href="#step-6-locate-the-configuration-document">6단계 - Configuration 문서 찾기</a></li>
+   <li><a class="no-num" href="#step-7-process-the-configuration-document">7단계 - Configuration 문서 처리하기</a>
     <ol class="toc">
      <li><a href="#terminology-used-in-processing-algorithm"><span class="secno">9.1.1 </span>처리 알고리즘에 사용되는 용어</a></li>
      <li><a href="#algorithm-to-process-a-configuration-document"><span class="secno">9.1.2 </span>Configuration 문서를 처리하는 알고리즘</a></ol></li>
-   <li><a class="no-num done" href="#step-8-locate-the-start-file">Step 8 - 시작 파일 찾기</a></li>
-   <li><a class="no-num done" href="#step-9-process-the-default-icons">Step 9 - 기본 아이콘 처리하기</a></ol></li>
+   <li><a class="no-num done" href="#step-8-locate-the-start-file">8단계 - 시작 파일 찾기</a></li>
+   <li><a class="no-num done" href="#step-9-process-the-default-icons">9단계 - 기본 아이콘 처리하기</a></ol></li>
  <li><a class="no-num" href="#appendix">부록</a>
   <ol class="toc">
    <li><a class="no-num" href="#media-type-registration-for-application/widget"><code>application/widget</code>에 대한 미디어 타입 등록</a></li>
@@ -452,8 +452,8 @@ td, th {
   <a href="#default-icon" title="default icon">기본 아이콘</a>과 <a href="#locale-folder-0" title="locale folder">locale 폴더</a>같은 
   <a href="#reserved">예약된</a> 파일로 구성된 다양한 측면을 정의합니다.
   처리하는 방법과 관련된 측면은 문서의 후반부에서 자세히 설명하고, 전반부에서는 설명하지 않습니다.</p>
-  <p>"<a href="#steps-for-processing-a-widget-package-0">widget 패키지 처리 Steps</a>" 섹션부터 시작되는 후반부에는,
-  widget 패키지를 처리하는데 필요한 step을 정의하는데, 이 step은 유저 에이전트가 <a href="#packaging-format">패키징 포맷</a>, 
+  <p>"<a href="#steps-for-processing-a-widget-package-0">widget 패키지 처리 과정</a>" 섹션부터 시작되는 후반부에는,
+  widget 패키지를 처리하는데 필요한 과정을 정의하는데, 이 과정은 유저 에이전트가 <a href="#packaging-format">패키징 포맷</a>, 
   configuration 문서를 처리하고 현지화된 컨텐츠를 찾으려고 시도하는 예상되는 동작과 마찬가지입니다.
   이 문서의 후반부에는 <a href="#unsupported">지원하지 않거나</a> 찾지 못하는 파일, 또는 <a href="#in-error">에러가 있는</a> configuration 문서의 <abbr title="Document Object Model">DOM</abbr> 노드를 유저에이전트가 접하는 이벤트에 대한 에러를 처리하는 방법도 다룹니다.
    처리가 중요한 경우, 문서의 전반부 섹션은 문서의 후반부 섹션으로 연결합니다.</p>
@@ -624,7 +624,7 @@ td, th {
       <p>파일 데이터는 <a href="#deflate">[Deflate]</a> 방법으로 압축되거나, 파일 데이터는 폴더이고, 아니면 파일은 기존의 PKWARE 암호화 방식으로 암호화되어 있습니다.</p>
     </dd>
   </dl>
-  <p class="note"><span class="notetitle">주석:</span> Zip 아카이브가 기존의 PKWARE 암호화방식으로 암호화되어 있을 경우, <a href="#step-2-verify-the-zip-archive">Step 2</a>에서 유저 에이전트는 <a href="#invalid-widget-package-0">잘못된 Widget 패키지</a>를 다룰 수도 있습니다.</p>
+  <p class="note"><span class="notetitle">주석:</span> Zip 아카이브가 기존의 PKWARE 암호화방식으로 암호화되어 있을 경우, <a href="#step-2-verify-the-zip-archive">2단계</a>에서 유저 에이전트는 <a href="#invalid-widget-package-0">잘못된 Widget 패키지</a>를 다룰 수도 있습니다.</p>
   <h3 id="zip-relative-paths"><span class="secno">5.3 </span>Zip 상대 경로</h3>
   <p>A <dfn id="zip-relative-path">Zip 상대경로</dfn>는 <a href="#file-entry">파일 엔트리</a>의 <var><a href="#local-file-header">로컬 파일 헤더</a></var>에 기록된 <dfn class="external" id="file-name-field"><var>파일명 필드</var></dfn>로부터 얻은 가변 길이 문자열입니다.</p>
   <p class="note"><span class="notetitle">주석:</span> A Zip relative path is said to be relative as it stores the string that represents file and folder names relative to where the Zip archive was created on a file system (e.g. <samp>images/bg.png</samp>), as opposed to storing an absolute path (e.g. <samp>c:\images\bg.png</samp>).
@@ -714,7 +714,7 @@ td, th {
       <p>0개 또는 그 이상의 <a href="#digital-signature" title="digital signature">디지털 서명</a>이 <a href="#root-of-the-widget-package">widget 패키지의 root</a>에 있습니다.</p>
     </li>
   </ul>
-  <p class="note"><span class="notetitle">주석:</span> See <a href="#step-1-acquire-a-potential-zip-archive">step 1</a> - Acquire
+  <p class="note"><span class="notetitle">주석:</span> See <a href="#step-1-acquire-a-potential-zip-archive">1단계</a> - Acquire
     a Potential Zip Archive for instructions on how to process a widget package.</p>
   <h3 id="invalid-widget-package"><span class="secno">6.1 </span>잘못된 Widget 패키지</h3>
   <p><a href="#steps-for-processing-a-widget-package-0">widget 패키지를 처리하는 과정</a>을 진행할 때, 특정 에러 조건은 <a href="#zip-archive-0">Zip 아카이브</a>를 <a href="#invalid-widget-package-0">잘못된 widget 패키지</a>로 처리할 수 있습니다. <dfn id="invalid-widget-package-0">잘못된 Widget 패키지</dfn>의  상태는, Zip 아카이브 또는 Zip 아카이브 내의 파일이 복구  불가능하게 손상되었거나, 부적합하거나, <a href="#unsupported">지원되지 않거나</a>, 유저 에이전트가 계속 처리할 수 없는  명세인 것으로 간주되는 상태입니다.</p>
@@ -910,7 +910,7 @@ td, th {
       <td>application/xhtml+xml</td>
     </tr>
   </table>
-  <p class="note"><span class="notetitle">주석:</span> <a href="#default-start-file">기본 시작 파일</a>을 찾는 설명이 나와있는<a href="#step-8-locate-the-start-file">Step 8</a>을 보세요.</p>
+  <p class="note"><span class="notetitle">주석:</span> <a href="#default-start-file">기본 시작 파일</a>을 찾는 설명이 나와있는<a href="#step-8-locate-the-start-file">8단계</a>를 보세요.</p>
   <p class="authorguide"><strong>작성 지침:</strong> widget 패키지에는 적어도 하나 이상의 <a href="#start-file">시작 파일</a>을 항상 포함합니다.</p>
   <h3 id="icons"><span class="secno">6.6 </span>아이콘</h3>
   <p><dfn id="icon">아이콘</dfn>은 다양한 애플리케이션 컨텍스트에서 widget을 표현하기 위해 주로 사용하는 <a href="#file">파일</a>입니다
@@ -974,7 +974,7 @@ td, th {
   </div>
   <h2 id="configuration-document"><span class="secno">7 </span>Configuration 문서</h2>
   <p><dfn id="configuration-document-0">configuration 문서</dfn>는 <a href="#widget-namespace">widget namespace</a>에 있는 root에 <code title="widget element"><a href="#the-widget-element-and-its-attributes">widget</a></code> 요소를 가지는 <a href="#xml">[XML]</a> 문서입니다. widget 패키지는 정확하게 <a href="#root-of-the-widget-package">widget 패키지의 root</a>에 위치하는 하나의 configuration 문서를 가집니다.</p>
-  <p class="note"><span class="notetitle">주석:</span> <a href="#configuration-document-0">configuration 문서</a>의 element들이 user agent에 의해 어떻게 처리되는지에 대한 자세한 내용은 <a href="#step-7-process-the-configuration-document">Step 7</a>을 보기 바랍니다..</p>
+  <p class="note"><span class="notetitle">주석:</span> <a href="#configuration-document-0">configuration 문서</a>의 element들이 user agent에 의해 어떻게 처리되는지에 대한 자세한 내용은 <a href="#step-7-process-the-configuration-document">7단계</a>를 보기 바랍니다.</p>
   <p><dfn id="valid-configuration-document-file-name">올바른 configuration 문서 파일 이름</dfn>은  <code>"config.xml"</code>입니다. </p>
   <p id="ta-dxzVDWpaWg"><a class="product-ua" href="#user-agent">user agent</a>는 <a href="#arbitrary">임의의</a> <a href="#folder">폴더</a> 또는 <a href="#locale-folder-0" title="locale folder">locale 폴더들</a> 아래의 "<code>config.xml</code>"이라는 이름을 사용하는 <a href="#file">파일</a>은 <a href="#arbitrary">임의의</a> 파일로 취급<em class="ct">해야한다.</em></p>
   <p class="authorguide"><strong>작성 지침:</strong>반드시 <a href="#configuration-document-0">configuration 문서</a>는 <a href="#root-of-the-widget-package">widget 패키지의 root</a>에 포함하여 주시고 <code>config.xml</code>파일 이름은 소문자 형태로 해주시기 바랍니다. 상호 운용을 위해서 <a href="#configuration-document-0">configuration 문서</a>는 <a href="#utf-8">[UTF-8]</a>로 encode바랍니다.</p>
@@ -1026,7 +1026,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
   &lt;/license&gt;
 &lt;/widget&gt;</code></pre>
   </div>
-  <p class="note"><span class="notetitle">주석:</span> <a href="#configuration-document-0">configuration 문서</a>에서 제공하는 관련 정보들을 사용자에게 제공하도록 구현자들에게 권장하고 있습니다. "보여지는 metadata"가 있다는 것은 작성자들이 configuration 포맷을 최대한 활용하도록 만듭니다. 어떻게 configuration 문서를 처리하는지에 대한 설명은 <a href="#step-7-process-the-configuration-document">Step 7</a>을 참고하세요.</p>
+  <p class="note"><span class="notetitle">주석:</span> <a href="#configuration-document-0">configuration 문서</a>에서 제공하는 관련 정보들을 사용자에게 제공하도록 구현자들에게 권장하고 있습니다. "보여지는 metadata"가 있다는 것은 작성자들이 configuration 포맷을 최대한 활용하도록 만듭니다. 어떻게 configuration 문서를 처리하는지에 대한 설명은 <a href="#step-7-process-the-configuration-document">7단계</a>를 참고하세요.</p>
   <div class="authorguide">
     <p><strong>작성 지침:</strong> configuration 문서에서 유일한 필수 element는 <code title="widget element"><a href="#the-widget-element-and-its-attributes">widget</a></code> element 입니다. 모든 다른 elements와 그것들 각각의 attributes는 optional 입니다. 다음의 예는 user agent가 처리할 수 있는 가장 최소한의 configuration 문서입니다. 이 하나의 element를 포함하는 이유는 user agent나 conformance checker에게 이 zip 파일은 이 명세를 준수하려고 한다는 것을 명시적으로 알려주기 위해서입니다.</p>
     <div class="example">
@@ -1068,7 +1068,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
     </dd>
     <dt><dfn id="string-attribute">String attribute</dfn></dt>
     <dd>
-      <p>string attribute의 값은 XML attribute를 위한 올바른 문자열 <a href="#xml">[XML]</a>을 준수하는 어떤 문자열이라도 상관없습니다. 이 attribute 타입의 목적은 <code title="author email"><a href="#the-email-attribute">email</a></code> attribute와 같이 <code title="dir"><a href="#the-dir-attribute">dir</a></code> attribute에 의해 영향을 받지 않는 문자열을 분류하기 위함입니다. (즉, 이 attributes는 <a href="#step-7-process-the-configuration-document">Step 7</a>에서 <a href="#displayable-string-attribute" title="Displayable-string attribute">displayable-strings</a> 로 취급되지 않을 것입니다). </p>
+      <p>string attribute의 값은 XML attribute를 위한 올바른 문자열 <a href="#xml">[XML]</a>을 준수하는 어떤 문자열이라도 상관없습니다. 이 attribute 타입의 목적은 <code title="author email"><a href="#the-email-attribute">email</a></code> attribute와 같이 <code title="dir"><a href="#the-dir-attribute">dir</a></code> attribute에 의해 영향을 받지 않는 문자열을 분류하기 위함입니다. (즉, 이 attributes는 <a href="#step-7-process-the-configuration-document">7단계</a>에서 <a href="#displayable-string-attribute" title="Displayable-string attribute">displayable-strings</a> 로 취급되지 않을 것입니다). </p>
     </dd>
     <dt><dfn id="displayable-string-attribute">Displayable-string attribute</dfn></dt>
     <dd>
@@ -1150,7 +1150,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
   <p>이 섹션은 <a href="#xml">[XML]</a> 명세와 이 명세의 일부에서 나머지 다른 관련 attributes의 동작과 사용법에 대해 설명합니다. 이 명세에서 이 attributes는 <a href="#configuration-document-0">configuration 문서</a>의 어떤 element에서도 사용 가능 하기 때문에 
   <dfn id="global-attributes-0">global attributes</dfn>라고 합니다. </p>
   <p><a href="#global-attributes-0">global attributes</a>는 이 명세내의 어떤 element에서도 사용 가능 하지만 때때로 일부 element에서는 아무 효과도 없을수도 있습니다. 예를 들어, 
-   <code title="icon element"><a href="#the-icon-element-and-its-attributes">icon</a></code> element 에 <code><a href="#the-dir-attribute">dir</a></code> attribute 을 적용시키면 <code title="icon element"><a href="#the-icon-element-and-its-attributes">icon</a></code> elements 나 그것의 어떤 attributes에도 아무 영향이 없습니다. elements에 global attribute의 어떤 효과가 지정되었는 지는 이 명세의 <a href="#step-7-process-the-configuration-document">Step 7</a> 에 정해져 있습니다.</p>
+   <code title="icon element"><a href="#the-icon-element-and-its-attributes">icon</a></code> element 에 <code><a href="#the-dir-attribute">dir</a></code> attribute 을 적용시키면 <code title="icon element"><a href="#the-icon-element-and-its-attributes">icon</a></code> elements 나 그것의 어떤 attributes에도 아무 영향이 없습니다. elements에 global attribute의 어떤 효과가 지정되었는 지는 이 명세의 <a href="#step-7-process-the-configuration-document">7단계</a>에 정해져 있습니다.</p>
   <p class="authorguide"><strong>작성 지침:</strong> 어떤  global attributes을 사용할 지는 작성자 선택이지만 적절한 때 사용하는 것을 추천합니다
    (e.g., language를 선언하면 가독성을 높이는 데 도움이 되고 방향정보는 user agent가 텍스트를 올바르게 표시하는데 도움이 됩니다 ). </p>
   <h4 id="the-xml:lang-attribute"><span class="secno">7.5.1 </span>The <dfn><code>xml:lang</code></dfn> Attribute</h4>
@@ -1240,7 +1240,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
     <dd><code title="feature element"><a href="#the-feature-element-and-its-attributes">feature</a></code>: 없거나 하나이상.</dd>
     <dd><code title="preference element"><a href="#the-preference-element-and-its-attributes">preference</a></code>: 없거나 하나이상.</dd>
     <dt>Localizable via xml:lang:</dt>
-    <dd> 안됩니다. <code title="author element"><a href="#the-author-element-and-its-attributes">author</a></code>, <code title="preference element"><a href="#the-preference-element-and-its-attributes">preference</a></code>, <code title="icon element"><a href="#the-icon-element-and-its-attributes">icon</a></code>, 그리고 <code title="content element"><a href="#the-content-element-and-its-attributes">content</a></code>에 의한 이 attribuate 값의 상속은 <a href="#step-7-process-the-configuration-document">Step 7</a>의 처리 동안 아무런 효과가 없을 것입니다.</dd>
+    <dd> 안됩니다. <code title="author element"><a href="#the-author-element-and-its-attributes">author</a></code>, <code title="preference element"><a href="#the-preference-element-and-its-attributes">preference</a></code>, <code title="icon element"><a href="#the-icon-element-and-its-attributes">icon</a></code>, 그리고 <code title="content element"><a href="#the-content-element-and-its-attributes">content</a></code>에 의한 이 attribuate 값의 상속은 <a href="#step-7-process-the-configuration-document">7단계</a>의 처리 동안 아무런 효과가 없을 것입니다.</dd>
     <dt>Attributes:</dt>
     <dd> <a href="#global-attributes-0" title="global attributes">Global attributes</a>, <code title="widget id"><a href="#the-id-attribute">id</a></code>, <code title="widget version"><a href="#widget-version">version</a></code>, <code title="widget height"><a href="#widget-height">height</a></code>, <code title="widget width"><a href="#widget-width">width</a></code>, <code title="widget viewmodes"><a href="#the-viewmodes-attribute">viewmodes</a></code>. </dd>
   </dl>
@@ -1350,7 +1350,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
     <dd>가능합니다.</dd>
     <dd>
       <p class="authorguide"><strong>작성 지침:</strong> <code><a href="#the-xml:lang-attribute">xml:lang</a></code> attribute의 값은 이 타입의 뒤에 오는 어느 element와 비교해도 유일무이해야 합니다.
-      만약 같은 xml:lang attribute 값을 가진 둘 또는 그 이상의 elements와 충돌한다면 ,user agent는 모두 <a href="#ignore">무시</a> 하고 첫번째 element를 맞출 것입니다. 보다 자세한 내용은 <a href="#step-7-process-the-configuration-document">Step 7</a>을 확인바랍니다. </p>
+      만약 같은 xml:lang attribute 값을 가진 둘 또는 그 이상의 elements와 충돌한다면 ,user agent는 모두 <a href="#ignore">무시</a> 하고 첫번째 element를 맞출 것입니다. 보다 자세한 내용은 <a href="#step-7-process-the-configuration-document">7단계</a>를 확인바랍니다. </p>
     </dd>
     <dt>Attributes:</dt>
     <dd><a href="#global-attributes-0" title="global attributes">Global attributes</a>.</dd>
@@ -2184,8 +2184,8 @@ Distributed under the W3C Software License.
       </li>
     </ul>
   </div>
-  <h2 id="steps-for-processing-a-widget-package"><span class="secno">9 </span>Widget 패키지 처리에 대한 Steps</h2>
-  <p><dfn id="steps-for-processing-a-widget-package-0">Widget 패키지 처리에 대한 Steps</dfn>는 9 step으로 되어있습니다. involves nine steps that a <a href="#user-agent">user agent</a> follows in sequential order, responding
+  <h2 id="steps-for-processing-a-widget-package"><span class="secno">9 </span>widget 패키지 처리 과정</h2>
+  <p><dfn id="steps-for-processing-a-widget-package-0">widget 패키지 처리 과정</dfn>은 9단계로 되어있습니다. involves nine steps that a <a href="#user-agent">user agent</a> follows in sequential order, responding
     accordingly if any of the steps result in an error or if the specification asks for the
     user agent to skip a step. The procedures for what to do when an error is encountered
     are described as part of each step; however, there are times when it will not be
