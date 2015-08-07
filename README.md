@@ -1,4 +1,4 @@
-# Packaged-Web-Apps
+# Web App 패키지(Widgets)
 * w3c translation
 * 현재 번역본 보기 - http://gom105mari.github.io/Packaged-Web-Apps
 
