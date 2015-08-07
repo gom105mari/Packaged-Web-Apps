@@ -2,7 +2,7 @@
 * w3c translation
 * 현재 번역본 보기 - http://gom105mari.github.io/Packaged-Web-Apps
 
-## 번역 진행상황
+## 번역 진행상황 (전체 30% 정도 번역 완료)
 * Abstract - 100% 완료
 * Status of this document - 100% 완료
 * Table of Contents - 90%
