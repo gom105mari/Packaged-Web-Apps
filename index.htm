@@ -261,9 +261,9 @@ td, th {
  <li><a href="#definitions"><span class="secno">3 </span>정의</a>
   <ol class="toc">
    <li><a href="#character-definitions"><span class="secno">3.1 </span>문자 정의</a></ol></li>
- <li><a href="#user-agents"><span class="secno">4 </span>사용자 에이전트</a>
+ <li><a href="#user-agents"><span class="secno">4 </span>유저 에이전트</a>
   <ol class="toc">
-   <li><a href="#optional-aspects-of-the-zip-specification"><span class="secno">4.1 </span>Optional Aspects of the Zip Specification</a></ol></li>
+   <li><a href="#optional-aspects-of-the-zip-specification"><span class="secno">4.1 </span>Zip 명세의 선택적인 측면</a></ol></li>
  <li><a href="#zip-archive"><span class="secno">5 </span>Zip 아카이브</a>
   <ol class="toc">
    <li><a href="#compression-methods"><span class="secno">5.1 </span>압축 방법</a></li>
@@ -408,14 +408,14 @@ td, th {
  <li><a class="no-num" href="#informative-references">유용한 참조</a></ol>
 <!--end-toc-->
   <h2 id="introduction"><span class="secno">1 </span>개요</h2>
-  <p><em>이 섹션은 비표준인 내용입니다.</em></p>
+  <p><em>이 섹션은 비표준 내용입니다.</em></p>
   <p><em>Widgets</em>은 <a href="#html">[HTML]</a>와 같은 Web 표준을 이용하여 작성되고 배포를 위해 패키지된 클라이언트 응용 애플리케이션입니다.
   이것은 일반적으로 단독 애플리케이션으로 실행을 하기 위한 클라이언트 기기에 다운로드되고 설치되지만, 웹 페이지에 포함하거나, 웹 브라우저에서 실행할 수도 있습니다.
    간단한 시계, 주식 시세 표시기, 뉴스캐스터, 게임, 날씨 캐스터부터, 여러 소스들에서 데이터를 얻어, 흥미있고 유용한 것을 사용자에게 보여주는 복잡한 앱까지를 예로 들 수 있습니다(<a href="#widgets-landscape">[Widgets-Landscape]</a>에서 더 많은 정보를 참조하세요).
    </p>
   <p>이 명세는 <a href="#html">[HTML]</a>과 많은 관련이 있는 Web 플랫폼의 부분을 명시할 예정입니다.</p>
   <h3 id="design-goals-and-requirements"><span class="secno">1.1 </span>설계 목표와 요구사항</h3>
-  <p><em>이 섹션은 비표준인 내용입니다.</em></p>
+  <p><em>이 섹션은 비표준 내용입니다.</em></p>
   <p>이 명세에 대한 설계 목표와 요구사항은 <cite> </cite><a href="#widgets-requirements">[Widgets-Requirements]</a>문서에 작성되었습니다.</p>
   <p>이 문서는 2009년 4월 30일 <cite>Widgets Requirements</cite> 작업 초안 문서에 나온 "<a href="http://www.w3.org/TR/2009/WD-widgets-reqs-20090430/#widget-package-packaging">패키징</a>"과 "<a href="http://www.w3.org/TR/2009/WD-widgets-reqs-20090430/#configuration-document">Configuration 문서</a>"에 관련된 25가지 요구사항을 다룹니다:</p>
   <ol>
@@ -446,7 +446,7 @@ td, th {
     <li><a href="http://www.w3.org/TR/2009/WD-widgets-reqs-20090430/#preferred-display-mode">선호되는 디스플레이 모드</a>: <code title="widget element"><a href="#the-widget-element-and-its-attributes">widget</a></code> element의 <code>viewmodes</code> attribute</li>
   </ol>
   <h3 id="how-this-document-is-organized"><span class="secno">1.2 </span>이 문서가 어떻게 구성되어 있는가</h3>
-  <p><em>이 섹션은 비표준인 내용입니다.</em></p>
+  <p><em>이 섹션은 비표준 내용입니다.</em></p>
   <p>이 문서는 2개로 나누어 구성되지만, 명시적으로 표시되어 있지는 않습니다.
   전반부는 <a href="#packaging-format">패키지 포맷</a>, <a href="#configuration-document-0">configuration 문서</a>, 
   <a href="#default-icon" title="default icon">기본 아이콘</a>과 <a href="#locale-folder-0" title="locale folder">locale 폴더</a>같은 
@@ -458,12 +458,12 @@ td, th {
   이 문서의 후반부에는 <a href="#unsupported">지원하지 않거나</a> 찾지 못하는 파일, 또는 <a href="#in-error">에러가 있는</a> configuration 문서의 <abbr title="Document Object Model">DOM</abbr> 노드를 유저에이전트가 접하는 이벤트에 대한 에러를 처리하는 방법도 다룹니다.
    처리가 중요한 경우, 문서의 전반부 섹션은 문서의 후반부 섹션으로 연결합니다.</p>
   <h3 id="typographic-conventions"><span class="secno">1.3 </span>표기법</h3>
-  <p><em>이 섹션은 비표준인 내용입니다.</em></p>
+  <p><em>이 섹션은 비표준 내용입니다.</em></p>
   <p>이 섹션은 이 명세에서 사용하는 <dfn id="typographical-conventions">표기법</dfn>을 정의합니다.
   이 명세의 몇몇 텍스트는 비표준입니다.
   비표준 텍스트는 아래 내용을 포함합니다:</p>
   <ul>
-    <li>섹션에 <q><em>이 섹션은 비표준인 내용입니다.</em></q> 텍스트가 표시,</li>
+    <li>섹션에 <q><em>이 섹션은 비표준 내용입니다.</em></q> 텍스트가 표시,</li>
     <li>작성 지침,</li>
     <li>예시,</li>
     <li>그리고 노트.</li>
@@ -489,7 +489,7 @@ td, th {
   작성 지침의 목적은 작성 기술의 모범 사례를 작성자에게 제공하는 것입니다.
     작성 지침은 비표준입니다.</p>
   <h3 id="the-widget-family-of-specifications"><span class="secno">1.4 </span>The Widget Family of Specifications</h3>
-  <p><em>이 섹션은 비표준인 내용입니다.</em></p>
+  <p><em>이 섹션은 비표준 내용입니다.</em></p>
   <p>이 명세는 widget 전체를 표준화 하는 <dfn id="widgets-family-of-specifications">Widgets family of specifications</dfn>의 일부분입니다.
   Widgets Family of Specifications의 <a href="http://www.w3.org/2008/webapps/wiki/WidgetSpecs">명세 목록</a>은 Working Group의 위키에서 찾을 수 있습니다. </p>
   <h2 id="conformance"><span class="secno">2 </span>호환</h2>
@@ -608,7 +608,7 @@ td, th {
     <dt><code>8</code></dt>
     <dd>데이터는 <a href="#deflate">[Deflate]</a>를 사용하여 압축됩니다.</dd>
     <dt><code>0</code></dt>
-    <dd>데이터는 <a href="#zip">[ZIP]</a> 명세에 정의된 대로 저장된다 (압축 안함).</dd>
+    <dd>데이터는 <a href="#zip">[ZIP]</a> 명세에 정의된 대로 저장됩니다(압축 안함).</dd>
   </dl>
   <p class="authorguide"><strong>저작 지침:</strong> 상호 운용성을 확보하기 위해서, <a href="#file-entry" title="file entry">파일 엔트리</a>를 <a href="#deflate">[Deflate]</a>나 <a href="#stored">Stored</a> (압축 안함) 방법으로 Zip 아카이브에 압축합니다; 다른 압축 방법은  Zip 아카이브가 <a href="#invalid-widget-package-0">잘못된 Widget 패키지</a>로 처리되는 원인이 될 수 있습니다. 올바른 압축 방법 중, <a href="#deflate">[Deflate]</a>를 추천합니다.</p>
   <h3 id="version-of-zip-needed-to-extract-a-file-entry"><span class="secno">5.2 </span>파일 엔트리를 추출하기 위해 필요한 Zip의 버전</h3>
@@ -654,18 +654,18 @@ td, th {
 </code></pre>
   <p><dfn class="external" id="alpha"><code>ALPHA</code></dfn>, <dfn class="external" id="digit"><code>DIGIT</code></dfn>, 그리고 <dfn class="external" id="sp"><code>SP</code></dfn>는 <a href="#abnf">[ABNF]</a> 명세에 정의되어 있습니다(그러나 기본적으로 각각의 영숫자문자와  U+0020 SPACE 코드 포인트를 나타냅니다).</p>
   <h3 id="interoperability-considerations"><span class="secno">5.4 </span>상호운용 고려사항</h3>
-  <p><em>이 섹션은 비표준인 내용입니다.</em></p>
+  <p><em>이 섹션은 비표준 내용입니다.</em></p>
   <p>몇가지 문제는 파일명의 문자 인코딩, zip 상대경로의 길이, 그리고 파일명과 같은 특정 문자의 사용시에 발생할 수 있습니다. 이 부분은 상호운용성 문제를 피할수 있도록 작성자가 도움을 주는 부분입니다.</p>
   <div class="authorguide"><strong>작성 지침</strong>
     <h4 class="no-toc" id="paths-lengths"><span class="secno">5.4.1 </span>경로 길이</h4>
-    <p><em>이 섹션은 비표준인 내용입니다.</em></p>
+    <p><em>이 섹션은 비표준 내용입니다.</em></p>
     <p>Authors need to be aware that having
       excessively long path names (e.g. over 120 characters) can also result in
       interoperability issues on some operating systems. This is because some operating systems have restrictions on how long a path length can be, so authors should try to keep the lengths of  paths at less than 250 bytes. In addition, Unicode code points may
       require more than one byte to encode a character, which can result in a path whose
       length is less than 250 characters but whose size is greater than 250 bytes! </p>
     <h4 class="no-toc" id="character-sets"><span class="secno">5.4.2 </span>문자 세트</h4>
-    <p><em>이 섹션은 비표준인 내용입니다.</em></p>
+    <p><em>이 섹션은 비표준 내용입니다.</em></p>
     <p>Authors need to be aware that, at the time of publication, there are
       interoperability issues with regards to using characters outside the <code>safe-chars</code> range for file or folder names in a Zip archive when using
       Zipping tools bundled with operating systems. The interoperability issues have
@@ -677,7 +677,7 @@ td, th {
       test their widgets on various platforms prior to distribution; otherwise it is
       suggested that authors restrict file and folder names to the <code>safe-chars</code> (characters in the US-ASCII range).</p>
     <h4 class="no-toc" id="file-names"><span class="secno">5.4.3 </span>파일명</h4>
-    <p><em>이 섹션은 비표준인 내용입니다.</em></p>
+    <p><em>이 섹션은 비표준 내용입니다.</em></p>
     <p> Authors need to avoid using the <a href="#zip-forbidden-characters">Zip forbidden
       characters</a> when naming the files used by a widget. These characters are reserved to
       maintain interoperability across various file systems and with <a href="#uri">[URI]</a>s.</p>
@@ -1041,7 +1041,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
   <p>이 명세에는 명시적인 버전 번호를 위한 규정은 없습니다. 만약 이 명세의 향후 버전에서 문서 포맷의 명시적인 버저닝이 필요하다면 다른 namespace가 사용될 것입니다.</p>
   <p class="authorguide"><strong>작성 지침:</strong> 반드시 widget namespace를 <code title="widget element"><a href="#the-widget-element-and-its-attributes">widget</a></code> element의 파트로 선언하세요. 만약 namespace가 없다면, user agent은 widget을 <a href="#invalid-widget-package-0">잘못된 widget package</a>로 인식할 것입니다.</p>
   <h3 id="proprietary-extensions"><span class="secno">7.3 </span>Proprietary Extensions</h3>
-  <p><em>이 섹션은 비표준인 내용입니다.</em>.</p>
+  <p><em>이 섹션은 비표준 내용입니다.</em>.</p>
   <p>자신만의 <a href="#xml">[XML]</a> elements와 attributes (또는 다른 명세에 정의된 이것들) 를 가지고 <a href="#configuration-document-0">configuration 문서</a>의 포맷을 확장하려고 하는 구현자 혹은 작성자들은 별도의 <a href="#xmlns">[XMLNS]</a> namespace를 가지고 할 수 있습니다. 이 명세는 <a href="#widget-namespace">widget namespace</a> 외부의 <a href="#xml">[XML]</a> elements를 처리하는 모델을 정의하지 않습니다.(그 elements는 단순히 처리과정에서 <a href="#ignore" title="ignore">무시됩니다</a>).</p>
   <div class="example">
     <p><a href="#configuration-document-0">configuration 문서</a> 포맷 확장의 예시:</p>
@@ -1941,7 +1941,7 @@ Distributed under the W3C Software License.
   </pre>
   </div>
   <h3 id="localization-examples"><span class="secno">8.5 </span>Localization Examples</h3>
-  <p><em>이 섹션은 비표준인 내용입니다.</em></p>
+  <p><em>이 섹션은 비표준 내용입니다.</em></p>
   <p>This section presents three examples of how widgets can be localized. Each example
     is intended to showcase how the localization algorithm is intended to work.</p>
   <h4 id="simple-example"><span class="secno">8.5.1 </span>Simple Example</h4>
@@ -3858,7 +3858,7 @@ Content-Type: application/x-gadget</code></pre>
     </dd>
   </dl>
   <h3 class="no-num" id="linking-to-a-widget-package-from-a-html-document">Linking To a Widget Package From a HTML Document</h3>
-  <p><em>이 섹션은 비표준인 내용입니다.</em></p>
+  <p><em>이 섹션은 비표준 내용입니다.</em></p>
   <p><em>This section only applies to HTML user agents <a href="#html">[HTML]</a>.</em></p>
   <p><dfn id="auto-discovery">Auto-discovery</dfn> enables a user agent to identify and install a <a href="#widget-package">widget package</a> that is associated with an HTML page. When a page points to
     a <a href="#widget-package">widget package</a>, user agents <em class="ct">should</em> expose the presence of the <a href="#widget-package">widget package</a> to the end-user and allow the end-user to install the <a href="#widget">widget</a>.</p>
@@ -3874,7 +3874,7 @@ Content-Type: application/x-gadget</code></pre>
 </pre>
   </div>
   <h3 class="no-num" id="table-of-elements-and-their-attributes">Table of Elements and Their Attributes</h3>
-  <p><em>이 섹션은 비표준인 내용입니다.</em></p>
+  <p><em>이 섹션은 비표준 내용입니다.</em></p>
   <p>This table lists all elements and respective attributes, as well as child-parent relationships, that make up the language of the <a href="#configuration-document-0">configuration document</a> format defined in this specification. </p>
   <table>
     <tr>
