@@ -37,11 +37,20 @@
  * identifier -> 식별자
  * authoritative -> 권위있는
  * optional -> 선택적인(또는 선택사항)
+ * Conformance -> 호환
+ * clause -> 조항
+ * assertion -> 검증
+ * keyword -> 키워드
+ * section -> 섹션
 
 ## 번역 진행상황
 * Abstract - 100% 완료
-* 목차 - 90%
+* Status of this document - 100% 완료
+* Table of Contents - 90%
+* 1. Introduction - 100% 완료
+* 2. Conformance - 100% 완료
+* 3. Definitions - 100% 완료
 * 4. User Agent - 100% 완료
 * 5. Zip Archive - 90%
 * 6. Widget Package - 100% 완료
-* 7. Configuration Document - 10%
+* 7. Configuration Document - 35%
