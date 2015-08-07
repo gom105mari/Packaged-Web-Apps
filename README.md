@@ -10,6 +10,7 @@
  * namespace
  * root
  * Step
+ * Widgets family of specifications
 * 표준 번역
  * Note -> 주석
  * Authoring Guidelines -> 작성 지침
@@ -34,6 +35,8 @@
  * arbitrary -> 임의의
  * table -> 표
  * identifier -> 식별자
+ * authoritative -> 권위있는
+ * optional -> 선택적인(또는 선택사항)
 
 ## 번역 진행상황
 * Abstract - 100% 완료
