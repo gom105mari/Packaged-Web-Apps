@@ -481,7 +481,7 @@ td, th {
   키워드는 <a href="#rfc2119">[RFC2119]</a>에 설명된 대로 해석되어야 합니다.</p>
   <p>변수는 특별히 <var>variable</var>과 같이 서식화되어 있습니다. 코드도 특별히 <code>code</code>와 같이 서식화되어 있습니다.</p>
   <p><dfn class="external" id="italics">이탤릭체</dfn> 단어는 외부 명세로부터 주어진 일정한 양식에 따른 정의를 나타냅니다.</p>
-  <p class="example">이것은 예제입니다. 예시는 개념이나 기능을 사용하는 방법을 설명할 때 사용합니다.
+  <p class="example">이것은 예시입니다. 예시는 개념이나 기능을 사용하는 방법을 설명할 때 사용합니다.
   예시는 비표준입니다.</p>
   <p class="note"><span class="notetitle">주석:</span> 이것은 주석입니다.
    주석은 일반적으로 비표준 형식의 추가 정보가 포함되어 있습니다.</p>
@@ -876,7 +876,7 @@ td, th {
   <p><dfn id="default-start-file">기본 시작 파일</dfn>은 <a href="#root-of-the-widget-package">widget 패키지의 root</a>에 위치하는 <a href="#reserved">예약된</a> <a href="#start-file">시작 파일</a>이거나 <a href="#locale-folder-0">locale 폴더</a>의 root에 위치하는 파일이며, <a href="#default-start-files-table">기본 시작 파일 표</a>의 파일명과 대소문자까지 일치하는 파일명을 찾습니다.
   또한, 표의  <a href="#media-type-0">미디어 타입</a>과 일치하는 <a href="#media-type-0">미디어 타입</a>이어야 합니다.</p>
   <p><a href="#default-start-files-table">기본 시작 파일 표</a>에 나열된 <a href="#media-type-0" title="media type">미디어 타입</a>은 
-  <a class="product-ua" href="#user-agent">유저 에이전트</a>를 위한 부가정보입니다.</p>
+  <a class="product-ua" href="#user-agent">유저 에이전트</a>를 위한 선택정보입니다.</p>
   <p id="ta-RRZxvvTFHx">만약 유저 에이전트가 <a href="#arbitrary">임의의</a> <a href="#folder">폴더</a> 내에서 <a href="#default-start-files-table">기본 시작 파일 표</a>의 파일명과 일치하는 <a href="#file">파일</a>을 찾을 경우,
     <a class="product-ua" href="#user-agent">유저 에이전트</a>는 그 파일을 <em class="ct">반드시</em> <a href="#arbitrary">임의의</a> 파일로 다루어야 합니다.</p>
   <p class="example">예를 들어,
@@ -956,7 +956,7 @@ td, th {
     </tr>
   </table>
   <p> <a href="#default-icons-table">기본 아이콘 표</a>에 나열된 <a href="#media-type-0" title="media type">미디어 타입</a>은 
-  <a class="product-ua" href="#user-agent">유저 에이전트</a>를 위한 부가정보입니다.</p>
+  <a class="product-ua" href="#user-agent">유저 에이전트</a>를 위한 선택정보입니다.</p>
   <h3 id="media-type"><span class="secno">6.7 </span>미디어 타입</h3>
   <p><dfn id="valid-widget-media-type">올바른 widget 미디어 타입</dfn>은 <code>application/widget</code> 입니다.</p>
   <p class="authorguide"><strong>작성 지침:</strong>만약 <a href="#widget-package">widget 패키지</a>가 전송되는 프로토콜이
@@ -1159,7 +1159,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
     Registry</a>를 참고하시기 바랍니다). <a href="#xml">[XML]</a> 명세는 <code><a href="#the-xml:lang-attribute">xml:lang</a></code> attribute 와 자식 노드들에 미치는 영향을 지정합니다. </p>
   <div class="authorguide">
     <p><strong>작성 지침:</strong> 비록 <a href="#bcp47">[BCP47]</a>는 프레젠테이션을 위해 특정한 방법으로 language tags를 casefold하는 것을 추천하지만, 대소문자여부는 language tag에 아무 의미가 없습니다. 
-    user-agents는 모든 language tags를 소문자로 매핑한다는 것을 작성자에게 되새기는 차원에서, 이 문서의 모든 예제들도 소문자를 사용합니다. 작성자는 폴더의 이름 행태의 소문자로 language tag를 사용해야 하며 <a href="#folder-based-localization-0">folder-based localization</a>를 참고하세요.</p>
+    user-agents는 모든 language tags를 소문자로 매핑한다는 것을 작성자에게 되새기는 차원에서, 이 문서의 모든 예시들도 소문자를 사용합니다. 작성자는 폴더의 이름 행태의 소문자로 language tag를 사용해야 하며 <a href="#folder-based-localization-0">folder-based localization</a>를 참고하세요.</p>
     <p><a href="http://www.iana.org/assignments/language-subtag-registry">IANA Language Subtag
       Registry</a>에 deprecated, grandfathered, 또는 redundant 로 표시된 subtags는 피하세요. <code><a href="#the-xml:lang-attribute">xml:lang</a></code> attribute의 의도된 목적은 element나 그것의 attribute, 그것의 자손 노드들의 
       일차 language를 선언하는 것입니다; 예를 들어 user agent 의 텍스트의 방향성에 관해 관련된 것은 없습니다. 텍스트의 방향을 지정하려면 <code><a href="#the-dir-attribute">dir</a></code> attribute를 참고하세요. </p>
@@ -1279,7 +1279,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
   </div>
   <h4 id="example-of-usage-of-the-defaultlocale-attribute"><span class="secno">7.6.8 </span><code title="widget defaultlocale"><a href="#the-defaultlocale-attribute">defaultlocale</a></code> attribute의 사용 예시</h4>
   <div class="example">
-    <p>다음 예제는 <code title="widget element"><a href="#the-widget-element-and-its-attributes">widget</a></code> element의 <code title="widget defaultlocale"><a href="#the-defaultlocale-attribute">defaultlocale</a></code> attribute가 어떻게 사용되는 지를 보여줍니다: </p>
+    <p>다음 예시는 <code title="widget element"><a href="#the-widget-element-and-its-attributes">widget</a></code> element의 <code title="widget defaultlocale"><a href="#the-defaultlocale-attribute">defaultlocale</a></code> attribute가 어떻게 사용되는 지를 보여줍니다: </p>
     <pre>&lt;widget xmlns = "http://www.w3.org/ns/widgets"
         <strong>defaultlocale</strong> = "en-us"&gt;
 
@@ -1321,7 +1321,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
   <code title="name short"><a href="#the-short-attribute">short</a></code> attribute를 사용 하는 것은 선택 항목입니다.</p>
   <h4 id="example-of-usage-0"><span class="secno">7.7.2 </span>사용 예시</h4>
   <div class="example">
-    <p>다음 예제는 <code title="name element"><a href="#the-name-element-and-its-attributes">name</a></code> element의 사용법을 보여줍니다.</p>
+    <p>다음 예시는 <code title="name element"><a href="#the-name-element-and-its-attributes">name</a></code> element의 사용법을 보여줍니다.</p>
     <pre><code>&lt;widget xmlns="http://www.w3.org/ns/widgets"&gt;
 
    <strong>&lt;name short="Weather"&gt;
