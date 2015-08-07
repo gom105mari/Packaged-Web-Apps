@@ -1389,34 +1389,33 @@ your blog or to the insane dahut chaser web site! Awesome!
 &lt;/widget&gt;</code></pre>
   </div>
   <h3 id="the-license-element-and-its-attributes"><span class="secno">7.10 </span>The <dfn title="license element"><code>license</code></dfn> Element and its Attributes</h3>
-  <p>The <code title="license element"><a href="#the-license-element-and-its-attributes">license</a></code> element represents a <dfn id="software-license">software
-    license</dfn>, which includes, for example, a usage agreement, redistribution
-    statement, and/or a copyright license terms under which the content of the widget
-    package is provided.</p>
+  <p><code title="license element"><a href="#the-license-element-and-its-attributes">license</a></code> element는 사용 동의서, 재 배포문, 또는 widget 패키지의 컨텐츠가 제공되는 저작권 라이센스 조건등을 포함하는
+  <dfn id="software-license">소프트웨어 라이센스</dfn>를 나타냅니다.</p>
   <dl>
     <dt>Context in which this element is used:</dt>
-    <dd>As a child of the <code title="widget element"><a href="#the-widget-element-and-its-attributes">widget</a></code> element.</dd>
+    <dd><code title="widget element"><a href="#the-widget-element-and-its-attributes">widget</a></code> element의 자식 element.</dd>
     <dt>Content model:</dt>
-    <dd>Any.</dd>
+    <dd>어떤 모델이던지.</dd>
     <dt>Expected children:</dt>
-    <dd><code title="span element"><a href="#the-span-element-and-its-attributes">span</a></code>: zero or more.</dd>
+    <dd><code title="span element"><a href="#the-span-element-and-its-attributes">span</a></code>: 없거나 하나 이상.</dd>
     <dt>Occurrences:</dt>
-    <dd>Zero or more (<a href="#one-element-is-allowed-per-language">one element is allowed per language</a>).</dd>
-    <dt>Localizable via <code><a href="#the-xml:lang-attribute">xml:lang</a></code>:</dt>
-    <dd>Yes.</dd>
+    <dd>없거나 하나 이상 (<a href="#one-element-is-allowed-per-language">language당 하나의 element만 허용됩니다</a>).</dd>
+    <dt><code><a href="#the-xml:lang-attribute">xml:lang</a></code>을 통한 현지화 가능 여부:</dt>
+    <dd>가능.</dd>
     <dd>
-      <p class="authorguide"><strong>작성 지침:</strong> The value of the <code><a href="#the-xml:lang-attribute">xml:lang</a></code> attribute needs to be unique for any subsequent element of this type. The content of localized <code title="license element"><a href="#the-license-element-and-its-attributes">license</a></code> elements shouldn't be used to present different versions of a license, just translations of the same license.</p>
+      <p class="authorguide"><strong>작성 지침:</strong> <code><a href="#the-xml:lang-attribute">xml:lang</a></code> attribute의 값은 이 타입 이후에 오는 어느 element 값에 비해 와 비해 유일무이해야 합니다(TODO 동일 문장들 다시 체크해야할듯 뭔가 이상).
+       현지화된 <code title="license element"><a href="#the-license-element-and-its-attributes">license</a></code> elements의 컨텐츠는 동일한 버젼의 라이센스를 번역한 것이어야 합니다.</p>
     </dd>
     <dt>Attributes:</dt>
     <dd><a href="#global-attributes-0" title="global attributes">Global attributes</a>, <code title="license href"><a href="#the-href-attribute-0">href</a></code>. </dd>
   </dl>
   <h4 id="the-href-attribute-0"><span class="secno">7.10.1 </span>The <dfn title="license href"><code>href</code></dfn> Attribute</h4>
-  <p>A <a href="#valid-iri">valid IRI</a> or a <a href="#valid-path">valid path</a> that points to a
+  <p>소프트웨어나 컨텐츠의 라이센스 표현을 가리키는 <a href="#valid-iri">올바른 IRI</a>나 <a href="#valid-path">올바른 path</a>.
     representation of a software and/or content license. </p>
-  <p class="authorguide"><strong>작성 지침:</strong> It is optional for authors to use the <code title="license href"><a href="#the-href-attribute-0">href</a></code> attribute with a <code title="license element"><a href="#the-license-element-and-its-attributes">license</a></code> element.</p>
+  <p class="authorguide"><strong>작성 지침:</strong> 작성자가 <code title="license element"><a href="#the-license-element-and-its-attributes">license</a></code> element에 <code title="license href"><a href="#the-href-attribute-0">href</a></code> attribute을 사용하는 것은 선택 사항입니다.</p>
   <h4 id="example-of-usage-3"><span class="secno">7.10.2 </span>사용 예시</h4>
   <div class="example">
-    <p>This example shows the expected usage of the <code title="license element"><a href="#the-license-element-and-its-attributes">license</a></code> element's <code title="license href"><a href="#the-href-attribute-0">href</a></code> attribute.</p>
+    <p>이것은 <code title="license element"><a href="#the-license-element-and-its-attributes">license</a></code> element에 <code title="license href"><a href="#the-href-attribute-0">href</a></code> attribute를 사용한 예시 입니다.</p>
     <pre><code>&lt;widget xmlns="http://www.w3.org/ns/widgets"&gt;
   <strong>&lt;license href="http://www.w3.org/Consortium/Legal/2002/copyright-software-20021231"&gt;
 Distributed under the W3C Software License.
@@ -1424,8 +1423,8 @@ Distributed under the W3C Software License.
 &lt;/widget&gt;</code></pre>
   </div>
   <div class="example">
-    <p>This example shows the expected usage of the <code title="license element"><a href="#the-license-element-and-its-attributes">license</a></code> element when the <code title="license href"><a href="#the-href-attribute-0">href</a></code> attribute is
-      omitted.</p>
+    <p>아래는 <code title="license element"><a href="#the-license-element-and-its-attributes">license</a></code> element에 <code title="license href"><a href="#the-href-attribute-0">href</a></code> attribute가 생략되었을
+    때의 사용 예시입니다.</p>
     <pre><code>&lt;widget xmlns="http://www.w3.org/ns/widgets"&gt;
   <strong>&lt;license&gt;
 	... 
