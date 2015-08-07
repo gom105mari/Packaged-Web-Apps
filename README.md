@@ -13,6 +13,12 @@
 * 5. Zip Archive - 90%
 * 6. Widget Package - 100% 완료
 * 7. Configuration Document - 35%
+* 8 Internationalization and localization
+* 9 Steps for Processing a Widget Package
+* Appendix
+* Acknowledgements
+* Normative References
+* Informative References
 
 ## 번역 지침
 * 고유 단어로 유지할 것
