@@ -1,5 +1,6 @@
 # Web App 패키지(Widgets)
 * w3c translation
+* [Packaged Web Apps (Widgets)](http://www.w3.org/TR/2012/REC-widgets-20121127/) 에 대한 한글 번역본
 * 현재 번역본 보기 - http://gom105mari.github.io/Packaged-Web-Apps
 
 ## 번역 진행상황 (전체 30% 정도 번역 완료)
