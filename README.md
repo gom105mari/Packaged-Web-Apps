@@ -2,6 +2,18 @@
 * w3c translation
 * 현재 번역본 보기 - http://gom105mari.github.io/Packaged-Web-Apps
 
+## 번역 진행상황
+* Abstract - 100% 완료
+* Status of this document - 100% 완료
+* Table of Contents - 90%
+* 1. Introduction - 100% 완료
+* 2. Conformance - 100% 완료
+* 3. Definitions - 100% 완료
+* 4. User Agent - 100% 완료
+* 5. Zip Archive - 90%
+* 6. Widget Package - 100% 완료
+* 7. Configuration Document - 35%
+
 ## 번역 지침
 * 고유 단어로 유지할 것
  * Configuration
@@ -42,15 +54,3 @@
  * assertion -> 검증
  * keyword -> 키워드
  * section -> 섹션
-
-## 번역 진행상황
-* Abstract - 100% 완료
-* Status of this document - 100% 완료
-* Table of Contents - 90%
-* 1. Introduction - 100% 완료
-* 2. Conformance - 100% 완료
-* 3. Definitions - 100% 완료
-* 4. User Agent - 100% 완료
-* 5. Zip Archive - 90%
-* 6. Widget Package - 100% 완료
-* 7. Configuration Document - 35%
