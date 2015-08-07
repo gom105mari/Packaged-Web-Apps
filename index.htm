@@ -503,8 +503,8 @@ td, th {
   다른 용어는 이 명세를 통해 정의되어 있습니다.</p>
   <p><dfn id="arbitrary">임의의</dfn>는 이 명세의 목적을 위해 
   <a href="#reserved">예약된</a> 것이 아닌 
-  문자, 텍스트 문자열, 또는 <code><a href="#file-name">파일명</a></code>, 
-  <code><a href="#folder-name">폴더명</a></code>을 의미합니다.</p>
+  문자, 텍스트 문자열, 또는 <code><a href="#file-name">file-name</a></code>, 
+  <code><a href="#folder-name">folder-name</a></code>을 의미합니다.</p>
   <p><dfn id="author">작성자</dfn>는 <a href="#widget-package">widget 패키지</a>를 만드는 사람이거나 <a href="#widget-package">widget 패키지</a>를 생성하는 작성 툴입니다.</p>
   <p><dfn id="initialization">초기화</dfn>는 유저 에이전트가 <a href="#steps-for-processing-a-widget-package-0">widget 패키지 처리에 대한 과정</a>에 따라 단계별로 실행하는 것을 의미합니다.</p>
   <p><dfn class="external" id="language-tag">language tag</dfn>는 <a href="#bcp47">[BCP47]</a>
@@ -513,7 +513,7 @@ td, th {
   <a href="http://www.iso.org/iso/country_codes/iso_3166_code_lists/country_names_and_code_elements">Maintenance Agency for ISO 3166 country codes</a>를 보세요). </p>
   <p><dfn class="external" id="media-type-0">미디어 타입</dfn>은 <a href="#mime">[MIME]</a> 명세에 정의되어 있습니다.</p>
   <p><dfn id="reserved">예약된</dfn>은 이 명세나 다른 명세, 또는 시스템에서 특별한 의미와 목적으로 사용하는 
-  문자, 텍스트 문자열, 또는 <code><a href="#file-name">파일명</a></code>, <code><a href="#folder-name">폴더명</a></code>을 의미합니다.
+  문자, 텍스트 문자열, 또는 <code><a href="#file-name">file-name</a></code>, <code><a href="#folder-name">folder-name</a></code>을 의미합니다.
  예약된 것에 대한 의도된 목적은 용어가 사용될 때 주어집니다.</p>
   <p><dfn id="supported">지원된</dfn>은 언급한 명세나 호환 조항을 유저 에이전트가 구현한 것, 또는 언급한 <a href="#media-type-0">미디어 타입</a>을 처리 또는 만들 수 있는 것을 의미합니다.</p>
   <p><dfn id="unsupported">지원하지 않는</dfn>은 유저 에이전트가 언급한 명세나 기능을 구현하지 않은 것, 또는 언급한 <a href="#media-type-0">미디어 타입</a>을 처리 또는 만들 수 없는 것을 의미합니다.</p>
@@ -659,42 +659,26 @@ td, th {
   <div class="authorguide"><strong>작성 지침</strong>
     <h4 class="no-toc" id="paths-lengths"><span class="secno">5.4.1 </span>경로 길이</h4>
     <p><em>이 섹션은 비표준 내용입니다.</em></p>
-    <p>Authors need to be aware that having
-      excessively long path names (e.g. over 120 characters) can also result in
-      interoperability issues on some operating systems. This is because some operating systems have restrictions on how long a path length can be, so authors should try to keep the lengths of  paths at less than 250 bytes. In addition, Unicode code points may
-      require more than one byte to encode a character, which can result in a path whose
-      length is less than 250 characters but whose size is greater than 250 bytes! </p>
+    <p>작성자는 지나치게 긴 경로명(120자 이상과 같은)을 가지는 것은 일부 운영체제에서 상호운용성 문제를 발생시킬 수 있음을 인식해야합니다.
+    일부 운영체제 경로의 길이에 제한이 있기 때문에, 저자는 경로의 길이를 250바이트 미만으로 유지할 필요가 있습니다. 
+    또한, 250바이트 이상의 사이즈이면서 250자 미만의 길이를 가진 경로를 가져올 수 있는 문자의 인코딩을 위해서, Unicode 코드부호는 1바이트 이상을 필요로 할 수도 있습니다!</p>
     <h4 class="no-toc" id="character-sets"><span class="secno">5.4.2 </span>문자 세트</h4>
     <p><em>이 섹션은 비표준 내용입니다.</em></p>
-    <p>Authors need to be aware that, at the time of publication, there are
-      interoperability issues with regards to using characters outside the <code>safe-chars</code> range for file or folder names in a Zip archive when using
-      Zipping tools bundled with operating systems. The interoperability issues have
-      arisen from non-conforming implementations of the <a href="#zip">[ZIP]</a> specification
-      across operating systems: very few, if any, correctly support encoding file names
-      in Unicode.</p>
-    <p>In the case where the Zip relative path is encoded using <a href="#utf-8">[UTF-8]</a>, the <a class="external" href="#language-encoding-flag-(efs)">language encoding flag (EFS)</a> needs to be set.</p>
-    <p>If an author chooses to use the <code>utf8-chars</code>, they need to thoroughly
-      test their widgets on various platforms prior to distribution; otherwise it is
-      suggested that authors restrict file and folder names to the <code>safe-chars</code> (characters in the US-ASCII range).</p>
+    <p>작성자는 발행 시점에 운영체제의 기본 압축 툴을 이용해서 Zip 아카이브를 만들 때, <code>safe-chars</code> 범위 밖의 문자를 사용한 파일명이나 폴더명과 관련하여 상호운용성 문제가 발생할 수 있다는 점에 유의해야합니다.
+    Unicode로 인코딩 파일명을 올바르게 지원하더라도 상호운용성 문제는 <a href="#zip">[ZIP]</a> 명세를 따르지 않고 구현한 운영체제 사이에서 아주 가끔 발생하고 있습니다.</p>
+    <p><a href="#utf-8">[UTF-8]</a>을 이용하여 인코딩된 Zip 상대 경로의 경우, <a class="external" href="#language-encoding-flag-(efs)">언어 인코딩 플래그(EFS)</a>를 설정해야합니다.</p>
+    <p>작성자가 <code>utf8-chars</code>를 사용할 경우, 배포전에 다양한 플랫폼에서 widgets을 테스트해야합니다; 아니면 작성자가 파일명과 폴더명을 <code>safe-chars</code>(US-ASCII 범위 내 문자)로 제한할 것을 제안합니다.</p>
     <h4 class="no-toc" id="file-names"><span class="secno">5.4.3 </span>파일명</h4>
     <p><em>이 섹션은 비표준 내용입니다.</em></p>
-    <p> Authors need to avoid using the <a href="#zip-forbidden-characters">Zip forbidden
-      characters</a> when naming the files used by a widget. These characters are reserved to
-      maintain interoperability across various file systems and with <a href="#uri">[URI]</a>s.</p>
-    <p>Authors need to avoid using the following words as either a <a href="#folder"><code>folder</code></a> or
-      a <a href="#file-name"><code>file-name</code></a> in a <a href="#zip-relative-path">Zip relative path</a> as they
-      are reserved by some operating systems (case-insensitive): CON, PRN, AUX, NUL,
+    <p>작성자는 widget에서 사용되는 파일명을 정할 때, <a href="#zip-forbidden-characters">Zip에 포함할 수 없는 문자</a>를 사용하지 않아야합니다.
+    <a href="#zip-forbidden-characters">Zip에 포함할 수 없는 문자</a>는 다양한 파일 시스템간, 그리고 <a href="#uri">[URI]</a>와의 상호운용성을 듀지하기 위해 예약되어 있습니다.</p>
+    <p>작성자는 다음에 나오는 일부 운영제체(대소문자 구분하지 않음)에서 예약해 놓은 단어를 <a href="#zip-relative-path">Zip 상대 경로</a>에서 <a href="#folder"><code>folder</code></a>나 <a href="#file-name"><code>file-name</code></a>으로 사용하지 않도록 해야합니다: CON, PRN, AUX, NUL,
       COM1, COM2, COM3, COM4, COM5, COM6, COM7, COM8, COM9, LPT1, LPT2, LPT3, LPT4, LPT5,
-      LPT6, LPT7, LPT8, LPT9, CLOCKS$. For example, the following names are ok:
-      "CON-tact.txt", "printer.lpt1", "DCOM1.pdf". However, "com3.txt" "Lpt1", "CoM9.gif"
-      
-      would not be.</p>
-    <p>In addition,  authors need to avoid having a "." U+002E FULL STOP as the last character of a
-      file or folder name as some operating systems will remove the character when the
-      file is extracted from the Zip archive onto the device. Furthermore, avoid having
-      the space character (<a href="#sp">SP</a>) at the start or end of a file name; and take
-      caution when using the "+" U+002B PLUS SIGN, as it might cause issues on some
-      operating systems.</p>
+      LPT6, LPT7, LPT8, LPT9, CLOCKS$. 예를 들어, 다음과 같은 이름은 사용 가능합니다:
+      "CON-tact.txt", "printer.lpt1", "DCOM1.pdf". 하지만, "com3.txt" "Lpt1", "CoM9.gif"
+      는 사용할 수 없습니다.</p>
+    <p>또한, 작성자는 "." U+002E FULL STOP을 파일명이나 폴더명의 마지막 문자로 사용하지 않아야 합니다. 왜냐하면, 일부 운영체제는 Zip 아카이브로부터 장치에 압출을 풀 때, "." U+002E FULL STOP을 삭제하기 때문입니다.
+    빈 칸 문자(<a href="#sp">SP</a>)를 파일명의 시작이나 마지막에 사용하는 것도 피해야합니다; "+" U+002B PLUS SIGN 을 사용하는 것도 일부 운영체제에서 문제를 일으킬 수 있으므로 주의해야 합니다.</p>
   </div>
   <h2 id="widget-packages"><span class="secno">6 </span>Widget 패키지</h2><p><dfn id="widget-package">widget 패키지</dfn>는 아래 내용을 포함하는 <a href="#valid-zip-archive">올바른 Zip 아카이브</a>입니다:</p>
   <ul>
