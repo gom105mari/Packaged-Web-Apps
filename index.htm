@@ -1438,37 +1438,34 @@ Distributed under the W3C Software License.
 &lt;/widget&gt;</code></pre>
   </div>
   <h3 id="the-icon-element-and-its-attributes"><span class="secno">7.11 </span>The <dfn title="icon element"><code>icon</code></dfn> Element and its Attributes</h3>
-  <p>The <code title="icon element"><a href="#the-icon-element-and-its-attributes">icon</a></code> element represents a <a href="#custom-icon">custom
-    icon</a> for the widget.</p>
+  <p>The <code title="icon element"><a href="#the-icon-element-and-its-attributes">icon</a></code> element는 widget의 <a href="#custom-icon">custom
+    icon</a>을 나타냅니다.</p>
   <dl>
     <dt>Context in which this element is used:</dt>
-    <dd>As a child of the <code title="widget element"><a href="#the-widget-element-and-its-attributes">widget</a></code> element.</dd>
+    <dd><code title="widget element"><a href="#the-widget-element-and-its-attributes">widget</a></code> element의 자식으로.</dd>
     <dt>Content model:</dt>
     <dd>Empty.</dd>
     <dt>Occurrences:</dt>
-    <dd>Zero or more.</dd>
+    <dd>없거나 하나 이상.</dd>
     <dt>Localizable via <code><a href="#the-xml:lang-attribute">xml:lang</a></code>:</dt>
-    <dd>No. Relies on <a href="#folder-based-localization-0">folder-based localization</a>.</dd>
+    <dd>불가. <a href="#folder-based-localization-0">folder-based localization</a>을 통해 가능.</dd>
     <dt>Attributes:</dt>
     <dd><a href="#global-attributes-0" title="global attributes">Global attributes</a>, <code title="icon src"><a href="#the-src-attribute">src</a></code>, <code title="icon width"><a href="#the-width-attribute-0">width</a></code>, <code title="icon height"><a href="#the-height-attribute-0">height</a></code>. </dd>
   </dl>
   <h4 id="the-src-attribute"><span class="secno">7.11.1 </span>The <dfn title="icon src"><code>src</code></dfn> Attribute</h4>
-  <p>A <a href="#path-attribute">path attribute</a> that points to a <a href="#file">file</a> inside the
-    widget package. </p>
-  <p class="authorguide"><strong>작성 지침:</strong> When an <code title="icon element"><a href="#the-icon-element-and-its-attributes">icon</a></code> element is used, it is required for authors to
-    use the <code title="icon src"><a href="#the-src-attribute">src</a></code> attribute.</p>
+  <p>widget 패키지 내부의 <a href="#file">file</a>을 가리키는 <a href="#path-attribute">path attribute</a>.</p>
+  <p class="authorguide"><strong>작성 지침:</strong> <code title="icon element"><a href="#the-icon-element-and-its-attributes">icon</a></code> element를 사용한다면 작성자는 <code title="icon src"><a href="#the-src-attribute">src</a></code> attribute를 꼭 추가해야 합니다.</p>
   <h4 id="the-width-attribute-0"><span class="secno">7.11.2 </span>The <code><dfn title="icon width">width</dfn></code> Attribute</h4>
-  <p>A <a href="#valid-non-negative-integer" title="valid non-negative integer">numeric attribute</a> greater than <code>0</code> that represents,  in <a href="http://www.w3.org/TR/CSS21/syndata.html#length-units">CSS pixels</a> <a href="#css2">[CSS]</a>, the author's preferred width for the icon. A user agent <em class="ct">may</em> ignore this value when changing the height icon to fit a rendering context or for accessibility reasons. </p>
-  <p class="authorguide"><strong>작성 지침:</strong> It is optional for authors to use the <code title="icon width"><a href="#the-width-attribute-0">width</a></code> attribute of an <code title="icon element"><a href="#the-icon-element-and-its-attributes">icon</a></code> element.</p>
+  <p> 작성자가 선호하는 icon의 너비를 나타내는 <code>0</code> 이상의 <a href="http://www.w3.org/TR/CSS21/syndata.html#length-units">CSS pixels</a> <a href="#css2">[CSS]</a> 단위의 <a href="#valid-non-negative-integer" title="valid non-negative integer">numeric attribute</a>.
+  user agent는 icon을 렌더링 컨텍스트에 맞추거나 또는 접근성의 이유들로 인해 너비를 바꿔야 할 때 이 값을 무시할 수도 있다(원문엔 height인데 오타인듯). </p>
+  <p class="authorguide"><strong>작성 지침:</strong> <code title="icon element"><a href="#the-icon-element-and-its-attributes">icon</a></code> element에 <code title="icon width"><a href="#the-width-attribute-0">width</a></code> attribute을 사용하는 것은 작성자 선택 사항입니다.</p>
   <h4 id="the-height-attribute-0"><span class="secno">7.11.3 </span>The <code><dfn title="icon height">height</dfn></code> Attribute</h4>
-  <p>A <a href="#valid-non-negative-integer" title="valid non-negative integer">numeric attribute</a> greater than <code>0</code> that represents,  in <a href="http://www.w3.org/TR/CSS21/syndata.html#length-units">CSS pixels</a> <a href="#css2">[CSS]</a>, the author's preferred height for the icon. A user agent <em class="ct">may</em> ignore this value when changing the height icon to fit a rendering context or for accessibility reasons. </p>
-  <p class="authorguide"><strong>작성 지침:</strong> It is optional for authors to use the <code title="icon height"><a href="#the-height-attribute-0">height</a></code> attribute of an <code title="icon element"><a href="#the-icon-element-and-its-attributes">icon</a></code> element.</p>
+  <p>작성자가 선호하는 icon의 높이를 나타내는 <code>0</code> 이상의 <a href="http://www.w3.org/TR/CSS21/syndata.html#length-units">CSS pixels</a> <a href="#css2">[CSS]</a> 단위의 <a href="#valid-non-negative-integer" title="valid non-negative integer">numeric attribute</a>. user agent는 icon을 렌더링 컨텍스트에 맞추거나 또는 접근성의 이유들로 인해 높이를 바꿔야 할 때 이 값을 무시할 수도 있다. </p>
+  <p class="authorguide"><strong>작성 지침:</strong> <code title="icon element"><a href="#the-icon-element-and-its-attributes">icon</a></code> element에 <code title="icon height"><a href="#the-height-attribute-0">height</a></code> attribute을 사용하는 것은 작성자 선택 사항입니다.</p>
   <h4 id="example-of-usage-4"><span class="secno">7.11.4 </span>사용 예시</h4>
   <div class="example">
-    <p>This example shows the expected usage of the <code title="icon element"><a href="#the-icon-element-and-its-attributes">icon</a></code> element. The example declares three icon elements, two of
-      which are raster and one of which is an <a href="#svgtiny">[SVGTiny]</a> file. The raster
-      graphics would be used for display contexts smaller than 256x256 pixels. <a href="http://www.w3.org/TR/xpath/#dt-document-order">Document order</a> of the elements is
-      irrelevant.</p>
+    <p>다음은 <code title="icon element"><a href="#the-icon-element-and-its-attributes">icon</a></code> element의 사용 예시입니다. 세개의 icon elements를 선언하고 있는데,
+     그 중 2가지는 raster 이미지이고 하나는 <a href="#svgtiny">[SVGTiny]</a> 파일입니다. raster 그래픽스는 256x256 pixels보다 작은 디스플레이 컨텍스트에서 사용됩니다. elements의 <a href="http://www.w3.org/TR/xpath/#dt-document-order">Document order</a>는 무관합니다.</p>
     <pre>
 <code>&lt;widget xmlns="http://www.w3.org/ns/widgets"&gt;
   <strong>&lt;icon src="icons/medium.png"/&gt;
