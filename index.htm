@@ -1474,53 +1474,45 @@ Distributed under the W3C Software License.
 &lt;/widget&gt;</code></pre>
   </div>
   <h3 id="the-content-element-and-its-attributes"><span class="secno">7.12 </span>The <dfn title="content element"><code>content</code></dfn> Element and its Attributes</h3>
-  <p>The <code title="content element"><a href="#the-content-element-and-its-attributes">content</a></code> element is used by an author to
-    declare which <a href="#custom-start-file-0">custom start file</a> the user agent is expected to use when it instantiates the widget.</p>
+  <p><code title="content element"><a href="#the-content-element-and-its-attributes">content</a></code> element는 widget이 instance화될때 user agent가 사용하게 할 
+  <a href="#custom-start-file-0">custom start file</a>을 작성자가 선언할 때 사용된다.</p>
   <dl>
     <dt>Context in which this element is used:</dt>
-    <dd>As a child of the <code title="widget element"><a href="#the-widget-element-and-its-attributes">widget</a></code> element.</dd>
+    <dd><code title="widget element"><a href="#the-widget-element-and-its-attributes">widget</a></code> element의 자식으로.</dd>
     <dt>Content model:</dt>
-    <dd>Empty.</dd>
+    <dd>없음.</dd>
     <dt>Occurrences:</dt>
-    <dd>Zero or one.</dd>
+    <dd>없거나 한번.</dd>
     <dt>Localizable via <code><a href="#the-xml:lang-attribute">xml:lang</a></code>:</dt>
-    <dd>No. Relies on <a href="#folder-based-localization-0">folder-based localization</a>.</dd>
+    <dd>불가능. <a href="#folder-based-localization-0">folder-based localization</a>을 통해서 가능.</dd>
     <dt>Attributes:</dt>
     <dd><a href="#global-attributes-0" title="global attributes">Global attributes</a>, <code title="content src"><a href="#the-src-attribute-0">src</a></code>, <code title="content type"><a href="#the-type-attribute">type</a></code>, <code title="content encoding"><a href="#the-encoding-attribute">encoding</a></code>.</dd>
   </dl>
   <h4 id="the-src-attribute-0"><span class="secno">7.12.1 </span>The <code><dfn title="content src">src</dfn></code> Attribute</h4>
-  <p>A <a href="#path-attribute">path attribute</a> that allows an author to point to a <a href="#file">file</a> within the <a href="#widget-package">widget package</a>. </p>
-  <p class="authorguide"><strong>작성 지침:</strong> When a <code title="content element"><a href="#the-content-element-and-its-attributes">content</a></code> element is used, it is required for authors to
-    use the <code title="content src"><a href="#the-src-attribute-0">src</a></code> attribute.</p>
+  <p>작성자가 widget 패키지 내부의 <a href="#file">file</a>을 가리키게 하는 <a href="#path-attribute">path attribute</a>. </p>
+  <p class="authorguide"><strong>작성 지침:</strong>  <code title="content element"><a href="#the-content-element-and-its-attributes">content</a></code> element를 사용한다면 작성자는 <code title="icon src"><a href="#the-src-attribute">src</a></code> attribute를 꼭 추가해야 합니다.</p>
   <h4 id="the-type-attribute"><span class="secno">7.12.2 </span>The <dfn title="content type"><code>type</code></dfn> Attribute</h4>
-  <p>A <a href="#media-type-attribute">media type attribute</a> that indicates the <a href="#media-type-0">media type</a> of
-    the file referenced by the <code>src</code> attribute. </p>
-  <p class="authorguide"><strong>작성 지침:</strong> It is optional for authors
-    to use the <code title="content type"><a href="#the-type-attribute">type</a></code> attribute with a <code title="content element"><a href="#the-content-element-and-its-attributes">content</a></code> element. When the value is absent, the
-    user agent will assume the value <code>text/html</code>. </p>
+  <p><code>src</code> attribute가 참조하는 파일의 <a href="#media-type-0">media type</a>을 가리키는 <a href="#media-type-attribute">media type attribute</a>. </p>
+  <p class="authorguide"><strong>작성 지침:</strong> <code title="content element"><a href="#the-content-element-and-its-attributes">content</a></code> element에 <code title="content type"><a href="#the-type-attribute">type</a></code> attribute를 사용하는 것은 
+  작성자 선택 사항입니다. 만약 값이 빠져 있다면 user agent는 값을 <code>text/html</code>이라고 추정할 것입니다. </p>
   <h4 id="the-encoding-attribute"><span class="secno">7.12.3 </span>The <dfn title="content encoding"><code>encoding</code></dfn> Attribute</h4>
-  <p>A <a href="#keyword-attribute">keyword attribute</a> that denotes the character encoding of the file identified by
-    the <code title="content src"><a href="#the-src-attribute-0">src</a></code> attribute. The  value is the "name"
-    
-    or "alias" of any "Character Set" listed in <a href="#iana-charsets">[IANA-Charsets]</a>. </p>
-  <p class="authorguide"><strong>작성 지침:</strong> It is optional for authors to use the <code title="content encoding"><a href="#the-encoding-attribute">encoding</a></code> attribute with a <code title="content element"><a href="#the-content-element-and-its-attributes">content</a></code> element. Where aliases are given by
-    the <a href="#iana-charsets">[IANA-Charsets]</a> registry, authors are encouraged to use the value of the
-    "preferred MIME name" (if any) from the registry.</p>
-  <p>The <dfn id="default-encoding">default encoding</dfn> is <a href="#utf-8">[UTF-8]</a>, which has the name "<code><a href="#utf-8">UTF-8</a></code>"  in the <a href="#iana-charsets">[IANA-Charsets]</a> registry. </p>
-  <p>Aside from the <a href="#default-encoding">default encoding</a>, it is <em class="ct">optional</em> for a <a class="product-ua" href="#user-agent">user
-    agent</a> to <a href="#supported" title="supported">support</a> other character encodings. </p>
+  <p><code title="content src"><a href="#the-src-attribute-0">src</a></code> attribute에 표시된 파일의 문자 encoding을 나타내는 <a href="#keyword-attribute">keyword attribute</a>. 값은 <a href="#iana-charsets">[IANA-Charsets]</a>에
+  나열된 어느 "Character Set"의 "name" 또는 "alias" 항목값 입니다. </p>
+  <p class="authorguide"><strong>작성 지침:</strong> <code title="content element"><a href="#the-content-element-and-its-attributes">content</a></code> element에 <code title="content encoding"><a href="#the-encoding-attribute">encoding</a></code> attribute를 사용하는 것은 작성자 선택 사항 입니다. 
+  작성자는 <a href="#iana-charsets">[IANA-Charsets]</a> registry의 alias가 있는 곳의 "preferred MIME name" 값(이 있다면)을 사용하는 것이 좋습니다.</p>
+  <p><dfn id="default-encoding">default encoding</dfn>은 <a href="#iana-charsets">[IANA-Charsets]</a> registry에 "<code><a href="#utf-8">UTF-8</a></code>"이라는 이름을 가진 <a href="#utf-8">[UTF-8]</a>입니다. </p>
+  <p><a href="#default-encoding">default encoding</a>을 제외하고, <a class="product-ua" href="#user-agent">user
+    agent</a>가 다른 문자 encodings를 <a href="#supported" title="supported">지원하는 것</a>은 <em class="ct">선택사항</em>입니다. </p>
   <h4 id="example-of-usage-5"><span class="secno">7.12.4 </span>사용 예시</h4>
   <div class="example">
-    <p>This example shows the expected usage of the <code title="content element"><a href="#the-content-element-and-its-attributes">content</a></code> element:</p>
+    <p>다음은 <code title="content element"><a href="#the-content-element-and-its-attributes">content</a></code> element의 사용 예시입니다:</p>
     <pre><code>&lt;widget xmlns="http://www.w3.org/ns/widgets"&gt;
   <strong>&lt;content src="myWidget.html"/&gt;</strong>
 
 &lt;/widget&gt;</code></pre>
   </div>
   <div class="example">
-    <p>This example shows the <code title="content element"><a href="#the-content-element-and-its-attributes">content</a></code> element being
-      used with a <code>encoding</code> attribute to override the default value of the <code>encoding</code> attribute (<code><a href="#utf-8">UTF-8</a></code>) with the GB2312 character set, which the author has
-      used to encode simplified Chinese characters:</p>
+    <p>다음은 간소화된 중국 문자들을 encode하는 GB2312 문자 셋과 <code>encoding</code> attribute (<code><a href="#utf-8">UTF-8</a></code>)의 기본 값을 오버라이드하는 <code>encoding</code> attribute을 사용하는 예제입니다.:</p>
     <pre><code>&lt;widget xmlns="http://www.w3.org/ns/widgets"&gt;
   &lt;name xml:lang="zh-cn"&gt;古老瓷地图&lt;/name&gt;
   &lt;name&gt;Ancient Chinese Maps&lt;/name&gt;
@@ -1528,9 +1520,8 @@ Distributed under the W3C Software License.
 &lt;/widget&gt;</code></pre>
   </div>
   <div class="example">
-    <p>This example shows the <code title="content element"><a href="#the-content-element-and-its-attributes">content</a></code> element being
-      used with a <code title="content type"><a href="#the-type-attribute">type</a></code> attribute to instantiate a widget
-      created with a proprietary <a href="#media-type-0">media type</a>:</p>
+    <p>등록된 <a href="#media-type-0">media type</a>으로 생성된 widget을 인스턴스화하기 위해 <code title="content type"><a href="#the-type-attribute">type</a></code> attribute을 사용하는 
+    <code title="content element"><a href="#the-content-element-and-its-attributes">content</a></code> element의 예시입니다 :</p>
     <pre>
 <code>&lt;widget xmlns="http://www.w3.org/ns/widgets"&gt;
   &lt;name&gt;Location-Based Games Finder&lt;/name&gt;
