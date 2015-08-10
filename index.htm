@@ -1531,13 +1531,11 @@ Distributed under the W3C Software License.
 &lt;/widget&gt;</code></pre>
   </div>
   <h3 id="the-feature-element-and-its-attributes"><span class="secno">7.13 </span>The <dfn title="feature element"><code>feature</code></dfn> Element and its Attributes</h3>
-  <p>A <dfn id="feature">feature</dfn> is a URI identifiable runtime component (e.g. an Application Programming
-    Interface or video decoder). The act of a an author requesting the availability of a feature through a <code title="feature element"><a href="#the-feature-element-and-its-attributes">feature</a></code> element is referred to as a <dfn id="feature-request">feature request</dfn>. The <code title="feature element"><a href="#the-feature-element-and-its-attributes">feature</a></code> element serves as a standardized means to request the
-    binding of an IRI identifiable runtime component to a widget for use at runtime.
-    Using a <code title="feature element"><a href="#the-feature-element-and-its-attributes">feature</a></code> element denotes that, at runtime,
-    a widget can attempt to access the <a href="#feature">feature</a> identified by the <code title="feature element"><a href="#the-feature-element-and-its-attributes">feature</a></code> element's <code title="feature name"><a href="#the-name-attribute">name</a></code> attribute. How a user agent makes use of <a href="#feature" title="feature">features</a> depends
-    on the user agent's security policy, hence activation and authorization requirements
-    for features are beyond the scope of this specification. A feature has  zero or more <a href="#parameter" title="parameter">parameters</a> associated with it.</p>
+  <p><dfn id="feature">feature</dfn>는 URI 식별 가능한 런타임 컴포넌트(예를 들어 애플리케이션 프로그래밍 인터페이스나 video decoder) 입니다. <code title="feature element"><a href="#the-feature-element-and-its-attributes">feature</a></code> element를 통해 작성자가
+    feature의 사용을 요청하는 행위를 <dfn id="feature-request">feature request</dfn>라고 합니다. <code title="feature element"><a href="#the-feature-element-and-its-attributes">feature</a></code> element가 표준화된 역할을 한다는 것은
+    widget에 런타임시 사용하기위해 IRI 식별 가능한 런타임 컴포넌트의 바인딩을 요청하는 것을 의미합니다.
+    <code title="feature element"><a href="#the-feature-element-and-its-attributes">feature</a></code> element의 사용은 런타임시 widget이 <code title="feature element"><a href="#the-feature-element-and-its-attributes">feature</a></code> element의 <code title="feature name"><a href="#the-name-attribute">name</a></code> attribute에 의해 식별된 <a href="#feature">feature</a> 에 액세스를 시도할 수 있다는 의미입니다. user agent <a href="#feature" title="feature">features</a>를 어떻게 사용하냐는 
+    user agent의 보안 정책에 따라 다르기 때문에 features의 활성 및 승인 요건들은 이 명세에서 다루지 않습니다. feature는 0개 이상의 연관된 <a href="#parameter" title="parameter">parameters</a>를 가집니다.</p>
   <!--- p>When a <code title="feature element">feature</code> element is nested inside another feature element, it
   denotes a <dfn>fallback relationship</dfn>: if the feature identified by the outermost
   element is unavailable, then the user agent will check for the availability of the
