@@ -1542,33 +1542,32 @@ Distributed under the W3C Software License.
   feature identified by the child's element's <code title="feature name">name</code> attribute.</p -->
   <dl>
     <dt>Context in which this element is used:</dt>
-    <dd>As a child of the <code title="widget element"><a href="#the-widget-element-and-its-attributes">widget</a></code> element.</dd>
+    <dd><code title="widget element"><a href="#the-widget-element-and-its-attributes">widget</a></code> element의 자식.</dd>
     <dt>Content model:</dt>
-    <dd>Zero or more <code title="param element"><a href="#the-param-element-and-its-attributes">param</a></code> elements.</dd>
+    <dd>없거나 하나 이상의 <code title="param element"><a href="#the-param-element-and-its-attributes">param</a></code> elements.</dd>
     <dt>Occurrences:</dt>
-    <dd>Zero or more.</dd>
+    <dd>없거나 하나 이상.</dd>
     <dt>Localizable via <code><a href="#the-xml:lang-attribute">xml:lang</a></code>:</dt>
-    <dd>No.</dd>
+    <dd>불가.</dd>
     <dt>Attributes:</dt>
     <dd><a href="#global-attributes-0" title="global attributes">Global attributes</a>, <code title="feature name"><a href="#the-name-attribute">name</a></code>, <code title="feature required"><a href="#the-required-attribute">required</a></code>. </dd>
   </dl>
   <h4 id="the-name-attribute"><span class="secno">7.13.1 </span>The <dfn title="feature name"><code title="feature name">name</code></dfn> Attribute</h4>
-  <p>An <a href="#iri-attribute">IRI attribute</a> that identifies a <a href="#feature">feature</a> that is needed by the widget at runtime (such as an <abbr title="application programming interface">API</abbr>). </p>
-  <p class="authorguide"><strong>작성 지침:</strong> When the <code title="feature element"><a href="#the-feature-element-and-its-attributes">feature</a></code> element is declared, it is required for authors to use the <code title="feature name"><a href="#the-name-attribute">name</a></code> attribute.</p>
+  <p>the widget이 런타임시에 필요로 하는 <a href="#feature">feature</a>를 식별하는 <a href="#iri-attribute">IRI attribute</a> (<abbr title="application programming interface">API</abbr>와 같이). </p>
+  <p class="authorguide"><strong>작성 지침:</strong> <code title="feature element"><a href="#the-feature-element-and-its-attributes">feature</a></code> element를 선언할때, 작성자는 <code title="feature name"><a href="#the-name-attribute">name</a></code> attribute를 필수 항목으로 넣어야 한다.</p>
   <h4 id="the-required-attribute"><span class="secno">7.13.2 </span>The <code><dfn title="feature required">required</dfn></code> Attribute</h4>
-  <p>A <a href="#boolean-attribute">boolean attribute</a> that indicates whether or not this <a href="#feature">feature</a> has to be available to the widget at runtime. </p>
-  <p>When set to <code>true</code>, the <code title="feature required"><a href="#the-required-attribute">required</a></code> attribute denotes that a <a href="#feature">feature</a> is absolutely needed by the widget to function correctly, and
-    without the availability of this <a href="#feature">feature</a> the widget serves no useful
-    purpose or won't execute properly. </p>
-  <p>When set to <code>false</code>, the <code title="feature required"><a href="#the-required-attribute">required</a></code> attribute denotes that a
-    widget can function correctly without the <a href="#feature">feature</a> being <a href="#supported">supported</a> or otherwise made available by the user agent. </p>
-  <p class="authorguide"><strong>작성 지침:</strong> It is optional for authors to use the <code title="feature required"><a href="#the-required-attribute">required</a></code> attribute with an <code title="feature element"><a href="#the-feature-element-and-its-attributes">feature</a></code> element. However, authors need to be aware that a user agent will behave as if the <code title="feature required"><a href="#the-required-attribute">required</a></code> attribute had been set to <code>true</code> when the <code title="feature required"><a href="#the-required-attribute">required</a></code> attribute is absent, meaning that the named <a href="#feature">feature</a> needs to be available  at
-    runtime or the widget will be treated as an <a href="#invalid-widget-package-0">invalid widget package</a>. </p>
+  <p>해당 <a href="#feature">feature</a>가 widget 런타임시에 사용가능 해야 하는지 여부를 알려주는 <a href="#boolean-attribute">boolean attribute</a>(TODO). </p>
+  <p><code title="feature required"><a href="#the-required-attribute">required</a></code> attribute이 <code>true</code>라면 이 <a href="#feature">feature</a>는 widget이 제대로 기능 수행을 하기 위해 절대적으로 필요합니다.
+  즉, 이 <a href="#feature">feature</a>를 사용하지 않고서는 제대로 실행이 되지 않거나 쓸모있는 동작을 하지 못합니다. </p>
+  <p><code title="feature required"><a href="#the-required-attribute">required</a></code> attribute가 <code>false</code> 라는 것은 
+    widget이 <a href="#supported">지원 되는</a> <a href="#feature">feature</a> 없이도 제대로 동작하거나 user agent가 widget을 잘 동작하게 한다는 것을 의미합니다. </p>
+  <p class="authorguide"><strong>작성 지침:</strong> <code title="feature element"><a href="#the-feature-element-and-its-attributes">feature</a></code> element에 <code title="feature required"><a href="#the-required-attribute">required</a></code> attribute을 사용하는
+  것은 작성자 선택 사항입니다. 그러나 만약 <code title="feature required"><a href="#the-required-attribute">required</a></code> attribute가 빠져있다면 user agent는 <code title="feature required"><a href="#the-required-attribute">required</a></code> attribute이 <code>true</code>인 것처럼 동작 하며
+   이는 <a href="#feature">feature</a>가 런타임시 사용 가능해야 하며 그렇지 않으면(TODO?) widget이 <a href="#invalid-widget-package-0">invalid widget package</a>로 처리될 수 있다는 것을 알아야 합니다. </p>
   <h4 id="example-of-usage-6"><span class="secno">7.13.3 </span>사용 예시</h4>
   <div class="example">
-    <p>This example demonstrates a widget that would like to use a fictional geo-location <abbr title="application programming interface">API</abbr> feature, but would still
-      be able to function if the feature cannot be made available to the widget by the user
-      agent.</p>
+    <p>다음은 widget이 가상의 geo-location <abbr title="application programming interface">API</abbr> feature를 사용하는 예 이며 , widget이 feature를 사용할 수 없어도
+    user agent에 의해 기능이 동작합니다.</p>
     <pre><code>&lt;widget xmlns="http://www.w3.org/ns/widgets"&gt;
    <strong>&lt;feature name     = "http://example.org/api/geolocation"
             required = "false"/&gt; </strong>
