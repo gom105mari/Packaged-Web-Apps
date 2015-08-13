@@ -1574,32 +1574,30 @@ Distributed under the W3C Software License.
 &lt;/widget&gt;</code></pre>
   </div>
   <h3 id="the-param-element-and-its-attributes"><span class="secno">7.14 </span>The <dfn title="param element"><code>param</code></dfn> Element and its Attributes</h3>
-  <p>The <code title="param element"><a href="#the-param-element-and-its-attributes">param</a></code> element defines a <a href="#parameter">parameter</a> for a <a href="#feature">feature</a>. A <dfn id="parameter">parameter</dfn> is a name-value pair that is <span class="associate">associated</span> with the corresponding <a href="#feature">feature</a> for which the parameter is declared for. A author establishes the relationship between a <a href="#parameter">parameter</a> and feature  by having a <code title="param element"><a href="#the-param-element-and-its-attributes">param</a></code> element as a
-    direct child of a <code title="feature element"><a href="#the-feature-element-and-its-attributes">feature</a></code> element in <a href="http://www.w3.org/TR/xpath/#dt-document-order">document order</a>.</p>
+  <p><code title="param element"><a href="#the-param-element-and-its-attributes">param</a></code> element는 <a href="#feature">feature</a>의 <a href="#parameter">parameter</a>를 정의합니다. <dfn id="parameter">parameter</dfn>는 parameter의 선언 대상에 해당하는 <a href="#feature">feature</a>와 <span class="associate">연관된</span> name-value 쌍 입니다. 작성자는 
+    <a href="http://www.w3.org/TR/xpath/#dt-document-order">document order</a>에 정의된 데로 <code title="feature element"><a href="#the-feature-element-and-its-attributes">feature</a></code> element의 바로 하위에 <code title="param element"><a href="#the-param-element-and-its-attributes">param</a></code> element를 가짐으로써 <a href="#parameter">parameter</a> 와 feature 사이에 관계를 정립합니다.</p>
   <dl>
-    <dt>Context in which this element is used:</dt>
-    <dd>As a child of the <code title="feature element"><a href="#the-feature-element-and-its-attributes">feature</a></code> element.</dd>
+    <dt>이 element가 사용되는 컨텍스트:</dt>
+    <dd><code title="feature element"><a href="#the-feature-element-and-its-attributes">feature</a></code> element의 하위에.</dd>
     <dt>Content model:</dt>
     <dd>Empty.</dd>
-    <dt>Occurrences:</dt>
-    <dd>Zero or more.</dd>
-    <dt>Localizable via <code><a href="#the-xml:lang-attribute">xml:lang</a></code>:</dt>
-    <dd>No.</dd>
+    <dt>출현 빈도:</dt>
+    <dd>없거나 하나 이상.</dd>
+    <dt><code><a href="#the-xml:lang-attribute">xml:lang</a></code>를 통한 현지화 가능 여부:</dt>
+    <dd>불가.</dd>
     <dt>Attributes:</dt>
     <dd><a href="#global-attributes-0" title="global attributes">Global attributes</a>, <code title="param name"><a href="#the-name-attribute-0">name</a></code>, <code title="param value"><a href="#the-value-attribute">value</a></code>. </dd>
   </dl>
   <h4 id="the-name-attribute-0"><span class="secno">7.14.1 </span>The <code><dfn title="param name">name</dfn></code> Attribute</h4>
-  <p>A <a href="#string-attribute">string attribute</a> that denotes the name of this <a href="#parameter">parameter</a>. </p>
-  <p class="authorguide"><strong>작성 지침:</strong>When a <code title="param element"><a href="#the-param-element-and-its-attributes">param</a></code> element is declared, it is required for authors to
-    use the <code title="param name"><a href="#the-name-attribute-0">name</a></code> attribute. </p>
+  <p>이 <a href="#parameter">parameter</a>의 이름을 나타내는 <a href="#string-attribute">string attribute</a>. </p>
+  <p class="authorguide"><strong>작성 지침:</strong>작성자가 <code title="param element"><a href="#the-param-element-and-its-attributes">param</a></code> element를 선언할 때는 반드시 <code title="param name"><a href="#the-name-attribute-0">name</a></code> attribute를 기술해야 합니다. </p>
   <h4 id="the-value-attribute"><span class="secno">7.14.2 </span>The <code><dfn title="param value">value</dfn></code> Attribute</h4>
-  <p>A <a href="#string-attribute">string attribute</a> that denotes the value of this <a href="#parameter">parameter</a>. </p>
+  <p>이 <a href="#parameter">parameter</a>의 값을 나타내는 <a href="#string-attribute">string attribute</a>. </p>
   <p class="authorguide"><strong>작성 지침:</strong> When a <code title="param element"><a href="#the-param-element-and-its-attributes">param</a></code> element is used, it is required for authors to
     use the <code title="param value"><a href="#the-value-attribute">value</a></code> attribute.</p>
   <h4 id="example-of-usage-7"><span class="secno">7.14.3 </span>사용 예시</h4>
   <div class="example">
-    <p>This example demonstrates a widget that makes use of a fictional geo-location
-      feature where by its accuracy is set to "<code>low</code>" via a <code title="param element"><a href="#the-param-element-and-its-attributes">param</a></code> element.</p>
+    <p>다음은 widget이 <code title="param element"><a href="#the-param-element-and-its-attributes">param</a></code> element를 통해 accuracy값을 <code>low</code>로 설정해 가상의 geo-location feature를 사용하는 예시입니다.</p>
     <pre>
 <code>&lt;widget xmlns="http://www.w3.org/ns/widgets"&gt;
    &lt;feature name="http://example.org/api/geolocation"&gt;
