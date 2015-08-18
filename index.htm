@@ -1649,21 +1649,21 @@ Distributed under the W3C Software License.
 &lt;/widget&gt;</code></pre>
   </div>
   <h3 id="the-span-element-and-its-attributes"><span class="secno">7.16 </span>The <dfn title="span element"><code>span</code></dfn> Element and its Attributes</h3>
-  <p>The <code title="span element"><a href="#the-span-element-and-its-attributes">span</a></code> element is a wrapper for text content; on its own it serves no useful function. </p>
-  <p>It is expected that authors will use the <code title="span element"><a href="#the-span-element-and-its-attributes">span</a></code> element  with the <a href="#global-attributes-0">global attributes</a>. When combined with the <code><a href="#the-dir-attribute">dir</a></code> attribute,  the <code title="span element"><a href="#the-span-element-and-its-attributes">span</a></code> element can indicate the textual directionality  of text content. In other words, it allows authors to set the base direction for the Unicode bidirectional algorithm <a href="#bidi">[BIDI]</a>. When combined with the <code><a href="#the-xml:lang-attribute">xml:lang</a></code> attribute, the <code title="span element"><a href="#the-span-element-and-its-attributes">span</a></code> element allows the author to indicate the particular language used for a subset of text content within  another element. </p>
+  <p><code title="span element"><a href="#the-span-element-and-its-attributes">span</a></code> element는 텍스트 컨텐츠를 위한 wrapper 입니다; 단독으로 아무런 기능이 없습니다. </p>
+  <p>작성자는 <code title="span element"><a href="#the-span-element-and-its-attributes">span</a></code> element에 <a href="#global-attributes-0">global attributes</a>를 함께 사용해야 합니다. 
+  <code><code title="span element"><a href="#the-span-element-and-its-attributes">span</a></code> element의 <a href="#the-dir-attribute">dir</a></code> attribute는 텍스트 컨텐츠의 문자 방향을 의미합니다.
+   바꿔 말하면, 작성자가 Unicode bidirectional algorithm <a href="#bidi">[BIDI]</a>을 위한 기본 방향을 설정할 수 있습니다. <code title="span element"><a href="#the-span-element-and-its-attributes">span</a></code> element에 <code><a href="#the-xml:lang-attribute">xml:lang</a></code> attribute를 사용하면,
+   다른 element 내부의 텍스트 컨텐츠의 일부 영역에 특정 언어를 사용할 수 있습니다. </p>
   <dl>
     <dt>Context in which this element is used:</dt>
-    <dd>As a child of the <code title="name element"><a href="#the-name-element-and-its-attributes">name</a></code>, <code title="author element"><a href="#the-author-element-and-its-attributes">author</a></code>, <code title="license element"><a href="#the-license-element-and-its-attributes">license</a></code>, and/or <code title="description element"><a href="#the-description-element-and-its-attributes">description</a></code> element. </dd>
+    <dd><code title="name element"><a href="#the-name-element-and-its-attributes">name</a></code>, <code title="author element"><a href="#the-author-element-and-its-attributes">author</a></code>, <code title="license element"><a href="#the-license-element-and-its-attributes">license</a></code>, 또는 <code title="description element"><a href="#the-description-element-and-its-attributes">description</a></code> element의 자식. </dd>
     <dt>Occurrences:</dt>
-    <dd>Zero or more.</dd>
+    <dd>없거나 하나 이상.</dd>
     <dt>Expected children:</dt>
-    <dd>Any.</dd>
+    <dd>어떤 자식이던 가능.</dd>
     <dt>Localizable via <code><a href="#the-xml:lang-attribute">xml:lang</a></code>:</dt>
     <dd>
-      <p>No, meaning that declaring <code><a href="#the-xml:lang-attribute">xml:lang</a></code> on a <code title="span element"><a href="#the-span-element-and-its-attributes">span</a></code> element within a parent element (e.g., a <code title="name element"><a href="#the-name-element-and-its-attributes">name</a></code> element) will not affect the behavior of <a href="#element-based-localization-0">element-based localization</a> (see Example of Usage below to see how this works). </p>
-    </dd>
-    <dd>
-      <p class="authorguide"><strong>작성 지침:</strong> Authors are encouraged to use <code><a href="#the-xml:lang-attribute">xml:lang</a></code> to indicate the language information for text content contained within a <code title="span element"><a href="#the-span-element-and-its-attributes">span</a></code> element. See Example of Usage for more information. </p>
+      <p>불가, 부모 element 아래의  <code title="span element"><a href="#the-span-element-and-its-attributes">span</a></code> element에 <code><a href="#the-xml:lang-attribute">xml:lang</a></code>을 선언하는 것은 (예를 들어, <code title="name element"><a href="#the-name-element-and-its-attributes">name</a></code> element) <a href="#element-based-localization-0">element기반의 현지화</a>의 동작에 아무런 영향을 끼치지 않습니다. (어떻게 동작하는 지 알고 싶으면 하단의 사용 예시를 참고하세요). </p>
     </dd>
     <dt>Attributes:</dt>
     <dd><a href="#global-attributes-0" title="global attributes">Global attributes</a>.</dd>
