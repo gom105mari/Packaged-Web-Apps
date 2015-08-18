@@ -1606,39 +1606,36 @@ Distributed under the W3C Software License.
 &lt;/widget&gt;</code></pre>
   </div>
   <h3 id="the-preference-element-and-its-attributes"><span class="secno">7.15 </span>The <code><dfn title="preference element">preference</dfn></code> Element and its Attributes</h3>
-  <p>The <code title="preference element"><a href="#the-preference-element-and-its-attributes">preference</a></code> element allows authors to
-    declare one or more preferences: a <dfn id="preference">preference</dfn> is a persistently stored
-    name-value pair that is <a href="#associate" title="associate">associated</a> with the widget the
-    first time the widget is initiated.</p>
-  <p class="note"><span class="notetitle">주석:</span> A user agent that <a href="#supported" title="supported">supports</a> the <a href="#widgets-apis">[Widgets-APIs]</a> specification will expose any declared <a href="#preference">preference</a> at runtime  in the manner described
-    in the <a href="#widgets-apis">[Widgets-APIs]</a> specification.</p>
+  <p><code title="preference element"><a href="#the-preference-element-and-its-attributes">preference</a></code> element는 작성자가 하나 이상의 preferences를 선언하도록 합니다.: 
+  <dfn id="preference">preference</dfn>는 widget이 시작되는 초기와 <a href="#associate" title="associate">관련된</a> 영구 저장되는 name-value쌍 입니다.</p>
+  <p class="note"><span class="notetitle">주석:</span><a href="#widgets-apis">[Widgets-APIs]</a> 명세를 <a href="#supported" title="supported">지원 하는</a> user agent는 런타임시 선언된 <a href="#preference">preference</a>를
+  <a href="#widgets-apis">[Widgets-APIs]</a> 명세에서 언급된 방식으로 보여줄 것입니다.</p>
   <dl>
     <dt>Context in which this element is used:</dt>
-    <dd>As a child of the <code title="widget element"><a href="#the-widget-element-and-its-attributes">widget</a></code> element.</dd>
+    <dd><code title="widget element"><a href="#the-widget-element-and-its-attributes">widget</a></code> element의 자식.</dd>
     <dt>Occurrences:</dt>
-    <dd>Zero or more.</dd>
+    <dd>없거나 하나 이상.</dd>
     <dt>Expected children:</dt>
-    <dd>none.</dd>
+    <dd>없음.</dd>
     <dt>Localizable via <code><a href="#the-xml:lang-attribute">xml:lang</a></code>:</dt>
-    <dd>No.</dd>
+    <dd>불가.</dd>
     <dt>Attributes:</dt>
     <dd><a href="#global-attributes-0" title="global attributes">Global attributes</a>, <code title="preference name"><a href="#the-name-attribute-1">name</a></code>, <code title="preference value"><a href="#the-value-attribute-0">value</a></code>, <code title="preference readonly"><a href="#the-readonly-attribute">readonly</a></code>.</dd>
   </dl>
   <h4 id="the-name-attribute-1"><span class="secno">7.15.1 </span>The <code><dfn title="preference name">name</dfn></code> Attribute</h4>
-  <p>A string that denotes the name of this <a href="#preference">preference</a>. </p>
-  <p class="authorguide"><strong>작성 지침:</strong> When a <code title="preference element"><a href="#the-preference-element-and-its-attributes">preference</a></code> element is used, it is required for authors to
-    use the <code title="preference name"><a href="#the-name-attribute-1">name</a></code> attribute.</p>
+  <p이 <a href="#preference">preference</a>의 이름을 나타내는 문자열. </p>
+  <p class="authorguide"><strong>작성 지침:</strong> <code title="preference element"><a href="#the-preference-element-and-its-attributes">preference</a></code> element를 사용하려면, 작성자는 반드시 <code title="preference name"><a href="#the-name-attribute-1">name</a></code> attribute를 사용해야 합니다.</p>
   <h4 id="the-value-attribute-0"><span class="secno">7.15.2 </span>The <code><dfn title="preference value">value</dfn></code> Attribute</h4>
-  <p>A string that denotes the value of this <a href="#preference">preference</a>. </p>
-  <p class="authorguide"><strong>작성 지침:</strong> It is optional for authors to use the <code title="preference value"><a href="#the-value-attribute-0">value</a></code> attribute with a <code title="preference element"><a href="#the-preference-element-and-its-attributes">preference</a></code> element.</p>
+  <p>이 <a href="#preference">preference</a>의 값을 나타내는 문자열. </p>
+  <p class="authorguide"><strong>작성 지침:</strong><code title="preference element"><a href="#the-preference-element-and-its-attributes">preference</a></code> element에 <code title="preference value"><a href="#the-value-attribute-0">value</a></code> attribute를 사용하는 것은 사용자 선택 사항입니다.</p>
   <h4 id="the-readonly-attribute"><span class="secno">7.15.3 </span>The <code><dfn title="preference readonly">readonly</dfn></code> Attribute</h4>
-  <p>A <a href="#boolean-attribute">boolean attribute</a> indicating whether this preference can, or cannot, be
-    overwritten at runtime (e.g., via an author script). When set to <code>true</code>, it means that the <a href="#preference">preference</a> cannot be overwritten. When set to <code>false</code>, it means that the <a href="#preference">preference</a> can be overwritten. </p>
-  <p class="authorguide"><strong>작성 지침:</strong> It is optional for authors to use the <code title="readonly">readonly</code> attribute with a <code title="preference element"><a href="#the-preference-element-and-its-attributes">preference</a></code> element. If the <code title="readonly">readonly</code> attribute is absent, the user agent will act as if the readonly attribute had been set to <code>false</code> (meaning that the <a href="#preference">preference</a> can be overwritten at runtime).</p>
+  <p>이 preference가 런타임시 overwrite가 가능한지 아닌지를 알려 주는 <a href="#boolean-attribute">boolean attribute</a>입니다(예를 들자면 작성자 script를 통해). <code>true</code>로 설정 되었다면, <a href="#preference">preference</a>를 overwrite할 수 없다는 의미입니다. <code>false</code>라면, <a href="#preference">preference</a>를 overwrite할 수 있다는 것을 뜻합니다. </p>
+  <p class="authorguide"><strong>작성 지침:</strong> 작성자가 <code title="preference element"><a href="#the-preference-element-and-its-attributes">preference</a></code> element에 <code title="readonly">readonly</code> attribute를 사용하는 것은 
+  선택 사항입니다. 만약 <code title="readonly">readonly</code> attribute가 없다면, user agent는 readonly attribute가 <code>false</code>로 설정된 것처럼 동작할 것입니다 (즉, 런타임에 <a href="#preference">preference</a>를 overwrite할 수 있게).</p>
   <h4 id="example-of-usage-8"><span class="secno">7.15.4 </span>사용 예시</h4>
   <div class="example">
-    <p>This example shows a widget where two preferences are set. The second <code title="preference element"><a href="#the-preference-element-and-its-attributes">preference</a></code> is set as "read only" via the <code>readonly</code> attribute, which means the values of that preference cannot be changed at
-      runtime.</p>
+    <p>다음은 widget에 2개의 preferences가 설정된 예제입니다. 두번째 <code title="preference element"><a href="#the-preference-element-and-its-attributes">preference</a></code>는 <code>readonly</code> attribute를 통해 "read only"로 설정되었습니다.
+     즉, 런타임에 preference의 값들을 바꿀수 없습니다. .</p>
     <pre><code>&lt;widget xmlns="http://www.w3.org/ns/widgets"&gt;
    <strong>&lt;preference name     = "skin"
                value    = "alien"/&gt;
