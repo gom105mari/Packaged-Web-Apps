@@ -1693,31 +1693,28 @@ Distributed under the W3C Software License.
 &lt;/description&gt;
 &lt;/widget&gt;</code></pre>
   </div>
-  <h2 id="internationalization-and-localization"><span class="secno">8 </span>Internationalization and localization</h2>
-  <p><dfn id="internationalization">Internationalization</dfn>, or i18n, is the design and development of a
-    product, application or document content that enables  localization for target
-    audiences that vary in culture, region, or language. <dfn id="localization">Localization</dfn> refers to
-    the adaptation of a product, application or document content to meet the language,
-    cultural and other requirements of a specific target market (a "locale").</p>
-  <p class="note"><span class="notetitle">주석:</span> See also the <cite><a href="http://www.w3.org/TR/2004/NOTE-ws-i18n-scenarios-20040730/#locale">Web Services
-    Internationalization Usage Scenarios</a></cite> and the <cite><a href="http://www.unicode.org/reports/tr35/#Locale">Unicode Locale Data Markup
-    Language</a></cite> for an informative discussion on the term locale.</p>
-  <p><dfn id="localized-content">Localized content</dfn> is content an author has explicitly <a href="#localization" title="localization">localized</a>: that is, a <a href="#widget-package">widget package</a> that contains
-    content localized using <a href="#folder-based-localization-0">folder-based localization</a> or a <a href="#configuration-document-0">configuration
-    document</a> that contains content localized via <a href="#element-based-localization-0">element-based
-    localization</a>.</p>
-  <p><dfn id="default-content">Default content</dfn> is content included in the <a href="#widget-package">widget
-    package</a> or in the <a href="#configuration-document-0">configuration document</a> that has not been
-    explicitly localized or content explicitly indicated by the author to be used as default content via the <code>defaultlocale</code> attribute of the <code title="widget element"><a href="#the-widget-element-and-its-attributes">widget</a></code> element. In the case of a <a href="#widget-package">widget package</a>, this means content outside the <a href="#container-for-localized-content">container for localized content</a>. In the case of a <a href="#configuration-document-0">configuration document</a>,
-    this means any element without an explicitly declared or inherited <code><a href="#the-xml:lang-attribute">xml:lang</a></code> attribute.</p>
-  <p>A <dfn id="localized-file">localized file</dfn> is any <a href="#file">file</a> that has been placed inside a <a href="#locale-folder-0">locale folder</a> (i.e., <a href="#localized-content">localized content</a> that makes use of <a href="#folder-based-localization-0">folder-based localization</a>).  A widget
-    package contains zero or more localized files. All files and
-    folders, except for the <a href="#digital-signature" title="digital signature">digital signatures</a> and
-    the <a href="#configuration-document-0">configuration document</a>, can be localized via <a href="#folder-based-localization-0">folder-based localization</a>.</p>
-  <p class="example">For example, a locale folder "<code>locales/ja/</code>" (Japanese) might contain
-    an HTML document translated into Japanese.</p>
-  <p class="authorguide"><strong>작성 지침:</strong> <a href="#locale-folder-0" title="locale folder">Locale folders</a> need to be placed in the <a href="#container-for-localized-content">container for
-    localized content</a> (a locale folder not in a <a href="#container-for-localized-content">container for localized
+  <h2 id="internationalization-and-localization"><span class="secno">8 </span>국제화와 현지화</h2>
+  <p><dfn id="internationalization">국제화</dfn>, 혹은 i18n,라는 것은 문화적으로, 지역적으로, 또한 언어적으로 다양한 사용자들을 대상으로 현지화 가능하게 하는
+  제품, 애플리케이션 또는 문서 컨텐츠의 디자인과 개발을 의미합니다. <dfn id="localization">현지화</dfn>란 제품, 애플리케이션 또는 문서 컨텐츠를 특정 타겟 시장("locale")의 언어,
+  문화나 다른 요구 사항에 알맞게 수정하는 것을 뜻합니다.</p>
+  <p class="note"><span class="notetitle">주석:</span> locale 용어에 대한 비공식 토론 내용은 <cite><a href="http://www.w3.org/TR/2004/NOTE-ws-i18n-scenarios-20040730/#locale">Web Services
+    Internationalization Usage Scenarios</a></cite> 와 <cite><a href="http://www.unicode.org/reports/tr35/#Locale">Unicode Locale Data Markup
+    Language</a></cite> 을 참고하세요.</p>
+  <p><dfn id="localized-content">현지화한 컨텐츠</dfn>는 작성자가 명시적으로 <a href="#localization" title="localization">현지화한</a> 컨텐츠입니다: 
+  즉, <a href="#folder-based-localization-0">폴더 기반 현지화</a>를 사용한 현지화된 컨텐츠를 포함하는 <a href="#widget-package">widget package</a>
+   또는 <a href="#element-based-localization-0">element 기반 현지화</a>를 통해 현지화한 컨텐츠를 포함하는 <a href="#configuration-document-0">configuration
+    문서</a> .</p>
+  <p><dfn id="default-content">디폴트 컨텐츠</dfn>는 <a href="#widget-package">widget
+    package</a> 나 <a href="#configuration-document-0">configuration 문서</a>에 포함되는 컨텐츠로 명시적으로 현지화 하지 않았거나 작성자가
+     <code title="widget element"><a href="#the-widget-element-and-its-attributes">widget</a></code> element의 <code>defaultlocale</code> attribute를 통해 디폴트 컨텐츠로
+     사용하도록 명시적으로 지정된 컨텐츠입니다. 이는 <a href="#widget-package">widget package</a>인 경우 <a href="#container-for-localized-content">현지화한 컨텐츠 컨테이너</a>의 외부에 있습니다. <a href="#configuration-document-0">configuration 문서</a>의 경우엔,
+    <code><a href="#the-xml:lang-attribute">xml:lang</a></code> attribute를 명시적인 선언하지 않았거나 상속하고 있는 element입니다.</p>
+  <p><dfn id="localized-file">현지화한 파일</dfn>은 <a href="#locale-folder-0">locale folder</a>내부에 위치하고 있는 <a href="#file">파일</a>입니다. (예를 들어, <a href="#folder-based-localization-0">폴더 기반 현지화</a>를 이용하는 <a href="#localized-content">현지화한 컨텐츠</a>).
+    widget package는 0개 이상의 현지화한 파일을 포함합니다. <a href="#digital-signature" title="digital signature">디지털 서명</a>과
+    <a href="#configuration-document-0">configuration 문서</a>를 제외한 모든 파일과 폴더는 <a href="#folder-based-localization-0">폴더 기반 현지화</a>를 통해 현지화 할 수 있습니다.</p>
+  <p class="example">예를 들어, locale folder인 "<code>locales/ja/</code>" (Japanese)는 일어로 번역된 HTML document를 포함할 것입니다.</p>
+  <p class="authorguide"><strong>작성 지침:</strong> <a href="#locale-folder-0" title="locale folder">Locale folders</a>는 <a href="#container-for-localized-content">container for
+    localized content</a>에 위치해야 합니다. (a locale folder not in a <a href="#container-for-localized-content">container for localized
     content</a> will be treated as an <a href="#arbitrary">arbitrary</a> folder).  In addition, authors making use of localization features provided by this specification should  translate, localize, or alter <a href="#localized-content">localized content</a> for a the given locale, and test their widgets thoroughly.</p>
   <h3 id="bidirectional-text"><span class="secno">8.1 </span>Bidirectional  text</h3>
   <p>In conjunction to mandating that user agents support <a href="#unicode">[Unicode]</a>, this specification provides the <code><a href="#the-dir-attribute">dir</a></code> attribute and <code title="span element"><a href="#the-span-element-and-its-attributes">span</a></code> element as a markup-based means of influencing the directionality for bidirectional Unicode text <a href="#bidi">[BIDI]</a>. See the  definitions of the <code><a href="#the-dir-attribute">dir</a></code> attribute and <code title="span element"><a href="#the-span-element-and-its-attributes">span</a></code> element for usage examples. </p>
