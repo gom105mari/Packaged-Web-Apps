@@ -524,7 +524,7 @@ td, th {
 </p>
   <h3 id="character-definitions"><span class="secno">3.1 </span>문자 정의</h3>
   <p>이 섹션은 이 명세를 처리하는 목적에 대한 정의와 관련한 <a href="#unicode">[Unicode]</a> 코드 부호의 공통 세트를 모았습니다.</p>
-  <p><dfn id="space-characters" title="space characters">빈 칸 문자</dfn>는 <a href="#unicode">[Unicode]</a> 명세에 "White_Space"속성이 표시된 코드 부호이고, 아래 목록에 포함되었지만, 이 목록에 국한되는 것은 아닙니다(권위있는 목록에 대한 <a href="#unicode">[Unicode]</a>를 보세요):</p>
+  <p><dfn id="space-characters" title="space characters">공백 문자</dfn>는 <a href="#unicode">[Unicode]</a> 명세에 "White_Space"속성이 표시된 코드 부호이고, 아래 목록에 포함되었지만, 이 목록에 국한되는 것은 아닙니다(권위있는 목록에 대한 <a href="#unicode">[Unicode]</a>를 보세요):</p>
   <ul>
     <li>U+0020 SPACE,</li>
     <li>U+0009 CHARACTER TABULATION (tab),</li>
@@ -678,7 +678,7 @@ td, th {
       "CON-tact.txt", "printer.lpt1", "DCOM1.pdf". 하지만, "com3.txt" "Lpt1", "CoM9.gif"
       는 사용할 수 없습니다.</p>
     <p>또한, 작성자는 "." U+002E FULL STOP을 파일명이나 폴더명의 마지막 문자로 사용하지 않아야 합니다. 왜냐하면, 일부 운영체제는 Zip 아카이브로부터 장치에 압축을 풀 때, "." U+002E FULL STOP을 삭제하기 때문입니다.
-    빈 칸 문자(<a href="#sp">SP</a>)를 파일명의 시작이나 마지막에 사용하는 것도 피해야합니다; "+" U+002B PLUS SIGN 을 사용하는 것도 일부 운영체제에서 문제를 일으킬 수 있으므로 주의해야 합니다.</p>
+    공백 문자(<a href="#sp">SP</a>)를 파일명의 시작이나 마지막에 사용하는 것도 피해야합니다; "+" U+002B PLUS SIGN 을 사용하는 것도 일부 운영체제에서 문제를 일으킬 수 있으므로 주의해야 합니다.</p>
   </div>
   <h2 id="widget-packages"><span class="secno">6 </span>Widget 패키지</h2><p><dfn id="widget-package">widget 패키지</dfn>는 아래 내용을 포함하는 <a href="#valid-zip-archive">올바른 Zip 아카이브</a>입니다:</p>
   <ul>
@@ -1623,7 +1623,7 @@ Distributed under the W3C Software License.
     <dd><a href="#global-attributes-0" title="global attributes">Global attributes</a>, <code title="preference name"><a href="#the-name-attribute-1">name</a></code>, <code title="preference value"><a href="#the-value-attribute-0">value</a></code>, <code title="preference readonly"><a href="#the-readonly-attribute">readonly</a></code>.</dd>
   </dl>
   <h4 id="the-name-attribute-1"><span class="secno">7.15.1 </span>The <code><dfn title="preference name">name</dfn></code> Attribute</h4>
-  <p이 <a href="#preference">preference</a>의 이름을 나타내는 문자열. </p>
+  <p>이 <a href="#preference">preference</a>의 이름을 나타내는 문자열. </p>
   <p class="authorguide"><strong>작성 지침:</strong> <code title="preference element"><a href="#the-preference-element-and-its-attributes">preference</a></code> element를 사용하려면, 작성자는 반드시 <code title="preference name"><a href="#the-name-attribute-1">name</a></code> attribute를 사용해야 합니다.</p>
   <h4 id="the-value-attribute-0"><span class="secno">7.15.2 </span>The <code><dfn title="preference value">value</dfn></code> Attribute</h4>
   <p>이 <a href="#preference">preference</a>의 값을 나타내는 문자열. </p>
@@ -2145,18 +2145,15 @@ Distributed under the W3C Software License.
     </ul>
   </div>
   <h2 id="steps-for-processing-a-widget-package"><span class="secno">9 </span>widget 패키지 처리 과정</h2>
-  <p><dfn id="steps-for-processing-a-widget-package-0">widget 패키지 처리 과정</dfn>은 9단계로 되어있습니다. involves nine steps that a <a href="#user-agent">user agent</a> follows in sequential order, responding
-    accordingly if any of the steps result in an error or if the specification asks for the
-    user agent to skip a step. The procedures for what to do when an error is encountered
-    are described as part of each step; however, there are times when it will not be
-    possible for the user agent to recover from an error and it will be forced to treat the
-    widget as an <a href="#invalid-widget-package-0">invalid widget package</a>.</p>
-  <p>In the event that a user agent encounters an <a href="#invalid-widget-package-0">invalid widget package</a> during the <a href="#steps-for-processing-a-widget-package-0">steps for processing a widget package</a>, a <a class="product-ua" href="#user-agent">user agent</a> <em class="ct">must</em> abort all processing of the <a href="#steps-for-processing-a-widget-package-0">steps for processing a
-    widget package</a>.</p>
-  <p class="note"><span class="notetitle">주석:</span>A user agent can optimize <a href="#steps-for-processing-a-widget-package-0">steps for processing a widget package</a> and associated <a href="#processing-rules-0">processing rules</a> , or  perform the steps in a different order,
-    but the end result needs to be indistinguishable from the result that
-    would be obtained by following the specification.</p>
-  <h3 id="processing-rules"><span class="secno">9.1 </span>Processing Rules</h3>
+  <p><dfn id="steps-for-processing-a-widget-package-0">widget 패키지 처리 과정</dfn>은 <a href="#user-agent">유저 에이전트</a>가 순서를 따르는 9단계로 되어있는데, 
+  어떤 스텝에서 에러가 발생할 경우, 또는 유저 에이전트가 단계를 생략하는 것을 이 명세가 필요로 할 경우에 따라 단계별로 진행됩니다.
+    에러가 발생할 때의 진행 절차는 각 단계의 일부로 포함되어 있습니다; 하지만, 유저 에이전트가 에러를 복구하는 것이 불가능할 때도 있고, 
+    widget을 <a href="#invalid-widget-package-0">잘못된 widget 패키지</a>로 취급할 때도 있습니다.</p>
+  <p><a href="#steps-for-processing-a-widget-package-0">widget 패키지를 처리하는 과정</a>에서 유저 에이전트가 <a href="#invalid-widget-package-0">잘못된 widget 패키지</a> 이벤트가 발생하면, 
+  <a class="product-ua" href="#user-agent">유저 에이전트</a>는 <em class="ct">반드시</em> <a href="#steps-for-processing-a-widget-package-0">widget 패키지 처리 과정</a>의 모든 처리를 중단시켜야 합니다.</p>
+  <p class="note"><span class="notetitle">주석:</span>유저 에이전트는 <a href="#steps-for-processing-a-widget-package-0">widget 패키지 처리 과정</a>과,
+  이와 관련된 <a href="#processing-rules-0">처리 규칙</a>을 최적화하거나, 다른 순서로 과정을 실행할 수 있지만, 최종 결과는 이 명세에 따라 얻은 결과와 구별이 되어야 합니다.</p>
+  <h3 id="processing-rules"><span class="secno">9.1 </span>처리 규칙</h3>
   <p>This section defines various <dfn id="processing-rules-0">processing rules</dfn>, which are algorithms used  during the <a href="#steps-for-processing-a-widget-package-0">steps for processing a widget package</a>. </p>
   <p>These algorithm makes use of a few special concepts defined below:</p>
   <dl>
@@ -2190,7 +2187,7 @@ Distributed under the W3C Software License.
     the height of a widget, since the height of a widget is defined as a 
     non-negative integer greater than 0. In such a case, 0 could be treated 
     as if it were <code><a href="#null">null</a></code>. </p>
-  <h4 id="rule-for-verifying-a-zip-archive"><span class="secno">9.1.1 </span>Rule for Verifying a Zip Archive</h4>
+  <h4 id="rule-for-verifying-a-zip-archive"><span class="secno">9.1.1 </span>Zip 아카이브 검증 규칙</h4>
   <p>The <dfn id="rule-for-verifying-a-zip-archive-0">rule for verifying a zip archive</dfn> is described in this
     section. The algorithm returns either true or an error.</p>
   <p>This specification does not provide the technical
@@ -2207,7 +2204,7 @@ Distributed under the W3C Software License.
     </li>
     <li>Otherwise, return true. </li>
   </ol>
-  <h4 id="rule-for-extracting-file-data-from-a-file-entry"><span class="secno">9.1.2 </span>Rule for Extracting File Data from a File Entry</h4>
+  <h4 id="rule-for-extracting-file-data-from-a-file-entry"><span class="secno">9.1.2 </span>File Entry로부터의 File Data 추출 규칙</h4>
   <p>The <dfn id="rule-for-extracting-file-data-from-a-file-entry-0">rule for extracting file data from a file entry</dfn> is as follows:</p>
   <ol>
     <li>
@@ -2229,7 +2226,7 @@ Distributed under the W3C Software License.
     precaution, implementations are discouraged from extracting <a href="#file-entry" title="file entry">file entries</a> from un-trusted widgets directly onto the file system.
     Instead, implementations could use, for example, a virtual file system or mapping to
     access files inside a <a href="#widget-package">widget package</a>.</p>
-  <h4 id="rule-for-finding-a-file-within-a-widget-package"><span class="secno">9.1.3 </span>Rule for Finding a File Within a Widget Package</h4>
+  <h4 id="rule-for-finding-a-file-within-a-widget-package"><span class="secno">9.1.3 </span>Widget 패키지 내의 File을 찾는 규칙</h4>
   <p>The <dfn id="rule-for-finding-a-file-within-a-widget-package-0">rule for finding a file within a widget package</dfn> is given in the
     following algorithm. The algorithm returns either a <a href="#processable-file">processable file</a>, <code><a href="#null">null</a></code>, or an error. </p>
   <p>For
@@ -2326,7 +2323,7 @@ Distributed under the W3C Software License.
       <p>Otherwise, return <code><a href="#null">null</a></code>.</p>
     </li>
   </ol>
-  <h4 id="rule-for-determining-directionality"><span class="secno">9.1.4 </span>Rule for Determining Directionality</h4>
+  <h4 id="rule-for-determining-directionality"><span class="secno">9.1.4 </span>결정 방향성에 대한 규칙</h4>
   <p>The <dfn id="rule-for-determining-directionality-0">rule for determining directionality</dfn> is given in the following
     algorithm. The algorithm always returns one of the <a href="#valid-directional-indicators">valid directional indicators</a> as a string. </p>
   <ol>
@@ -2363,7 +2360,7 @@ Distributed under the W3C Software License.
       </ol>
     </li>
   </ol>
-  <h4 id="rule-for-getting-a-single-attribute-value"><span class="secno">9.1.5 </span>Rule for Getting a Single Attribute Value</h4>
+  <h4 id="rule-for-getting-a-single-attribute-value"><span class="secno">9.1.5 </span>하나의 attribute 값을 얻는 규칙</h4>
   <p>The <dfn id="rule-for-getting-a-single-attribute-value-0">rule for getting a single attribute value</dfn> is given in the following
     algorithm. The algorithm always returns either a string or a <a href="#localizable-string">localizable string</a>, which can be empty. </p>
   <ol>
@@ -2408,7 +2405,7 @@ Distributed under the W3C Software License.
     </li>
     <li>Return <var>result</var>. </li>
   </ol>
-  <h4 id="rule-for-getting-a-list-of-keywords-from-an-attribute"><span class="secno">9.1.6 </span>Rule for Getting a List of Keywords From an Attribute</h4>
+  <h4 id="rule-for-getting-a-list-of-keywords-from-an-attribute"><span class="secno">9.1.6 </span>attribute로부터 키워드 리스트를 얻는 규칙</h4>
   <p>The <dfn id="rule-for-getting-a-list-of-keywords-from-an-attribute-0">rule for getting a list of keywords from an attribute</dfn> is given by the
     following algorithm. The algorithm takes a string as input, and returns a list of  strings  which can be empty.</p>
   <ol>
@@ -2428,7 +2425,7 @@ Distributed under the W3C Software License.
     </li>
     <li>Return <var>result.</var></li>
   </ol>
-  <h4 id="rule-for-verifying-a-file-entry"><span class="secno">9.1.7 </span>Rule for Verifying a File Entry</h4>
+  <h4 id="rule-for-verifying-a-file-entry"><span class="secno">9.1.7 </span>File Entry 검증 규칙</h4>
   <p>The <dfn id="rule-for-verifying-a-file-entry-0">rule for verifying a file entry</dfn> is given in the following algorithm.
     The algorithm always returns a boolean value.</p>
   <p>For the <a href="#file-entry">file entry</a>, check the following data in the <var><a href="#local-file-header">local file
@@ -2459,7 +2456,7 @@ Distributed under the W3C Software License.
     </li>
     <li>return <code>true</code>.</li>
   </ol>
-  <h4 id="rule-for-getting-text-content"><span class="secno">9.1.8 </span>Rule for Getting Text Content</h4>
+  <h4 id="rule-for-getting-text-content"><span class="secno">9.1.8 </span>텍스트 내용을 가져오는 규칙</h4>
   <p>The <dfn id="rule-for-getting-text-content-0">rule for getting text content</dfn> is given in the following algorithm.
     The algorithm always returns a list of <a href="#localizable-string">localizable string</a>s, which can be empty.</p>
   <ol>
@@ -2530,7 +2527,7 @@ Distributed under the W3C Software License.
       lang: "jp"}]
 }</code></pre>
   </div>
-  <h4 id="rule-for-getting-text-content-with-normalized-white-space"><span class="secno">9.1.9 </span>Rule for Getting Text Content with Normalized White Space</h4>
+  <h4 id="rule-for-getting-text-content-with-normalized-white-space"><span class="secno">9.1.9 </span>표준화된 공백과 함께 텍스트 내용을 가져오는 규칙</h4>
   <p class="no-toc no-num">The <dfn id="rule-for-getting-text-content-with-normalized-white-space-0">rule for getting text content with normalized white
     space</dfn> is given in the following algorithm. The algorithm always returns a string,
     which can be empty.</p>
@@ -2565,7 +2562,7 @@ Distributed under the W3C Software License.
       <bdo dir="rtl">Dude</bdo>
       Widget</samp>" (please note that <q>Dude</q> is rendered right-to-left).</p>
   </div>
-  <h4 id="rule-for-parsing-a-non-negative-integer"><span class="secno">9.1.10 </span>Rule for Parsing a Non-negative Integer</h4>
+  <h4 id="rule-for-parsing-a-non-negative-integer"><span class="secno">9.1.10 </span>양수 파싱 규칙</h4>
   <p>The <dfn id="rule-for-parsing-a-non-negative-integer-0">rule for parsing a non-negative integer</dfn> is given in the following
     algorithm.  This algorithm  returns the number zero, a positive integer, or an error.</p>
   <ol>
@@ -2619,7 +2616,7 @@ Distributed under the W3C Software License.
       <p>Return <var title="">result</var>.</p>
     </li>
   </ol>
-  <h4 id="rule-for-identifying-the-media-type-of-a-file"><span class="secno">9.1.11 </span>Rule for Identifying the Media Type of a File</h4>
+  <h4 id="rule-for-identifying-the-media-type-of-a-file"><span class="secno">9.1.11 </span>파일의 미디어 타입 정의에 대한 규칙</h4>
   <p>The <dfn id="rule-for-identifying-the-media-type-of-a-file-0">rule for identifying the media type of a file</dfn> is given by the
     following algorithm. The algorithm always returns a
     string.</p>
@@ -2749,7 +2746,7 @@ Distributed under the W3C Software License.
     </tr>
   </table>
   <p>It is <em class="ct">optional</em> for a <a class="product-ua" href="#user-agent">user agent</a> to <a href="#supported" title="supported">support</a> the <a href="#media-type-0" title="media type">media types</a> given in the <a href="#file-identification-table">file identification table</a>. </p>
-  <h4 id="rule-for-deriving-the-user-agent-locales"><span class="secno">9.1.12 </span>Rule for Deriving the <var title="">user agent locales</var></h4>
+  <h4 id="rule-for-deriving-the-user-agent-locales"><span class="secno">9.1.12 </span><var title="">user agent locales</var> 도출에 대한 규칙</h4>
   <p>The <dfn id="rule-for-deriving-the-user-agent-locales-0">rule for deriving the <var>user agent locales</var></dfn> is as follows: </p>
   <ol>
     <li>
@@ -2806,8 +2803,7 @@ Distributed under the W3C Software License.
     "<code>en-us,en,en-au,en,en,fr-ca,fr,zh-hans-cn,zh-hans,zh,*</code>".</p>
   <p class="example">For example, an <var>unprocessed locales list</var> that contains
     "<code>en-us,en,fr-ca,en,en-ca</code>" would result in a <var><a href="#user-agent-locales">user agent locales</a></var> that contains "<code>en-us,en,en,fr-ca,fr,en,en-ca,en,*</code>". </p>
-  <h4 id="rule-for-determining-if-a-potential-zip-archive-is-a-zip-archive"><span class="secno">9.1.13 </span>Rule for Determining if a Potential Zip Archive is a Zip
-    Archive</h4>
+  <h4 id="rule-for-determining-if-a-potential-zip-archive-is-a-zip-archive"><span class="secno">9.1.13 </span>Rule for Determining if a Potential Zip Archive is a Zip Archive</h4>
   <p>The <dfn id="rule-for-determining-if-a-potential-zip-archive-is-a-zip-archive-0">rule for determining if a potential Zip archive is a Zip archive</dfn> is
     given by the following algorithm.</p>
   <ol>
@@ -2826,14 +2822,14 @@ Distributed under the W3C Software License.
     </li>
   </ol>
   <p class="note"><span class="notetitle">주석:</span> A user agent can inspect the <var>potential archive</var> once it has acquired the first four bytes of the <a href="#potential-zip-archive">potential Zip archive</a> or can wait until all the data of the <a href="#potential-zip-archive">potential Zip archive</a> has been completely acquired.</p>
-  <h3 class="no-num done" id="step-1-acquire-a-potential-zip-archive"><dfn>Step 1</dfn> - Acquire a Potential Zip Archive</h3>
+  <h3 class="no-num done" id="step-1-acquire-a-potential-zip-archive"><dfn>Step 1</dfn> - Potential Zip 아카이브 획득</h3>
   <p>Step 1 involves acquiring a <a href="#potential-zip-archive">potential Zip archive</a> and confirming that
     it is a <a href="#zip-archive-0">Zip archive</a> by applying the <a href="#rule-for-determining-if-a-potential-zip-archive-is-a-zip-archive-0">rule for determining if a
     potential Zip archive is a Zip archive</a>. A user agent will acquire a <a href="#potential-zip-archive">potential Zip archive</a> from a data transfer protocol that either labels
     resources with a <a href="#media-type-0">media type</a> (e.g. <a href="#http">[HTTP]</a>) or from a data
     transfer protocol that does not label resources with a media type (e.g., BitTorrent
     or Bluetooth).</p>
-  <h4 id="acquisition-of-a-potential-zip-archive-labeled-with-a-media-type"><span class="secno">9.1.1 </span><dfn>Acquisition of a Potential Zip archive Labeled with a Media Type</dfn></h4>
+  <h4 id="acquisition-of-a-potential-zip-archive-labeled-with-a-media-type"><span class="secno">9.1.1 </span><dfn>미디어 타입으로 분류된 Potential Zip 아카이브 획득</dfn></h4>
   <p id="ta-GVVIvsdEUo">It is <em class="ct">recommended</em> that a user agent <a href="#supported" title="supported">support</a> <a href="#acquisition-of-a-potential-zip-archive-labeled-with-a-media-type" title="acquisition of a potential Zip archive labeled with a media type">acquisition of a potential Zip archive from a protocol that labels resources with a media
     type</a> (e.g., getting a widget package over <a href="#http">[HTTP]</a>). If a user agent <a href="#supported" title="supported">supports</a> acquisition of a potential Zip archive from a protocol that labels resources with a media
     type, then the <a class="product-ua" href="#user-agent">user agent</a> needs to process resources labeled with the <a href="#valid-widget-media-type">valid widget
@@ -2870,19 +2866,18 @@ Content-Type: application/x-gadget</code></pre>
       </dd>
     </dl>
   </div>
-  <h4 id="acquisition-of-potential-zip-archive-not-labeled-with-a-media-type"><span class="secno">9.1.2 </span><dfn>Acquisition of Potential Zip Archive not Labeled with a Media
-    Type</dfn></h4>
+  <h4 id="acquisition-of-potential-zip-archive-not-labeled-with-a-media-type"><span class="secno">9.1.2 </span><dfn>미디어 타입으로 분류되지 않은 Potential Zip 아카이브 획득</dfn></h4>
   <p id="ta-FDGQBROtzW">When acquiring a potential Zip archive that has not been labeled with a media type (e.g., from a file system), a <a class="product-ua" href="#user-agent">user agent</a> <em class="ct">should</em> attempt to process
     the resource regardless of the file extension (including situations when the file
     extension is absent) by applying the <a href="#rule-for-determining-if-a-potential-zip-archive-is-a-zip-archive-0">rule for determining if a potential Zip
     archive is a Zip archive</a>. If the <a href="#rule-for-determining-if-a-potential-zip-archive-is-a-zip-archive-0">rule for determining if a potential Zip
     archive is a Zip archive</a> return <code>true</code>, proceed to <a href="#step-2-verify-the-zip-archive">Step
     2</a>. Otherwise, if an error was returned, the <a class="product-ua" href="#user-agent">user agent</a> <em class="ct">must</em> treat the <a href="#potential-zip-archive">potential Zip archive</a> as an <a href="#invalid-widget-package-0">invalid widget package</a>.</p>
-  <h3 class="no-num done" id="step-2-verify-the-zip-archive"><dfn>Step 2</dfn> - <dfn>Verify the Zip Archive</dfn></h3>
+  <h3 class="no-num done" id="step-2-verify-the-zip-archive"><dfn>Step 2</dfn> - <dfn>Zip 아카이브 검증</dfn></h3>
   <p id="ta-uLHyIMvLwz">To verify that a <a href="#zip-archive-0">Zip archive</a> and its <a href="#file-entry" title="file entry">file
     entries</a> conform to this specification, a <a class="product-ua" href="#user-agent">user agent</a> <em class="ct">must</em> apply the <a href="#rule-for-verifying-a-zip-archive-0">rule for verifying a zip archive</a>. If the <a href="#rule-for-verifying-a-zip-archive-0">rule for verifying a zip archive</a> returns <code>true</code>, then the <a class="product-ua" href="#user-agent">user agent</a> <em class="ct">must</em> go to <a href="#step-3-set-the-configuration-defaults">Step 3</a>. Otherwise, if the <a href="#rule-for-verifying-a-zip-archive-0">rule for verifying a zip archive</a> returns an error, then  the <a class="product-ua" href="#user-agent">user agent</a> <em class="ct">must</em> treat the <a href="#zip-archive-0">Zip
     archive</a> as an <a href="#invalid-widget-package-0">invalid widget package</a>.</p>
-  <h3 class="no-num" id="step-3-set-the-configuration-defaults"><dfn>Step 3</dfn> - Set the Configuration Defaults</h3>
+  <h3 class="no-num" id="step-3-set-the-configuration-defaults"><dfn>Step 3</dfn> - 기본 Configuration 설정</h3>
   <p>In <a href="#step-3-set-the-configuration-defaults">Step 3</a>, a <a class="product-ua" href="#user-agent">user agent</a> <em class="ct">must</em> set the following variables and
     default values as defined in the <a href="#table-of-configuration-defaults">table of configuration defaults</a>. </p>
   <p class="note"><span class="notetitle">주석:</span> When a <code><a href="#null">null</a></code> value is assigned to a variable in the <a href="#table-of-configuration-defaults">table of
@@ -3054,10 +3049,10 @@ Content-Type: application/x-gadget</code></pre>
       <td>A  list of <a href="#language-tag" title="language tag">language tags</a>. </td>
     </tr>
   </table>
-  <h3 class="no-num done" id="step-4-locate-and-process-the-digital-signature"><dfn>Step 4</dfn> - Locate and Process the Digital Signature</h3>
+  <h3 class="no-num done" id="step-4-locate-and-process-the-digital-signature"><dfn>Step 4</dfn> - 디지털 서명을 찾고 처리하기</h3>
   <p>If the
     user agent does not <a href="#supported" title="supported">support</a> <a href="#widgets-digsig">[Widgets-DigSig]</a>,  then the user agent <em class="ct">must</em> skip <a href="#step-4-locate-and-process-the-digital-signature">Step 4</a> and go to <a href="#step-5-derive-the-user-agent's-locales">Step 5</a>. Otherwise, the user agent <em class="ct">must</em> apply the algorithm to locate digital signatures, which is defined in the <a href="#widgets-digsig">[Widgets-DigSig]</a> specification under the section named <a href="http://www.w3.org/TR/widgets-digsig/#locating-signature-files-in-a-widget-package">Locating signature files in a widget package</a>.</p>
-  <h3 class="no-num" id="step-5-derive-the-user-agent's-locales"><dfn>Step 5</dfn> - Derive the User Agent's Locales</h3>
+  <h3 class="no-num" id="step-5-derive-the-user-agent's-locales"><dfn>Step 5</dfn> - 유저 에이전트의 지역 얻기</h3>
   <p>The <dfn id="system">end-user's language ranges</dfn> represents the end-user's
     preferred languages and regional settings, which are derived from the operating
     system or directly from the user agent. As there are numerous ways a user agent can
@@ -3084,7 +3079,7 @@ Content-Type: application/x-gadget</code></pre>
     languages from a list, or a list of preferred languages and regional settings could
     have been dynamically derived from the end-user's geographical location, etc. </p>
   <p>In <a href="#step-5-derive-the-user-agent's-locales">Step 5</a>, the <a class="product-ua" href="#user-agent">user agent</a> <em class="ct">must</em> apply the <a href="#rule-for-deriving-the-user-agent-locales-0">rule for deriving the <var>user agent locales</var></a>.</p>
-  <h3 class="no-num done" id="step-6-locate-the-configuration-document"><dfn>Step 6</dfn> - Locate the Configuration Document</h3>
+  <h3 class="no-num done" id="step-6-locate-the-configuration-document"><dfn>Step 6</dfn> - Configuration 문서 찾기</h3>
   <p>This step involves searching within the Zip archive for a <a href="#configuration-document-0">configuration
     document</a>.</p>
   <p id="ta-ZjcdAxFMSx">In <a href="#step-6-locate-the-configuration-document">Step 6</a>, a <a class="product-ua" href="#user-agent">user agent</a><em class="ct"> must</em> apply the algorithm to <a href="#locate-the-configuration-document">locate the configuration document</a>.</p>
@@ -3098,14 +3093,13 @@ Content-Type: application/x-gadget</code></pre>
       match is made, then let <var><a href="#widget-config-doc">widget config doc</a></var> to the result of applying <a href="#rule-for-extracting-file-data-from-a-file-entry-0">rule for extracting file data from a file entry</a> to the matching <a href="#file-entry">file entry</a>. If no match is made (meaning that <var><a href="#widget-config-doc">widget config doc</a></var> is <code><a href="#null">null</a></code>), then treat the <a href="#zip-archive-0">Zip
       archive</a> as an <a href="#invalid-widget-package-0">invalid widget package</a>.</li>
   </ol>
-  <h3 class="no-num" id="step-7-process-the-configuration-document"><dfn>Step 7</dfn> - <dfn>Process the Configuration
-    Document</dfn></h3>
+  <h3 class="no-num" id="step-7-process-the-configuration-document"><dfn>Step 7</dfn> - <dfn>Configuration 문서 처리하기</dfn></h3>
   <p>The purpose of processing the <a href="#configuration-document-0">configuration document</a> is to override the values in the <a href="#table-of-configuration-defaults">table of configuration defaults</a>, which are used during <a href="#initialization">initialization</a> and at runtime, and to select the appropriate localized
     content (if any) to be presented to the end user.</p>
   <p>In conjunction to the algorithm for processing a <a href="#configuration-document-0">configuration document</a> given below, this section firstly defines some terminology used by the processing algorithm
     and describes how localized elements are processed.</p>
   <p>During <a href="#step-7-process-the-configuration-document">Step 7</a>, a <a class="product-ua" href="#user-agent">user agent</a> <em class="ct">must</em> apply the <a href="#algorithm-to-process-a-configuration-document-0">algorithm to process a configuration document</a>.</p>
-  <h4 id="terminology-used-in-processing-algorithm"><span class="secno">9.1.1 </span>Terminology Used in Processing Algorithm</h4>
+  <h4 id="terminology-used-in-processing-algorithm"><span class="secno">9.1.1 </span>처리 알고리즘에 사용되는 용어</h4>
   <p>In the <a href="#algorithm-to-process-a-configuration-document-0">algorithm to process a configuration document</a>, the term <dfn id="in-error">in error</dfn> is used to mean that an element, or
     attribute, or <a href="#file">file</a> in a <a href="#configuration-document-0">configuration document</a> is
     non-conforming to the rules of this specification. How an element or an attribute is to
@@ -3146,7 +3140,7 @@ Content-Type: application/x-gadget</code></pre>
   <p>The <dfn class="external" id="lookup"><a href="http://tools.ietf.org/html/bcp47#page-2-12">lookup</a></dfn> algorithm is defined in <a href="#bcp47">[BCP47]</a>. It is used in this Step  to
     match <a href="#localized-content">localized content</a> in the <a href="#configuration-document-0">configuration document</a> to the
     language ranges held by the <var><a href="#user-agent-locales">user agent locales</a></var> (if any).</p>
-  <h4 id="algorithm-to-process-a-configuration-document"><span class="secno">9.1.2 </span>Algorithm to Process a Configuration Document</h4>
+  <h4 id="algorithm-to-process-a-configuration-document"><span class="secno">9.1.2 </span>Configuration 문서를 처리하는 알고리즘</h4>
   <p>The <dfn id="algorithm-to-process-a-configuration-document-0">algorithm to process a configuration document</dfn> is as follows:</p>
   <ol>
     <li>
@@ -3631,7 +3625,7 @@ Content-Type: application/x-gadget</code></pre>
       </dl>
     </li>
   </ol>
-  <h3 class="no-num done" id="step-8-locate-the-start-file"><dfn>Step 8</dfn> - Locate the Start File</h3>
+  <h3 class="no-num done" id="step-8-locate-the-start-file"><dfn>Step 8</dfn> - 시작 파일 찾기</h3>
   <p id="ta-BnWPqNvNVo">If <var><a href="#widget-start-file">widget start file</a></var> of the <a href="#table-of-configuration-defaults">table of configuration defaults</a> contains a <a href="#file">file</a> (i.e. <var><a href="#widget-start-file">widget start file</a></var> is not <code><a href="#null">null</a></code>), then a <a class="product-ua" href="#user-agent">user agent</a> <em class="ct">must</em> skip <a href="#step-8-locate-the-start-file">Step 8</a> and go
     to <a href="#step-9-process-the-default-icons">Step 9</a>. </p>
   <p id="ta-RGNHRBWNZV">If <var><a href="#widget-start-file">widget start file</a></var> does not contain a <a href="#file">file</a>, the <a class="product-ua" href="#user-agent">user agent</a> <em class="ct">must</em> apply the <a href="#algorithm-to-locate-a-default-start-file">algorithm to locate a default start file</a>.</p>
@@ -3673,7 +3667,7 @@ Content-Type: application/x-gadget</code></pre>
         files table</a> no default start file is found, then treat this widget as an <a href="#invalid-widget-package-0">invalid widget package</a>.</p>
     </li>
   </ol>
-  <h3 class="no-num done" id="step-9-process-the-default-icons"><dfn>Step 9</dfn> - Process the Default Icons</h3>
+  <h3 class="no-num done" id="step-9-process-the-default-icons"><dfn>Step 9</dfn> - 기본 아이콘 처리하기</h3>
   <p>This step describes how to locate the <a href="#default-icons-table" title="default icons table">default
     icons</a>.</p>
   <p id="ta-FAFYMEGELU">In <a href="#step-9-process-the-default-icons">Step 9</a>, a <a class="product-ua" href="#user-agent">user agent</a> <em class="ct">must</em> apply the <a href="#algorithm-to-locate-the-default-icons">algorithm to locate the default icons</a>.</p>
@@ -3700,8 +3694,8 @@ Content-Type: application/x-gadget</code></pre>
       </ol>
     </li>
   </ol>
-  <h2 class="no-num" id="appendix">Appendix</h2>
-  <h3 class="no-num" id="media-type-registration-for-application/widget">Media Type Registration for <code>application/widget</code></h3>
+  <h2 class="no-num" id="appendix">부록</h2>
+  <h3 class="no-num" id="media-type-registration-for-application/widget"><code>application/widget</code>에 대한 미디어 타입 등록</h3>
   <p>This appendix is the MIME media type registration for "<code>application/widget</code>". This registration has been <a href="http://www.iana.org/assignments/media-types/application/">approved</a> by the Internet Assigned Numbers Authority (<abbr title="Internet Assigned Numbers Authority">IANA</abbr>) . </p>
   <p>Registration with <abbr title="Internet Assigned Numbers Authority">IANA</abbr> was conducted in conformance with <a href="http://www.ietf.org/rfc/rfc4288.txt">BCP 13</a> and <a href="http://www.w3.org/2002/06/registering-mediatype.html">W3CRegMedia</a>. </p>
   <dl>
@@ -3817,7 +3811,7 @@ Content-Type: application/x-gadget</code></pre>
       <p><a href="http://www.w3.org/2008/webapps/">The W3C's Web Applications Working Group</a></p>
     </dd>
   </dl>
-  <h3 class="no-num" id="linking-to-a-widget-package-from-a-html-document">Linking To a Widget Package From a HTML Document</h3>
+  <h3 class="no-num" id="linking-to-a-widget-package-from-a-html-document">HTML 문서로부터 Widget 패키지에 링크걸기</h3>
   <p><em>이 섹션은 비표준 내용입니다.</em></p>
   <p><em>This section only applies to HTML user agents <a href="#html">[HTML]</a>.</em></p>
   <p><dfn id="auto-discovery">Auto-discovery</dfn> enables a user agent to identify and install a <a href="#widget-package">widget package</a> that is associated with an HTML page. When a page points to
@@ -3833,7 +3827,7 @@ Content-Type: application/x-gadget</code></pre>
 &lt;/a&gt;</code>
 </pre>
   </div>
-  <h3 class="no-num" id="table-of-elements-and-their-attributes">Table of Elements and Their Attributes</h3>
+  <h3 class="no-num" id="table-of-elements-and-their-attributes">Elements와 Attributes 표</h3>
   <p><em>이 섹션은 비표준 내용입니다.</em></p>
   <p>This table lists all elements and respective attributes, as well as child-parent relationships, that make up the language of the <a href="#configuration-document-0">configuration document</a> format defined in this specification. </p>
   <table>
@@ -4101,7 +4095,7 @@ Content-Type: application/x-gadget</code></pre>
       <td><a href="#keyword-attribute" title="keyword attribute">keyword</a></td>
     </tr>
   </table>
-  <h2 class="no-num" id="acknowledgements">Acknowledgements</h2>
+  <h2 class="no-num" id="acknowledgements">감사의 글</h2>
   <p>Huge thanks to everyone who contributed their time and sent feedback to our public mailing, particularly the i18n WG. </p>
   <p>This specification would not exist without the contribution of the following individuals:</p>
   <p>Aaron Boodman,  Adam Barth, Addison Phillips, Alexander Dreiling, Andrew Sledd, Andrew Welch, Arun Ranganathan, Arthur Barstow, Bárbara
@@ -4124,7 +4118,7 @@ Content-Type: application/x-gadget</code></pre>
   <p>Graphic icons used some examples of this specification were created by <a href="http://www.pinvoke.com/">Yusuke Kamiyamane</a> and are available for use under a <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0
     license</a>.</p>
   <p>This specification is dedicated to the children of India.</p>
-  <h2 class="no-num" id="normative-references">Normative References</h2>
+  <h2 class="no-num" id="normative-references">인용 참조</h2>
 <dl><dt><dfn id="abnf">[ABNF]</dfn></dt>
     <dd><a href="http://www.ietf.org/rfc/rfc5234.txt"><cite>Augmented BNF for Syntax
       Specifications: <abbr title="Augmented Backus-Naur Form">ABNF</abbr></cite></a>.
@@ -4199,7 +4193,7 @@ Content-Type: application/x-gadget</code></pre>
     <dd><a href="http://www.iana.org/assignments/media-types/application/zip">IANA Media Type
       Assignment.</a></dd>
   </dl>
-  <h2 class="no-num" id="informative-references">Informative References</h2>
+  <h2 class="no-num" id="informative-references">유용한 참조</h2>
  <dl><dt><dfn id="ecmascript-mime">[ECMAScript-MIME]</dfn></dt>
     <dd><a href="http://www.rfc-editor.org/rfc/rfc4329.txt"><cite>Scripting Media Types</cite></a>. RFC4329. B. Hoehrmann. IETF. April 2006.</dd>
     <dt><dfn id="html">[HTML]</dfn></dt>
