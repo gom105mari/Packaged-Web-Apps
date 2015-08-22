@@ -2154,98 +2154,82 @@ Distributed under the W3C Software License.
   <p class="note"><span class="notetitle">주석:</span>유저 에이전트는 <a href="#steps-for-processing-a-widget-package-0">widget 패키지 처리 과정</a>과,
   이와 관련된 <a href="#processing-rules-0">처리 규칙</a>을 최적화하거나, 다른 순서로 과정을 실행할 수 있지만, 최종 결과는 이 명세에 따라 얻은 결과와 구별이 되어야 합니다.</p>
   <h3 id="processing-rules"><span class="secno">9.1 </span>처리 규칙</h3>
-  <p>This section defines various <dfn id="processing-rules-0">processing rules</dfn>, which are algorithms used  during the <a href="#steps-for-processing-a-widget-package-0">steps for processing a widget package</a>. </p>
-  <p>These algorithm makes use of a few special concepts defined below:</p>
+  <p>이 섹션에서는 <a href="#steps-for-processing-a-widget-package-0">widget 패키지 처리 과정</a>에서 사용되는 <dfn id="processing-rules-0">처리 규칙</dfn>, 즉 알고리즘을 정의합니다.</p>
+  <p>이 알고리즘은 다음에 정의된 몇몇 특별한 개념을 사용합니다:</p>
   <dl>
-    <dt><dfn id="text-node">Text node</dfn></dt>
+    <dt><dfn id="text-node">Text 노드</dfn></dt>
     <dd>
-      <p>Any <code>Text</code> node, including <code>CDATASection</code> nodes (any <code>Node</code> with node type <code>TEXT_NODE</code> or <code>CDATA_SECTION_NODE</code>) as defined in the <a href="#dom3core">[DOMCore]</a> specification. For example, the worlds "hello world!" in the following <code title="name element"><a href="#the-name-element-and-its-attributes">name</a></code> element: <code>&lt;name&gt;hello world!&lt;/name&gt;</code>.</p>
+      <p><a href="#dom3core">[DOMCore]</a> 명세에 정의된 <code>CDATASection</code>을 포함하는 어떤 <code>Text</code> 노드(노드 타입이 <code>TEXT_NODE</code>나 <code>CDATA_SECTION_NODE</code>인 어떤 <code>Node</code>)이다. 
+       예를 들면, 다음의 <code title="name element"><a href="#the-name-element-and-its-attributes">name</a></code> element에 나오는 "hello world!" 단어: <code>&lt;name&gt;hello world!&lt;/name&gt;</code>.</p>
     </dd>
-    <dt><dfn id="localizable-string">Localizable string</dfn> </dt>
+    <dt><dfn id="localizable-string">현지화할 수 있는 문자열</dfn> </dt>
     <dd>
-      <p>A data structure containing a sequence of one or more strings, each having some
-        associated directional information and language information (if any). The purpose of an localizable string is to assist user agent in
-        correctly applying the Unicode <a href="#bidi">[BIDI]</a> algorithm when displaying text. </p>
+      <p>하나 이상의 문자열의 순서를 포함하는 데이터 구조이며, 몇몇 방향 정보, 언어 정보와 관련된 내용을 각각 가지고 있습니다(있는 경우). 현지화할 수 있는 문자열의 목적은,
+      유저 에이전트가 텍스트를 보여줄 때 <a href="#bidi">[BIDI]</a> 유니코드 알고리즘을 올바르게 적용하도록 돕는 것입니다.</p>
     </dd>
     <dd class="example">
-      <p>For
-        example, the string "Internationalization <span dir="rtl">نشاط التدويل!</span> Activity." The string contains both Arabic and English that mixes left-to-right text, right-to-left
-        text, and a directionality-neutral punctuation mark that could not be correctly displayed 
-        without directional information. </p>
+      <p>예를 들면, "Internationalization <span dir="rtl">نشاط التدويل!</span> Activity."과 같은 것입니다. 이 문자열은 좌-우, 우-좌 텍스트를 혼합한 아랍어와 영어를 포함하고 있고,
+       방향 정보없이는 올바르게 보여줄 수 없는 방향성 중립 구두점 부호(!)를 포함하고 있습니다.</p>
     </dd>
     <dt><code><dfn id="null">null</dfn></code></dt>
     <dd>
-      <p>A special symbol to indicate that a value has no data. For example, "let <var>x</var> be <code><a href="#null">null</a></code>" or "if <var>y</var> is empty, then return <code><a href="#null">null</a></code>".</p>
+      <p>데이터가 없는 값을 나타내는 특별한 부호. 예를 들면, "<var>x</var>를 <code><a href="#null">null</a></code>로 설정" 또는 "만약 <var>y</var>가 empty이면, <code><a href="#null">null</a></code>을 반환한다"와 같은 것입니다.</p>
     </dd>
   </dl>
-  <p class="note"><span class="notetitle">주석:</span> 주석: Although languages such as ECMA Script and Java support <code><a href="#null">null</a></code> as a 
-    native value type, there are some programming languages that have no 
-    notion of <code><a href="#null">null</a></code> or where null is problematic (e.g. C++). Implementations 
-    in these languages need to substitute a language-specific value or symbol 
-    which is functionally equivalent to <code><a href="#null">null</a></code>, or if no equivalent exists, to 
-    have no value at all. For example, the value 0 may represent <code><a href="#null">null</a></code> for 
-    the height of a widget, since the height of a widget is defined as a 
-    non-negative integer greater than 0. In such a case, 0 could be treated 
-    as if it were <code><a href="#null">null</a></code>. </p>
+  <p class="note"><span class="notetitle">주석:</span> 주석: ECMA 스크립트와 Java 같은 언어는 <code><a href="#null">null</a></code>을 기본 타입으로 지원하지만,
+   <code><a href="#null">null</a></code>의 개념이 없거나 null에 문제가 있는 프로그래밍 언어도 있습니다(예를 들면 C++). 
+   이런 언어의 구현은, 기능적으로 <code><a href="#null">null</a></code>과 같거나 같은 내용이 존재하지 않는 언어별 값이나 기호를 값이 전혀 없는 것처럼 대체할 필요가 있습니다.
+   예를 들면, widget의 높이는 0 이상의 양수로 정의되어 있기 때문에, 0 값은 widget의 높이에 대해 <code><a href="#null">null</a></code>로 나타낼 수 있습니다.
+   이런 경우에는, 0을 <code><a href="#null">null</a></code>인 것처럼 처리할 수 있습니다.</p>
   <h4 id="rule-for-verifying-a-zip-archive"><span class="secno">9.1.1 </span>Zip 아카이브 검증 규칙</h4>
-  <p>The <dfn id="rule-for-verifying-a-zip-archive-0">rule for verifying a zip archive</dfn> is described in this
-    section. The algorithm returns either true or an error.</p>
-  <p>This specification does not provide the technical
-    details of how to actually perform the checks, for which implementers need to refer to the <a href="#zip">[ZIP]</a> specification.</p>
+  <p>The <dfn id="rule-for-verifying-a-zip-archive-0">Zip 아카이브 검증 규칙</dfn>은 이 섹션에서 설명합니다.
+  이 알고리즘은 true나 에러를 반환합니다.</p>
+  <p>이 명세는 실제 확인 수행 방법의 자세한 기술적인 부분을 제공하지 않습니다. 따라서, 구현자는 <a href="#zip">[ZIP]</a> 명세를 참조할 필요가 있습니다.</p>
   <ol>
     <li>
-      <p>If the <a href="#zip-archive-0">Zip archive</a> is <dfn class="external" id="split-into-multiple-files">split into multiple
-        files</dfn> or spans <dfn class="external" id="multiple-volumes">multiple volumes</dfn>, as defined in
-        the <a href="#zip">[ZIP]</a> specification, then return an error and terminate this algorithm.</p>
+      <p>만약 <a href="#zip-archive-0">Zip 아카이브</a>가 <a href="#zip">[ZIP]</a> 명세에 정의된 대로 <dfn class="external" id="split-into-multiple-files">여러 파일로 분할</dfn>되거나 
+      <dfn class="external" id="multiple-volumes">여러 volume</dfn>에 걸쳐있다면, 에러를 반환하고 이 알고리즘을 종료합니다.</p>
     </li>
     <li>
-      <p>If the <a href="#zip-archive-0">Zip archive</a> is encrypted, as defined in <a href="#zip">[Zip]</a>, return an error
-        and terminate this algorithm.</p>
+      <p>만약 <a href="#zip-archive-0">Zip 아카이브</a>가 <a href="#zip">[Zip]</a>에 정의된 대로 암호화 되어 있다면, 에러를 반환하고 이 알고리즘을 종료합니다.</p>
     </li>
-    <li>Otherwise, return true. </li>
+    <li>아니면, true를 반환합니다. </li>
   </ol>
   <h4 id="rule-for-extracting-file-data-from-a-file-entry"><span class="secno">9.1.2 </span>File Entry로부터의 File Data 추출 규칙</h4>
-  <p>The <dfn id="rule-for-extracting-file-data-from-a-file-entry-0">rule for extracting file data from a file entry</dfn> is as follows:</p>
+  <p>The <dfn id="rule-for-extracting-file-data-from-a-file-entry-0">File Entry로부터의 File Data 추출 규칙</dfn>은 다음과 같습니다:</p>
   <ol>
     <li>
-      <p>Let <var>path</var> be the <a href="#zip-relative-path">zip relative path</a> that identifies the <a href="#file-entry">file entry</a> being sought. </p>
+      <p>유저 에이전트에 의해 요구되는 <a href="#file-entry">file entry</a>를 식별하는 <a href="#zip-relative-path">zip 상대 경로</a>를 <var>path</var>로 설정합니다.</p>
     </li>
     <li>
-      <p>Let <var><a href="#file-entry">file entry</a></var> be the file entry identified by the <var>path</var>. </p>
+      <p><var>path</var>에 의해 식별된 file entry를 <var><a href="#file-entry">file entry</a></var>로 설정합니다.</p>
     </li>
     <li>
-      <p>Let <var><a href="#file">file</a></var> be the result of decompressing (or extracting) the <var><a href="#file-data">file data</a></var> from <var><a href="#file-entry">file entry</a></var> using <a href="#zip">[Zip]</a>.</p>
+      <p><var><a href="#file-entry">file entry</a></var>에서 <var><a href="#file-data">file data</a></var>를 <a href="#zip">[Zip]</a>을 이용하여 압축해제(또는 추출)한 결과를 <var><a href="#file">file</a></var>로 설정합니다.</p>
     </li>
     <li>
-      <p>Return <var><a href="#file">file</a></var>.</p>
+      <p><var><a href="#file">file</a></var>을 반환합니다.</p>
     </li>
   </ol>
-  <p class="note"><span class="notetitle">주석:</span> For efficiency, a user agent can
-    extract specific <a href="#file" title="file">files</a> as they are needed for processing
-    rather than extracting all the <a href="#file" title="file">files</a> at once. As a security
-    precaution, implementations are discouraged from extracting <a href="#file-entry" title="file entry">file entries</a> from un-trusted widgets directly onto the file system.
-    Instead, implementations could use, for example, a virtual file system or mapping to
-    access files inside a <a href="#widget-package">widget package</a>.</p>
+  <p class="note"><span class="notetitle">주석:</span>효율화를 위해서, 유저 에이전트는 처리를 위해 모든 <a href="#file" title="file">파일</a>을 한번에 추출하지 않고,
+   특정한 <a href="#file" title="file">파일</a>만 추출할 수도 있습니다. 보안 예방책으로, 구현시 신뢰할 수 없는 widget으로부터 <a href="#file-entry" title="file entry">file entries</a>를 파일 시스템에 직접 추출하지 말 것을 권장합니다. 
+   대신에 구현시, 예를 들면, 가상 파일시스템이나 <a href="#widget-package">widget 패키지</a>내 파일에 액세스할 수 있게 맵핑하여 사용할 수 있습니다.</p>
   <h4 id="rule-for-finding-a-file-within-a-widget-package"><span class="secno">9.1.3 </span>Widget 패키지 내의 File을 찾는 규칙</h4>
-  <p>The <dfn id="rule-for-finding-a-file-within-a-widget-package-0">rule for finding a file within a widget package</dfn> is given in the
-    following algorithm. The algorithm returns either a <a href="#processable-file">processable file</a>, <code><a href="#null">null</a></code>, or an error. </p>
-  <p>For
-    the sake of comparison and matching, it is <em class="ct">recommended</em> that a <a class="product-ua" href="#user-agent">user agent</a> treat all <a href="#zip-relative-path" title="zip relative path">Zip relative paths</a> as <a href="#utf-8">[UTF-8]</a>. </p>
-  <p class="note"><span class="notetitle">주석:</span> This specification does not define
-    how links in documents other than the <a href="#configuration-document-0">configuration document</a> are to be
-    dereferenced. For handling links in other documents, such as (X)HTML, CSS, SVG, etc.,
-    please refer to the <a href="#widgets-uri">[Widgets-URI]</a> specification.</p>
+  <p><dfn id="rule-for-finding-a-file-within-a-widget-package-0">Widget 패키지 내의 File을 찾는 규칙</dfn>은 아래 알고리즘으로 주어집니다.
+  이 알고리즘은 <a href="#processable-file">처리 가능한 파일</a>, <code><a href="#null">null</a></code> 또는 에러를 반환합니다.</p>
+  <p>비교 및 일치여부 판단을 위해, <a class="product-ua" href="#user-agent">유저 에이전트</a>가 <a href="#utf-8">[UTF-8]</a>에 따라 모든 
+  <a href="#zip-relative-path" title="zip relative path">Zip 상대 경로</a>를 처리할 것을 <em class="ct">추천</em>합니다.</p>
+  <p class="note"><span class="notetitle">주석:</span> 이 명세는 <a href="#configuration-document-0">configuration 문서</a> 이외의 문서에서 링크를 역참조하는 방법을 정의하지 않습니다.
+  (X)HTML, CSS, SVG, 기타 등등 다른 문서에서 링크를 다루기 위해서는 <a href="#widgets-uri">[Widgets-URI]</a> 명세를 참조하세요.</p>
   <ol>
     <li>
-      <p>Let <var>path</var> be the  path to the <a href="#file-entry">file
-        entry</a> being sought by the user agent.</p>
+      <p>유저 에이전트에 의해 요구되는 <a href="#file-entry">file entry</a>의 경로를 <var>path</var>로 설정합니다.</p>
     </li>
     <li>
-      <p>If <var>path</var> is not a valid path, return an error and terminate this algorithm. </p>
+      <p>만약 <var>path</var>가 올바르지 않은 경로일 경우, 에러를 반환하고 알고리즘을 종료합니다.</p>
     </li>
     <li>
-      <p>If the <var>path</var> starts with a U+002F SOLIDUS (e.g.,
-        "<code>/style/master.css</code>"),  then remove the first U+002F SOLIDUS from <var>path.</var></p>
+      <p>만약 <var>path</var>가 U+002F SOLIDUS (예를 들면, "<code>/style/master.css</code>")로 시작하면, <var>path</var>에서 첫 U+002F SOLIDUS 를 삭제합니다.</p>
     </li>
     <li>
       <p>Let <var>path-components</var> be the result of splitting <var>path</var> at
