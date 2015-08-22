@@ -3,7 +3,7 @@
 * [Packaged Web Apps (Widgets)](http://www.w3.org/TR/2012/REC-widgets-20121127/) 에 대한 한글 번역본
 * 현재 번역본 보기 - http://gom105mari.github.io/Packaged-Web-Apps
 
-## 번역 진행상황 (전체 30% 정도 번역 완료)
+## 번역 진행상황 (전체 55% 정도 번역 완료)
 제목 | 진행상황
 ------------ | -------------
 요약 | 100% 완료
@@ -68,3 +68,6 @@
  * default ? -> 디폴트? 기본?(base?)
  * white space -> 공백
  * text -> 텍스트
+ * parsing -> 파싱
+ * processing -> 처리
+ * rule -> 규칙
