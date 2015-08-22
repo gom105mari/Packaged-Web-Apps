@@ -64,5 +64,7 @@
  * keyword -> 키워드
  * section -> 섹션
  * code point -> 코드부호
- * content ? -> 컨텐트? 컨텐츠?
+ * content -> 컨텐츠
  * default ? -> 디폴트? 기본?(base?)
+ * white space -> 공백
+ * text -> 텍스트
