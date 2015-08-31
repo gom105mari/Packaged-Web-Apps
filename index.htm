@@ -1714,28 +1714,24 @@ Distributed under the W3C Software License.
     <a href="#configuration-document-0">configuration 문서</a>를 제외한 모든 파일과 폴더는 <a href="#folder-based-localization-0">폴더 기반 현지화</a>를 통해 현지화 할 수 있습니다.</p>
   <p class="example">예를 들어, locale folder인 "<code>locales/ja/</code>" (Japanese)는 일어로 번역된 HTML document를 포함할 것입니다.</p>
   <p class="authorguide"><strong>작성 지침:</strong> <a href="#locale-folder-0" title="locale folder">Locale folders</a>는 <a href="#container-for-localized-content">container for
-    localized content</a>에 위치해야 합니다. (a locale folder not in a <a href="#container-for-localized-content">container for localized
-    content</a> will be treated as an <a href="#arbitrary">arbitrary</a> folder).  In addition, authors making use of localization features provided by this specification should  translate, localize, or alter <a href="#localized-content">localized content</a> for a the given locale, and test their widgets thoroughly.</p>
+    localized content</a>에 위치해야 합니다. (<a href="#container-for-localized-content">container for localized
+    content</a>외부에 있는 locale folder는 그냥 <a href="#arbitrary">보통</a> 폴더로 인식될 것입니다). 덧붙이면 작성자는 번역을 하고 이를 지역화한 후, 주어진 로케일의 <a href="#localized-content">지역화한 컨텐츠</a>를 수정하고, 그리고 widget들을 철저히 테스트 하여 이 명세에서 제시하는 지역화 피쳐를 하여야 합니다.</p>
   <h3 id="bidirectional-text"><span class="secno">8.1 </span>Bidirectional  text</h3>
-  <p>In conjunction to mandating that user agents support <a href="#unicode">[Unicode]</a>, this specification provides the <code><a href="#the-dir-attribute">dir</a></code> attribute and <code title="span element"><a href="#the-span-element-and-its-attributes">span</a></code> element as a markup-based means of influencing the directionality for bidirectional Unicode text <a href="#bidi">[BIDI]</a>. See the  definitions of the <code><a href="#the-dir-attribute">dir</a></code> attribute and <code title="span element"><a href="#the-span-element-and-its-attributes">span</a></code> element for usage examples. </p>
+  <p>user agent들이 <a href="#unicode">[Unicode]</a>를 지원하도록 하기 위해, 이 명세에서는 양방향의 Unicode 텍스트<a href="#bidi">[BIDI]</a>를 위해 방향에 영향을 주는 마크업 기반의 방법인 <code><a href="#the-dir-attribute">dir</a></code> attribute 와 <code title="span element"><a href="#the-span-element-and-its-attributes">span</a></code> element를 제공합니다. 사용법 예제를 위해 <code><a href="#the-dir-attribute">dir</a></code> attribute 와 <code title="span element"><a href="#the-span-element-and-its-attributes">span</a></code> element의 정의를 참고하세요. </p>
   <h3 id="localization-model"><span class="secno">8.2 </span>Localization Model</h3>
-  <p>This specification provides two means that authors can use to explicitly localize
-    the content of a widget:</p>
+  <p>이 명세에서는 작성자가 widget의 컨텐츠를 명시적으로 지역화하는 방법을 2 가지로 제시하고 있습니다:</p>
   <ol>
     <li>
-      <p>By placing localized file content in <a href="#locale-folder-0" title="locale folder">locale
-        folders</a>, a process referred to as <a href="#folder-based-localization-0">folder-based localization</a>.</p>
+      <p><a href="#locale-folder-0" title="locale folder">locale
+        folders</a> 아래에 지역화한 파일 컨텐츠를 위치하게 하는 <a href="#folder-based-localization-0">폴더 기반 지역화</a> 처리.</p>
     </li>
     <li>
-      <p>By explicitly marking XML elements in the <a href="#configuration-document-0">configuration document</a> as
-        localized, a process referred to as <a href="#element-based-localization-0">element-based localization</a>.</p>
+      <p><a href="#configuration-document-0">configuration 문서</a> 내의 XML element들을 명시적으로 지역화 되었다고 표시하는 <a href="#element-based-localization-0">element 기반의 지역화</a> 처리.</p>
     </li>
   </ol>
-  <p>Both forms of localization are described below. Folder-based and element-based
-    localization rely on the user agent to match the language ranges held by the <var><a href="#user-agent-locales">user
-    agent locales</a></var> to the appropriate locale folders and/or localized XML elements in
-    the widget's <a href="#configuration-document-0">configuration document</a>.</p>
-  <h3 id="folder-based-localization"><span class="secno">8.3 </span>Folder-based localization</h3>
+  <p>2 가지의 지역화 형식은 아래 항목에 잘 나와 있습니다. 폴더 기반과 element 기반의 지역화는 <var><a href="#user-agent-locales">user
+    agent locales</a></var>를 따르는 다양한 언어를 적절한 locale 폴더와 widget의 <a href="#configuration-document-0">configuration 문서</a>에 있는 지역화한 XML element에 일치시키기위해 user agent를 필요로 합니다.</p>
+  <h3 id="folder-based-localization"><span class="secno">8.3 </span>폴더 기반의 지역화</h3>
   <p>This specification defines the concept of <dfn id="folder-based-localization-0">folder-based localization</dfn>,
     which is the process whereby an author places <a href="#file" title="file">files</a> inside <a href="#folder" title="folder">folders</a> that are named in a manner that conforms to a <code>language-range</code> ABNF rule of this specification. That
     is, by naming folders in lower-case using values derived from the <a href="http://www.iana.org/assignments/language-subtag-registry">IANA Language Subtag
