@@ -1740,15 +1740,13 @@ Distributed under the W3C Software License.
     Registry</a>. These <a href="#locale-folder-0" title="locale folder">locale folders</a> are then placed
     inside the <a href="#container-for-localized-content">container for localized content</a>.</p>
   <p class="authorguide"><strong>작성 지침</strong> Although BCP 47 recommends a particular case-folding convention, the use of upper or lowercase letters has no meaning in a language tag. Because folders inside a widget package are treated by the user-agent in a case-sensitive manner, the names of the folders inside a 'locale' folder must be all lowercase. All language tags are mapped to lowercase for matching purposes (although they can appear in any form in the configuration file or elsewhere).</p>
-  <p><dfn id="container-for-localized-content">지역화한 컨텐츠를 위한 컨테이너</dfn>는 <a href="#root-of-the-widget-package">widget 패키지의 root</a>에 위치하며 <code><a href="#folder-name">폴더 이름</a></code>이 대소문자까지 정확하게 '<code>locales</code>'인 <a href="#reserved">예약된</a> <a href="#folder">폴더</a>입니다. 지역화한 컨텐츠를 위한 컨테이너는 0개 이상의 <a href="#locale-folder-0" title="locale folder">locale 폴더들</a>을 가집니다.</p>
-  <p>A <dfn id="locale-folder-0">locale 폴더</dfn> is a <a href="#folder">folder</a> whose <var><a href="#file-name-field">file name field</a></var> matches the production of <code><a href="#locale-folder">locale-folder</a></code> and is a direct descendant of the <a href="#container-for-localized-content">container for localized content</a> (e.g., "<code>/locales/en-us</code>",
-    "<code>/locales/fr</code>", etc). A <a href="#locale-folder-0">locale folder</a> contains zero or more <a href="#arbitrary">arbitrary</a> folders and/or files.</p>
+  <p><dfn id="container-for-localized-content">지역화한 컨텐츠 컨테이너</dfn>는 <a href="#root-of-the-widget-package">widget 패키지의 root</a>에 위치하며 <code><a href="#folder-name">폴더 이름</a></code>이 대소문자까지 정확하게 '<code>locales</code>'인 <a href="#reserved">예약된</a> <a href="#folder">폴더</a>입니다. 지역화한 컨텐츠를 위한 컨테이너는 0개 이상의 <a href="#locale-folder-0" title="locale folder">locale 폴더들</a>을 가집니다.</p>
+  <p><dfn id="locale-folder-0">locale 폴더</dfn>는 폴더의 <var><a href="#file-name-field">파일 이름 field</a></var>가 <code><a href="#locale-folder">locale-folder</a></code>의 형식에 부합하고 <a href="#container-for-localized-content">지역화한 컨텐츠 컨테이너</a>의 바로 하위에 존재하는 <a href="#folder">폴더</a> 입니다. (예를 들면, "<code>/locales/en-us</code>",
+    "<code>/locales/fr</code>", etc). A <a href="#locale-folder-0">locale 폴더는</a> 0개 이상의 <a href="#arbitrary">일반</a> 폴더들이나 파일을 포함하고 있습니다.</p>
   <div class="authorguide">
-    <p><strong>작성 지침</strong> Authors need to avoid region, script or
-      other subtags except where they add useful distinguishing information to a <a href="#locale-folder-0">locale folder</a>. In addition, avoid including empty <a href="#locale-folder-0" title="locale folder">locale folders</a> in a <a href="#widget-package">widget package</a> (unless there
-      is a good reason to include them).</p>
+    <p><strong>작성 지침</strong> 작성자는 <a href="#locale-folder-0">locale 폴더</a>에 유용한 특징적인 정보를 추가하는 경우를 제외하고 (폴더 명에) 지역, 스크립트 또는 다른 보조 태그들을 삼가해야 합니다. 추가로 <a href="#widget-package">widget 패키지</a>가 빈 <a href="#locale-folder-0" title="locale folder">locale 폴더들</a>을 포함하지 않도록 하세요. (꼭 포함해야 할 이유가 있는 경우를 제외하고).</p>
     <div class="example">
-      <p>An example of a widget that uses folder-based localization:</p>
+      <p>폴더 기반의 지역화를 사용하는 widget의 예시:</p>
       <pre><code>widget.wgt
  locales/zh-hans-cn/a.gif
  locales/zh-hans-cn/f.gif
@@ -1764,32 +1762,25 @@ Distributed under the W3C Software License.
  index.html
  config.xml</code></pre>
     </div>
-    <p>Authors can further facilitate the localization process by grouping <a href="#file" title="file">files</a> into <a href="#folder">folder</a> hierarchies made up of matching subtags,
-      as is shown in the example.</p>
-    <p>Assuming the widget's locale is "zh-hans-cn", a reference to:</p>
+    <p>작성자는 아래 예문과 같이 보조 태그들에 일치하게 구성된 <a href="#folder">폴더</a> 계층에 <a href="#file" title="file">파일들</a>을 그룹을 지어 지역화 처리를 보다 용이하게 할 수 있습니다.</p>
+    <p>widget의 지역이 "zh-hans-cn" 이라고 한다면, 다음과 같습니다.:</p>
     <ul>
-      <li>a.gif would resolve to locales/zh-hans-cn/a.gif</li>
-      <li> b.gif would resolve to locales/zh-hans/b.gif</li>
-      <li> c.gif would resolve to locales/zh/c.gif</li>
-      <li> d.gif would resolve to d.gif, as it is not associated with any
-        locales and is hence available to all locales.</li>
+      <li>a.gif 는 locales/zh-hans-cn/a.gif 로 변합니다</li>
+      <li> b.gif 는 locales/zh-hans/b.gif 로 변합니다</li>
+      <li> c.gif 는 locales/zh/c.gif 로 변합니다.</li>
+      <li> d.gif 는 그대로 d.gif, 즉 어떤 locale들과 연관이 없으며, 그러므로 모든 locale들에서 사용 가능 합니다.</li>
     </ul>
-    <p>This works at all sub-levels, so long as the parent subtag matches the child
-      subtags. So, for example, the "<code>cn</code>" region can make use of the localized
-      files in the "zh-hans" folder level, the "zh" folder level, and the unlocalized files
-      at the <a href="#root-of-the-widget-package">root of the widget package</a>. The user agent always prioritizes
-      files in sub-folders over files in locale folders closer to the <a href="#root-of-the-widget-package">root of the
-      widget package</a>. Conversely, if the widget's locale were "<code>en-us</code>",
-      references to a.gif, b.gif, c.gif and d.gif would all resolve to the files in the
-      root of the widget package.</p>
-    <p>Note also that the user agent treats any <a href="#file">file</a> or <a href="#folder">folder</a> outside the container for localized content as <a href="#default-content">default content</a>.</p>
+    <p>이는 부모의 보조 태그(위 예시에서는 zh)가 자식의 보조 태그(zh-hans 또는 zh-hans-cn)들에 일치하기만 하면 모든 하위 단계에서 동작합니다. 예를 들면 "<code>cn</code>" region 은 "zh-hans" 폴더 단계의, "zh" 폴더 단계의 지역화한 파일들과 
+    <a href="#root-of-the-widget-package">widget 패키지의 root</a>에 위치한 지역화 하지 않은 파일을 사용할 수 있습니다. user agent는 <a href="#root-of-the-widget-package">widget 패키지의 root</a>에 보다 가까운 locale 폴더의 파일들 보다 하위 폴더의 파일들을 항상 우선 처리합니다.
+     반대로 만약 widget의 locale이 "<code>en-us</code>" 였다면 a.gif, b.gif, c.gif 그리고 d.gif를 가리키는 것들은 모두 widget 패키지의 root에 있는 파일로 바뀔 것입니다.</p>
+    <p>또한 user agent는 지역화한 컨텐츠 컨테이너 외부의 어떤 <a href="#file">파일</a>이나 <a href="#folder">폴더</a>던지 <a href="#default-content">디폴트 컨텐츠</a>로 처리한다는 것을 기억하십시오.</p>
   </div>
   <h3 id="element-based-localization"><span class="secno">8.4 </span>Element-Based Localization</h3>
-  <p>This specification defines the concept of <dfn id="element-based-localization-0">element-based localization</dfn>,
-    which allows authors to use the <code><a href="#the-xml:lang-attribute">xml:lang</a></code> attribute to explicitly indicate
-    that an <a href="#xml">[XML]</a> element in the <a href="#configuration-document-0">configuration document</a> has been <a href="#localization" title="localization">localized</a>.</p>
+  <p>이 명세에서는 작성자가 
+    <a href="#configuration-document-0">configuration 문서</a>의 <a href="#xml">[XML]</a> element가 <a href="#localization" title="localization">지역화한 것</a>을 명시적으로 가리키는데 
+    <code><a href="#the-xml:lang-attribute">xml:lang</a></code> attribute을 사용하도록 하는 <dfn id="element-based-localization-0">element 기반의 지역화</dfn>의 컨셉을 나타냅니다.</p>
   <div class="example">
-    <p>The following is an example of element-based localization:</p>
+    <p>다음은 element 기반의 지역화 예시 입니다:</p>
     <pre><code>&lt;widget xmlns="http://www.w3.org/ns/widgets"&gt;
    &lt;name short="Weather"&gt;
    The Ultimate Weather Widget
