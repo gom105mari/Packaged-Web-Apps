@@ -2374,71 +2374,65 @@ Distributed under the W3C Software License.
     <li><var>result</var>를 반환합니다. </li>
   </ol>
   <h4 id="rule-for-getting-a-list-of-keywords-from-an-attribute"><span class="secno">9.1.6 </span>attribute로부터 키워드 리스트를 얻는 규칙</h4>
-  <p>The <dfn id="rule-for-getting-a-list-of-keywords-from-an-attribute-0">rule for getting a list of keywords from an attribute</dfn> is given by the
-    following algorithm. The algorithm takes a string as input, and returns a list of  strings  which can be empty.</p>
+  <p><dfn id="rule-for-getting-a-list-of-keywords-from-an-attribute-0">attribute로부터 키워드 리스트를 얻는 규칙</dfn>은 다음 알고리즘과 같습니다.
+  이 알고리즘은 input으로 문자열을 가지고, 문자열들의 리스트를 반환하며, 문자열은 비어있을 수 있습니다.</p>
   <ol>
     <li>
-      <p>Let <var>result</var> be the value of the attribute to be processed.</p>
+      <p>처리될 attribute의 값을 <var>result</var>로 설정합니다.</p>
     </li>
     <li>
-      <p>In <var>result</var>, replace any sequences of <a href="#space-characters">space characters</a> (in
-        any order) with a single U+0020 SPACE character.</p>
+      <p><var>result</var>에서, <a href="#space-characters">공백 문자들</a>(순서대로)을 하나의 U+0020 SPACE 문자로 치환합니다.</p>
     </li>
     <li>
-      <p>In <var>result</var>, remove any leading or trailing U+0020 SPACE character.</p>
+      <p><var>result</var>에서, 앞뒤 또는 이어진 U+0020 SPACE 문자를 삭제합니다.</p>
     </li>
     <li>
-      <p>In <var>result</var>, split the string at each occurrence of a U+0020 character,
-        removing that U+0020 character in the process.</p>
+      <p><var>result</var>에서, 문자열을 U+0020 문자로 분할하고, U+0020 문자를 삭제합니다.</p>
     </li>
-    <li>Return <var>result.</var></li>
+    <li><var>result</var>를 반환합니다.</li>
   </ol>
   <h4 id="rule-for-verifying-a-file-entry"><span class="secno">9.1.7 </span>File Entry 검증 규칙</h4>
-  <p>The <dfn id="rule-for-verifying-a-file-entry-0">rule for verifying a file entry</dfn> is given in the following algorithm.
-    The algorithm always returns a boolean value.</p>
-  <p>For the <a href="#file-entry">file entry</a>, check the following data in the <var><a href="#local-file-header">local file
-    header</a></var>.</p>
+  <p><dfn id="rule-for-verifying-a-file-entry-0">File Entry 검증 규칙</dfn>은 다음 알고리즘과 같습니다.
+    이 알고리즘은 항상 boolean 값을 반환합니다.</p>
+  <p><a href="#file-entry">file entry</a>를 위해서, <var><a href="#local-file-header">local file
+    header</a></var>에서 다음의 데이터를 확인합니다.</p>
   <ol>
     <li>
-      <p>If the value of the <dfn id="crc-32">CRC-32</dfn> field (defined in the <a href="#zip">[ZIP]</a> specification) fails a CRC-32 check, return <code>false</code> and terminate this
-        algorithm.</p>
+      <p>만약 <dfn id="crc-32">CRC-32</dfn>(defined in the <a href="#zip">[ZIP]</a> specification) 필드의 값이 CRC-32 확인 중 실패할 경우,
+      <code>false</code>를 반환하고 이 알고리즘을 종료합니다.</p>
     </li>
     <li>
-      <p>The <var><a href="#file-name-field">file name field</a></var> is an empty string, return <code>false</code> and
-        terminate this algorithm.</p>
+      <p><var><a href="#file-name-field">file name field</a></var>가 비어있는 문자열일 경우, <code>false</code>를 반환하고 이 알고리즘을 종료합니다.</p>
     </li>
     <li>
-      <p>The <var><a href="#file-name-field">file name field</a></var> contains <a href="#zip-forbidden-characters">Zip forbidden characters</a>,
-        return <code>false</code> and terminate this algorithm.</p>
+      <p><var><a href="#file-name-field">file name field</a></var>가 <a href="#zip-forbidden-characters">Zip forbidden characters</a>를 포함할 경우,
+        <code>false</code>를 반환하고 이 알고리즘을 종료합니다.</p>
     </li>
     <li>
-      <p>The <var><a href="#file-name-field">file name field</a></var> is a sequence exclusively composed of (one or
-        more) <a href="#space-characters">space characters</a> or a mixed sequence of <a href="#space-characters">space
-        characters</a> and U+002E FULL STOP (".") (e.g.
-        " . .   "), return <code>false</code> and terminate this
-        algorithm.</p>
+      <p><var><a href="#file-name-field">file name field</a></var>가 (하나 이상의)<a href="#space-characters">공백 문자들</a>로만 구성되었거나,
+       <a href="#space-characters">공백 문자들</a>과 U+002E FULL STOP (".") (e.g. " . .   ")이 섞여있을 경우, <code>false</code>를 반환하고 이 알고리즘을 종료합니다.</p>
     </li>
     <li>
-      <p>The <var><a href="#file-name-field">file name field</a></var> is an invalid <a href="#zip-relative-path">Zip relative
+      <p><var><a href="#file-name-field">file name field</a></var>는  is an invalid <a href="#zip-relative-path">Zip relative
         path</a>, return <code>false</code> and terminate this algorithm.</p>
     </li>
     <li>return <code>true</code>.</li>
   </ol>
   <h4 id="rule-for-getting-text-content"><span class="secno">9.1.8 </span>텍스트 내용을 가져오는 규칙</h4>
-  <p>The <dfn id="rule-for-getting-text-content-0">rule for getting text content</dfn> is given in the following algorithm.
-    The algorithm always returns a list of <a href="#localizable-string">localizable string</a>s, which can be empty.</p>
+  <p><dfn id="rule-for-getting-text-content-0">텍스트 내용을 가져오는 규칙</dfn>은 다음 알고리즘과 같습니다.
+    이 알고리즘은 항상 <a href="#localizable-string">현지화 가능한 문자열</a>들을 반환하고, 문자열이 비어있을 수 있습니다.</p>
   <ol>
     <li>
-      <p>Let <var>input</var> be the <code>Element</code> to be processed.</p>
+      <p><var>input</var>을 처리되는 <code>Element</code>로 설정합니다.</p>
     </li>
     <li>
-      <p>Let <var>bidi-text</var> be an empty list of <a href="#localizable-string" title="localizable string">localizable strings</a>.</p>
+      <p><var>bidi-text</var>를 비어있는 <a href="#localizable-string" title="localizable string">현지화 가능한 문자열들</a>의 리스트로 설정합니다.</p>
     </li>
     <li>
-      <p>If <var>input</var> has no child nodes, return an <var>bidi-text</var> and terminate this algorithm.</p>
+      <p><var>input</var>의 자식 노드가 없을 경우, <var>bidi-text</var>를 반환하고 이 알고리즘을 종료합니다.</p>
     </li>
     <li>
-      <p>Let <var>lang-strings</var> be an empty list (it will hold localizable strings). </p>
+      <p><var>lang-strings</var>를 비어있는 리스트로 설정합니다(이것은 현지화할 수 있는 문자열들을 유지할 것입니다). </p>
     </li>
     <li>
       <p>Let <var>lang</var> be the <a href="#language-tag">language tag</a> derived from having processed the <code><a href="#the-xml:lang-attribute">xml:lang</a></code> attribute on either <var>input</var>, or in <var>input</var>'s  ancestor chain as per <a href="#xml">[XML]</a>. If <var><a href="#the-xml:lang-attribute">xml:lang</a></var> was not used anywhere in the ancestor chain, then let <var>lang</var> be an empty string.</p>
