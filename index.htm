@@ -1795,10 +1795,10 @@ Distributed under the W3C Software License.
   "yes"이면, 그것은 작성자가 직접 또는 간접적인 <code><a href="#the-xml:lang-attribute">xml:lang</a></code> 값의 상속을 통해 <a href="#element-based-localization-0">element 기반의 지역화</a> 하도록 xml:lang을 활용할 수 있다는 의미입니다. How element-based localization is handled is specified in detail in <a href="#step-7-process-the-configuration-document">Step 7</a>. </p>
   <p class="note"><span class="notetitle">주석:</span> The xml:lang attribute can be used on any element in order to indicate which language is used in the content and attribute values of that element. As specified in the XML Specification, its value is inherited, such that if an element has an xml:lang attribute, all of its descendants are considered to be in that language as well, unless they specify their own <code><a href="#the-xml:lang-attribute">xml:lang</a></code> attribute. Note that an element can indicate that it is in no specific language by setting <code><a href="#the-xml:lang-attribute">xml:lang</a></code> to the empty string, irrespective of whether any of its ancestors has an xml:lang attribute.</p>
   <div class="example">
-    <p>For example, if an author uses the <code><a href="#the-xml:lang-attribute">xml:lang</a></code> attribute on the <code title="widget element"><a href="#the-widget-element-and-its-attributes">widget</a></code> element, then all child elements inherit
-      the value xml:lang. This means that the first <code title="name element"><a href="#the-name-element-and-its-attributes">name</a></code> element below behaves as <code>xml:lang="en"</code> had been explicitly used.
-      However, in the second <code title="name element"><a href="#the-name-element-and-its-attributes">name</a></code> element, the
-      declaration of <code>xml:lang="pt"</code> overrides <code>xml:lang="en"</code> inherited from the <code title="widget element"><a href="#the-widget-element-and-its-attributes">widget</a></code> element. Finally, the last name element overrides xml:lang with an empty string, so that element will be treated by the user agent as <a href="#default-content">default content</a>.</p>
+    <p>예를 들어 작성자가 <code title="widget element"><a href="#the-widget-element-and-its-attributes">widget</a></code> 요소에 <code><a href="#the-xml:lang-attribute">xml:lang</a></code> 속성을 사용 하였다면,  모든 자식 요소들은 
+      xml:lang 값을 물려 받습니다. 즉, 하단에 있는 첫번째 <code title="name element"><a href="#the-name-element-and-its-attributes">name</a></code> 속성은 명시적으로 <code>xml:lang="en"</code>이라고 사용된 것처럼 동작 한다는 의미입니다.
+      반면에, 두번째 <code title="name element"><a href="#the-name-element-and-its-attributes">name</a></code> 요소의 <code>xml:lang="pt"</code> 선언은 <code title="widget element"><a href="#the-widget-element-and-its-attributes">widget</a></code> 요소로 부터 물려 받은
+       <code>xml:lang="en"</code> 을 재정의 합니다. 끝으로, 마지막에 있는 name 요소는 빈 값의 xml:lang을 재정의 하여, user agent는 이 요소를 <a href="#default-content">default content</a>처럼 처리할 것입니다.</p>
     <pre><code>&lt;widget xmlns="http://www.w3.org/ns/widgets"
  xml:lang="en"&gt;
 
@@ -1817,20 +1817,16 @@ Distributed under the W3C Software License.
 
 &lt;/widget&gt;</code></pre>
   </div>
-  <p>If an element is marked as being localizable via <code><a href="#the-xml:lang-attribute">xml:lang</a></code> with "yes",
-    the specification  indicates that only <dfn id="one-element-is-allowed-per-language">one element is allowed per language</dfn>:</p>
-  <p>One element is allowed per language means that only one element of a type is
-    allowed to be used per language (e.g., although many <code title="name element"><a href="#the-name-element-and-its-attributes">name</a></code> elements can be present in a <a href="#configuration-document-0">configuration document</a>, only one <code title="name element"><a href="#the-name-element-and-its-attributes">name</a></code> element will be selected by the user agent for the English language). During
-    processing (<a href="#step-7-process-the-configuration-document">Step 7</a>), the user agent will only
-    match the first element, in <a href="http://www.w3.org/TR/xpath/#dt-document-order">document order</a>, that matches a
-    language range in the <var><a href="#user-agent-locales">user agent locales</a></var> and <a href="#ignore">ignore</a> any
-    subsequent repetitions of the element that contain a matching <code><a href="#the-xml:lang-attribute">xml:lang</a></code> value (even if that element's content is different).</p>
+  <p>만약, <code><a href="#the-xml:lang-attribute">xml:lang</a></code>을 통한 현지화가 가능하다 라고 표시 되어진 요소는, 오직 <dfn id="one-element-is-allowed-per-language">언어당 하나의 요소 만 허용 된다</dfn> 라고 명세에 나와 있습니다:</p>
+  <p>언어당 하나의 요소 만 허용 이라는 의미는 언어당 한 타입의 하나의 요소 허용 된다는 뜻입니다 (예를 들어, <a href="#configuration-document-0">configuration document</a>에 많은 <code title="name element"><a href="#the-name-element-and-its-attributes">name</a></code> 요소들이 등장할 수 있다해도, 
+  user agent는 English 언어용으로 오직 하나의 <code title="name element"><a href="#the-name-element-and-its-attributes">name</a></code> 요소만 선택합니다). 처리 과정 (<a href="#step-7-process-the-configuration-document">Step 7</a>)중에, user agent
+  <a href="http://www.w3.org/TR/xpath/#dt-document-order">document order</a>에 따라 첫번째 요소만을 매칭(<var><a href="#user-agent-locales">user agent locales</a></var>내의 language 항목 매칭)이고, 그 이후에 오는 어떤 요소들의 <code><a href="#the-xml:lang-attribute">xml:lang</a></code>
+값이 일치하더 라도  모두 <a href="#ignore">무시합니다</a> (심지어 element의 content가 다를지라도).</p>
   <div class="example">
-    <p>For example, assume the <var><a href="#user-agent-locales">user agent locales</a></var> only contains the
-      following language range: "<code>en-us</code>" (English as used in the United
-      States). As only one instance of the <code title="description element"><a href="#the-description-element-and-its-attributes">description</a></code> element is allowed per language, in the
-      following code the user agent would match the first <code title="description element"><a href="#the-description-element-and-its-attributes">description</a></code> element but would <a href="#ignore">ignore</a> the
-      second and third <code title="description element"><a href="#the-description-element-and-its-attributes">description</a></code> elements.</p>
+    <p>예를 들어 <var><a href="#user-agent-locales">user agent locales</a></var>가 오직 하나의 다음 언어만 포함한다고 가정합시다: "<code>en-us</code>" (미주 영어).
+     언어당 하나의 <code title="description element"><a href="#the-description-element-and-its-attributes">description</a></code> 요소의 인스턴스 만이 허용되기에, 다음의 코드에서 
+     user agent는 첫번째 <code title="description element"><a href="#the-description-element-and-its-attributes">description</a></code> 요소만 매칭하고
+      나머지 두,세번째 <code title="description element"><a href="#the-description-element-and-its-attributes">description</a></code> 요소들은 무시할 것입니다.</p>
     <pre><code>
 &lt;widget xmlns="http://www.w3.org/ns/widgets"&gt;
 
@@ -1855,9 +1851,8 @@ Distributed under the W3C Software License.
 	 &lt;/description&gt;
 
 &lt;/widget&gt;</code></pre>
-    <p>However, if the <var><a href="#user-agent-locales">user agent locales</a></var> only contained "<code>*</code>",
-      or did not match any of the localized <code title="description element"><a href="#the-description-element-and-its-attributes">description</a></code> elements, then the user agent would match
-      the third <code title="description element"><a href="#the-description-element-and-its-attributes">description</a></code> element above.</p>
+    <p>그러나 만약 <var><a href="#user-agent-locales">user agent locales</a></var>에 "<code>*</code>"만 포함되어 있거나, 현지화한 <code title="description element"><a href="#the-description-element-and-its-attributes">description</a></code> 요소들과도
+    매칭이 되지 않으면, user agent는 위 예제에서 세 번째 <code title="description element"><a href="#the-description-element-and-its-attributes">description</a></code> 요소를 매칭할 것입니다.</p>
   </div>
   <p>In the case whereby the author does not use an <code><a href="#the-xml:lang-attribute">xml:lang</a></code> attribute,
     and no element of a particular type with <code><a href="#the-xml:lang-attribute">xml:lang</a></code> matches the <var><a href="#user-agent-locales">user agent locales</a></var>, the user agent will use the
