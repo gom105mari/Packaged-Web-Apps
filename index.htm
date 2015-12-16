@@ -1715,38 +1715,39 @@ Distributed under the W3C Software License.
   <p class="example">예를 들어, locale folder인 "<code>locales/ja/</code>" (Japanese)는 일어로 번역된 HTML document를 포함할 것입니다.</p>
   <p class="authorguide"><strong>작성 지침:</strong> <a href="#locale-folder-0" title="locale folder">Locale folders</a>는 <a href="#container-for-localized-content">container for
     localized content</a>에 위치해야 합니다. (<a href="#container-for-localized-content">container for localized
-    content</a>외부에 있는 locale folder는 그냥 <a href="#arbitrary">보통</a> 폴더로 인식될 것입니다). 덧붙이면 작성자는 번역을 하고 이를 지역화한 후, 주어진 로케일의 <a href="#localized-content">지역화한 컨텐츠</a>를 수정하고, 그리고 widget들을 철저히 테스트 하여 이 명세에서 제시하는 지역화 피쳐를 하여야 합니다.</p>
+    content</a>외부에 있는 locale folder는 그냥 <a href="#arbitrary">보통</a> 폴더로 인식될 것입니다). 덧붙이면 작성자는 번역을 하고 이를 현지화한 후, 주어진 로케일의 <a href="#localized-content">현지화한 컨텐츠</a>를 수정하고, 그리고 widget들을 철저히 테스트 하여 이 명세에서 제시하는 현지화 피쳐를 하여야 합니다.</p>
   <h3 id="bidirectional-text"><span class="secno">8.1 </span>Bidirectional  text</h3>
   <p>user agent들이 <a href="#unicode">[Unicode]</a>를 지원하도록 하기 위해, 이 명세에서는 양방향의 Unicode 텍스트<a href="#bidi">[BIDI]</a>를 위해 방향에 영향을 주는 마크업 기반의 방법인 <code><a href="#the-dir-attribute">dir</a></code> attribute 와 <code title="span element"><a href="#the-span-element-and-its-attributes">span</a></code> element를 제공합니다. 사용법 예제를 위해 <code><a href="#the-dir-attribute">dir</a></code> attribute 와 <code title="span element"><a href="#the-span-element-and-its-attributes">span</a></code> element의 정의를 참고하세요. </p>
   <h3 id="localization-model"><span class="secno">8.2 </span>Localization Model</h3>
-  <p>이 명세에서는 작성자가 widget의 컨텐츠를 명시적으로 지역화하는 방법을 2 가지로 제시하고 있습니다:</p>
+  <p>이 명세에서는 작성자가 widget의 컨텐츠를 명시적으로 현지화하는 방법을 2 가지로 제시하고 있습니다:</p>
   <ol>
     <li>
       <p><a href="#locale-folder-0" title="locale folder">locale
-        folders</a> 아래에 지역화한 파일 컨텐츠를 위치하게 하는 <a href="#folder-based-localization-0">폴더 기반 지역화</a> 처리.</p>
+        folders</a> 아래에 현지화한 파일 컨텐츠를 위치하게 하는 <a href="#folder-based-localization-0">폴더 기반 현지화</a> 처리.</p>
     </li>
     <li>
-      <p><a href="#configuration-document-0">configuration 문서</a> 내의 XML element들을 명시적으로 지역화 되었다고 표시하는 <a href="#element-based-localization-0">element 기반의 지역화</a> 처리.</p>
+      <p><a href="#configuration-document-0">configuration 문서</a> 내의 XML element들을 명시적으로 현지화 되었다고 표시하는 <a href="#element-based-localization-0">element 기반의 현지화</a> 처리.</p>
     </li>
   </ol>
-  <p>2 가지의 지역화 형식은 아래 항목에 잘 나와 있습니다. 폴더 기반과 element 기반의 지역화는 <var><a href="#user-agent-locales">user
-    agent locales</a></var>를 따르는 다양한 언어를 적절한 locale 폴더와 widget의 <a href="#configuration-document-0">configuration 문서</a>에 있는 지역화한 XML element에 일치시키기위해 user agent를 필요로 합니다.</p>
-  <h3 id="folder-based-localization"><span class="secno">8.3 </span>폴더 기반의 지역화</h3>
-  <p>이 명세는 <dfn id="folder-based-localization-0">폴더 기반의 지역화</dfn>,즉 작성자가 이 명세의 <code>언어-범위</code> ABNF 룰에 어느 정도 일치되게 명명된 <a href="#folder" title="folder">폴더들</a> 내에 <a href="#file" title="file">파일들</a>을
-   두어야 하는 프로세스의 컨셉을 정의합니다. That
-    is, by naming folders in lower-case using values derived from the <a href="http://www.iana.org/assignments/language-subtag-registry">IANA Language Subtag
-    Registry</a> such as "<code>en-us</code>", "<code>en-gb</code>", and so on, but
-    avoiding subtags marked as <dfn class="external" id="deprecated">deprecated</dfn>, <dfn class="external" id="grandfathered">grandfathered</dfn>, or <dfn class="external" id="redundant">redundant</dfn> in the <a href="http://www.iana.org/assignments/language-subtag-registry">IANA Language Subtag
-    Registry</a>. These <a href="#locale-folder-0" title="locale folder">locale folders</a> are then placed
-    inside the <a href="#container-for-localized-content">container for localized content</a>.</p>
-  <p class="authorguide"><strong>작성 지침</strong> Although BCP 47 recommends a particular case-folding convention, the use of upper or lowercase letters has no meaning in a language tag. Because folders inside a widget package are treated by the user-agent in a case-sensitive manner, the names of the folders inside a 'locale' folder must be all lowercase. All language tags are mapped to lowercase for matching purposes (although they can appear in any form in the configuration file or elsewhere).</p>
-  <p><dfn id="container-for-localized-content">지역화한 컨텐츠 컨테이너</dfn>는 <a href="#root-of-the-widget-package">widget 패키지의 root</a>에 위치하며 <code><a href="#folder-name">폴더 이름</a></code>이 대소문자까지 정확하게 '<code>locales</code>'인 <a href="#reserved">예약된</a> <a href="#folder">폴더</a>입니다. 지역화한 컨텐츠를 위한 컨테이너는 0개 이상의 <a href="#locale-folder-0" title="locale folder">locale 폴더들</a>을 가집니다.</p>
-  <p><dfn id="locale-folder-0">locale 폴더</dfn>는 폴더의 <var><a href="#file-name-field">파일 이름 field</a></var>가 <code><a href="#locale-folder">locale-folder</a></code>의 형식에 부합하고 <a href="#container-for-localized-content">지역화한 컨텐츠 컨테이너</a>의 바로 하위에 존재하는 <a href="#folder">폴더</a> 입니다. (예를 들면, "<code>/locales/en-us</code>",
+  <p>2 가지의 현지화 형식은 아래 항목에 잘 나와 있습니다. 폴더 기반과 element 기반의 현지화는 <var><a href="#user-agent-locales">user
+    agent locales</a></var>를 따르는 다양한 언어를 적절한 locale 폴더와 widget의 <a href="#configuration-document-0">configuration 문서</a>에 있는 현지화한 XML element에 일치시키기위해 user agent를 필요로 합니다.</p>
+  <h3 id="folder-based-localization"><span class="secno">8.3 </span>폴더 기반의 현지화</h3>
+  <p>이 명세는 <dfn id="folder-based-localization-0">폴더 기반의 현지화</dfn>,즉 작성자가 이 명세의 <code>언어-범위</code> ABNF 룰에 어느 정도 일치되게 명명된 <a href="#folder" title="folder">폴더들</a> 내에 <a href="#file" title="file">파일들</a>을
+   두어야 하는 프로세스의 컨셉을 정의합니다. 이는 "<code>en-us</code>", "<code>en-gb</code>" 등과 같이 <a href="http://www.iana.org/assignments/language-subtag-registry">IANA Language Subtag
+    Registry</a>로 부터 파생된 - 그러나 <a href="http://www.iana.org/assignments/language-subtag-registry">IANA Language Subtag
+    Registry</a>에 <dfn class="external" id="deprecated">deprecated</dfn>, <dfn class="external" id="grandfathered">grandfathered</dfn>, or <dfn class="external" id="redundant">redundant</dfn>로 표시된 subtag를 제외한 - 
+    값을 사용하여 소문자로 폴더를 명명한다. 그리고 이 <a href="#locale-folder-0" title="locale folder">locale 폴더들</a>은 
+    <a href="#container-for-localized-content">현지화한 컨텐츠를 위한 컨테이너</a> 내부에 위치 하여야 합니다.</p>
+  <p class="authorguide"><strong>작성 지침</strong> BCP 47이 특정 대/소문자 컨벤션을 추천하고 있긴 하지만, language tag에 대문자 또는 소문자 단어를 사용하는 것은 아무 의미가 없습니다.
+  왜냐하면 위젯 패키지 내의 폴더들은 user-agent에 의해 대소문자까지 확실하게 체크되며 'locale' 폴더 내의 모든 폴더들의 이름은 반드시 모두 소문자여야 합니다.
+  모든 language tag들은 매칭을 위해 소문자로 매핑되어 있습니다.(configuration 파일이나 다른 곳에선 어떤 형태로도 보여질 수 있습니다).</p>
+  <p><dfn id="container-for-localized-content">현지화한 컨텐츠를 위한 컨테이너</dfn>는 <a href="#root-of-the-widget-package">widget 패키지의 root</a>에 위치하며 <code><a href="#folder-name">폴더 이름</a></code>이 대소문자까지 정확하게 '<code>locales</code>'인 <a href="#reserved">예약된</a> <a href="#folder">폴더</a>입니다. 현지화한 컨텐츠를 위한 컨테이너는 0개 이상의 <a href="#locale-folder-0" title="locale folder">locale 폴더들</a>을 가집니다.</p>
+  <p><dfn id="locale-folder-0">locale 폴더</dfn>는 폴더의 <var><a href="#file-name-field">파일 이름 field</a></var>가 <code><a href="#locale-folder">locale-folder</a></code>의 형식에 부합하고 <a href="#container-for-localized-content">현지화한 컨텐츠 컨테이너</a>의 바로 하위에 존재하는 <a href="#folder">폴더</a> 입니다. (예를 들면, "<code>/locales/en-us</code>",
     "<code>/locales/fr</code>", etc). A <a href="#locale-folder-0">locale 폴더는</a> 0개 이상의 <a href="#arbitrary">일반</a> 폴더들이나 파일을 포함하고 있습니다.</p>
   <div class="authorguide">
     <p><strong>작성 지침</strong> 작성자는 <a href="#locale-folder-0">locale 폴더</a>에 유용한 특징적인 정보를 추가하는 경우를 제외하고 (폴더 명에) 지역, 스크립트 또는 다른 보조 태그들을 삼가해야 합니다. 추가로 <a href="#widget-package">widget 패키지</a>가 빈 <a href="#locale-folder-0" title="locale folder">locale 폴더들</a>을 포함하지 않도록 하세요. (꼭 포함해야 할 이유가 있는 경우를 제외하고).</p>
     <div class="example">
-      <p>폴더 기반의 지역화를 사용하는 widget의 예시:</p>
+      <p>폴더 기반의 현지화를 사용하는 widget의 예시:</p>
       <pre><code>widget.wgt
  locales/zh-hans-cn/a.gif
  locales/zh-hans-cn/f.gif
@@ -1762,7 +1763,7 @@ Distributed under the W3C Software License.
  index.html
  config.xml</code></pre>
     </div>
-    <p>작성자는 아래 예문과 같이 보조 태그들에 일치하게 구성된 <a href="#folder">폴더</a> 계층에 <a href="#file" title="file">파일들</a>을 그룹을 지어 지역화 처리를 보다 용이하게 할 수 있습니다.</p>
+    <p>작성자는 아래 예문과 같이 보조 태그들에 일치하게 구성된 <a href="#folder">폴더</a> 계층에 <a href="#file" title="file">파일들</a>을 그룹을 지어 현지화 처리를 보다 용이하게 할 수 있습니다.</p>
     <p>widget의 지역이 "zh-hans-cn" 이라고 한다면, 다음과 같습니다.:</p>
     <ul>
       <li>a.gif 는 locales/zh-hans-cn/a.gif 로 변합니다</li>
@@ -1770,17 +1771,17 @@ Distributed under the W3C Software License.
       <li> c.gif 는 locales/zh/c.gif 로 변합니다.</li>
       <li> d.gif 는 그대로 d.gif, 즉 어떤 locale들과 연관이 없으며, 그러므로 모든 locale들에서 사용 가능 합니다.</li>
     </ul>
-    <p>이는 부모의 보조 태그(위 예시에서는 zh)가 자식의 보조 태그(zh-hans 또는 zh-hans-cn)들에 일치하기만 하면 모든 하위 단계에서 동작합니다. 예를 들면 "<code>cn</code>" region 은 "zh-hans" 폴더 단계의, "zh" 폴더 단계의 지역화한 파일들과 
-    <a href="#root-of-the-widget-package">widget 패키지의 root</a>에 위치한 지역화 하지 않은 파일을 사용할 수 있습니다. user agent는 <a href="#root-of-the-widget-package">widget 패키지의 root</a>에 보다 가까운 locale 폴더의 파일들 보다 하위 폴더의 파일들을 항상 우선 처리합니다.
+    <p>이는 부모의 보조 태그(위 예시에서는 zh)가 자식의 보조 태그(zh-hans 또는 zh-hans-cn)들에 일치하기만 하면 모든 하위 단계에서 동작합니다. 예를 들면 "<code>cn</code>" region 은 "zh-hans" 폴더 단계의, "zh" 폴더 단계의 현지화한 파일들과 
+    <a href="#root-of-the-widget-package">widget 패키지의 root</a>에 위치한 현지화 하지 않은 파일을 사용할 수 있습니다. user agent는 <a href="#root-of-the-widget-package">widget 패키지의 root</a>에 보다 가까운 locale 폴더의 파일들 보다 하위 폴더의 파일들을 항상 우선 처리합니다.
      반대로 만약 widget의 locale이 "<code>en-us</code>" 였다면 a.gif, b.gif, c.gif 그리고 d.gif를 가리키는 것들은 모두 widget 패키지의 root에 있는 파일로 바뀔 것입니다.</p>
-    <p>또한 user agent는 지역화한 컨텐츠 컨테이너 외부의 어떤 <a href="#file">파일</a>이나 <a href="#folder">폴더</a>던지 <a href="#default-content">디폴트 컨텐츠</a>로 처리한다는 것을 기억하십시오.</p>
+    <p>또한 user agent는 현지화한 컨텐츠 컨테이너 외부의 어떤 <a href="#file">파일</a>이나 <a href="#folder">폴더</a>던지 <a href="#default-content">디폴트 컨텐츠</a>로 처리한다는 것을 기억하십시오.</p>
   </div>
   <h3 id="element-based-localization"><span class="secno">8.4 </span>Element-Based Localization</h3>
   <p>이 명세에서는 작성자가 
-    <a href="#configuration-document-0">configuration 문서</a>의 <a href="#xml">[XML]</a> element가 <a href="#localization" title="localization">지역화한 것</a>을 명시적으로 가리키는데 
-    <code><a href="#the-xml:lang-attribute">xml:lang</a></code> attribute을 사용하도록 하는 <dfn id="element-based-localization-0">element 기반의 지역화</dfn>의 컨셉을 나타냅니다.</p>
+    <a href="#configuration-document-0">configuration 문서</a>의 <a href="#xml">[XML]</a> element가 <a href="#localization" title="localization">현지화한 것</a>을 명시적으로 가리키는데 
+    <code><a href="#the-xml:lang-attribute">xml:lang</a></code> attribute을 사용하도록 하는 <dfn id="element-based-localization-0">element 기반의 현지화</dfn>의 컨셉을 나타냅니다.</p>
   <div class="example">
-    <p>다음은 element 기반의 지역화 예시 입니다:</p>
+    <p>다음은 element 기반의 현지화 예시 입니다:</p>
     <pre><code>&lt;widget xmlns="http://www.w3.org/ns/widgets"&gt;
    &lt;name short="Weather"&gt;
    The Ultimate Weather Widget
@@ -1791,9 +1792,14 @@ Distributed under the W3C Software License.
    &lt;/name&gt;
 &lt;/widget&gt;</code></pre>
   </div>
-  <p>widget 네임스페이스의 몇몇 element는 element의 정의들 하나 중에 <dfn id="localizable-via-xml:lang">xml:lang을 통해 지역화 가능</dfn>하다고 정의 되어 있습니다("yes" 또는 "no"). <code title="name element"><a href="#the-name-element-and-its-attributes">name</a></code> element를 예로 들도록 하겠습니다.
-  "yes"이면, 그것은 작성자가 직접 또는 간접적인 <code><a href="#the-xml:lang-attribute">xml:lang</a></code> 값의 상속을 통해 <a href="#element-based-localization-0">element 기반의 지역화</a> 하도록 xml:lang을 활용할 수 있다는 의미입니다. How element-based localization is handled is specified in detail in <a href="#step-7-process-the-configuration-document">Step 7</a>. </p>
-  <p class="note"><span class="notetitle">주석:</span> The xml:lang attribute can be used on any element in order to indicate which language is used in the content and attribute values of that element. As specified in the XML Specification, its value is inherited, such that if an element has an xml:lang attribute, all of its descendants are considered to be in that language as well, unless they specify their own <code><a href="#the-xml:lang-attribute">xml:lang</a></code> attribute. Note that an element can indicate that it is in no specific language by setting <code><a href="#the-xml:lang-attribute">xml:lang</a></code> to the empty string, irrespective of whether any of its ancestors has an xml:lang attribute.</p>
+  <p>widget 네임스페이스의 몇몇 element는 element의 정의들 하나 중에 <dfn id="localizable-via-xml:lang">xml:lang을 통해 현지화 가능</dfn>하다고 정의 되어 있습니다("yes" 또는 "no"). <code title="name element"><a href="#the-name-element-and-its-attributes">name</a></code> element를 예로 들도록 하겠습니다.
+  "yes"이면, 그것은 작성자가 직접 또는 간접적인 <code><a href="#the-xml:lang-attribute">xml:lang</a></code> 값의 상속을 통해 <a href="#element-based-localization-0">element 기반의 현지화</a> 하도록 xml:lang을 활용할 수 있다는 의미입니다.
+  element 기반의 현지화가 어떻게 처리되는 지는 <a href="#step-7-process-the-configuration-document">Step 7</a>에 자세히 정리되어 있습니다. </p>
+  <p class="note"><span class="notetitle">주석:</span> xml:lang 속성은 컨텐츠에 어떤 언어가 사용되었는 지를 나타내기 위한 요소의 속성 값으로 어느 요소에나 사용될 수 있습니다.
+  XML 명세에 명시된 내용에 따르면, 그 속성 값은 상속이 된다. 예를 들어 만약 어떤 요소가 xml:lang 속성을 가지고 있다면 그것의 모든 자손 요소들도 고유한 자신들의 <code><a href="#the-xml:lang-attribute">xml:lang</a></code>
+  속성이 없어도 마치 그 언어 속성을 가지고 있는 것으로 인식됩니다.
+   참고로 요소는 <code><a href="#the-xml:lang-attribute">xml:lang</a></code>을 빈 문자열로 설정함으로써 조상 요소들의 xml:lang 속성 여부와 상관 없이 어느 특정한 언어도 설정하지 않도록 할 수 있습니다.
+   .</p>
   <div class="example">
     <p>예를 들어 작성자가 <code title="widget element"><a href="#the-widget-element-and-its-attributes">widget</a></code> 요소에 <code><a href="#the-xml:lang-attribute">xml:lang</a></code> 속성을 사용 하였다면,  모든 자식 요소들은 
       xml:lang 값을 물려 받습니다. 즉, 하단에 있는 첫번째 <code title="name element"><a href="#the-name-element-and-its-attributes">name</a></code> 속성은 명시적으로 <code>xml:lang="en"</code>이라고 사용된 것처럼 동작 한다는 의미입니다.
