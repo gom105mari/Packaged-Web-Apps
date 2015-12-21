@@ -1860,16 +1860,14 @@ Distributed under the W3C Software License.
     <p>그러나 만약 <var><a href="#user-agent-locales">user agent locales</a></var>에 "<code>*</code>"만 포함되어 있거나, 현지화한 <code title="description element"><a href="#the-description-element-and-its-attributes">description</a></code> 요소들과도
     매칭이 되지 않으면, user agent는 위 예제에서 세 번째 <code title="description element"><a href="#the-description-element-and-its-attributes">description</a></code> 요소를 매칭할 것입니다.</p>
   </div>
-  <p>In the case whereby the author does not use an <code><a href="#the-xml:lang-attribute">xml:lang</a></code> attribute,
-    and no element of a particular type with <code><a href="#the-xml:lang-attribute">xml:lang</a></code> matches the <var><a href="#user-agent-locales">user agent locales</a></var>, the user agent will use the
-    first element that is <a href="#default-content">default content</a>, in <a href="http://www.w3.org/TR/xpath/#dt-document-order">document order</a>, that matches the
-    element type being sought.</p>
+  <p>작성자가 <code><a href="#the-xml:lang-attribute">xml:lang</a></code> 속성을 사용하지 않는 경우나  <code><a href="#the-xml:lang-attribute">xml:lang</a></code>을 사용 하는 어떤 타입의 요소도 
+   <var><a href="#user-agent-locales">user agent locales</a></var>와 매칭되지 않는 경우, user agent는 
+    <a href="http://www.w3.org/TR/xpath/#dt-document-order">document order</a>에 따라 발견된 요소 타입이 일치하는 첫번째 요소인 <a href="#default-content">default content</a>를 사용한다.</p>
   <div class="example">
-    <p>For example, now assume that the <var><a href="#user-agent-locales">user agent locales</a></var> only contains the
-      following language range: "<code>jp</code>" (Japanese). As only one instance of the <code title="description element"><a href="#the-description-element-and-its-attributes">description</a></code> element is allowed per
-      language, in the following code the user will agent <a href="#ignore">ignore</a> the first
-      two <code title="description element"><a href="#the-description-element-and-its-attributes">description</a></code> elements, but would match
-      the third (unlocalized) <code title="description element"><a href="#the-description-element-and-its-attributes">description</a></code> element.</p>
+    <p>예를 들어 , <var><a href="#user-agent-locales">user agent locales</a></var>가 다음과 같은 언어 범위: "<code>jp</code>" (Japanese)만 포함한다고 가정해봅시다.
+     언어 별로 <code title="description element"><a href="#the-description-element-and-its-attributes">description</a></code> 요소의 한 인스턴스만 허용되기 때문에,
+      다음 코드에서 user agent는 첫 번째와 두 번째 <code title="description element"><a href="#the-description-element-and-its-attributes">description</a></code> 요소들을 <a href="#ignore">무시</a>하고,
+      세 번째(현지화 되지 않은) <code title="description element"><a href="#the-description-element-and-its-attributes">description</a></code> 요소를 매치시킬 것입니다.</p>
     <pre><code>
 &lt;widget xmlns="http://www.w3.org/ns/widgets"&gt;
 
