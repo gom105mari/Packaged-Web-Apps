@@ -2434,47 +2434,51 @@ Distributed under the W3C Software License.
       <p><var>lang-strings</var>를 비어있는 리스트로 설정합니다(이것은 현지화할 수 있는 문자열들을 유지할 것입니다). </p>
     </li>
     <li>
-      <p>Let <var>lang</var> be the <a href="#language-tag">language tag</a> derived from having processed the <code><a href="#the-xml:lang-attribute">xml:lang</a></code> attribute on either <var>input</var>, or in <var>input</var>'s  ancestor chain as per <a href="#xml">[XML]</a>. If <var><a href="#the-xml:lang-attribute">xml:lang</a></var> was not used anywhere in the ancestor chain, then let <var>lang</var> be an empty string.</p>
+      <p>하나의 <var>input</var>, 또는 <a href="#xml">[XML]</a>에 따른 <var>input</var>의 ancestor chain에 
+      <code><a href="#the-xml:lang-attribute">xml:lang</a></code> 속성을 처리하면서 얻은 <a href="#language-tag">language tag</a>로 <var>lang</var>을 설정합니다.
+        만약 ancestor chain에서  <var><a href="#the-xml:lang-attribute">xml:lang</a></var>을 사용하는 곳이 없다면, <var>lang</var>을 비어있는 문자열로 설정합니다.</p>
     </li>
     <li>
-      <p>Let <var>direction</var> be the result of applying the <a href="#rule-for-determining-directionality-0">rule for determining directionality</a> to <var>input</var>. </p>
+      <p><a href="#rule-for-determining-directionality-0">방향성 결정에 대한 규칙</a>을 <var>input</var>에 적용한 결과를 <var>direction</var>으로 설정합니다.</p>
     </li>
     <li>
-      <p>Associate <var>lang</var> and <var>direction</var> with <var>bidi-text</var>. </p>
+      <p><var>lang</var>과 <var>direction</var>을 <var>bidi-text</var>와 연관시킵니다.</p>
     </li>
     <li>
-      <p>For each <var>child node</var> of <var>input</var>: </p>
+      <p><var>input</var>의 각 <var>child node</var>에 대해 : </p>
       <ol>
         <li>
-          <p>If <var> child node</var> is not an <code>Element</code> or <code>TextNode</code>, move onto the next child element and ignore the following sub-steps. </p>
+          <p>만약 <var> child node</var>가 <code>Element</code> 나<code>TextNode</code>가 아닐 경우, 다음 자식 앨리먼트로 이동하고 아래 과정을 무시합니다.</p>
         </li>
         <li>
-          <p>If the <var> child node</var> is an <code>Element</code>, let <var>lstring</var> be the result of recursively applying the <a href="#rule-for-getting-text-content-0">rule for getting text content</a> using this <var>current child element</var> as the argument. </p>
+          <p>만약 <var> child node</var>가 <code>Element</code>일 경우, <var>lstring</var>을 현재 자식 앨리먼트를 변수로 사용하여 
+          <a href="#rule-for-getting-text-content-0">텍스트 내용을 가져오는 규칙</a>을 재귀적으로 적용한 결과로 설정합니다.</p>
         </li>
         <li>
-          <p>If the <var> child node</var> is a <a href="#text-node" title="text node">text node</a>, then: </p>
+          <p>만약 <var> child node</var>가 <a href="#text-node" title="text node">text node</a>일 경우 : </p>
           <ol>
             <li>
-              <p> Create a new localizable string called <var>lstring</var>, using the text content of the <var>current child node</var> as the text value, <var>direction</var> as the direction, and <var>lang</var> as the language. </p>
+              <p><var>current child node</var>의 텍스트 내용을 텍스트 값으로, <var>direction</var>을 방향으로, <var>lang</var>을 언어로 사용하여 
+              <var>lstring</var>에 현지화된 새로운 문자열을 생성합니다. </p>
             </li>
           </ol>
         </li>
-        <li> Append <var>lstring</var> to the <var>lang-string</var> list. </li>
+        <li><var>lstring</var>을 <var>lang-string</var>리스트에 반영합니다.</li>
       </ol>
     </li>
     <li>
-      <p>Take all the text nodes, in order, from the returned <a href="#localizable-string">localizable string</a> and associate them with <var>bidi-text</var>. </p>
+      <p>모든 적절한 텍스트 노드를 반환받은 <a href="#localizable-string">현지화된 문자열</a>에서 가져오고, 그것들을 <var>bidi-text</var>와 연관시킵니다. </p>
     </li>
-    <li>return <var>bidi-text</var>.</li>
+    <li><var>bidi-text</var>를 반환합니다.</li>
   </ol>
   <div class="example">
-    <p>For example, the following configuration document: </p>
+    <p>예를 들어, configuration 문서를 보면: </p>
     <pre>&lt;?xml version="1.0" encoding="UTF-8"?&gt;<br>&lt;widget xmlns="http://www.w3.org/ns/widgets" dir="rtl" xml:lang="fr"&gt;
 &lt;name dir="rlo"&gt;
    &lt;span xml:lang="jp"&gt;Hello &lt;span dir="rtl"&gt;&lt;span dir="rlo"/&gt;backwards&lt;/span&gt;&lt;/span&gt;
 &lt;/name&gt;
 &lt;/widget&gt;</pre>
-    <p>When the <a href="#rule-for-getting-text-content-0">rule for getting text content</a> is applied could be logically represented as pseudo code: </p>
+    <p><a href="#rule-for-getting-text-content-0">텍스트 내용을 가져오는 규칙</a>이 적용될 때를 논리적인 수도코드로 표현하면: </p>
     <pre><code>
 {dir: rlo,
  lang: fr,
@@ -2489,29 +2493,29 @@ Distributed under the W3C Software License.
 }</code></pre>
   </div>
   <h4 id="rule-for-getting-text-content-with-normalized-white-space"><span class="secno">9.1.9 </span>표준화된 공백과 함께 텍스트 내용을 가져오는 규칙</h4>
-  <p class="no-toc no-num">The <dfn id="rule-for-getting-text-content-with-normalized-white-space-0">rule for getting text content with normalized white
-    space</dfn> is given in the following algorithm. The algorithm always returns a string,
-    which can be empty.</p>
+  <p class="no-toc no-num"><dfn id="rule-for-getting-text-content-with-normalized-white-space-0">표준화된 공백과 함께 텍스트 내용을 가져오는 규칙</dfn>은
+  다음 알고리즘과 같습니다. 이 알고리즘은 항상 문자열을 반환하며, 문자열이 비어있을 수 있습니다.</p>
   <ol>
     <li>
-      <p>Let <var>input</var> be the <code>Element</code> to be processed.</p>
+      <p><var>input</var>을 처리되는 <code>Element</code>로 설정합니다.</p>
     </li>
     <li>
-      <p>Let <var>result</var> be the result of applying the <a href="#rule-for-getting-text-content-0">rule for getting text
-        content</a> to <var>input</var>.</p>
+      <p><a href="#rule-for-getting-text-content-0">텍스트 내용을 가져오는 규칙</a>을 <var>input</var>에 적용한 결과를 <var>result</var>에 설정합니다.</p>
     </li>
     <li>
-      <p>In <var>result</var>, convert any sequence of one or more <a href="#space-characters">space characters</a> into a single U+0020 SPACE.</p>
+      <p><var>result</var>에서, 연속된 하나 이상의 <a href="#space-characters">공백 문자</a>를 하나의 U+0020 SPACE로 변환합니다.</p>
     </li>
     <li>
-      <p>In <var>result</var>, remove any leading or trailing U+0020 SPACE character.</p>
+      <p><var>result</var>에서, 앞뒤의 U+0020 SPACE 문자를 삭제합니다.</p>
     </li>
     <li>
-      <p>Return <var>result</var>.</p>
+      <p><var>result</var>를 반환합니다.</p>
     </li>
   </ol>
   <div class="example">
-    <p>For example, the user agent would <a href="#ignore">ignore</a> the <code title="author element"><a href="#the-author-element-and-its-attributes">author</a></code> and <code>blink</code> elements, but their <code>Text</code> nodes would be extracted (together with directional and language information): </p>
+    <p>예를 들어, user agent는 <code title="author element"><a href="#the-author-element-and-its-attributes">author</a></code>와 
+    <code>blink</code> 앨리먼트를 <a href="#ignore">무시</a>하곘지만, 
+     <code>Text</code> 노드는 추출될 것입니다 (방향성, 언어 정보 포함): </p>
     <pre><code>&lt;widget xmlns="http://www.w3.org/ns/widgets"
  		 xmlns:x="http://x.x.example/x" xml:lang="en"&gt;
    &lt;name&gt;
@@ -2519,9 +2523,9 @@ Distributed under the W3C Software License.
      &lt;author email="dude@example.com"&gt;Super &lt;x:blink dir="rtl"&gt;Dude&lt;/x:blink&gt;&lt;/author&gt;
      Widget&lt;/name&gt;
 &lt;/widget&gt;</code></pre>
-    <p>The resulting <var><a href="#widget-name">widget name</a></var> would be "<samp>The Awesome Super
+    <p><var><a href="#widget-name">widget name</a></var>의 결과는 "<samp>The Awesome Super
       <bdo dir="rtl">Dude</bdo>
-      Widget</samp>" (please note that <q>Dude</q> is rendered right-to-left).</p>
+      Widget</samp>" 입니다 (<q>Dude</q>가 right-to-left로 렌더링되는 것을 확인하세요).</p>
   </div>
   <h4 id="rule-for-parsing-a-non-negative-integer"><span class="secno">9.1.10 </span>양수 파싱 규칙</h4>
   <p>The <dfn id="rule-for-parsing-a-non-negative-integer-0">rule for parsing a non-negative integer</dfn> is given in the following
