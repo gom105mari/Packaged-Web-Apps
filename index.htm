@@ -2528,57 +2528,57 @@ Distributed under the W3C Software License.
       Widget</samp>" 입니다 (<q>Dude</q>가 right-to-left로 렌더링되는 것을 확인하세요).</p>
   </div>
   <h4 id="rule-for-parsing-a-non-negative-integer"><span class="secno">9.1.10 </span>양수 파싱 규칙</h4>
-  <p>The <dfn id="rule-for-parsing-a-non-negative-integer-0">rule for parsing a non-negative integer</dfn> is given in the following
-    algorithm.  This algorithm  returns the number zero, a positive integer, or an error.</p>
+  <p><dfn id="rule-for-parsing-a-non-negative-integer-0">양수 파싱 규칙</dfn>은 다음 알고리즘과 같습니다.
+  이 알고리즘은 숫자 0, 양수 또는 에러를 반환합니다.</p>
   <ol>
     <li>
-      <p>Let <var title="">input</var> be the string being parsed.</p>
+      <p><var title="">input</var>을 파싱되는 문자열로 설정합니다.</p>
     </li>
     <li>
-      <p>Let <var title="">result</var> have the value <code>0</code>.</p>
+      <p><var title="">result</var>를 <code>0</code> 값으로 설정합니다.</p>
     </li>
     <li>
-      <p>If the length of <var title="">input</var> is <code>0</code>, return an
-        error.</p>
+      <p>만약 <var title="">input</var>의 길이가 <code>0</code>이면, 에러를 반환합니다.</p>
     </li>
     <li>
-      <p>Let <var title="">position</var> be a pointer into <var title="">input</var>,
-        initially pointing at first character of the string.</p>
+      <p><var title="">position</var>를  <var title="">input</var>에 대한 포인터로 설정하고,
+        문자열의 첫 문자를 가리키도록 초기화합니다.</p>
     </li>
     <li>
-      <p>Let <var>nextchar</var> be the character in <var>input</var> at <var>position</var>.</p>
+      <p><var>nextchar</var>를  <var>input</var>의 <var>position</var>에 있는 문자로 설정합니다.</p>
     </li>
     <li>
-      <p>If the <var>nextchar</var> is one of the <a href="#space-characters">space characters</a>,
-        increment <var title="">position</var>. If <var>position</var> is past the end of <var>input</var>, return an error and terminate this algorithm. Otherwise, go to step 5 in this algorithm.</p>
+      <p>만약 <var>nextchar</var>가 <a href="#space-characters">공백 문자들</a> 중 하나일 경우,
+        <var title="">position</var>을 1 증가합니다. 만약 <var>position</var>이  <var>input</var>의 끝을 지났을 경우, 에러를 반환하고
+        알고리즘을 종료합니다. 그렇지 않으면, 이 알고리즘의 5번으로 이동합니다.</p>
     </li>
     <li>
-      <p>If the <var>nextchar</var> is not one of U+0030 (<code>0</code>) .. U+0039
-        (<code>9</code>), then return <var>result</var>.</p>
+      <p>만약 <var>nextchar</var>의 값이  U+0030 (<code>0</code>) .. U+0039
+        (<code>9</code>)가 아닐 경우, <var>result</var>를 반환합니다.</p>
     </li>
     <!-- Ok. At this point we know we have a number. It might have
                            trailing garbage which we'll ignore, but it's a number, and we
                            won't return an error. -->
     <li>
-      <p>If the <var>nextchar</var> is one of U+0030 (<code>0</code>) .. U+0039
-        (<code>9</code>):</p>
+      <p><var>nextchar</var>가 U+0030 (<code>0</code>) .. U+0039
+        (<code>9</code>) 일 경우:</p>
       <ol style="list-style-type:upper-alpha">
         <li>
-          <p>Multiply <var title="">result</var> by ten.</p>
+          <p><var title="">result</var>에 10을 곱합니다.</p>
         </li>
         <li>
-          <p>Add the value of the <var>nextchar</var> to <var title="">result</var>.</p>
+          <p><var>nextchar</var>의 값을 <var title="">result</var>에 더합니다.</p>
         </li>
         <li>
-          <p>Increment <var title="">position</var>.</p>
+          <p><var title="">position</var>을 1 증가합니다.</p>
         </li>
         <li>
-          <p>If <var title="">position</var> is not past the end of <var title="">input</var>, go to 5 in this algorithm.</p>
+          <p>만약 <var title="">position</var>이 <var title="">input</var>의 끝을 지난 경우, 이 알고리즘의 5번으로 이동합니다.</p>
         </li>
       </ol>
     </li>
     <li>
-      <p>Return <var title="">result</var>.</p>
+      <p><var title="">result</var>를 반환합니다.</p>
     </li>
   </ol>
   <h4 id="rule-for-identifying-the-media-type-of-a-file"><span class="secno">9.1.11 </span>파일의 미디어 타입 정의에 대한 규칙</h4>
