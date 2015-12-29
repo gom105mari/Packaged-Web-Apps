@@ -2043,20 +2043,19 @@ Distributed under the W3C Software License.
              그래서 user agent가 찾는 다음 위치는 상대 경로인 '<code>images/mast.png</code>'와 매칭되는 '<code>en/</code>' 폴더입니다.</p>
       </li>
       <li>
-        <p>Lastly, if the above fails, the user agent will search for the absent file at the root
-          of the widget package. So, if the user agent's locale did not find the zip relative path in one of the locale folders, then '<code>images/mast.png</code>' file at the root of the widget would be matched and this <a href="#default-content">default content</a> would be used.</p>
+        <p>끝으로, 만약 이전 단계에서 실패한다면 user agent는 빠진 파일을 위젯 패키지의 최상위에서 찾으려고 합니다.
+            그러므로 만약 user agent의 로케일이 locale folder들 중에서 상대 경로를 찾지 못하면 위젯 패키지의 최상위에 위치한 
+            '<code>images/mast.png</code>'가 매칭되어 이 <a href="#default-content">default content</a>가 사용됩니다.</p>
       </li>
     </ol>
-    <p>Now consider the for various Chinese variants: '<code>zh-hans-cn</code>',
-      '<code>zh-hans</code>', and '<code>zh</code>' below. In this case, to find the
+    <p>다양한 중국어 유형을 생각해 봅시다: '<code>zh-hans-cn</code>',
+      '<code>zh-hans</code>', 그리고 '<code>zh</code>' below. In this case, to find the
       '<code>flag.png</code>' file for Mainland Chinese in simplified script
       '<code>zh-hans-cn</code>', the user agent would first look in
       '<code>zh-hans-cn</code>', followed by '<code>zh-hans</code>', then in
       '<code>zh</code>' where the file is located.</p>
-    <p>To find the '<code>mast.png</code>' file, the user agent would look in
-      '<code>zh-hans-cn</code>', followed by '<code>zh-hans</code>', followed
-      '<code>zh</code>', and finally at the root of the widget package where the absent
-      file is actually located.</p>
+    <p>'<code>mast.png</code>'파일을 찾기 위해서, user agent는 '<code>zh-hans-cn</code>' 내부를 찾은 뒤,
+    다음으로 '<code>zh-hans</code>내부를 찾고, '<code>zh</code>' 내부를 찾고 마지막으로 파일이 실제로 위치한 위젯 패키지의 최상위를 찾습니다.</p>
     <div class="code_sniplet c1">
       <p><img alt="file: " height="16" src="images/text.png" width="16">/index.html</p>
       <pre>
