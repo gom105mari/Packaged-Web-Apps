@@ -1888,15 +1888,11 @@ Distributed under the W3C Software License.
   </div>
   <h3 id="localization-examples"><span class="secno">8.5 </span>Localization Examples</h3>
   <p><em>이 섹션은 비표준 내용입니다.</em></p>
-  <p>This section presents three examples of how widgets can be localized. Each example
-    is intended to showcase how the localization algorithm is intended to work.</p>
+  <p>이 섹션에서는 widget을 현지화 하는 방법에 대한 세가지 예시를 제공합니다. 각각은 현지화 알고리즘이 어떻게 동작하는 지를 보여주기 위한 예제입니다.</p>
   <h4 id="simple-example"><span class="secno">8.5.1 </span>Simple Example</h4>
   <div class="example">
-    <p class="no-toc no-num">This example shows a widget that displays the days of the
-      week based on the language ranges held by the <var><a href="#user-agent-locales">user agent locales</a></var>. If the
-      user agent is unable to match a language range to any <a href="#locale-folder-0">locale folder</a>, the
-      widget displays <code>/index.html</code> at the <a href="#root-of-the-widget-package">root of the widget
-      package</a>.</p>
+    <p class="no-toc no-num">다음은 <var><a href="#user-agent-locales">user agent locales</a></var>에 따라 언어 종류를 기반으로 한 주의 날들을 보여주는 widget의 예제입니다. 
+    만약 언어 종류와 매칭 되는 <a href="#locale-folder-0">가 하나도 없다면 widget은 <a href="#root-of-the-widget-package">위젯 패키지의 최상위</a> 에 있는 <code>/index.html</code>을 보여주게 됩니다.</p>
     <div class="code_sniplet c1">
       <p><img alt="config: " height="16" src="images/config.png" width="16">config.xml</p>
       <pre><code>&lt;widget xmlns="http://www.w3.org/ns/widgets"&gt;
@@ -1961,15 +1957,12 @@ Distributed under the W3C Software License.
   </div>
   <h4 id="complex-example"><span class="secno">8.5.2 </span>Complex Example</h4>
   <div class="example">
-    <p>The following is an example of a localized widget with multiple localized <a href="#icon" title="icon">icons</a>, <a href="#start-file" title="start file">start files</a> and <a href="#configuration-document-0" title="configuration document">configuration documents</a>. Some relevant
-      things to note from the example:</p>
+    <p>다음은 다양하게 현지화된 <a href="#icon" title="icon">아이콘들</a>, <a href="#start-file" title="start file">시작 파일들</a> 및 <a href="#configuration-document-0" title="configuration document">configuration 문서들</a>을 가지는 위젯의 예제입니다.
+     예제를 위한 관련된 간단한 도움말:</p>
     <ul>
-      <li>The Spanish version (<code>locales/es/</code>) has its own localized
-        icon.</li>
-      <li>The Spanish (<code>locales/es</code>) and English (<code>locales/en/</code>)
-        versions of the widget use the un-localized script in <code>/scripts/engine.js</code> folder.</li>
-      <li>On the other hand, the English-Australia (<code>en-au</code>) version uses a
-        localized script (<code>en-au/scripts/engine.js</code>).</li>
+      <li>스페인어 버젼(<code>locales/es/</code>)은 별도의 스페인 아이콘을 별도로 가지고 있습 니다.</li>
+      <li>위젯의 스페인어(<code>locales/es</code>) 및 영어 (<code>locales/en/</code>) 버젼은 <code>/scripts/engine.js</code> 폴더에 있는 현지화 하지 않은 스크립트를 사용합니다.</li>
+      <li>반면, 호주식 영어(<code>en-au</code>) 버젼은 현지화한 스크립트(<code>en-au/scripts/engine.js</code>)를 사용합니다.</li>
     </ul>
     <div class="code_sniplet c1">
       <p><img alt="config: " height="16" src="images/config.png" width="16">/config.xml</p>
@@ -2036,24 +2029,18 @@ Distributed under the W3C Software License.
   </div>
   <h4 id="fallback-behavior-example"><span class="secno">8.5.3 </span>Fallback Behavior Example</h4>
   <div class="example">
-    <p>This specification allows authors to place files and folders they don't wish to
-      localize at the root of the widget package. At runtime, if the user agent fails to
-      find a file in a <a href="#locale-folder-0">locale folder</a>, it will always search at the root of the
-      widget package for that missing file. The purpose of this 'fallback' model is to
-      reduce the number of <a href="#file" title="file">files</a> that need to be created in order
-      to <a href="#localization" title="localization">localize</a> a <a href="#widget-package">widget package</a>.</p>
-    <p>The example below demonstrates how a user agent attempts to locate a file that is
-      absent in a localized scenario. Assume the user agent's locale is '<code>en-gb</code>' and the zip relative path being sought is "<code>images/mast.png</code>":</p>
+    <p>이 명세는 작성자가 현지화를 원하지 않는 파일들과 폴더들은 위젯 패키지의 최상위에 두도록 하고 있습니다.
+        런타임시, 만약 user agent가 <a href="#locale-folder-0">locale folder</a>에서 파일 찾기를 실패하면, 항상 위젯 패키지의 최상위에서 놓친 파일을 찾을 것입니다.
+         이런 '폴백(fallback)' 모델의 목적은 <a href="#widget-package">위젯 패키지</a>를 <a href="#localization" title="localization">현지화</a>하기 위해 생성해야 하는 <a href="#file" title="file">파일들</a>의 갯수를 줄이기 위해서 입니다.
+    <p>다음 예제들은 user agent가 현지화 시나리오에서 빠진 파일을 어떻게 위치시키는 지를 보여줍니다. 
+        user agent의 로케일이 '<code>en-gb</code>'이며 찾는 상대 경로가 "<code>images/mast.png</code>"라 가정합시다:</p>
     <ol>
       <li>
-        <p>Firstly, the user agent will search for a folder that matches the user agent's
-          locale as closely as possible for the desired file. In this case, the user
-          agent would attempt to locate the relative path <code>'images/mast.png</code>' in '<code>/locales/en-gb/</code>', but would fail. </p>
+        <p>첫째로 user agent는 빠진파일을 위해 user agent의 로케일에 가장 근접한 폴더를 찾을 것입니다. 이 경우에 user agent는 '<code>/locales/en-gb/</code>'내에서 <code>'images/mast.png</code>'을 찾으려고 하지만 실패합니다. </p>
       </li>
       <li>
-        <p>Secondly, if the file is absent, the user agent will search for the absent file in any
-          other sub-folder that is in the language range of the current locale folder. So the next place the user agent would look is in the
-          '<code>en/</code>' folder, where it would match the zip relative path '<code>images/mast.png</code>'.</p>
+        <p>두번째로, 파일이 없다면, user agent는 빠진 파일을 현재 로케일 폴더의 언어 범위에 있는 아무 다른 하위 폴더에서 찾으려고 합니다.
+             그래서 user agent가 찾는 다음 위치는 상대 경로인 '<code>images/mast.png</code>'와 매칭되는 '<code>en/</code>' 폴더입니다.</p>
       </li>
       <li>
         <p>Lastly, if the above fails, the user agent will search for the absent file at the root
