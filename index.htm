@@ -2574,62 +2574,62 @@ Distributed under the W3C Software License.
     media type of a file (e.g., by the presence of the <code title="content element"><a href="#the-content-element-and-its-attributes">content</a></code> element's <code title="content type"><a href="#the-type-attribute">type</a></code> attribute or deriving the media type of a <a href="#default-start-file">default start file</a> from the <a href="#default-start-files-table">default start files table</a>).</p>
   <ol>
     <li>
-      <p>Let <var title="">file</var> be the <a href="#file">file</a> to be processed. </p>
+      <p><var title="">file</var>은 진행될 <a href="#file">파일</a>로 설정합니다. </p>
     </li>
     <li>
-      <p>Let <var>content-type</var> be an empty string.</p>
+      <p><var>content-type</var>은 공백으로 둡니다.</p>
     </li>
     <li>
-      <p>Let <var>extension</var> be an empty string.</p>
+      <p><var>extension</var>은 공백으로 둡니다.</p>
     </li>
     <li>
-      <p>Let <var>name</var> be the <code><a href="#file-name">file-name</a></code> component of the <a href="#zip-relative-path">zip relative path</a> that identifies the <var><a href="#file">file</a></var>.</p>
-      <p class="example">For example, the <var>name</var> for "<code>some/zip/rel/path/hello.png</code>" would be "<code>hello.png</code>". </p>
+      <p><var>name</var>은 <var><a href="#file">파일</a></var>을 식별하는 <a href="#zip-relative-path">zip 상대 경로</a>의  <code><a href="#file-name">file-name</a></code> 컴포넌트로 설정합니다.</p>
+      <p class="example">예를 들어, "<code>some/zip/rel/path/hello.png</code>"의 <var>name</var>은 "<code>hello.png</code>"입니다. </p>
     </li>
     <li>
-      <p>If the first character of the <var>name</var> is  a   U+002E 'FULL STOP'  character, and the file name contains no other U+002E 'FULL STOP'  character, then go to step 10 of this algorithm. </p>
-      <p class="example">For example, if the name is "<samp>.htaccess</samp>", jump to step 10 and derive the media type using   the <a href="#sniff">[SNIFF]</a> specification. </p>
+      <p><var>name</var>의 첫 번째 문자가 '마침표(U+002E)'이고 파일 이름에 마침표가 더 이상 포함되어 있지 않다면, 이 알고리즘의 10번째 단계로 가세요. </p>
+      <p class="example">예를 들어, 만약 이름이 "<samp>.htaccess</samp>"라면, 10 단계로 가서 <a href="#sniff">[SNIFF]</a> 명세를 사용해서 미디어 타입을 구하세요. </p>
     </li>
     <li>
-      <p>If the first character or last character of the <var>name</var> is  not a   U+002E 'FULL STOP'  character, but <var>name</var> contains one or more U+002E 'FULL STOP'  characters, then let <var>extension</var> be the sequence of characters from the last U+002E 'FULL STOP' (inclusive) to the end of <var>name</var>. </p>
-      <p class="example">The value of <var>extension</var> for the file name "<samp>cat.html</samp>" would be ".<samp><a href="#html">html</a></samp>". The value of extension for "...html" would be ".html". And the value of <var>extension</var> for "hello." would be an empty string. </p>
+      <p>만약 <var>name</var>의 첫 문자 또는 마지막 문자가 마침표가 아니며, 하나 이상의 마침표들을 포함되어 있다면, 마지막 마침표(를 포함하여)부터 <var>name</var>의 끝까지의 문자열이 <var>extension</var>이 됩니다. </p>
+      <p class="example">파일 이름이 "<samp>cat.html</samp>"인 경우 <var>extension</var>의 값은 ".<samp><a href="#html">html</a></samp>" 입니다."...html"의 확장자 값은 ".html"입니다. 그리고 "hello."의 <var>extension</var> 값은 빈 문자열입니다. </p>
     </li>
     <li>
-      <p>If the first character of the <var>name</var> is  a   U+002E 'FULL STOP'  character, and the file name contains another U+002E 'FULL STOP'  character, then let <var>extension</var> be the sequence of characters from the last U+002E 'FULL STOP' (inclusive) to the end of <var>name</var> (if any). </p>
-      <p class="example">For example, if the <var>name</var> is "<samp>.myhidden.html</samp>", then the extension would be "<samp><a href="#html">.html</a></samp>".</p>
+      <p><var>name</var>의 첫번째 문자가 마침표이고 다른 마침표를 포함하고 있다면 <var>extension</var>의 값은 (만약 있다면) 마지막 마침표(를 포함하여)부터 <var>name</var> 끝까지의 문자열입니다 . </p>
+      <p class="example">예를 들어 만약 <var>name</var>이 "<samp>.myhidden.html</samp>"이라면, 확장자는 "<samp><a href="#html">.html</a></samp>"이 됩니다.</p>
     </li>
     <li>
-      <p>If <var>extension</var> is an empty string, go to step 10 in this algorithm.</p>
+      <p>만약 <var>extension</var>이 빈 문자열이라면 이 알고리즘의 10번째 단계로 가세요.</p>
     </li>
     <li>
-      <p>Check that  each  character in the <var> extension</var> is either in the  U+0041-U+005A range or in the  U+0061-U+007A range (ASCII uppercase and lowercase characters, respectively) or in the U+0030-U+0039 range (ASCII numbers 0 to 9): </p>
+      <p><var> extension</var>의 각 문자가 U+0041-U+005A 범위내이거나 또는 U+0061-U+007A 사이 (각각 대문자  A-Z/소문자a-z ASCII 문자들) 또는 U+0030-U+0039(0 부터 9 까지의 ASCII 숫자들) 범위내에 있는지 확인하세요 : </p>
       <ol>
         <li>
-          <p>If any  character in the <var>extension</var> is outside  the    U+0041-U+005A range or  the  U+0061-U+007A range or the U+0030-U+0039 range, then go to step 10 in this algorithm. </p>
-          <p class="example">For example, if the extension is "<samp>.pñg</samp>", the go to step 10 in this algorithm. </p>
+          <p>만약 <var>extension</var>의 한 문자라도  U+0041-U+005A 범위 이외이거나 U+0061-U+007A 범위 또는 U+0030-U+0039 범위 이외라면, 이 알고리즘의 10번째 단계로 가세요. </p>
+          <p class="example">예를 들어 만약 확장자가 "<samp>.pñg</samp>"라면, 이 알고리즘의 10번째 단계로 가세요. </p>
         </li>
         <li>
-          <p> If all characters in the <var>extension</var> are in any of the  U+0041-U+005A range or in the  U+0061-U+007A range  or the U+0030-U+0039 range (e.g., "<code>Mp3</code>"), then attempt to case-insensitive match
-            the value of <var>extension</var> to one of the values in the file extension column in the <a href="#file-identification-table">file identification table</a>. If there is a match, then return let <var>content-type</var> be the corresponding value from the <a href="#media-type-0">media type</a> column. </p>
+          <p><var>extension</var>의 모든 문자가 U+0041-U+005A 범위내 또는 U+0061-U+007A 범위 또는 U+0030-U+0039 범위내에 있다면 ("<code>Mp3</code>" 같이), 대소문자 상관없이
+            <var>extension</var>의 값을 <a href="#file-identification-table">파일 식별 테이블</a>에 있는 파일 확장자 항목 값들과 매치해 봅니다. 만약 일치하는 것이 있다면, <a href="#media-type-0">미디어 타입</a> 항목에서 대응대는 값을 <var>content-type</var>으로 설정 반환합니다. </p>
         </li>
         <li>
-          <p>Go to step 11.</p>
+          <p>11번째 단계로 갑니다.</p>
         </li>
       </ol>
     </li>
     <li>
-      <p> Let <var>content-type</var> be the result of processing <var><a href="#file">file</a></var> through the <a href="#sniff">[SNIFF]</a> specification. </p>
+      <p> <var>content-type</var>은 <a href="#sniff">[SNIFF]</a> 명세를 통한 <var><a href="#file">파일</a></var> 처리 결과를 설정합니다. </p>
     </li>
-    <li>Return the value of <var>content-type</var>.</li>
+    <li><var>content-type</var>의 값을 반환합니다.</li>
   </ol>
   <table>
     <caption>
-    <dfn id="file-identification-table">File Identification Table</dfn>
+    <dfn id="file-identification-table">파일 식별 테이블</dfn>
     </caption>
     <thead>
       <tr>
-        <th scope="col">file extension</th>
-        <th scope="col">media type</th>
+        <th scope="col">파일 확장자</th>
+        <th scope="col">미디어 타입</th>
       </tr>
     </thead>
     <tr>
@@ -2693,7 +2693,7 @@ Distributed under the W3C Software License.
       <td>audio/mpeg</td>
     </tr>
   </table>
-  <p>It is <em class="ct">optional</em> for a <a class="product-ua" href="#user-agent">user agent</a> to <a href="#supported" title="supported">support</a> the <a href="#media-type-0" title="media type">media types</a> given in the <a href="#file-identification-table">file identification table</a>. </p>
+  <p><a class="product-ua" href="#user-agent">유저 에이전트</a>가 <a href="#file-identification-table">파일 식별 테이블</a>에 보여지는 <a href="#media-type-0" title="media type">미디어 타입들</a>을 <a href="#supported" title="supported">지원</a>하는 것은 <em class="ct">optional</em> 합니다. </p>
   <h4 id="rule-for-deriving-the-user-agent-locales"><span class="secno">9.1.12 </span><var title="">user agent locales</var> 도출에 대한 규칙</h4>
   <p>The <dfn id="rule-for-deriving-the-user-agent-locales-0">rule for deriving the <var>user agent locales</var></dfn> is as follows: </p>
   <ol>
