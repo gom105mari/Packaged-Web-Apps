@@ -2692,62 +2692,55 @@ Distributed under the W3C Software License.
   </table>
   <p><a class="product-ua" href="#user-agent">유저 에이전트</a>가 <a href="#file-identification-table">파일 식별 테이블</a>에 보여지는 <a href="#media-type-0" title="media type">미디어 타입들</a>을 <a href="#supported" title="supported">지원</a>하는 것은 <em class="ct">optional</em> 합니다. </p>
   <h4 id="rule-for-deriving-the-user-agent-locales"><span class="secno">9.1.12 </span><var title="">user agent locales</var> 도출에 대한 규칙</h4>
-  <p>The <dfn id="rule-for-deriving-the-user-agent-locales-0">rule for deriving the <var>user agent locales</var></dfn> is as follows: </p>
+  <p><dfn id="rule-for-deriving-the-user-agent-locales-0"><var>user agent locales</var>를 도출하기 위한 규칙</dfn>은 다음과 같습니다: </p>
   <ol>
     <li>
-      <p>Let <var>unprocessed locales list</var> be a list that  contains the <a href="#system">end-user's language ranges</a>.</p>
+      <p><var>unprocessed locales list</var>는 <a href="#system">최종 사용자의 언어 종류</a>를 포함하는 리스트로 설정합니다.</p>
     </li>
     <li>
-      <p>For each <var>range</var> in the <var>unprocessed locales list</var>: </p>
+      <p><var>unprocessed locales list</var>의 각각의 <var>range</var>에 대해: </p>
       <ol>
         <li>
-          <p>If this <var>range</var> begins with the <a href="#subtags" title="subtags">subtag</a> '<code>*</code>' (e.g. "<code>*-us</code>" or just "<code>*</code>"),  or contains any <a href="#space-characters">space characters</a>, skip
-            all the steps in this algorithm below, and move onto the next <var>range</var>.</p>
+          <p>만약 이 <var>range</var>가 <a href="#subtags" title="subtags">subtag</a> '<code>*</code>' (예를 들어 "<code>*-us</code>" 또는 그냥 "<code>*</code>")로 시작하거나,  아무 <a href="#space-characters">공백 문자들</a>을 포함하고 있다면,
+          	이 알고리즘 아래의 모든 단계들은 건너 뛰고 다음 <var>range</var>로 이동하세요.</p>
         </li>
         <li>
-          <p>If this <var>range</var> begins with the <a href="#subtags" title="subtags">subtag</a> "<code>i</code>" or the <var>range</var> is marked as "deprecated" in the <a href="http://www.iana.org/assignments/language-subtag-registry">IANA Language Subtag
-            Registry</a>, or is or is null, skip
-            all the steps in this algorithm below, and move onto the next <var>range</var>. </p>
+          <p>만약 이 <var>range</var>가 <a href="#subtags" title="subtags">subtag</a> "<code>i</code>"로 시작하거나 또는  <var>range</var>가 <a href="http://www.iana.org/assignments/language-subtag-registry">IANA Language Subtag
+            Registry</a>에  "deprecated"로 표시되어 있다면, or is 또는  null이면,이 알고리즘의 아래에 나오는 모든 단계들은 건너 뛰고 다음 <var>range</var>로 이동하세요. </p>
         </li>
         <li>
-          <p>If this <var>range</var> contains any <a href="#subtags" title="subtags">subtag</a> '<code>*</code>', remove the '<code>*</code>' and its preceding hyphen
-            (<code>U+002D</code>) (e.g., '<code>en-*-us</code>' becomes
-            '<code>en-us</code>').</p>
+          <p>만약 이 <var>range</var>가 어떤 <a href="#subtags" title="subtags">subtag</a> '<code>*</code>'라도 포함한다면, '<code>*</code>'와 앞쪽 하이픈(<code>U+002D</code>)을 삭제하세요
+             (예시로, '<code>en-*-us</code>'은 '<code>en-us</code>'이 됩니다).</p>
         </li>
         <li>
-          <p>While <var>range</var> contains <a href="#subtags" title="subtags">subtags</a>:</p>
+          <p><var>range</var>가 포함하는 <a href="#subtags" title="subtags">subtags</a>에 대해:</p>
           <ol style="list-style:decimal">
             <li>
-              <p>Add the value of the <var>range</var> to the <var><a href="#user-agent-locales">user agent
-                locales</a></var>.</p>
+              <p><var>range</var> 값을 <var><a href="#user-agent-locales">user agent
+                locales</a></var>에 추가합니다.</p>
             </li>
             <li>
-              <p>Remove the right most <a href="#subtags" title="subtags">subtag</a> from <var>range</var> and append the resulting value to <var><a href="#user-agent-locales">user agent
-                locales</a></var>. Continue removing the right most <a href="#subtags" title="subtags">subtag</a> and adding the result to <var><a href="#user-agent-locales">user agent
-                locales</a></var> until there are no <a href="#subtags">subtags</a> left in <var>range</var>.</p>
-              <p class="example">For example, if the <var>range</var> was "<code>zh-hans-cn</code>",
-                then the <var><a href="#user-agent-locales">user agent locales</a></var> become
-                "<code>zh-hans-cn,zh-hans,zh</code>".</p>
+              <p><var>range</var>에서 가장 오른쪽에 있는 <a href="#subtags" title="subtags">subtag</a>를 삭제하고 <var><a href="#user-agent-locales">user agent
+                locales</a></var>의 결과 값에 덧붙입니다. <var>range</var>에 <a href="#subtags">subtags</a>들이 남지 않을 때까지 계속해서 가장 오른쪽에 있는 <a href="#subtags" title="subtags">subtag</a>를 삭제하고 <var><a href="#user-agent-locales">user agent
+                locales</a></var>의 결과에 추가합니다.</p>
+              <p class="example">예를 들면, 만약 <var>range</var>가 "<code>zh-hans-cn</code>"라면,
+                <var><a href="#user-agent-locales">user agent locales</a></var>는  "<code>zh-hans-cn,zh-hans,zh</code>"가 됩니다.</p>
             </li>
             <li>
-              <p> Move onto the next <var>range</var> and go to step 1 in this
-                algorithm. </p>
+              <p> 다음 <var>range</var>로 넘어가 이 알고리즘의 1번 단계로 이동하세요. </p>
             </li>
           </ol>
         </li>
       </ol>
     </li>
     <li>
-      <p>Append the value "<code>*</code>" to the end of <var><a href="#user-agent-locales">user agent
-        locales</a></var>.</p>
+      <p><var><a href="#user-agent-locales">user agent
+        locales</a></var>의 마지막에 "<code>*</code>"를 추가합니다.</p>
     </li>
   </ol>
-  <p class="example">For example, an <var>unprocessed locales list</var> that contains
-    "<code>en-us,en-au,en,fr-ca,zh-hans-cn</code>" would result in a <var><a href="#user-agent-locales">user agent
-    locales</a></var> that contains
-    "<code>en-us,en,en-au,en,en,fr-ca,fr,zh-hans-cn,zh-hans,zh,*</code>".</p>
-  <p class="example">For example, an <var>unprocessed locales list</var> that contains
-    "<code>en-us,en,fr-ca,en,en-ca</code>" would result in a <var><a href="#user-agent-locales">user agent locales</a></var> that contains "<code>en-us,en,en,fr-ca,fr,en,en-ca,en,*</code>". </p>
+  <p class="example">예를 들면, "<code>en-us,en-au,en,fr-ca,zh-hans-cn</code>"을 포함하는 <var>unprocessed locales list</var>의 결과는 "<code>en-us,en,en-au,en,en,fr-ca,fr,zh-hans-cn,zh-hans,zh,*</code>"를 포함하는
+    <var><a href="#user-agent-locales">user agent locales</a></var>입니다 .</p>
+  <p class="example">예를 들어, "<code>en-us,en,fr-ca,en,en-ca</code>"을 가지는 <var>unprocessed locales list</var>의 결과는 "<code>en-us,en,en,fr-ca,fr,en,en-ca,en,*</code>"를 포함하는 <var><a href="#user-agent-locales">user agent locales</a></var>입니다. </p>
   <h4 id="rule-for-determining-if-a-potential-zip-archive-is-a-zip-archive"><span class="secno">9.1.13 </span>Rule for Determining if a Potential Zip Archive is a Zip Archive</h4>
   <p>The <dfn id="rule-for-determining-if-a-potential-zip-archive-is-a-zip-archive-0">rule for determining if a potential Zip archive is a Zip archive</dfn> is
     given by the following algorithm.</p>
