@@ -2767,17 +2767,14 @@ Distributed under the W3C Software License.
   만약 유저 에이전트가 미디어 타입으로 분류된 잠재적 Zip 아카이브 획득을 <a href="#supported" title="supported">지원</a>한다면 <a class="product-ua" href="#user-agent">유저 에이전트</a>는 리소스가 파일 확장자를 포함하는지 마는지의 여부와 상관없이, <a href="#rule-for-determining-if-a-potential-zip-archive-is-a-zip-archive-0">잠재적 Zip 아카이브가 Zip 아카이브인지 결정하는 룰</a>을 적용하여 <a href="#valid-widget-media-type">유효한 위젯 미디어 타입</a>(<code>application/widget</code>)으로 분류하는 처리가 필요합니다.
    <a href="#acquisition-of-a-potential-zip-archive-labeled-with-a-media-type">미디어 타입으로 분류된 잠재적 Zip 아카이브 획득</a>하는 도중, 유저 에이전트가 기존 또는 이미 분류된 <a href="#media-type-0" title="media type">미디어 타입</a>들을 <a href="#supported" title="supported">지원</a>하지 않으면, <a href="#unsupported">미 지원하는</a> <a href="#media-type-0" title="media type">미디어 타입</a>들은 에러 처리하고 
 <a class="product-ua" href="#user-agent">유저 에이전트</a>는 <em class="ct">반드시(must)</em> <a href="#potential-zip-archive">잠재적 Zip 아카이브</a>를 <a href="#invalid-widget-package-0">유효하지 않은 위젯 패키지</a>로 처리해야 합니다.</p>
-  <p id="ta-qxLSCRCHlN">If the result of  the user agent applying the <a href="#rule-for-determining-if-a-potential-zip-archive-is-a-zip-archive-0">rule for determining
-    if a potential Zip archive is a Zip archive</a> is <code>true</code>, meaning that the <a href="#potential-zip-archive">potential Zip archive</a> is a <a href="#zip-archive-0">Zip archive</a>, then the <a class="product-ua" href="#user-agent">user agent</a> <em class="ct">must</em> proceed
-    to <a href="#step-2-verify-the-zip-archive">Step 2</a>. Otherwise, if an error is returned, the <a class="product-ua" href="#user-agent">user agent</a> <em class="ct">must</em> treat the <a href="#potential-zip-archive">potential Zip archive</a> as an <a href="#invalid-widget-package-0">invalid widget package</a>. </p>
-  <p class="example">For example, in <a href="#http">[HTTP]</a>, where the <code>Content-Type</code> header matches <code>application/widget</code>.</p>
-  <p>If the protocol used for acquisition of a <a href="#potential-zip-archive">potential Zip archive</a> does
-    not provide, or otherwise include, a <a href="#media-type-0">media type</a>, then a <a class="product-ua" href="#user-agent">user agent</a> <em class="ct">should</em> treat the acquired <a href="#potential-zip-archive">potential Zip archive</a> as if
-    it has been <a href="#acquisition-of-potential-zip-archive-not-labeled-with-a-media-type" title="Acquisition of potential Zip archive not labeled with a media type">acquired from a protocol that does not label resources with a media
-    type</a>.</p>
+  <p id="ta-qxLSCRCHlN">만약 유저 에이전트가 <a href="#rule-for-determining-if-a-potential-zip-archive-is-a-zip-archive-0">잠재적 Zip 아카이브가 Zip 아카이브인지 결정하는 룰</a>을 적용한 결과가 <code>true</code>면,
+   이는 <a href="#potential-zip-archive">잠재적 Zip 아카이브</a>가 <a href="#zip-archive-0">Zip 아카이브</a>라는 것을 의미하며, <a class="product-ua" href="#user-agent">유저 에이전트</a> <em class="ct">반드시(must)</em> <a href="#step-2-verify-the-zip-archive">Step 2</a>를 진행해야만 합니다. 반면에, 에러를 리턴한다면,
+   <a class="product-ua" href="#user-agent">유저 에이전트</a>는 <em class="ct">반드시(must)</em> <a href="#potential-zip-archive">잠재적 Zip 아카이브</a>를 <a href="#invalid-widget-package-0">유효하지 않은 위젯 패키지</a>로 처리해야 합니다. </p>
+  <p class="example">예를 들면, <a href="#http">[HTTP]</a>, where the <code>Content-Type</code> header matches <code>application/widget</code>.</p>
+  <p>만약 <a href="#potential-zip-archive">잠재적 Zip 아카이브</a>의 획득에 사용되는 프로토콜이 제공되지 않지만, <a href="#media-type-0">미디어 타입</a>을 포함하고 있다면 
+  <a class="product-ua" href="#user-agent">유저 에이전트</a>는 획득한 <a href="#potential-zip-archive">잠재적 Zip 아카이브</a>를 마치 <a href="#acquisition-of-potential-zip-archive-not-labeled-with-a-media-type" title="Acquisition of potential Zip archive not labeled with a media type">미디어 타입으로 분류되지 않은 Potential Zip 아카이브 획득</a>된 것처럼 처리해야만<em class="ct">(should)</em> 합니다.</p>
   <div class="example">
-    <p>In this example, the <a href="#media-type-0">media type</a> of the <code>Content-Type</code> is
-      not one <a href="#supported">supported</a> by the user agent, so the user agent would treat the <a href="#potential-zip-archive">potential Zip archive</a> as an <a href="#invalid-widget-package-0">invalid widget package</a>:</p>
+    <p>이 예제에서, <code>Content-Type</code>의 <a href="#media-type-0">미디어 타입</a>은 유저 에이전트가 <a href="#supported">지원하는</a> 타입이 아니므로 유저 에이전트는 <a href="#potential-zip-archive">잠재적 Zip 아카이브</a>를 <a href="#invalid-widget-package-0">유효하지 않은 패키지</a>로 처리합니다:</p>
     <dl>
       <dt>Request</dt>
       <dd>
