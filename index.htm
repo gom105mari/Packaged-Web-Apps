@@ -2770,7 +2770,7 @@ Distributed under the W3C Software License.
   <p id="ta-qxLSCRCHlN">만약 유저 에이전트가 <a href="#rule-for-determining-if-a-potential-zip-archive-is-a-zip-archive-0">잠재적 Zip 아카이브가 Zip 아카이브인지 결정하는 룰</a>을 적용한 결과가 <code>true</code>면,
    이는 <a href="#potential-zip-archive">잠재적 Zip 아카이브</a>가 <a href="#zip-archive-0">Zip 아카이브</a>라는 것을 의미하며, <a class="product-ua" href="#user-agent">유저 에이전트</a> <em class="ct">반드시(must)</em> <a href="#step-2-verify-the-zip-archive">Step 2</a>를 진행해야만 합니다. 반면에, 에러를 리턴한다면,
    <a class="product-ua" href="#user-agent">유저 에이전트</a>는 <em class="ct">반드시(must)</em> <a href="#potential-zip-archive">잠재적 Zip 아카이브</a>를 <a href="#invalid-widget-package-0">유효하지 않은 위젯 패키지</a>로 처리해야 합니다. </p>
-  <p class="example">예를 들면, <a href="#http">[HTTP]</a>, where the <code>Content-Type</code> header matches <code>application/widget</code>.</p>
+  <p class="example">예를 들면, <a href="#http">[HTTP]</a>의 <code>Content-Type</code> 헤더를 <code>application/widget</code>와 매치시킵니다.</p>
   <p>만약 <a href="#potential-zip-archive">잠재적 Zip 아카이브</a>의 획득에 사용되는 프로토콜이 제공되지 않지만, <a href="#media-type-0">미디어 타입</a>을 포함하고 있다면 
   <a class="product-ua" href="#user-agent">유저 에이전트</a>는 획득한 <a href="#potential-zip-archive">잠재적 Zip 아카이브</a>를 마치 <a href="#acquisition-of-potential-zip-archive-not-labeled-with-a-media-type" title="Acquisition of potential Zip archive not labeled with a media type">미디어 타입으로 분류되지 않은 Potential Zip 아카이브 획득</a>된 것처럼 처리해야만<em class="ct">(should)</em> 합니다.</p>
   <div class="example">
@@ -2793,22 +2793,25 @@ Content-Type: application/x-gadget</code></pre>
     </dl>
   </div>
   <h4 id="acquisition-of-potential-zip-archive-not-labeled-with-a-media-type"><span class="secno">9.1.2 </span><dfn>미디어 타입으로 분류되지 않은 Potential Zip 아카이브 획득</dfn></h4>
-  <p id="ta-FDGQBROtzW">When acquiring a potential Zip archive that has not been labeled with a media type (e.g., from a file system), a <a class="product-ua" href="#user-agent">user agent</a> <em class="ct">should</em> attempt to process
-    the resource regardless of the file extension (including situations when the file
-    extension is absent) by applying the <a href="#rule-for-determining-if-a-potential-zip-archive-is-a-zip-archive-0">rule for determining if a potential Zip
-    archive is a Zip archive</a>. If the <a href="#rule-for-determining-if-a-potential-zip-archive-is-a-zip-archive-0">rule for determining if a potential Zip
-    archive is a Zip archive</a> return <code>true</code>, proceed to <a href="#step-2-verify-the-zip-archive">Step
-    2</a>. Otherwise, if an error was returned, the <a class="product-ua" href="#user-agent">user agent</a> <em class="ct">must</em> treat the <a href="#potential-zip-archive">potential Zip archive</a> as an <a href="#invalid-widget-package-0">invalid widget package</a>.</p>
+  <p id="ta-FDGQBROtzW">미디어 타입으로 분류되지 않은 잠재적인 Zip 아카이브를 획득할 때(예를 들면, 파일 시스템으로 부터), <a class="product-ua" href="#user-agent">유저 에이전트</a>는 
+    파일 확장자와 상관없이(파일 확장자가 없는 경우도 포함) <a href="#rule-for-determining-if-a-potential-zip-archive-is-a-zip-archive-0">잠재적인 Zip
+    아카이브가 Zip 아카이브인지 결정하는 룰</a>을 적용하여 리소스를 처리하도록 시도해야만<em class="ct">(should)</em> 합니다.
+     만약 <a href="#rule-for-determining-if-a-potential-zip-archive-is-a-zip-archive-0">잠재적인 Zip
+    아카이브가 Zip 아카이브인지 결정하는 룰</a>이 <code>true</code>를 리턴하면, <a href="#step-2-verify-the-zip-archive">Step
+    2</a>를 진행합니다. 반면에, 에러를 리턴하면, <a class="product-ua" href="#user-agent">유저 에이전트</a>는 <em class="ct">반드시(must)</em> <a href="#potential-zip-archive">잠재적인 Zip 아카이브</a>
+    를 <a href="#invalid-widget-package-0">유효하지 않은 위젯 패키지</a>로 처리해야 합니다.</p>
   <h3 class="no-num done" id="step-2-verify-the-zip-archive"><dfn>Step 2</dfn> - <dfn>Zip 아카이브 검증</dfn></h3>
-  <p id="ta-uLHyIMvLwz">To verify that a <a href="#zip-archive-0">Zip archive</a> and its <a href="#file-entry" title="file entry">file
-    entries</a> conform to this specification, a <a class="product-ua" href="#user-agent">user agent</a> <em class="ct">must</em> apply the <a href="#rule-for-verifying-a-zip-archive-0">rule for verifying a zip archive</a>. If the <a href="#rule-for-verifying-a-zip-archive-0">rule for verifying a zip archive</a> returns <code>true</code>, then the <a class="product-ua" href="#user-agent">user agent</a> <em class="ct">must</em> go to <a href="#step-3-set-the-configuration-defaults">Step 3</a>. Otherwise, if the <a href="#rule-for-verifying-a-zip-archive-0">rule for verifying a zip archive</a> returns an error, then  the <a class="product-ua" href="#user-agent">user agent</a> <em class="ct">must</em> treat the <a href="#zip-archive-0">Zip
-    archive</a> as an <a href="#invalid-widget-package-0">invalid widget package</a>.</p>
+  <p id="ta-uLHyIMvLwz"><a href="#zip-archive-0">Zip 아카이브</a>와 그것의 <a href="#file-entry" title="file entry">파일 엔트리들</a>이 이 명세를 준수하는지 검증하기 위해,
+  <a class="product-ua" href="#user-agent">유저 에이전트</a>는 <a href="#rule-for-verifying-a-zip-archive-0">zip 아카이브를 검증하는 룰</a>을 <em class="ct">반드시(must)</em> 적용해야 합니다.
+  만약 <a href="#rule-for-verifying-a-zip-archive-0">zip 아카이브를 검증하는 룰</a>이 <code>true</code>를 리턴하면, <a class="product-ua" href="#user-agent">유저 에이전트</a>는
+   <a href="#step-3-set-the-configuration-defaults">Step 3</a>를 진행할 것입니다<em class="ct">(must)</em>. 반대로, <a href="#rule-for-verifying-a-zip-archive-0">zip 아카이브를 검증하는 룰</a>이
+   에러를 리턴하면 <a class="product-ua" href="#user-agent">유저 에이전트</a>는 <a href="#zip-archive-0">Zip
+    아카이브</a>를 <a href="#invalid-widget-package-0">유효하지 않은 위젯 패키지</a>로 처리할 것입니다<em class="ct">(must)</em>.</p>
   <h3 class="no-num" id="step-3-set-the-configuration-defaults"><dfn>Step 3</dfn> - 기본 Configuration 설정</h3>
-  <p>In <a href="#step-3-set-the-configuration-defaults">Step 3</a>, a <a class="product-ua" href="#user-agent">user agent</a> <em class="ct">must</em> set the following variables and
-    default values as defined in the <a href="#table-of-configuration-defaults">table of configuration defaults</a>. </p>
-  <p class="note"><span class="notetitle">주석:</span> When a <code><a href="#null">null</a></code> value is assigned to a variable in the <a href="#table-of-configuration-defaults">table of
-    configuration defaults</a>, a user agent needs to treats
-    the value as <code><a href="#null">null</a></code> (i.e., not as an empty string and not as the text string <code><a href="#null">"null"</a></code>).</p>
+  <p><a href="#step-3-set-the-configuration-defaults">Step 3</a>에선, <a class="product-ua" href="#user-agent">유저 에이전트</a>는 <a href="#table-of-configuration-defaults">설정(configuration) 기본값 테이블</a>에 정의된 대로
+   다음 변수들과 기본 값들을 설정해야만<em class="ct">(must)</em> 합니다. </p>
+  <p class="note"><span class="notetitle">주석:</span><a href="#table-of-configuration-defaults">설정(configuration) 기본값 테이블</a>의 변수에 <code><a href="#null">null</a></code>이 할당되어 있을때,
+  유저 에이전트는 (빈 문자열이나 <code><a href="#null">"null"</a></code>이라는 텍스트 문자열이 아닌) <code><a href="#null">null</a></code>로 처리해야 합니다.</p>
   <table>
     <caption>
     <dfn id="table-of-configuration-defaults">Table of Configuration Defaults</dfn>
