@@ -25,8 +25,8 @@
 
 ## 번역 지침
 * 고유 단어로 유지할 것
- * Configuration
- * Widget
+ * Configuration -> 그냥 설정 문서로 바꾸자 
+ * Widget -> 그냥 위젯으로 바꾸자 
  * Zip
  * namespace
  * root
