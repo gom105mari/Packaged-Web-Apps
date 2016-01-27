@@ -2814,7 +2814,7 @@ Content-Type: application/x-gadget</code></pre>
   유저 에이전트는 (빈 문자열이나 <code><a href="#null">"null"</a></code>이라는 텍스트 문자열이 아닌) <code><a href="#null">null</a></code>로 처리해야 합니다.</p>
   <table>
     <caption>
-    <dfn id="table-of-configuration-defaults">Table of Configuration Defaults</dfn>
+    <dfn id="table-of-configuration-defaults">설정 기본값 테이블(Table of Configuration Defaults)</dfn>
     </caption>
     <thead>
       <tr>
@@ -2827,31 +2827,31 @@ Content-Type: application/x-gadget</code></pre>
         <th scope="row"><dfn id="author-email-var" title="author email var"><var>author email</var></dfn></th>
         <td>String</td>
         <td><a href="#step-7-process-the-configuration-document">Step 7</a></td>
-        <td> The value of the <code title="author element"><a href="#the-author-element-and-its-attributes">author</a></code> element's <code title="author email"><a href="#the-email-attribute">email</a></code> attribute (if any).</td>
+        <td> <code title="author element"><a href="#the-author-element-and-its-attributes">author</a></code> 요소의 <code title="author email"><a href="#the-email-attribute">email</a></code> 속성 값 (if any).</td>
       </tr>
       <tr>
         <th scope="row"><dfn id="author-href"><var>author href</var></dfn></th>
         <td>IRI</td>
         <td><a href="#step-7-process-the-configuration-document">Step 7</a></td>
-        <td>The value of the <code title="author element"><a href="#the-author-element-and-its-attributes">author</a></code> element's <code title="author-element href"><a href="#the-href-attribute">href</a></code> attribute (if any).</td>
+        <td><code title="author element"><a href="#the-author-element-and-its-attributes">author</a></code> 요소의  <code title="author-element href"><a href="#the-href-attribute">href</a></code> 속성 값 (if any).</td>
       </tr>
       <tr>
         <th scope="row"><dfn id="author-name"><var>author name</var></dfn></th>
         <td>String</td>
         <td><a href="#step-7-process-the-configuration-document">Step 7</a></td>
-        <td>A <a href="#localizable-string">localizable string</a> that represents the content of the <code title="author element"><a href="#the-author-element-and-its-attributes">author</a></code> element (if any).</td>
+        <td><code title="author element"><a href="#the-author-element-and-its-attributes">author</a></code> 요소의 컨텐츠를 나타내는 <a href="#localizable-string">현지화 가능한 문자열(localizable string)</a> (if any).</td>
       </tr>
       <tr>
         <th scope="row"><dfn id="feature-list"><var>feature list</var></dfn></th>
         <td>List</td>
         <td><a href="#step-7-process-the-configuration-document">Step 7</a></td>
-        <td>A list of features that correspond to features that were requested via <code title="feature element"><a href="#the-feature-element-and-its-attributes">feature</a></code> elements (if any). Each item in the list corresponds to a <code title="feature element"><a href="#the-feature-element-and-its-attributes">feature</a></code> element's <code title="name element"><a href="#the-name-element-and-its-attributes">name</a></code> attribute, whether it is required, and any associated <a href="#parameter" title="parameter'">parameters</a> (if any).</td>
+        <td><code title="feature element"><a href="#the-feature-element-and-its-attributes">feature</a></code> 요소를 통해 요청 되었던 피쳐들에 해당하는 피쳐들의 리스트 (if any). 리스트의 각각의 아이템은 <code title="feature element"><a href="#the-feature-element-and-its-attributes">feature</a></code> 요소의 <code title="name element"><a href="#the-name-element-and-its-attributes">name</a></code> 속성에 해당되며, whether it is required, and any associated <a href="#parameter" title="parameter'">parameters</a> (if any).</td>
       </tr>
       <tr>
         <th scope="row"><dfn id="icons-0"><var>icons</var></dfn></th>
         <td>List of file entries</td>
         <td><a href="#step-7-process-the-configuration-document">Step 7</a>, <a href="#step-9-process-the-default-icons">Step 9</a></td>
-        <td>The icons of the widget as they correspond to the <a href="#default-icon" title="default icon">default icons</a> and to the occurrence of <a href="#custom-icon" title="custom icon">custom icons</a> that are <a href="#supported">supported</a> by the <a href="#widget-package">widget package</a> (if any).</td>
+        <td><a href="#widget-package">위젯 패키지</a>가 <a href="#supported">지원</a>하는 <a href="#default-icon" title="default icon">기본 아이콘들</a>과 <a href="#custom-icon" title="custom icon">커스텀 아이콘들</a> 표시에 해당되는 위젯의 아이콘들 (if any).</td>
       </tr>
       <tr>
         <th scope="row"><dfn id="start-file-encoding"><var>start file encoding</var></dfn></th>
@@ -2871,34 +2871,31 @@ Content-Type: application/x-gadget</code></pre>
         <th scope="row"><dfn id="widget-config-doc"><var>widget config doc</var></dfn></th>
         <td><a href="#file">File</a></td>
         <td><a href="#step-6-locate-the-configuration-document">Step 6</a></td>
-        <td>The <a href="#file">file</a> that is the <a href="#configuration-document-0">configuration document</a> for the <a href="#widget-package">widget package</a>.</td>
+        <td><a href="#widget-package">위젯 패키지</a>의 <a href="#configuration-document-0">설정 문서</a>인 <a href="#file">파일</a>.</td>
       </tr>
       <tr>
         <th scope="row"><dfn id="widget-description"><var>widget description</var></dfn></th>
         <td>String</td>
         <td><a href="#step-7-process-the-configuration-document">Step 7</a></td>
-        <td>The text
-          content of the <code title="description element"><a href="#the-description-element-and-its-attributes">description</a></code> element in
-          the <a href="#configuration-document-0">configuration document</a>.</td>
+        <td><a href="#configuration-document-0">설정 문서</a>에 있는 <code title="description element"><a href="#the-description-element-and-its-attributes">description</a></code> 요소의 텍스트 내용.</td>
       </tr>
       <tr>
         <th scope="row"><dfn id="widget-height"><var>widget height</var></dfn></th>
         <td>positive number</td>
         <td><a href="#step-7-process-the-configuration-document">Step 7</a></td>
-        <td>The value of the <code title="widget element"><a href="#the-widget-element-and-its-attributes">widget</a></code> element's <code title="widget-element height"><a href="#the-height-attribute">height</a></code> attribute in the <a href="#configuration-document-0">configuration document</a> (if any).</td>
+        <td><a href="#configuration-document-0">설정 문서</a>에 있는 <code title="widget element"><a href="#the-widget-element-and-its-attributes">widget</a></code> 요소의 <code title="widget-element height"><a href="#the-height-attribute">height</a></code> 속성 값 (if any).</td>
       </tr>
       <tr>
         <th scope="row"><dfn id="widget-id-var" title="widget id var"><var>widget id</var></dfn></th>
         <td>String</td>
         <td><a href="#step-7-process-the-configuration-document">Step 7</a></td>
-        <td><p> The value of the <code title="widget element"><a href="#the-widget-element-and-its-attributes">widget</a></code> element's <code>id</code> attribute in the <a href="#configuration-document-0">configuration document</a> (if any).</td>
+        <td><p><a href="#configuration-document-0">설정 문서</a>에 있는 <code title="widget element"><a href="#the-widget-element-and-its-attributes">widget</a></code> 요소의 <code>id</code> 속성 값 (if any).</td>
       </tr>
       <tr>
         <th scope="row"><dfn id="widget-license"><var>widget license</var></dfn></th>
         <td>String</td>
         <td><a href="#step-7-process-the-configuration-document">Step 7</a></td>
-        <td>The text content of the <code title="license element"><a href="#the-license-element-and-its-attributes">license</a></code> element in the <a href="#configuration-document-0">configuration
-          document</a> (if any).</td>
+        <td><a href="#configuration-document-0">설정 문서</a>에 있는 <code title="license element"><a href="#the-license-element-and-its-attributes">license</a></code> 요소의 텍스트 내용 (if any).</td>
       </tr>
       <tr>
         <th scope="row"><dfn id="widget-license-file"><var>widget license file</var></dfn></th>
@@ -2910,15 +2907,13 @@ Content-Type: application/x-gadget</code></pre>
         <th scope="row"><dfn id="widget-license-href"><var>widget license href</var></dfn></th>
         <td>IRI</td>
         <td><a href="#step-7-process-the-configuration-document">Step 7</a></td>
-        <td>The value of the <code title="license element"><a href="#the-license-element-and-its-attributes">license</a></code> element's <code title="license href"><a href="#the-href-attribute-0">href</a></code> attribute in the <a href="#configuration-document-0">configuration
-          document</a> (if any).</td>
+        <td><a href="#configuration-document-0">설정 문서</a>에 있는 <code title="license element"><a href="#the-license-element-and-its-attributes">license</a></code> 요소의 <code title="license href"><a href="#the-href-attribute-0">href</a></code> 속성 값 (if any).</td>
       </tr>
       <tr>
         <th scope="row"><dfn id="widget-name"><var>widget name</var></dfn></th>
         <td><a href="#localizable-string">Localizable String</a></td>
         <td><a href="#step-7-process-the-configuration-document">Step 7</a></td>
-        <td>The text content of the <code title="name element"><a href="#the-name-element-and-its-attributes">name</a></code> element in the <a href="#configuration-document-0">configuration
-          document</a> (if any).</td>
+        <td><a href="#configuration-document-0">설정 문서</a>에 있는 <code title="name element"><a href="#the-name-element-and-its-attributes">name</a></code> 요소의 텍스트 내용 (if any).</td>
       </tr>
       <tr>
         <th scope="row"><dfn id="widget-preferences"><var>widget preferences</var></dfn></th>
@@ -2935,7 +2930,7 @@ Content-Type: application/x-gadget</code></pre>
         <th scope="row"><dfn id="widget-short-name"><var>widget short name</var></dfn></th>
         <td><a href="#localizable-string">Localizable String</a></td>
         <td><a href="#step-7-process-the-configuration-document">Step 7</a></td>
-        <td>The value of the <code title="name element"><a href="#the-name-element-and-its-attributes">name</a></code> element's <code title="name short"><a href="#the-short-attribute">short</a></code> attribute in the <a href="#configuration-document-0">configuration document</a> (if any).</td>
+        <td><a href="#configuration-document-0">설정 문서</a> 내에 있는 <code title="content element"><a href="#the-content-element-and-its-attributes">widget</a></code> 요소의 <code title="name short"><a href="#the-short-attribute">short</a></code> 속성 값 (if any).</td>
       </tr>
     </thead>
     <tfoot>
@@ -2950,19 +2945,19 @@ Content-Type: application/x-gadget</code></pre>
       <th scope="row"><dfn id="widget-version"><var>widget version</var></dfn></th>
       <td><a href="#localizable-string">Localizable String</a></td>
       <td><a href="#step-7-process-the-configuration-document">Step 7</a></td>
-      <td>The value of the <code title="widget element"><a href="#the-widget-element-and-its-attributes">widget</a></code> element's <code title="widget-element version"><a href="#the-version-attribute">version</a></code> attribute in the <a href="#configuration-document-0">configuration document</a> (if any).</td>
+      <td><a href="#configuration-document-0">설정 문서</a> 내에 있는 <code title="content element"><a href="#the-content-element-and-its-attributes">widget</a></code> 요소의 <code title="widget-element version"><a href="#the-version-attribute">version</a></code> 속성 값 (if any).</td>
     </tr>
     <tr>
       <th scope="row"><dfn id="widget-width"><var>widget width</var></dfn></th>
       <td>positive number</td>
       <td><a href="#step-7-process-the-configuration-document">Step 7</a></td>
-      <td>The value of the <code title="widget element"><a href="#the-widget-element-and-its-attributes">widget</a></code> element's <code title="widget-element width"><a href="#the-width-attribute">width</a></code> attribute in the <a href="#configuration-document-0">configuration document</a> (if any).</td>
+      <td><a href="#configuration-document-0">설정 문서</a> 내에 있는 <code title="content element"><a href="#the-content-element-and-its-attributes">widget</a></code> 요소의 <code title="widget-element width"><a href="#the-width-attribute">width</a></code> 속성 값 (if any).</td>
     </tr>
     <tr>
       <th scope="row"><dfn id="widget-window-modes"><var>widget window modes</var></dfn></th>
       <td>List of strings</td>
       <td><a href="#step-7-process-the-configuration-document">Step 7</a></td>
-      <td>The value of the <code title="content element"><a href="#the-content-element-and-its-attributes">widget</a></code> element's <code>viewmodes</code> attribute in the <a href="#configuration-document-0">configuration document</a> (if any).</td>
+      <td><a href="#configuration-document-0">설정 문서</a> 내에 있는 <code title="content element"><a href="#the-content-element-and-its-attributes">widget</a></code> 요소의 <code>viewmodes</code> 속성 값 (if any).</td>
     </tr>
     <tr>
       <th scope="row"><dfn id="widget-start-file"><var>widget start file</var></dfn></th>
@@ -2975,19 +2970,14 @@ Content-Type: application/x-gadget</code></pre>
       <th scope="row"><dfn id="user-agent-locales"><var>user agent locales</var></dfn></th>
       <td><p>List of strings</td>
       <td><a href="#step-5-derive-the-user-agent's-locales">Step 5</a></td>
-      <td>A  list of <a href="#language-tag" title="language tag">language tags</a>. </td>
+      <td><a href="#language-tag" title="language tag">language tags</a> 리스트. </td>
     </tr>
   </table>
   <h3 class="no-num done" id="step-4-locate-and-process-the-digital-signature"><dfn>Step 4</dfn> - 디지털 서명을 찾고 처리하기</h3>
-  <p>If the
-    user agent does not <a href="#supported" title="supported">support</a> <a href="#widgets-digsig">[Widgets-DigSig]</a>,  then the user agent <em class="ct">must</em> skip <a href="#step-4-locate-and-process-the-digital-signature">Step 4</a> and go to <a href="#step-5-derive-the-user-agent's-locales">Step 5</a>. Otherwise, the user agent <em class="ct">must</em> apply the algorithm to locate digital signatures, which is defined in the <a href="#widgets-digsig">[Widgets-DigSig]</a> specification under the section named <a href="http://www.w3.org/TR/widgets-digsig/#locating-signature-files-in-a-widget-package">Locating signature files in a widget package</a>.</p>
+  <p>만약 유저 에이전트가 <a href="#widgets-digsig">[Widgets-DigSig]</a>를 <a href="#supported" title="supported">지원</a>하지 않으면,  유저 에이전트는 <em class="ct">반드시(must)</em> <a href="#step-4-locate-and-process-the-digital-signature">Step 4</a>는 스킵하고 바로 <a href="#step-5-derive-the-user-agent's-locales">Step 5</a>로 가야합니다. 그게 아니라면, 유저 에이전트는 <a href="#widgets-digsig">[Widgets-DigSig]</a> 명세의 <a href="http://www.w3.org/TR/widgets-digsig/#locating-signature-files-in-a-widget-package">Locating signature files in a widget package</a> 섹션에 정의된 전자 서명을 찾는 알고리즘을 <em class="ct">반드시(must)</em> 지원해야 합니다.</p>
   <h3 class="no-num" id="step-5-derive-the-user-agent's-locales"><dfn>Step 5</dfn> - 유저 에이전트의 지역 얻기</h3>
-  <p>The <dfn id="system">end-user's language ranges</dfn> represents the end-user's
-    preferred languages and regional settings, which are derived from the operating
-    system or directly from the user agent. As there are numerous ways a user agent can
-    derive the end-user's preferred languages and regional settings, the means by which
-    those values are derived are beyond the scope of this specification and left up to
-    the implementation.</p>
+  <p><dfn id="system">최종 사용자의 언어 종류(end-user's language ranges)</dfn>는 운영 체제로부터 혹은 유저 에이전트로 부터 직접적으로 얻어진 최종 사용자가 선호하는 언어 및 지역 설정을 나타냅니다. 
+    유저 에이전트가 최종 사용자의 선호하는 언어 및 지역 설정을 얻는 방법은 많이 있기때문에 이 방법들은 이 명세의 범위를 넘어서며 구현에 맡겨 둡니다.(?)</p>
   <p>During the <a href="#rule-for-deriving-the-user-agent-locales-0">rule for deriving the <var>user agent locales</var></a> defined below, the user agent will need to construct a list <var>unprocessed locales</var>. Each item in the <var>unprocessed locales</var> is a  string in lowercase form, that conforms to the production of a <code>Language-Tag</code>, as defined in the <a href="#bcp47">[BCP47]</a> specification. A
     string that conforms to the production of a <code>Language-Tag</code> is referred to
     as a <dfn class="external" id="language-range">language range</dfn> <a href="#bcp47">[BCP47]</a> (e.g.
